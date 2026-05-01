@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+          <div className="why-features-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {features.map((f, i) => (
               <div key={f.title} className={`card reveal reveal-delay-${i + 1}`} style={{ padding: 24 }}>
                 <div style={{ color: f.accent, marginBottom: 14 }}>{f.icon}</div>
@@ -65,6 +65,10 @@ export default function WhyChooseUs() {
       <style jsx>{`
         @media (max-width: 800px) {
           div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .why-features-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+        }
+        @media (max-width: 480px) {
+          .why-features-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

@@ -405,6 +405,37 @@ select.form-input option { background: var(--bg-raised); }
   .card { padding: 16px 14px !important; }
 }
 
+/* ─── Page-specific mobile grid fixes ─── */
+@media (max-width: 768px) {
+  /* About page — Our Story 2-col */
+  .about-story-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+  /* Contact page — booking + message forms side-by-side */
+  .contact-forms-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* Contact form — name/phone row and date/time row */
+  .form-row-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+
+  /* Services page — deep clean and shampoo 2-col detail sections */
+  .service-detail-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+  /* Services page — features 2-col inside each service card */
+  .service-features-grid { grid-template-columns: 1fr !important; }
+
+  /* Services page — coverage grid auto rows reset */
+  .coverage-grid { grid-auto-rows: auto !important; }
+
+  /* WhyChooseUs — inner features 2x2 grid */
+  .why-features-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+
+  /* CTA Banner — reduce large padding on mobile */
+  .cta-inner { padding: 36px 20px !important; }
+
+  /* Price row inside service cards — stack on small screens */
+  .service-price-row { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+  .service-price-row .btn-group { width: 100%; justify-content: flex-end; }
+}
+
 /* ─── Mobile: force grids that use inline styles ─── */
 @media (max-width: 700px) {
   /* Services 2-col → 1-col */

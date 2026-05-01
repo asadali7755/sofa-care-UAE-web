@@ -65,7 +65,7 @@ export default function ServicesPage() {
         {/* Sofa Deep Cleaning */}
         <section id="deep-cleaning" className="section" style={{ borderBottom: '1px solid var(--line)' }}>
           <div className="container-x">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+            <div className="service-detail-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
               <div>
                 <div className="reveal">
                   <span className="badge badge-accent" style={{ marginBottom: 20, display: 'inline-flex' }}>Most Popular</span>
@@ -121,7 +121,7 @@ export default function ServicesPage() {
         {/* Sofa Shampooing */}
         <section id="shampooing" className="section" style={{ borderBottom: '1px solid var(--line)', background: 'var(--bg-elev)' }}>
           <div className="container-x">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+            <div className="service-detail-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
               <div className="reveal">
                 <div style={{ background: 'var(--bg-raised)', borderRadius: 20, padding: 32, border: '1px solid var(--line)', borderLeft: '3px solid var(--accent)' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>What&apos;s Included</div>
@@ -187,7 +187,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 28 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 28 }}>
               {[
                 {
                   id: 'stain-removal',
@@ -266,7 +266,7 @@ export default function ServicesPage() {
                   <p style={{ color: 'var(--fg-muted)', fontSize: 15, lineHeight: 1.7, marginBottom: 24 }}>{s.desc}</p>
 
                   {/* Features */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 12px', marginBottom: 28, flex: 1 }}>
+                  <div className="service-features-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 12px', marginBottom: 28, flex: 1 }}>
                     {s.features.map((f) => (
                       <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                         <span style={{ color: s.tagColor, fontWeight: 700, fontSize: 14, flexShrink: 0 }}>✓</span>
@@ -463,8 +463,12 @@ export default function ServicesPage() {
         .city-card:hover .city-default { opacity: 0; transform: translateY(10px); }
         .city-card:hover .city-hover { opacity: 1 !important; transform: translateY(0) !important; }
         @media (max-width: 768px) {
-          .coverage-grid { grid-template-columns: 1fr !important; }
-          .city-card { height: 320px !important; }
+          .coverage-grid { grid-template-columns: 1fr !important; grid-auto-rows: auto !important; }
+          .city-card { height: 280px !important; }
+          .service-detail-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+        @media (max-width: 480px) {
+          .city-card { height: 240px !important; }
         }
       `}</style>
     </>

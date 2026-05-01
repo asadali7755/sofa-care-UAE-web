@@ -5,7 +5,7 @@ export default function CTABanner() {
   return (
     <section className="section-sm" style={{ borderBottom: '1px solid var(--line)' }}>
       <div className="container-x">
-        <div className="reveal" style={{
+        <div className="reveal cta-inner" style={{
           position: 'relative', overflow: 'hidden',
           borderRadius: 24, padding: '64px 48px',
           background: 'linear-gradient(135deg, var(--bg-elev) 0%, color-mix(in oklab, var(--accent) 10%, var(--bg-elev)) 100%)',

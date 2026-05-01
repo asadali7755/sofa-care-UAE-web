@@ -80,7 +80,7 @@ export default function AboutPage() {
         {/* Our Story */}
         <section className="section" style={{ borderBottom: '1px solid var(--line)' }}>
           <div className="container-x">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+            <div className="about-story-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
               <div>
                 <div className="reveal section-tag">Our Story</div>
                 <h2 className="reveal" style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', marginBottom: 24 }}>

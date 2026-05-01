@@ -90,7 +90,7 @@ export default function ContactPage() {
         {/* Forms */}
         <section className="section" style={{ borderBottom: '1px solid var(--line)' }}>
           <div className="container-x">
-            <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 48, alignItems: 'start' }}>
+            <div className="contact-forms-grid" style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 48, alignItems: 'start' }}>
 
               {/* Booking Form */}
               <div className="reveal">
@@ -108,7 +108,7 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleBook} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                    <div className="form-row-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                       <div>
                         <label className="form-label">Full Name *</label>
                         <input className="form-input" type="text" placeholder="Ahmed Al Mansouri" required value={bookForm.name} onChange={(e) => setBookForm({ ...bookForm, name: e.target.value })}/>
@@ -131,7 +131,7 @@ export default function ContactPage() {
                         <option value="Both Services">Both Services — Deep Clean + Shampoo</option>
                       </select>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                    <div className="form-row-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                       <div>
                         <label className="form-label">Preferred Date *</label>
                         <input className="form-input" type="date" required value={bookForm.date} min={new Date().toISOString().split('T')[0]} onChange={(e) => setBookForm({ ...bookForm, date: e.target.value })}/>
