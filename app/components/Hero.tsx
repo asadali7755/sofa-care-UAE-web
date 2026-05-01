@@ -46,7 +46,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
@@ -85,7 +85,7 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="reveal reveal-delay-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.15)', maxWidth: 500 }}>
+          <div className="reveal reveal-delay-5 hero-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.15)', maxWidth: 500 }}>
             {stats.map((s) => (
               <div key={s.l}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(16px, 1.8vw, 24px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>{s.n}</div>

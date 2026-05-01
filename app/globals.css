@@ -13,10 +13,6 @@
   --coral:    #FF5A3C;
   --green:    #65D16C;
 
-  --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
-  --font-sans:    'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
-  --font-serif:   'Fraunces', 'Times New Roman', serif;
 
   --bg:          var(--ink);
   --bg-elev:     var(--ink2);
@@ -407,4 +403,44 @@ select.form-input option { background: var(--bg-raised); }
   h1 { font-size: 26px !important; }
   h2 { font-size: 22px !important; }
   .card { padding: 16px 14px !important; }
+}
+
+/* ─── Mobile: force grids that use inline styles ─── */
+@media (max-width: 700px) {
+  /* Services 2-col → 1-col */
+  .services-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+
+  /* Video stats 4-col → 2-col */
+  .video-stats { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Hero stats 4-col → 2-col */
+  .hero-stats { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+
+  /* Any inline flex row → wrap on mobile */
+  .mobile-wrap { flex-wrap: wrap !important; }
+
+  /* Card padding reduce on mobile */
+  .card { padding: 22px 18px !important; }
+
+  /* Card inside services grid — reduce font sizes */
+  .services-grid .card h3 { font-size: 20px !important; }
+  .services-grid .card p  { font-size: 14px !important; }
+
+  /* Hero section min-height instead of 100vh to avoid overflow on small phones */
+  #hero { min-height: 100svh !important; height: auto !important; }
+
+  /* Ensure buttons don't overflow */
+  .btn { white-space: nowrap; }
+}
+
+@media (max-width: 480px) {
+  /* Full-width buttons for main CTAs */
+  .hero-btns { flex-direction: column !important; }
+  .hero-btns .btn { width: 100% !important; justify-content: center !important; }
+
+  /* Video section gap */
+  .video-stats { gap: 10px !important; }
+
+  /* Marquee items smaller */
+  .marquee-inner span { font-size: 12px !important; }
 }

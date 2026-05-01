@@ -67,7 +67,7 @@ export default function Navbar() {
         <div className="container-x" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72, color: theme === 'light' ? '#0C1829' : undefined }}>
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-            <img src="/OIG2.jfif" alt="Logo" width="42" height="42" style={{ borderRadius: 10, objectFit: 'cover', display: 'block' }} />
+            <img src="/OIG2.jpg" alt="Logo" width="42" height="42" style={{ borderRadius: 10, objectFit: 'cover', display: 'block' }} />
             <div>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 16, color: 'var(--fg)', lineHeight: 1.1 }}>Al Haya Sofa Care</div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Sofa Care UAE</div>

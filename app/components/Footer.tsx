@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-              <img src="/OIG2.jfif" alt="Logo" width="38" height="38" style={{ borderRadius: 10, objectFit: 'cover', display: 'block' }} />
+              <img src="/OIG2.jpg" alt="Logo" width="38" height="38" style={{ borderRadius: 10, objectFit: 'cover', display: 'block' }} />
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 16, color: 'var(--fg)' }}>Al Haya Sofa Care</div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Sofa Care UAE</div>

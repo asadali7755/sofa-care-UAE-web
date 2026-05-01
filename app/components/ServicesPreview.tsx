@@ -159,7 +159,7 @@ const services = [
     features: ['Pet odor elimination', 'Smoke & food odors', 'Anti-bacterial treatment', 'Long-lasting freshness'],
     price: 'AED 59',
     href: '/contact',
-    bgImage: '/home/Odor-Treatment.png',
+    bgImage: '/home/Odor-Treatment.jpg',
   },
   {
     icon: <IconPaw size={36}/>,
@@ -192,7 +192,7 @@ const services = [
     features: ['Velvet-safe technique', 'Microfiber deep clean', 'Pile restoration', 'No shrinkage or fading'],
     price: 'AED 99',
     href: '/contact',
-    bgImage: '/home/Velvet-Microfiber.jfif',
+    bgImage: '/home/Velvet-Microfiber.jpg',
   },
   {
     icon: <IconShield size={36}/>,
@@ -203,7 +203,7 @@ const services = [
     features: ['Invisible stain shield', 'Spill repellent coat', 'UV fade protection', 'Lasts 12+ months'],
     price: 'AED 69',
     href: '/contact',
-    bgImage: '/home/Fabric-Protection.jfif',
+    bgImage: '/home/Fabric-Protection.jpg',
   },
 ];
 
