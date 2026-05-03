@@ -46,7 +46,7 @@ export default function VideoSection() {
           {/* Video always in DOM so play() works on iOS */}
           <video
             ref={videoRef}
-            src="/sofa-cleaning.mp4"
+            src="/sofa-cleaning-compressed.mp4"
             onClick={handleVideoClick}
             onPlay={() => setPlaying(true)}
             controls={playing}

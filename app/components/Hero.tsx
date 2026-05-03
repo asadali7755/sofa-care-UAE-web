@@ -49,7 +49,7 @@ export default function Hero() {
           preload="metadata"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         >
-          <source src="/hero-bg.mp4" type="video/mp4" />
+          <source src="/hero-bg-compressed.mp4" type="video/mp4" />
         </video>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.88) 0%, rgba(11,11,11,0.70) 50%, rgba(11,11,11,0.50) 100%)' }}/>
         <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
