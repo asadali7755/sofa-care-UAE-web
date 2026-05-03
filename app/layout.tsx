@@ -5,7 +5,7 @@ import { Archivo, Inter, JetBrains_Mono, Fraunces } from 'next/font/google';
 
 const fontDisplay = Archivo({
   subsets: ['latin'],
-  weight: ['400', '500', '700', '800', '900'],
+  weight: ['500', '800', '900'],
   variable: '--font-display',
   display: 'swap',
 });

@@ -118,48 +118,6 @@ export default function WhyChooseUs() {
 
       </div>
 
-      <style jsx>{`
-        /* Desktop: show desktop layout, hide mobile */
-        .why-desktop { display: grid; }
-        .why-mobile  { display: none; }
-
-        /* Mobile: hide desktop layout, show mobile */
-        @media (max-width: 768px) {
-          .why-desktop { display: none !important; }
-          .why-mobile  { display: block !important; }
-        }
-
-        /* Mobile row card styles */
-        .why-row-card {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          padding: 16px;
-          background: var(--bg-elev);
-          border: 1px solid var(--line);
-          border-radius: 14px;
-          transition: border-color 0.2s, transform 0.2s;
-        }
-        .why-row-card:active { transform: scale(0.99); }
-
-        .why-row-icon {
-          width: 48px;
-          height: 48px;
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-
-        .why-row-text { flex: 1; min-width: 0; }
-
-        .why-row-check {
-          font-size: 18px;
-          font-weight: 700;
-          flex-shrink: 0;
-        }
-      `}</style>
     </section>
   );
 }

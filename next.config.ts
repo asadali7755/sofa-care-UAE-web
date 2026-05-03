@@ -9,10 +9,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Allow JSX in .tsx files without style jsx pragma for styled-jsx compatibility
-  compiler: {
-    styledJsx: true,
-  },
 };
 
 export default nextConfig;

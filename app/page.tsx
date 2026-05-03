@@ -1,5 +1,3 @@
-'use client';
-import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ServicesPreview from './components/ServicesPreview';
@@ -11,32 +9,9 @@ import MarqueeBanner from './components/MarqueeBanner';
 import ServeDubaiSection from './components/ServeDubaiSection';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollRevealInit from './components/ScrollRevealInit';
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 400);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-
   return (
     <>
       <Navbar />
@@ -52,11 +27,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppButton />
-      <button
-        className={'scroll-top ' + (scrolled ? 'show' : '')}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        aria-label="Scroll to top"
-      >↑</button>
+      <ScrollRevealInit />
     </>
   );
 }
