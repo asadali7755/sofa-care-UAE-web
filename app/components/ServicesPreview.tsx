@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { IconArrow, IconSofa, IconDrop, IconShield, IconSpray, IconWind, IconPaw, IconSparkle, IconDiamond, IconFabric } from './Icons';
 
 const cyclingLines = [
@@ -229,17 +230,16 @@ export default function ServicesPreview() {
             <div
               key={s.title}
               className={`card reveal reveal-delay-${(i % 3) + 1}${('bgImage' in s && s.bgImage) ? ' card-dark-bg' : ''}`}
-              style={{
-                position: 'relative', padding: '40px 36px', borderLeft: `3px solid ${s.tagColor}`, display: 'flex', flexDirection: 'column',
-                ...(('bgImage' in s && s.bgImage) ? {
-                  backgroundImage: `linear-gradient(rgba(11,11,11,0.55), rgba(11,11,11,0.65)), url(${s.bgImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                } : {}),
-              }}
+              style={{ position: 'relative', padding: '40px 36px', borderLeft: `3px solid ${s.tagColor}`, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
             >
+              {('bgImage' in s && s.bgImage) && (
+                <>
+                  <Image src={s.bgImage} alt={s.title} fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', zIndex: 0 }} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(rgba(11,11,11,0.55), rgba(11,11,11,0.65))', zIndex: 1 }} />
+                </>
+              )}
               {/* Badge */}
-              <div style={{ position: 'absolute', top: 20, right: 20 }}>
+              <div style={{ position: 'absolute', top: 20, right: 20, zIndex: 2 }}>
                 <span style={{
                   padding: '4px 12px', borderRadius: 999,
                   fontFamily: 'var(--font-mono)', fontSize: 9, fontWeight: 600,
@@ -251,16 +251,16 @@ export default function ServicesPreview() {
               </div>
 
               {/* Icon */}
-              <div style={{ color: s.tagColor, marginBottom: 24 }}>{s.icon}</div>
+              <div style={{ color: s.tagColor, marginBottom: 24, position: 'relative', zIndex: 2 }}>{s.icon}</div>
 
               {/* Title */}
-              <h3 style={{ fontSize: 24, marginBottom: 14 }}>{s.title}</h3>
+              <h3 style={{ fontSize: 24, marginBottom: 14, position: 'relative', zIndex: 2 }}>{s.title}</h3>
 
               {/* Desc */}
-              <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.7, marginBottom: 24 }}>{s.desc}</p>
+              <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.7, marginBottom: 24, position: 'relative', zIndex: 2 }}>{s.desc}</p>
 
               {/* Features */}
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px', display: 'flex', flexDirection: 'column', gap: 12, flex: 1 }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px', display: 'flex', flexDirection: 'column', gap: 12, flex: 1, position: 'relative', zIndex: 2 }}>
                 {s.features.map((f) => (
                   <li key={f} style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'var(--fg-muted)', fontSize: 15 }}>
                     <span style={{ color: s.tagColor, fontWeight: 700, flexShrink: 0, fontSize: 16 }}>✓</span> {f}
@@ -269,7 +269,7 @@ export default function ServicesPreview() {
               </ul>
 
               {/* Price + CTA */}
-              <div style={{ borderTop: '1px solid var(--line)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div style={{ borderTop: '1px solid var(--line)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative', zIndex: 2 }}>
                 <div>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--fg-dim)', marginBottom: 5, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Starting from</div>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: 26, fontWeight: 900, color: s.tagColor }}>{s.price}</div>

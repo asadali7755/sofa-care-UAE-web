@@ -46,7 +46,8 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
+          poster="/hero-sofa.jpg"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         >
           <source src="/hero-bg-compressed.mp4" type="video/mp4" />
