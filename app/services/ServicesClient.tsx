@@ -322,3 +322,13 @@ export default function ServicesPage() {
 
         <ServiceCoverageSection />
       </main>
+      <Footer />
+      <WhatsAppButton />
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .service-detail-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+      `}</style>
+    </>
+  );
+}
