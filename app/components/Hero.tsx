@@ -41,6 +41,14 @@ export default function Hero() {
     <section id="hero" style={{ position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', borderBottom: '1px solid var(--line)' }}>
       {/* Background video */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        {/* Static poster always visible — CSS hides video on mobile */}
+        <img
+          src="/hero-sofa.jpg"
+          alt=""
+          aria-hidden="true"
+          className="hero-poster"
+          style={{ display: 'none', position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+        />
         <video
           autoPlay
           muted

@@ -25,22 +25,24 @@ export default function MarqueeBanner() {
       borderTop: '1px solid var(--line)',
       borderBottom: '1px solid var(--line)',
       background: 'var(--bg-elev)',
-      padding: '22px 0',
+      padding: '18px 0',
       overflow: 'hidden',
+      maxWidth: '100vw',
     }}>
-      <div className="marquee">
+      <div className="marquee" style={{ overflow: 'hidden', width: '100%' }}>
         <div
           className="marquee-inner"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(22px, 3vw, 42px)',
+            fontSize: 'clamp(15px, 2.5vw, 36px)',
             fontWeight: 900,
-            letterSpacing: '-0.025em',
+            letterSpacing: '-0.02em',
             lineHeight: 1,
+            whiteSpace: 'nowrap',
           }}
         >
           {Array(3).fill(null).map((_, i) => (
-            <span key={i} style={{ display: 'flex', alignItems: 'center' }}>
+            <span key={i} style={{ display: 'inline-flex', alignItems: 'center' }}>
               {items.map((item, j) => (
                 <span
                   key={j}
@@ -53,12 +55,11 @@ export default function MarqueeBanner() {
                     fontFamily: item.serif ? 'var(--font-serif)' : undefined,
                     fontStyle: item.serif ? 'italic' : undefined,
                     fontWeight: item.serif ? 400 : 900,
-                    margin: item.dim ? '0 20px' : undefined,
-                    paddingRight: !item.dim ? 0 : undefined,
+                    margin: item.dim ? '0 14px' : '0 4px',
+                    display: 'inline-block',
                   }}
                 >
                   {item.text}
-                  {!item.dim && ' '}
                 </span>
               ))}
             </span>
