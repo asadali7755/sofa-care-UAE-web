@@ -1,8 +1,9 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ServicesPreview from './components/ServicesPreview';
+import VideoSection from './components/VideoSection';
 import WhyChooseUs from './components/WhyChooseUs';
-import CoverageSection from './components/CoverageSection';
+import ServiceCoverageSection from './components/ServiceCoverageSection';
 import Testimonials from './components/Testimonials';
 import CTABanner from './components/CTABanner';
 import MarqueeBanner from './components/MarqueeBanner';
@@ -19,8 +20,9 @@ export default function Home() {
         <Hero />
         <MarqueeBanner />
         <ServicesPreview />
+        <VideoSection />
         <WhyChooseUs />
-        <CoverageSection />
+        <ServiceCoverageSection />
         <Testimonials />
         <ServeDubaiSection />
         <CTABanner />

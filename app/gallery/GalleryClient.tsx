@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import ServiceCoverageSection from '../components/ServiceCoverageSection';
 
 const categories = ['All', 'Sofa Cleaning', 'Stain Removal', 'Leather', 'Shampooing'];
 
@@ -117,6 +118,7 @@ export default function GalleryPage() {
             </div>
           </div>
         </section>
+        <ServiceCoverageSection />
       </main>
       <Footer />
       <WhatsAppButton />

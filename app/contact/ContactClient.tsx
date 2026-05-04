@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import ServiceCoverageSection from '../components/ServiceCoverageSection';
 import { IconPhone, IconWhatsApp, IconLocation, IconArrow } from '../components/Icons';
 
 export default function ContactPage() {
@@ -338,6 +339,7 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+        <ServiceCoverageSection />
       </main>
       <Footer />
       <WhatsAppButton />

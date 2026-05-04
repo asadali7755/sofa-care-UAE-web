@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import ServiceCoverageSection from '../components/ServiceCoverageSection';
 import { IconArrow, IconLeaf, IconClock, IconHome, IconShield } from '../components/Icons';
 
 function IconTag({ size = 28 }: { size?: number }) {
@@ -152,6 +153,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        <ServiceCoverageSection />
       </main>
       <Footer />
       <WhatsAppButton />
