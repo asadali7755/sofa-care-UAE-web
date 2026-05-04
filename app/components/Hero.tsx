@@ -1,30 +1,6 @@
-'use client';
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { IconArrow, IconWhatsApp } from './Icons';
-
-function useTypewriter(words: string[], typingSpeed = 80, deleteSpeed = 40, pauseMs = 1600) {
-  const [text, setText] = useState('');
-  const [idx, setIdx] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = words[idx % words.length];
-    let t: ReturnType<typeof setTimeout> | undefined;
-    if (!deleting && text === current) {
-      t = setTimeout(() => setDeleting(true), pauseMs);
-    } else if (deleting && text === '') {
-      setDeleting(false);
-      setIdx((i) => (i + 1) % words.length);
-    } else {
-      t = setTimeout(() => {
-        setText((s) => deleting ? s.slice(0, -1) : current.slice(0, s.length + 1));
-      }, deleting ? deleteSpeed : typingSpeed);
-    }
-    return () => { if (t) clearTimeout(t); };
-  }, [text, deleting, idx, words, typingSpeed, deleteSpeed, pauseMs]);
-  return text;
-}
+import TypewriterText from './TypewriterText';
 
 const stats = [
   { n: '500+', l: 'Happy Clients' },
@@ -34,12 +10,9 @@ const stats = [
 ];
 
 export default function Hero() {
-  const role = useTypewriter(['Sofa Deep Cleaning', 'Sofa Shampooing', 'Stain Removal', 'Same Day Service', 'At-Home Service']);
-
   return (
-    <>
     <section id="hero" style={{ position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', borderBottom: '1px solid var(--line)' }}>
-      {/* Background image — static for fast LCP */}
+      {/* Background image — server rendered for fast LCP */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
         <img
           src="/hero-sofa.webp"
@@ -53,9 +26,8 @@ export default function Hero() {
         <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
       </div>
 
-      {/* Main content — flex:1 fills remaining height after navbar */}
-      <div className="container-x hero-grid" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24 }}>
-        {/* Left */}
+      {/* Main content */}
+      <div className="container-x" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24 }}>
         <div>
           <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '6px 12px', borderRadius: 999, background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.15)', fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.75)', marginBottom: 20 }}>
             <span className="pulse-dot"/> Trusted by 500+ clients &nbsp;·&nbsp; Dubai, UAE
@@ -67,9 +39,7 @@ export default function Hero() {
             <span style={{ display: 'block', color: '#ffffff' }}>Experts</span>
           </h1>
 
-          <div className="reveal reveal-delay-2" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(15px, 1.8vw, 26px)', fontWeight: 700, color: 'var(--accent)', marginTop: 18, marginBottom: 16, minHeight: '1.5em', letterSpacing: '-0.01em' }}>
-            &gt; <span>{role}</span><span className="cursor-blink">_</span>
-          </div>
+          <TypewriterText />
 
           <p className="reveal reveal-delay-3" style={{ fontSize: 'clamp(14px, 1vw, 16px)', color: 'rgba(255,255,255,0.72)', maxWidth: 480, lineHeight: 1.6, marginBottom: 24 }}>
             Al Haya Sofa Care UAE brings <em style={{ fontFamily: 'var(--font-serif)', color: '#ffffff' }}>professional sofa cleaning</em> to your doorstep in Dubai, Sharjah &amp; Ajman. Advanced equipment, eco-friendly solutions, fast-dry results.
@@ -92,9 +62,7 @@ export default function Hero() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
-    </>
   );
 }
