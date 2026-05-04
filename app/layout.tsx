@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ThemeProvider } from './components/ThemeProvider';
 import { Archivo, Inter, JetBrains_Mono, Fraunces } from 'next/font/google';
 
 const fontDisplay = Archivo({
@@ -190,7 +189,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </head>
-      <body><ThemeProvider>{children}</ThemeProvider></body>
+      <body>{children}</body>
     </html>
   );
 }

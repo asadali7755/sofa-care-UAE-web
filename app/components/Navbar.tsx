@@ -4,43 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { IconClose } from './Icons';
-import { useTheme } from './ThemeProvider';
 
-function IconSun({ size = 16 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="5"/>
-      <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-      <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-    </svg>
-  );
-}
-
-function IconMoon({ size = 16 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-    </svg>
-  );
-}
-
-function HamburgerIcon({ open }: { open: boolean }) {
+function HamburgerIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-      <line
-        x1="3" y1={open ? '12' : '6'} x2="21" y2={open ? '12' : '6'}
-        style={{ transform: open ? 'rotate(45deg)' : 'none', transformOrigin: 'center', transition: 'all 0.3s' }}
-      />
-      <line
-        x1="3" y1="12" x2="21" y2="12"
-        style={{ opacity: open ? 0 : 1, transition: 'opacity 0.2s' }}
-      />
-      <line
-        x1="3" y1={open ? '12' : '18'} x2="21" y2={open ? '12' : '18'}
-        style={{ transform: open ? 'rotate(-45deg)' : 'none', transformOrigin: 'center', transition: 'all 0.3s' }}
-      />
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
     </svg>
   );
 }
@@ -57,7 +27,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -67,30 +36,17 @@ export default function Navbar() {
 
   useEffect(() => { setOpen(false); }, [pathname]);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
-
-  const navBg = scrolled
-    ? theme === 'dark'
-      ? 'rgba(11,11,11,0.92)'
-      : 'rgba(232,238,248,0.96)'
-    : theme === 'light'
-      ? 'rgba(232,238,248,0.85)'
-      : 'transparent';
 
   return (
     <>
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
         borderBottom: `1px solid ${scrolled ? 'var(--line)' : 'transparent'}`,
-        background: navBg,
+        background: scrolled ? 'rgba(11,11,11,0.92)' : 'transparent',
         backdropFilter: scrolled ? 'blur(16px)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
         transition: 'background 0.3s, border-color 0.3s',
@@ -100,7 +56,6 @@ export default function Navbar() {
           padding: '0 20px',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           height: 68,
-          color: theme === 'light' ? '#0C1829' : undefined,
         }}>
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', flexShrink: 0 }}>
@@ -118,42 +73,16 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Right: Phone + Theme + CTA */}
+          {/* Desktop Right: Phone + CTA */}
           <div className="nav-desktop-right" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <a href="tel:+971547199189" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--fg-muted)', display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
               +971 54 719 9189
             </a>
-            <button
-              onClick={toggle}
-              aria-label="Toggle theme"
-              style={{
-                display: 'flex', alignItems: 'center', gap: 6,
-                padding: '7px 12px', borderRadius: 999,
-                background: 'var(--bg-raised)', border: '1px solid var(--line-strong)',
-                color: 'var(--fg-muted)', cursor: 'pointer',
-                fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 600,
-                letterSpacing: '0.05em', textTransform: 'uppercase',
-                transition: 'all 0.2s', flexShrink: 0,
-              }}
-            >
-              {theme === 'dark' ? <><IconSun size={13}/> Light</> : <><IconMoon size={13}/> Dark</>}
-            </button>
             <Link href="/contact" className="btn btn-primary" style={{ padding: '9px 18px', fontSize: 13, whiteSpace: 'nowrap' }}>Book Now →</Link>
           </div>
 
-          {/* Mobile Right: Theme + Hamburger */}
+          {/* Mobile Right: Hamburger only */}
           <div className="nav-mobile-controls" style={{ display: 'none', alignItems: 'center', gap: 8 }}>
-            <button
-              onClick={toggle}
-              aria-label="Toggle theme"
-              style={{
-                background: 'var(--bg-raised)', border: '1px solid var(--line-strong)',
-                borderRadius: 8, color: 'var(--fg-muted)', cursor: 'pointer',
-                padding: '6px 8px', display: 'flex', alignItems: 'center',
-              }}
-            >
-              {theme === 'dark' ? <IconSun size={16}/> : <IconMoon size={16}/>}
-            </button>
             <button
               onClick={() => setOpen(!open)}
               aria-label={open ? 'Close menu' : 'Open menu'}
@@ -164,7 +93,7 @@ export default function Navbar() {
                 padding: 4, borderRadius: 6,
               }}
             >
-              {open ? <IconClose size={24}/> : <HamburgerIcon open={false}/>}
+              {open ? <IconClose size={24}/> : <HamburgerIcon/>}
             </button>
           </div>
         </div>
@@ -189,7 +118,7 @@ export default function Navbar() {
           position: 'fixed', top: 0, right: 0, bottom: 0,
           width: 'min(320px, 85vw)',
           zIndex: 199,
-          background: theme === 'dark' ? '#0F0F0F' : '#ffffff',
+          background: '#0F0F0F',
           borderLeft: '1px solid var(--line)',
           transform: open ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -265,7 +194,6 @@ export default function Navbar() {
           display: 'flex', flexDirection: 'column', gap: 12,
           flexShrink: 0,
         }}>
-          {/* Phone */}
           <a
             href="tel:+971547199189"
             style={{
@@ -279,8 +207,6 @@ export default function Navbar() {
             <span style={{ fontSize: 18 }}>📞</span>
             +971 54 719 9189
           </a>
-
-          {/* WhatsApp */}
           <a
             href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20sofa%20cleaning%20in%20Dubai."
             target="_blank"
@@ -298,8 +224,6 @@ export default function Navbar() {
             </svg>
             WhatsApp Us
           </a>
-
-          {/* Book Now */}
           <Link
             href="/contact"
             className="btn btn-primary"
