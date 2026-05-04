@@ -458,8 +458,7 @@ select.form-input option { background: var(--bg-raised); }
   .services-grid .card h3 { font-size: 20px !important; }
   .services-grid .card p  { font-size: 14px !important; }
 
-  /* Hero section min-height instead of 100vh to avoid overflow on small phones */
-  #hero { min-height: 100svh !important; height: auto !important; }
+  /* Hero uses poster attribute — no extra CSS needed */
 
   /* Ensure buttons don't overflow */
   .btn { white-space: nowrap; }
@@ -559,14 +558,7 @@ select.form-input option { background: var(--bg-raised); }
   .js-ready .reveal-delay-4 { transition-delay: 0.12s !important; }
   .js-ready .reveal-delay-5 { transition-delay: 0.15s !important; }
 
-  /* Hero video: hide on mobile, show poster only */
-  #hero video { display: none !important; }
-  #hero .hero-poster {
-    display: block !important;
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: center;
-  }
+  /* Hero uses poster attribute — no extra CSS needed */
 
   /* Stop floating badge overflow outside viewport */
   .hero-right { overflow: visible; }
@@ -624,4 +616,32 @@ section, footer, nav { overflow-x: hidden; }
 @supports not (color: color-mix(in oklab, red, blue)) {
   .badge-accent { background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3); }
   .card:hover   { box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+}
+
+/* ════════════════════════════════════════════
+   NAVBAR MOBILE FIX — global (replaces styled-jsx)
+   ════════════════════════════════════════════ */
+.hide-mobile { display: flex; }
+.show-mobile-flex { display: none !important; }
+
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile-flex { display: flex !important; }
+}
+@media (min-width: 769px) {
+  .show-mobile-flex { display: none !important; }
+}
+
+/* New navbar class names */
+.nav-desktop-links { display: flex; }
+.nav-desktop-right { display: flex; }
+.nav-mobile-controls { display: none; }
+
+@media (max-width: 768px) {
+  .nav-desktop-links { display: none !important; }
+  .nav-desktop-right { display: none !important; }
+  .nav-mobile-controls { display: flex !important; }
+}
+@media (min-width: 769px) {
+  .nav-mobile-controls { display: none !important; }
 }
