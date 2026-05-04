@@ -39,19 +39,16 @@ export default function Hero() {
   return (
     <>
     <section id="hero" style={{ position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', borderBottom: '1px solid var(--line)' }}>
-      {/* Background video */}
+      {/* Background image — static for fast LCP */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster="/hero-sofa.jpg"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-        >
-          <source src="/hero-bg-compressed.mp4" type="video/mp4" />
-        </video>
+        <img
+          src="/hero-sofa.jpg"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+        />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.88) 0%, rgba(11,11,11,0.70) 50%, rgba(11,11,11,0.50) 100%)' }}/>
         <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
       </div>
