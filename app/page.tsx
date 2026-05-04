@@ -1,7 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ServicesPreview from './components/ServicesPreview';
-import VideoSection from './components/VideoSection';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
 import CTABanner from './components/CTABanner';
@@ -19,7 +18,6 @@ export default function Home() {
         <Hero />
         <MarqueeBanner />
         <ServicesPreview />
-        <VideoSection />
         <WhyChooseUs />
         <Testimonials />
         <ServeDubaiSection />
