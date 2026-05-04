@@ -49,12 +49,12 @@ export default function Hero() {
           decoding="async"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.88) 0%, rgba(11,11,11,0.70) 50%, rgba(11,11,11,0.50) 100%)' }}/>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.72) 0%, rgba(11,11,11,0.45) 55%, rgba(11,11,11,0.25) 100%)' }}/>
         <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
       </div>
 
       {/* Main content — flex:1 fills remaining height after navbar */}
-      <div className="container-x hero-grid" style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr minmax(280px, 400px)', gap: 60, alignItems: 'center', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24 }}>
+      <div className="container-x hero-grid" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24 }}>
         {/* Left */}
         <div>
           <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '6px 12px', borderRadius: 999, background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.15)', fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.75)', marginBottom: 20 }}>
@@ -93,56 +93,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right — Hero Card */}
-        <div className="hero-right reveal reveal-delay-2" style={{ position: 'relative' }}>
-          <div style={{ position: 'relative', aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden', border: '1px solid rgba(246,241,232,0.15)', backgroundImage: 'url(/home/OIG2.webp)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundColor: 'rgba(11,11,11,0.9)' }}>
-            <div style={{ position: 'absolute', inset: 0, background: 'rgba(11,11,11,0.55)', backdropFilter: 'blur(2px)' }}/>
-            <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, padding: 28 }}>
-              <svg width="90" height="64" viewBox="0 0 120 80" fill="none">
-                <rect x="10" y="32" width="100" height="30" rx="8" fill="color-mix(in oklab, var(--accent) 20%, transparent)" stroke="var(--accent)" strokeWidth="1.5"/>
-                <rect x="20" y="22" width="80" height="14" rx="5" fill="color-mix(in oklab, var(--accent) 15%, transparent)" stroke="rgba(246,241,232,0.2)" strokeWidth="1"/>
-                <rect x="4" y="36" width="12" height="20" rx="6" fill="color-mix(in oklab, var(--accent) 20%, transparent)" stroke="var(--accent)" strokeWidth="1.5"/>
-                <rect x="104" y="36" width="12" height="20" rx="6" fill="color-mix(in oklab, var(--accent) 20%, transparent)" stroke="var(--accent)" strokeWidth="1.5"/>
-                <circle cx="90" cy="20" r="14" fill="var(--accent)"/>
-                <path d="M84 20l4 4 8-8" stroke="#0B0B0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 800, color: 'var(--fg)', marginBottom: 6 }}>Fresh &amp; Clean</div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--fg-muted)' }}>Professional Results, Every Time</div>
-              </div>
-              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'center' }}>
-                {['Eco-Safe', 'Same Day', 'At-Home'].map((tag) => (
-                  <span key={tag} className="badge badge-accent" style={{ fontSize: 10 }}>{tag}</span>
-                ))}
-              </div>
-            </div>
-            <div style={{ position: 'absolute', top: 14, left: 14, padding: '5px 9px', borderRadius: 6, background: 'rgba(11,11,11,0.75)', backdropFilter: 'blur(8px)', color: 'var(--fg)', fontFamily: 'var(--font-mono)', fontSize: 9, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}>AE · Dubai 2025</div>
-            <div style={{ position: 'absolute', bottom: 14, left: 14, right: 14, padding: '8px 12px', borderRadius: 8, background: 'rgba(11,11,11,0.72)', backdropFilter: 'blur(10px)', color: 'var(--fg)', fontFamily: 'var(--font-mono)', fontSize: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>SOFA_CLEAN.sh</span>
-              <span style={{ color: 'var(--green)' }}>● RUNNING</span>
-            </div>
-          </div>
-
-          {/* Floating badge bottom-left */}
-          <div style={{ position: 'absolute', bottom: -16, left: -24, padding: '12px 16px', background: 'var(--ink2)', border: '1px solid var(--line-strong)', borderRadius: 10, fontFamily: 'var(--font-mono)', fontSize: 11, color: '#D9F15A', boxShadow: '0 20px 40px rgba(0,0,0,0.35)', maxWidth: 220 }}>
-            <div style={{ color: 'var(--fg-muted)', marginBottom: 3 }}>{'// deep clean in'}</div>
-            <div><span style={{ color: 'var(--accent)' }}>const</span> <span style={{ color: 'var(--fg)' }}>time</span> = <span style={{ color: '#D9F15A' }}>&apos;2 hours&apos;</span>;</div>
-          </div>
-
-          {/* Floating badge top-right */}
-          <div style={{ position: 'absolute', top: -14, right: -14, padding: '8px 12px', background: 'var(--accent)', color: 'var(--ink)', borderRadius: 999, fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 600, boxShadow: '0 12px 28px color-mix(in oklab, var(--accent) 40%, transparent)', transform: 'rotate(5deg)' }}>
-            ◆ Same Day
-          </div>
-        </div>
       </div>
-
-
-      <style jsx>{`
-        @media (max-width: 900px) {
-          :global(.hero-grid) { grid-template-columns: 1fr !important; gap: 32px !important; padding-top: 100px !important; }
-          :global(.hero-right) { display: none !important; }
-        }
-      `}</style>
     </section>
     </>
   );
