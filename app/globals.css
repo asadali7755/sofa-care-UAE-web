@@ -93,14 +93,15 @@ h1,h2,h3,h4,h5 { font-family: var(--font-display); font-weight: 800; letter-spac
 p { margin: 0; }
 a { color: inherit; text-decoration: none; }
 
-/* ─── Scroll reveal ─── */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease-out, transform 0.55s ease-out; will-change: opacity, transform; }
-.reveal.in { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.06s; }
-.reveal-delay-2 { transition-delay: 0.12s; }
-.reveal-delay-3 { transition-delay: 0.18s; }
-.reveal-delay-4 { transition-delay: 0.24s; }
-.reveal-delay-5 { transition-delay: 0.30s; }
+/* ─── Scroll reveal — visible by default, animated when JS ready ─── */
+.reveal { opacity: 1; transform: none; }
+.js-ready .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+.js-ready .reveal.in { opacity: 1; transform: translateY(0); }
+.js-ready .reveal-delay-1 { transition-delay: 0.05s; }
+.js-ready .reveal-delay-2 { transition-delay: 0.10s; }
+.js-ready .reveal-delay-3 { transition-delay: 0.15s; }
+.js-ready .reveal-delay-4 { transition-delay: 0.20s; }
+.js-ready .reveal-delay-5 { transition-delay: 0.25s; }
 
 /* ─── Buttons ─── */
 .btn {
@@ -521,7 +522,7 @@ select.form-input option { background: var(--bg-raised); }
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
-  .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
+  .js-ready .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
   .marquee-inner { animation: none !important; }
   .pulse-dot { animation: none !important; }
   .cursor-blink { animation: none !important; }
@@ -551,12 +552,12 @@ select.form-input option { background: var(--bg-raised); }
   }
 
   /* Reveal faster on mobile — less jarring */
-  .reveal { transition: opacity 0.4s ease-out, transform 0.4s ease-out !important; }
-  .reveal-delay-1 { transition-delay: 0.04s !important; }
-  .reveal-delay-2 { transition-delay: 0.08s !important; }
-  .reveal-delay-3 { transition-delay: 0.12s !important; }
-  .reveal-delay-4 { transition-delay: 0.16s !important; }
-  .reveal-delay-5 { transition-delay: 0.20s !important; }
+  .js-ready .reveal { transition: opacity 0.35s ease-out, transform 0.35s ease-out !important; }
+  .js-ready .reveal-delay-1 { transition-delay: 0.03s !important; }
+  .js-ready .reveal-delay-2 { transition-delay: 0.06s !important; }
+  .js-ready .reveal-delay-3 { transition-delay: 0.09s !important; }
+  .js-ready .reveal-delay-4 { transition-delay: 0.12s !important; }
+  .js-ready .reveal-delay-5 { transition-delay: 0.15s !important; }
 
   /* Hero video: hide on mobile, show poster only */
   #hero video { display: none !important; }

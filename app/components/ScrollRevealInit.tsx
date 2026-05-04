@@ -11,18 +11,22 @@ export default function ScrollRevealInit() {
   }, []);
 
   useEffect(() => {
-    // Immediately reveal elements already visible on page load
-    const revealVisible = () => {
+    // Add js-ready so CSS animations kick in (elements hidden → animated in)
+    document.documentElement.classList.add('js-ready');
+
+    const revealAll = () => {
       document.querySelectorAll('.reveal').forEach((el) => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight + 50) {
+        if (rect.top < window.innerHeight + 100) {
           el.classList.add('in');
         }
       });
     };
-    revealVisible();
-    // Small delay to catch any late-rendered elements
-    const t = setTimeout(revealVisible, 200);
+
+    // Reveal immediately visible elements
+    revealAll();
+    const t1 = setTimeout(revealAll, 100);
+    const t2 = setTimeout(revealAll, 400);
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -33,10 +37,16 @@ export default function ScrollRevealInit() {
           }
         });
       },
-      { threshold: 0.05, rootMargin: '0px 0px 0px 0px' }
+      { threshold: 0, rootMargin: '0px 0px 100px 0px' }
     );
+
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-    return () => { clearTimeout(t); io.disconnect(); };
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      io.disconnect();
+    };
   }, []);
 
   return (
