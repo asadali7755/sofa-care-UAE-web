@@ -645,3 +645,8 @@ section, footer, nav { overflow-x: hidden; }
 @media (min-width: 769px) {
   .nav-mobile-controls { display: none !important; }
 }
+
+/* Coverage section mobile */
+@media (max-width: 768px) {
+  .coverage-grid { grid-template-columns: 1fr !important; }
+}
