@@ -42,7 +42,7 @@ export default function Hero() {
       {/* Background image — static for fast LCP */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
         <img
-          src="/hero-sofa.jpg"
+          src="/hero-sofa.webp"
           alt=""
           aria-hidden="true"
           fetchPriority="high"

@@ -149,7 +149,7 @@ const services = [
     features: ['pH-safe leather cleaner', 'Deep conditioning', 'Crack prevention', 'Protective coat finish'],
     price: 'AED 129',
     href: '/contact',
-    bgImage: '/home/leather.jpg',
+    bgImage: '/home/leather.webp',
   },
   {
     icon: <IconWind size={36}/>,
@@ -160,7 +160,7 @@ const services = [
     features: ['Pet odor elimination', 'Smoke & food odors', 'Anti-bacterial treatment', 'Long-lasting freshness'],
     price: 'AED 59',
     href: '/contact',
-    bgImage: '/home/Odor-Treatment.jpg',
+    bgImage: '/home/Odor-Treatment.webp',
   },
   {
     icon: <IconPaw size={36}/>,
@@ -171,7 +171,7 @@ const services = [
     features: ['Deep pet hair extraction', 'Anti-allergen treatment', 'Safe for all fabrics', 'Deodorizing included'],
     price: 'AED 39',
     href: '/contact',
-    bgImage: '/home/pet.jpg',
+    bgImage: '/home/pet.webp',
   },
   {
     icon: <IconSparkle size={36}/>,
@@ -182,7 +182,7 @@ const services = [
     features: ['99.9% bacteria kill rate', 'Child & pet safe', 'No harsh chemicals', 'WHO-approved solutions'],
     price: 'AED 49',
     href: '/contact',
-    bgImage: '/home/Sofa-Sanitization.jpg',
+    bgImage: '/home/Sofa-Sanitization.webp',
   },
   {
     icon: <IconFabric size={36}/>,
@@ -193,7 +193,7 @@ const services = [
     features: ['Velvet-safe technique', 'Microfiber deep clean', 'Pile restoration', 'No shrinkage or fading'],
     price: 'AED 99',
     href: '/contact',
-    bgImage: '/home/Velvet-Microfiber.jpg',
+    bgImage: '/home/Velvet-Microfiber.webp',
   },
   {
     icon: <IconShield size={36}/>,
@@ -204,7 +204,7 @@ const services = [
     features: ['Invisible stain shield', 'Spill repellent coat', 'UV fade protection', 'Lasts 12+ months'],
     price: 'AED 69',
     href: '/contact',
-    bgImage: '/home/Fabric-Protection.jpg',
+    bgImage: '/home/Fabric-Protection.webp',
   },
 ];
 

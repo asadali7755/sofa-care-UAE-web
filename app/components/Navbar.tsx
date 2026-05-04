@@ -59,7 +59,7 @@ export default function Navbar() {
         }}>
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', flexShrink: 0 }}>
-            <Image src="/OIG2.jpg" alt="Al Haya Sofa Care logo" width={40} height={40} priority style={{ borderRadius: 8, objectFit: 'cover', display: 'block' }} />
+            <Image src="/OIG2.webp" alt="Al Haya Sofa Care logo" width={40} height={40} priority style={{ borderRadius: 8, objectFit: 'cover', display: 'block' }} />
             <div>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 15, color: 'var(--fg)', lineHeight: 1.1 }}>Al Haya Sofa Care</div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Sofa Care UAE</div>
@@ -135,7 +135,7 @@ export default function Navbar() {
           flexShrink: 0,
         }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }} onClick={() => setOpen(false)}>
-            <Image src="/OIG2.jpg" alt="Al Haya Sofa Care" width={36} height={36} style={{ borderRadius: 8, objectFit: 'cover' }} />
+            <Image src="/OIG2.webp" alt="Al Haya Sofa Care" width={36} height={36} style={{ borderRadius: 8, objectFit: 'cover' }} />
             <div>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 14, color: 'var(--fg)', lineHeight: 1.1 }}>Al Haya Sofa Care</div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Sofa Care UAE</div>

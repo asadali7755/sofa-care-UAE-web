@@ -9,12 +9,12 @@ import ServiceCoverageSection from '../components/ServiceCoverageSection';
 const categories = ['All', 'Sofa Cleaning', 'Stain Removal', 'Leather', 'Shampooing'];
 
 const galleryItems = [
-  { id: 1, cat: 'Sofa Cleaning', label: '3-Seater Sofa — Before & After', before: '/3seater/before.jpg', after: '/3seater/after.jpg' },
-  { id: 2, cat: 'Stain Removal', label: 'Coffee Stain Removal — JVC', before: '/coffee/before.jpg', after: '/coffee/after.jpg' },
-  { id: 3, cat: 'Leather', label: 'Leather Sofa Deep Clean — Business Bay', before: '/leather/before.jpg', after: '/leather/after.jpg' },
-  { id: 4, cat: 'Shampooing', label: 'Fabric Shampoo — Sharjah', before: '/shampoo/before.jpg', after: '/shampoo/after.jpg' },
-  { id: 5, cat: 'Sofa Cleaning', label: 'L-Shaped Sofa — Downtown Dubai', before: '/L-shape/before.jpg', after: '/L-shape/after.jpg' },
-  { id: 6, cat: 'Stain Removal', label: 'Pet Stain Removal — Ajman', before: '/pet-stain/before.jpg', after: '/pet-stain/after.jpg' },
+  { id: 1, cat: 'Sofa Cleaning', label: '3-Seater Sofa — Before & After', before: '/3seater/before.webp', after: '/3seater/after.webp' },
+  { id: 2, cat: 'Stain Removal', label: 'Coffee Stain Removal — JVC', before: '/coffee/before.webp', after: '/coffee/after.webp' },
+  { id: 3, cat: 'Leather', label: 'Leather Sofa Deep Clean — Business Bay', before: '/leather/before.webp', after: '/leather/after.webp' },
+  { id: 4, cat: 'Shampooing', label: 'Fabric Shampoo — Sharjah', before: '/shampoo/before.webp', after: '/shampoo/after.webp' },
+  { id: 5, cat: 'Sofa Cleaning', label: 'L-Shaped Sofa — Downtown Dubai', before: '/L-shape/before.webp', after: '/L-shape/after.webp' },
+  { id: 6, cat: 'Stain Removal', label: 'Pet Stain Removal — Ajman', before: '/pet-stain/before.webp', after: '/pet-stain/after.webp' },
 ];
 
 function GalleryCard({ item }: { item: typeof galleryItems[0] }) {
