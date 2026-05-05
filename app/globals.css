@@ -650,3 +650,205 @@ section, footer, nav { overflow-x: hidden; }
 @media (max-width: 768px) {
   .coverage-grid { grid-template-columns: 1fr !important; }
 }
+
+/* ════════════════════════════════════════════
+   MOBILE COMPLETE REDESIGN — Light Theme
+   Applies ONLY on screens ≤ 768px
+   Desktop stays exactly the same (dark theme)
+   ════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ─── Light Theme CSS Variables ─── */
+  :root {
+    --bg:          #ffffff;
+    --bg-elev:     #f4f6fb;
+    --bg-raised:   #eaecf4;
+    --fg:          #0a0f1e;
+    --fg-muted:    rgba(10,15,30,0.58);
+    --fg-dim:      rgba(10,15,30,0.38);
+    --line:        rgba(10,15,30,0.08);
+    --line-strong: rgba(10,15,30,0.14);
+    --accent:      #00BCD4;
+    --ink:         #ffffff;
+    --ink2:        #f4f6fb;
+    --ink3:        #eaecf4;
+    --green:       #16a34a;
+  }
+
+  /* ─── Body: white + smooth iOS scroll ─── */
+  body {
+    background: #ffffff !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+  }
+
+  /* ─── Remove noise texture (performance) ─── */
+  body::before { display: none !important; }
+
+  /* ─── Remove grid pattern (performance) ─── */
+  .grid-bg { display: none !important; }
+
+  /* ─── Navbar: clean white on mobile ─── */
+  nav {
+    background: rgba(255,255,255,0.98) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.09) !important;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06) !important;
+  }
+
+  /* ─── Hero: keep dark (image section needs it) ─── */
+  #hero {
+    --fg:       #ffffff;
+    --fg-muted: rgba(255,255,255,0.72);
+    --fg-dim:   rgba(255,255,255,0.45);
+    --line:     rgba(255,255,255,0.15);
+  }
+
+  /* ─── All sections: white/light bg ─── */
+  section:not(#hero) {
+    background: var(--bg) !important;
+    border-color: rgba(0,0,0,0.07) !important;
+  }
+
+  /* ─── Alternate section: very light grey ─── */
+  section:not(#hero):nth-of-type(even) {
+    background: #f7f9fd !important;
+  }
+
+  /* ─── Cards: white with soft shadow ─── */
+  .card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
+    border-radius: 16px !important;
+  }
+
+  /* ─── Section tags ─── */
+  .section-tag {
+    background: rgba(0,188,212,0.08) !important;
+    border-color: rgba(0,188,212,0.22) !important;
+    color: #0097a7 !important;
+  }
+
+  /* ─── Headings: dark on light bg ─── */
+  h1:not(#hero h1), h2, h3, h4 {
+    color: #0a0f1e !important;
+  }
+
+  /* ─── Badges ─── */
+  .badge {
+    background: #eef1f8 !important;
+    border-color: rgba(0,0,0,0.09) !important;
+    color: rgba(10,15,30,0.65) !important;
+  }
+  .badge-accent {
+    background: rgba(0,188,212,0.10) !important;
+    border-color: rgba(0,188,212,0.25) !important;
+    color: #0097a7 !important;
+  }
+
+  /* ─── Buttons: keep accent colors ─── */
+  .btn-ghost {
+    background: #f4f6fb !important;
+    color: #0a0f1e !important;
+    border-color: rgba(0,0,0,0.14) !important;
+  }
+
+  /* ─── Nav links (desktop hidden but just in case) ─── */
+  .nav-link { color: #0a0f1e !important; }
+
+  /* ─── Footer: light grey ─── */
+  footer {
+    background: #f4f6fb !important;
+    border-top: 1px solid rgba(0,0,0,0.08) !important;
+  }
+  footer a, footer p, footer div {
+    color: rgba(10,15,30,0.62) !important;
+  }
+  footer h2, footer h3,
+  footer [style*="var(--fg)"] { color: #0a0f1e !important; }
+
+  /* ─── Why Choose Us cards on mobile ─── */
+  .why-row-card {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.08) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  }
+
+  /* ─── Forms: white inputs ─── */
+  .form-input {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.14) !important;
+    color: #0a0f1e !important;
+  }
+  .form-label { color: rgba(10,15,30,0.55) !important; }
+
+  /* ─── Filter tabs (gallery) ─── */
+  .filter-tab {
+    background: #f4f6fb !important;
+    border-color: rgba(0,0,0,0.1) !important;
+    color: rgba(10,15,30,0.65) !important;
+  }
+  .filter-tab.active {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+  }
+
+  /* ─── Stars ─── */
+  .stars { color: #f59e0b !important; }
+
+  /* ─── WhatsApp float: stays green ─── */
+  .wa-float { background: #25D366 !important; }
+
+  /* ─── Scroll to top: light style ─── */
+  .scroll-top {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.12) !important;
+    color: #0a0f1e !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1) !important;
+  }
+
+  /* ─── Marquee: light bg ─── */
+  .marquee-inner > * {
+    color: rgba(10,15,30,0.7) !important;
+  }
+
+  /* ─── Step numbers ─── */
+  .step-number {
+    background: rgba(0,188,212,0.1) !important;
+    border-color: rgba(0,188,212,0.25) !important;
+  }
+
+  /* ─── Page hero sections (inner pages) ─── */
+  .page-hero {
+    background: linear-gradient(135deg, #f0f9fc, #e8f4f8) !important;
+  }
+
+  /* ─── Breadcrumb ─── */
+  .breadcrumb { color: rgba(10,15,30,0.45) !important; }
+
+  /* ─── Remove pulse on mobile (saves battery) ─── */
+  .pulse-dot { animation: none !important; background: #16a34a !important; }
+  .wa-float::before { animation: none !important; }
+  .play-btn { animation: none !important; }
+  .cursor-blink { animation-duration: 1.2s !important; }
+
+  /* ─── Smooth section transitions ─── */
+  section { transition: none !important; }
+  * { -webkit-tap-highlight-color: rgba(0,188,212,0.15); }
+
+  /* ─── Mobile drawer: white background ─── */
+  .mobile-drawer {
+    background: #ffffff !important;
+    border-left: 1px solid rgba(0,0,0,0.08) !important;
+  }
+}
+
+/* ─── Extra small mobile ─── */
+@media (max-width: 390px) {
+  :root {
+    --bg: #ffffff;
+    --fg: #0a0f1e;
+  }
+  .section { padding: 44px 0 !important; }
+  h2 { font-size: 22px !important; }
+}

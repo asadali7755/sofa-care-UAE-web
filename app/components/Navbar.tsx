@@ -114,6 +114,7 @@ export default function Navbar() {
 
       {/* Mobile Slide-In Drawer */}
       <div
+        className="mobile-drawer"
         style={{
           position: 'fixed', top: 0, right: 0, bottom: 0,
           width: 'min(320px, 85vw)',
