@@ -13,7 +13,7 @@ export default function ServeDubaiSection() {
       <div className="container-x" style={{ position: 'relative', zIndex: 1 }}>
 
         {/* Header */}
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 40, alignItems: 'center', marginBottom: 56 }}>
+        <div className="reveal serve-dubai-header" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 40, alignItems: 'center', marginBottom: 56 }}>
           <div>
             <div className="section-tag" style={{ marginBottom: 16 }}>Serve Dubai</div>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 52px)', marginBottom: 16, lineHeight: 1.1 }}>
@@ -73,6 +73,7 @@ export default function ServeDubaiSection() {
       <style jsx>{`
         @media (max-width: 768px) {
           .serve-badge { display: none; }
+          .serve-dubai-header { display: none !important; }
         }
       `}</style>
     </section>

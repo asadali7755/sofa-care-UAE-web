@@ -5,7 +5,9 @@ export default function Footer() {
   return (
     <footer style={{ borderTop: '1px solid var(--line)', background: 'var(--bg-elev)', padding: '60px 0 32px' }}>
       <div className="container-x">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 48, marginBottom: 48 }}>
+
+        {/* ── Desktop: full 4-col grid ── */}
+        <div className="footer-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 48, marginBottom: 48 }}>
 
           {/* Brand */}
           <div>
@@ -68,18 +70,49 @@ export default function Footer() {
               <a href="https://wa.me/971547199189" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 14, display: 'flex', alignItems: 'center', gap: 8 }}>
                 WhatsApp Us
               </a>
-              <div style={{ color: 'var(--fg-muted)', fontSize: 14 }}>
-                Dubai, UAE
+              <div style={{ color: 'var(--fg-muted)', fontSize: 14 }}>Dubai, UAE</div>
+              <div style={{ color: 'var(--fg-muted)', fontSize: 14 }}>Mon–Sun: 7:00 AM – 10:00 PM</div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Mobile: compact footer ── */}
+        <div className="footer-mobile" style={{ display: 'none' }}>
+          {/* Brand row */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+            <img src="/OIG2.webp" alt="Logo" width="32" height="32" style={{ borderRadius: 8, objectFit: 'cover', display: 'block' }} />
+            <div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 14, color: 'var(--fg)' }}>Al Haya Sofa Care</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 8, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Sofa Care UAE</div>
+            </div>
+          </div>
+
+          {/* 2-col: Services + Contact */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 20 }}>
+            {/* Services */}
+            <div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--accent)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Services</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {['Deep Cleaning', 'Shampooing', 'Stain Removal', 'Leather Care', 'Pet Hair'].map((s) => (
+                  <Link key={s} href="/services" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>{s}</Link>
+                ))}
               </div>
-              <div style={{ color: 'var(--fg-muted)', fontSize: 14 }}>
-                Mon–Sun: 7:00 AM – 10:00 PM
+            </div>
+            {/* Contact */}
+            <div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--accent)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Contact</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <a href="tel:+971547199189" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>📞 Call Us</a>
+                <a href="https://wa.me/971547199189" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>💬 WhatsApp</a>
+                <Link href="/contact" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>📋 Book Now</Link>
+                <div style={{ color: 'var(--fg-muted)', fontSize: 12, marginTop: 4 }}>Dubai, UAE</div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div style={{ borderTop: '1px solid var(--line)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+        {/* Bottom bar — desktop shows copyright, mobile hides it */}
+        <div className="footer-bottom-bar" style={{ borderTop: '1px solid var(--line)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
           <p style={{ color: 'var(--fg-muted)', fontSize: 13, fontFamily: 'var(--font-mono)' }}>
             © 2025 Al Haya Sofa Care UAE. All rights reserved.
           </p>
@@ -88,6 +121,14 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .footer-desktop { display: none !important; }
+          .footer-mobile { display: block !important; }
+          .footer-bottom-bar { display: none !important; }
+        }
+      `}</style>
     </footer>
   );
 }

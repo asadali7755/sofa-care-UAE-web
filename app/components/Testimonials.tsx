@@ -24,7 +24,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="section" style={{ borderBottom: '1px solid var(--line)', background: 'var(--bg-elev)' }}>
+    <section id="testimonials" className="section" style={{ borderBottom: "1px solid var(--line)", background: "var(--bg-elev)" }}>
       <div className="container-x">
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 56 }}>
           <div className="section-tag">Client Reviews</div>

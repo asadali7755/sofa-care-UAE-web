@@ -36,7 +36,7 @@ const checklist = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="section why-section" style={{ borderBottom: '1px solid var(--line)' }}>
+    <section id="why-choose-us" className="section why-section" style={{ borderBottom: '1px solid var(--line)' }}>
       <div className="container-x">
 
         {/* ── Desktop layout: 2-col ── */}

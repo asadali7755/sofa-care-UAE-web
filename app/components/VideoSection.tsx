@@ -7,11 +7,13 @@ export default function VideoSection() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // On mobile, load immediately (no lazy load delay)
+    if (window.innerWidth <= 768) { setLoaded(true); return; }
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(([e]) => {
       if (e.isIntersecting) { setLoaded(true); io.disconnect(); }
-    }, { rootMargin: '200px' });
+    }, { rootMargin: '400px' });
     io.observe(el);
     return () => io.disconnect();
   }, []);

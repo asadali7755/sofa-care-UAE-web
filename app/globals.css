@@ -695,13 +695,18 @@ section, footer, nav { overflow-x: hidden; }
     box-shadow: 0 1px 8px rgba(0,0,0,0.06) !important;
   }
 
-  /* ─── Hero: keep dark (image section needs it) ─── */
+  /* ─── Hero: ALWAYS dark — even before image loads ─── */
   #hero {
+    background: #0b0b0b !important;
     --fg:       #ffffff;
     --fg-muted: rgba(255,255,255,0.72);
     --fg-dim:   rgba(255,255,255,0.45);
     --line:     rgba(255,255,255,0.15);
   }
+  /* Hero text: force white so it's always readable on dark bg */
+  #hero h1 span { color: #ffffff !important; }
+  #hero h1 .accent-word { color: var(--accent) !important; }
+  #hero p { color: rgba(255,255,255,0.72) !important; }
 
   /* ─── All sections: white/light bg ─── */
   section:not(#hero) {
@@ -714,12 +719,41 @@ section, footer, nav { overflow-x: hidden; }
     background: #f7f9fd !important;
   }
 
+  /* ─── HIDE WhyChooseUs on mobile (duplicate of ServicesPreview) ─── */
+  #why-choose-us { display: none !important; }
+
+  /* ─── HIDE Testimonials on mobile ─── */
+  #testimonials { display: none !important; }
+
   /* ─── Cards: white with soft shadow ─── */
   .card {
     background: #ffffff !important;
     border: 1px solid rgba(0,0,0,0.08) !important;
     box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
     border-radius: 16px !important;
+  }
+
+  /* ─── Service cards: remove dark bg image on mobile → clean white card ─── */
+  .card-dark-bg {
+    background: #ffffff !important;
+  }
+  .card-overlay { display: none !important; }
+  .card-dark-bg img { display: none !important; }
+
+  /* ─── Service card text: fully dark & readable ─── */
+  .card h3 {
+    color: #0a0f1e !important;
+    font-size: 18px !important;
+  }
+  .card p {
+    color: rgba(10,15,30,0.65) !important;
+  }
+  .card li {
+    color: rgba(10,15,30,0.65) !important;
+  }
+  /* "Starting from" label inside cards */
+  .card [style*="--fg-dim"] {
+    color: rgba(10,15,30,0.45) !important;
   }
 
   /* ─── Section tags ─── */
@@ -730,9 +764,13 @@ section, footer, nav { overflow-x: hidden; }
   }
 
   /* ─── Headings: dark on light bg ─── */
-  h1:not(#hero h1), h2, h3, h4 {
+  h2, h3, h4 {
     color: #0a0f1e !important;
   }
+
+  /* ─── ServicesPreview "Why Al Haya" animated text: fully dark ─── */
+  .services-grid p { color: rgba(10,15,30,0.65) !important; }
+  .services-grid h2 { color: #0a0f1e !important; }
 
   /* ─── Badges ─── */
   .badge {
@@ -753,25 +791,35 @@ section, footer, nav { overflow-x: hidden; }
     border-color: rgba(0,0,0,0.14) !important;
   }
 
-  /* ─── Nav links (desktop hidden but just in case) ─── */
+  /* ─── Nav links ─── */
   .nav-link { color: #0a0f1e !important; }
 
-  /* ─── Footer: light grey ─── */
+  /* ─── Mobile drawer: white ─── */
+  .mobile-drawer {
+    background: #ffffff !important;
+    border-left: 1px solid rgba(0,0,0,0.08) !important;
+  }
+
+  /* ─── Service Coverage cards: full width, always show areas ─── */
+  .scs-card { height: 320px !important; }
+  .scs-default { display: none !important; }
+  .scs-hover {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: flex !important;
+  }
+
+  /* ─── Footer: light grey, compact (handled by component styled-jsx too) ─── */
   footer {
     background: #f4f6fb !important;
     border-top: 1px solid rgba(0,0,0,0.08) !important;
+    padding: 28px 0 20px !important;
   }
-  footer a, footer p, footer div {
+  footer a, footer p, footer div, footer span {
     color: rgba(10,15,30,0.62) !important;
   }
-  footer h2, footer h3,
-  footer [style*="var(--fg)"] { color: #0a0f1e !important; }
-
-  /* ─── Why Choose Us cards on mobile ─── */
-  .why-row-card {
-    background: #ffffff !important;
-    border-color: rgba(0,0,0,0.08) !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  footer [style*="font-weight: 800"], footer [style*="fontWeight: 800"] {
+    color: #0a0f1e !important;
   }
 
   /* ─── Forms: white inputs ─── */
@@ -807,15 +855,9 @@ section, footer, nav { overflow-x: hidden; }
     box-shadow: 0 4px 16px rgba(0,0,0,0.1) !important;
   }
 
-  /* ─── Marquee: light bg ─── */
+  /* ─── Marquee: dark text ─── */
   .marquee-inner > * {
     color: rgba(10,15,30,0.7) !important;
-  }
-
-  /* ─── Step numbers ─── */
-  .step-number {
-    background: rgba(0,188,212,0.1) !important;
-    border-color: rgba(0,188,212,0.25) !important;
   }
 
   /* ─── Page hero sections (inner pages) ─── */
@@ -826,21 +868,14 @@ section, footer, nav { overflow-x: hidden; }
   /* ─── Breadcrumb ─── */
   .breadcrumb { color: rgba(10,15,30,0.45) !important; }
 
-  /* ─── Remove pulse on mobile (saves battery) ─── */
+  /* ─── Remove heavy animations on mobile (saves battery, improves FPS) ─── */
   .pulse-dot { animation: none !important; background: #16a34a !important; }
   .wa-float::before { animation: none !important; }
   .play-btn { animation: none !important; }
-  .cursor-blink { animation-duration: 1.2s !important; }
 
-  /* ─── Smooth section transitions ─── */
+  /* ─── No section transitions on mobile ─── */
   section { transition: none !important; }
   * { -webkit-tap-highlight-color: rgba(0,188,212,0.15); }
-
-  /* ─── Mobile drawer: white background ─── */
-  .mobile-drawer {
-    background: #ffffff !important;
-    border-left: 1px solid rgba(0,0,0,0.08) !important;
-  }
 }
 
 /* ─── Extra small mobile ─── */
@@ -849,6 +884,7 @@ section, footer, nav { overflow-x: hidden; }
     --bg: #ffffff;
     --fg: #0a0f1e;
   }
-  .section { padding: 44px 0 !important; }
+  .section { padding: 40px 0 !important; }
   h2 { font-size: 22px !important; }
+  .card h3 { font-size: 16px !important; }
 }

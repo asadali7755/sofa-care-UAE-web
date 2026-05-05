@@ -157,10 +157,10 @@ export default function ServiceCoverageSection() {
         .scs-card:hover .scs-hover { opacity: 1 !important; transform: translateY(0) !important; }
         @media (max-width: 768px) {
           .scs-grid { grid-template-columns: 1fr !important; }
-          .scs-card { height: 260px !important; }
-        }
-        @media (max-width: 480px) {
-          .scs-card { height: 220px !important; }
+          .scs-card { height: 320px !important; border-radius: 16px !important; }
+          /* On mobile touch: always show areas, hide default hover-to-explore */
+          .scs-default { display: none !important; }
+          .scs-hover { opacity: 1 !important; transform: translateY(0) !important; }
         }
       `}</style>
     </section>
