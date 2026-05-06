@@ -229,7 +229,7 @@ export default function ServicesPreview() {
           {services.map((s, i) => (
             <div
               key={s.title}
-              className={`card reveal reveal-delay-${(i % 3) + 1}${('bgImage' in s && s.bgImage) ? ' card-dark-bg' : ''}`}
+              className={`card reveal reveal-delay-${(i % 3) + 1} card-slide-${i % 2 === 0 ? 'left' : 'right'}${('bgImage' in s && s.bgImage) ? ' card-dark-bg' : ''}`}
               style={{ position: 'relative', padding: '40px 36px', borderLeft: `3px solid ${s.tagColor}`, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
             >
               {('bgImage' in s && s.bgImage) && (

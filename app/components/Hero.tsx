@@ -82,8 +82,8 @@ export default function Hero() {
             </span>
           </div>
 
-          <h2 className="reveal reveal-delay-3" style={{ fontSize: 'clamp(13px, 1vw, 15px)', fontWeight: 600, color: '#000000', maxWidth: 480, lineHeight: 1.65, marginBottom: 24, fontFamily: 'var(--font-sans)', background: 'rgba(255,255,255,0.82)', padding: '10px 14px', borderRadius: 8, backdropFilter: 'blur(4px)' }}>
-            Al Haya Sofa Care UAE brings <em style={{ fontFamily: 'var(--font-serif)', color: '#0a0f1e', fontStyle: 'italic' }}>professional sofa cleaning</em> to your doorstep in Dubai, Sharjah &amp; Ajman. Advanced equipment, eco-friendly solutions, fast-dry results.
+          <h2 className="reveal reveal-delay-3" style={{ fontSize: 'clamp(13px, 1vw, 15px)', fontWeight: 500, color: 'rgba(255,255,255,0.92)', maxWidth: 480, lineHeight: 1.7, marginBottom: 24, fontFamily: 'var(--font-sans)', textShadow: '0 1px 6px rgba(0,0,0,0.65)' }}>
+            Al Haya Sofa Care UAE brings <em style={{ fontFamily: 'var(--font-serif)', color: '#89CFF0', fontStyle: 'italic', fontWeight: 600 }}>professional sofa cleaning</em> to your doorstep in Dubai, Sharjah &amp; Ajman. Advanced equipment, eco-friendly solutions, fast-dry results.
           </h2>
 
           <div className="reveal reveal-delay-4" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 32 }}>
