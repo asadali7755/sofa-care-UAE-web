@@ -37,16 +37,18 @@ export default function Navbar() {
   useEffect(() => { setOpen(false); }, [pathname]);
 
   useEffect(() => {
+    const wrapper = document.getElementById('page-wrapper');
     if (open) {
       document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
+      if (wrapper) wrapper.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
+      if (wrapper) wrapper.style.overflowX = 'hidden';
+      if (wrapper) wrapper.style.overflowY = '';
     }
     return () => {
       document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
+      if (wrapper) { wrapper.style.overflowX = 'hidden'; wrapper.style.overflowY = ''; }
     };
   }, [open]);
 
