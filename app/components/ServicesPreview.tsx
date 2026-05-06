@@ -210,7 +210,7 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="section" style={{ borderBottom: '1px solid var(--line)' }}>
+    <section id="services-preview" className="section" style={{ borderBottom: '1px solid var(--line)' }}>
       <div className="container-x">
 
         {/* Header */}

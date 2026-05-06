@@ -59,7 +59,7 @@ export default function Hero() {
 
           <h1 className="reveal reveal-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(38px, 5.5vw, 80px)', lineHeight: 0.94, fontWeight: 900, letterSpacing: '-0.03em', marginBottom: 6 }}>
             <span style={{ display: 'block', color: 'rgba(255,255,255,0.65)', fontWeight: 500, fontSize: 'clamp(14px, 1.4vw, 18px)', letterSpacing: '-0.01em', marginBottom: 12, fontFamily: 'var(--font-sans)' }}>Dubai&apos;s Most Trusted</span>
-            <span style={{ display: 'block', color: '#ffffff' }}>Sofa <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Cleaning</span></span>
+            <span style={{ display: 'block', color: '#ffffff' }}>Sofa <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: '#89CFF0' }}>Cleaning</span></span>
             <span style={{ display: 'block', color: '#ffffff' }}>Experts</span>
           </h1>
 
