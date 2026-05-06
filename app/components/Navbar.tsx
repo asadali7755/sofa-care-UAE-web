@@ -236,18 +236,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .nav-desktop-links { display: none !important; }
-          .nav-desktop-right { display: none !important; }
-          .nav-mobile-controls { display: flex !important; }
-        }
-        @media (min-width: 769px) {
-          .nav-mobile-controls { display: none !important; }
-          .nav-desktop-links { display: flex !important; }
-          .nav-desktop-right { display: flex !important; }
-        }
-      `}</style>
     </>
   );
 }

@@ -564,6 +564,43 @@ select.form-input option { background: var(--bg-raised); }
   .hero-right { overflow: visible; }
 }
 
+/* ─── Navbar responsive (moved from style jsx) ─── */
+@media (max-width: 768px) {
+  .nav-desktop-links { display: none !important; }
+  .nav-desktop-right  { display: none !important; }
+  .nav-mobile-controls { display: flex !important; }
+}
+@media (min-width: 769px) {
+  .nav-mobile-controls { display: none !important; }
+  .nav-desktop-links   { display: flex !important; }
+  .nav-desktop-right   { display: flex !important; }
+}
+
+/* ─── ServiceCoverageSection (moved from style jsx) ─── */
+.scs-card:hover .scs-img     { transform: scale(1.08); }
+.scs-card:hover .scs-default { opacity: 0; transform: translateY(10px); }
+.scs-card:hover .scs-hover   { opacity: 1 !important; transform: translateY(0) !important; }
+
+@media (max-width: 768px) {
+  .scs-grid   { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .scs-card   { height: auto !important; min-height: 280px !important; border-radius: 16px !important; }
+  .scs-default { display: none !important; }
+  .scs-hover  { opacity: 1 !important; transform: translateY(0) !important; padding: 20px !important; }
+}
+
+/* ─── Footer responsive (moved from style jsx) ─── */
+@media (max-width: 768px) {
+  .footer-desktop    { display: none !important; }
+  .footer-mobile     { display: block !important; }
+  .footer-bottom-bar { display: none !important; }
+}
+
+/* ─── ServeDubai responsive (moved from style jsx) ─── */
+@media (max-width: 768px) {
+  .serve-badge        { display: none !important; }
+  .serve-dubai-header { display: none !important; }
+}
+
 /* ─── Services grid: always 1 col on mobile ─── */
 @media (max-width: 768px) {
   .services-grid {

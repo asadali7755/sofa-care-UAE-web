@@ -37,17 +37,17 @@ export default function Hero() {
   const role = useTypewriter(['Sofa Deep Cleaning', 'Sofa Shampooing', 'Stain Removal', 'Same Day Service', 'At-Home Service']);
 
   return (
-    <section id="hero" style={{ position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', borderBottom: '1px solid var(--line)' }}>
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+    <section id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', borderBottom: '1px solid var(--line)', background: '#0B0B0B' }}>
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0, background: '#0B0B0B' }}>
         <img
           src="/hero-sofa.webp"
           alt=""
           aria-hidden="true"
           fetchPriority="high"
           decoding="async"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.55 }}
         />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.72) 0%, rgba(11,11,11,0.45) 55%, rgba(11,11,11,0.25) 100%)' }}/>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.78) 55%, rgba(11,11,11,0.65) 100%)' }}/>
         <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
       </div>
 
