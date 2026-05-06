@@ -45,9 +45,9 @@ export default function Hero() {
           aria-hidden="true"
           fetchPriority="high"
           decoding="async"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.55 }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 1 }}
         />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.78) 55%, rgba(11,11,11,0.65) 100%)' }}/>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.45) 0%, rgba(11,11,11,0.25) 55%, rgba(11,11,11,0.10) 100%)' }}/>
         <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
       </div>
 
