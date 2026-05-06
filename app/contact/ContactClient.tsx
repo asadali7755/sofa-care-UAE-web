@@ -297,48 +297,6 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Google Map Section */}
-        <section className="section-sm" style={{ borderTop: '1px solid var(--line)', background: 'var(--bg-elev)' }}>
-          <div className="container-x">
-            <div className="reveal" style={{ textAlign: 'center', marginBottom: 36 }}>
-              <div className="section-tag">Service Area</div>
-              <h2 style={{ fontSize: 'clamp(24px, 3vw, 40px)', marginBottom: 12 }}>
-                We Cover All of <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>UAE</span>
-              </h2>
-              <p style={{ color: 'var(--fg-muted)', fontSize: 16, maxWidth: 500, margin: '0 auto' }}>
-                Same-day service available across Dubai, Sharjah, Ajman and all other emirates.
-              </p>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 40 }}>
-              {[
-                { name: 'Dubai', icon: '🏙', areas: 'Marina, Downtown, JVC, Business Bay & more' },
-                { name: 'Sharjah', icon: '🌆', areas: 'Al Nahda, Al Majaz, Muwaileh & more' },
-                { name: 'Ajman', icon: '🌇', areas: 'Al Nuaimia, Emirates City & more' },
-                { name: 'Abu Dhabi', icon: '🏛', areas: 'City Centre, Khalifa City & more' },
-                { name: 'RAK', icon: '🌴', areas: 'RAK City, Al Hamra & more' },
-                { name: 'Fujairah', icon: '⛵', areas: 'Fujairah City & surrounds' },
-              ].map((area) => (
-                <div key={area.name} className="card" style={{ padding: 20, textAlign: 'center' }}>
-                  <div style={{ fontSize: 28, marginBottom: 8 }}>{area.icon}</div>
-                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{area.name}</div>
-                  <div style={{ fontSize: 12, color: 'var(--fg-dim)', lineHeight: 1.5 }}>{area.areas}</div>
-                </div>
-              ))}
-            </div>
-            <div style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid var(--line)' }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462143.9035634647!2d54.89784285!3d25.07575755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1710000000000!5m2!1sen!2sae"
-                width="100%"
-                height="360"
-                style={{ border: 0, display: 'block' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Al Haya Cleaning Services — Service Area Map"
-              />
-            </div>
-          </div>
-        </section>
         <ServiceCoverageSection />
       </main>
       <Footer />
