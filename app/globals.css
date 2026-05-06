@@ -641,7 +641,8 @@ select.form-input option { background: var(--bg-raised); }
 }
 
 /* ─── Prevent horizontal overflow everywhere ─── */
-html, body { overflow-x: hidden !important; max-width: 100vw; }
+html { overflow-x: hidden; }
+body { overflow-x: hidden !important; overflow-y: auto !important; max-width: 100vw; -webkit-overflow-scrolling: touch; }
 section, footer, nav { overflow-x: hidden; }
 
 
