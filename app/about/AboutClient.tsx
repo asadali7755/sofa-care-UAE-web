@@ -23,12 +23,12 @@ const stats = [
 ];
 
 const whyUs = [
-  { icon: <IconLeaf size={28}/>, title: 'Eco-Friendly', desc: 'Non-toxic, biodegradable cleaning solutions safe for children, pets & sensitive skin.' },
-  { icon: <IconClock size={28}/>, title: 'Fast Service', desc: 'Same-day appointments available across Dubai, Sharjah & Ajman.' },
-  { icon: <IconHome size={28}/>, title: 'At-Home Convenience', desc: 'We come to you with all equipment — no need to move furniture or travel.' },
-  { icon: <IconShield size={28}/>, title: 'Certified Team', desc: 'Trained, experienced technicians who handle every sofa type with care.' },
-  { icon: <IconTag size={28}/>, title: 'Transparent Pricing', desc: 'Starting from AED 79 with no hidden fees — affordable quality cleaning.' },
-  { icon: <IconShield size={28}/>, title: 'Satisfaction Guaranteed', desc: "We're not done until your sofa looks and smells exactly as you expect." },
+  { icon: <IconLeaf size={28}/>, title: 'Eco-Friendly', desc: 'Non-toxic, biodegradable cleaning solutions safe for children, pets & sensitive skin.', accent: '#D9F15A' },
+  { icon: <IconClock size={28}/>, title: 'Fast Service', desc: 'Same-day appointments available across Dubai, Sharjah & Ajman.', accent: '#F59E0B' },
+  { icon: <IconHome size={28}/>, title: 'At-Home Convenience', desc: 'We come to you with all equipment — no need to move furniture or travel.', accent: '#FF5A3C' },
+  { icon: <IconShield size={28}/>, title: 'Certified Team', desc: 'Trained, experienced technicians who handle every sofa type with care.', accent: '#3B82F6' },
+  { icon: <IconTag size={28}/>, title: 'Transparent Pricing', desc: 'Starting from AED 79 with no hidden fees — affordable quality cleaning.', accent: '#10B981' },
+  { icon: <IconShield size={28}/>, title: 'Satisfaction Guaranteed', desc: "We're not done until your sofa looks and smells exactly as you expect.", accent: '#8B5CF6' },
 ];
 
 const sofaIcon = (
@@ -126,12 +126,23 @@ export default function AboutPage() {
                 Why Choose <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span>
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
               {whyUs.map((item, i) => (
-                <div key={item.title} className={`card reveal reveal-delay-${(i % 3) + 1}`}>
-                  <div style={{ color: 'var(--accent)', marginBottom: 16 }}>{item.icon}</div>
-                  <h3 style={{ fontSize: 18, marginBottom: 10 }}>{item.title}</h3>
-                  <p style={{ color: 'var(--fg-muted)', fontSize: 14, lineHeight: 1.65 }}>{item.desc}</p>
+                <div
+                  key={item.title}
+                  className={`reveal reveal-delay-${(i % 3) + 1}`}
+                  style={{
+                    background: '#141210',
+                    border: `1px solid ${item.accent}30`,
+                    borderTop: `3px solid ${item.accent}`,
+                    borderRadius: 16,
+                    padding: '28px 24px',
+                    transition: 'transform 0.2s, box-shadow 0.2s',
+                  }}
+                >
+                  <div style={{ color: item.accent, marginBottom: 16 }}>{item.icon}</div>
+                  <h3 style={{ fontSize: 17, marginBottom: 10, color: '#F6F1E8', fontWeight: 700 }}>{item.title}</h3>
+                  <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 14, lineHeight: 1.65 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
