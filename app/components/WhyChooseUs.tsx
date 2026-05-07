@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
                 transition: 'transform 0.2s, box-shadow 0.2s',
               }}>
                 <div style={{ color: f.accent, marginBottom: 14 }}>{f.icon}</div>
-                <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 10, color: f.accent }}>{f.title}</h3>
+                <div style={{ fontSize: 16, fontWeight: 800, marginBottom: 10, color: f.accent, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{f.title}</div>
                 <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.6 }}>{f.desc}</p>
               </div>
             ))}

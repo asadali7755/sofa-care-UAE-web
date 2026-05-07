@@ -268,7 +268,7 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 style={{ fontSize: 22, marginBottom: 12, paddingRight: 60, color: s.tagColor, fontWeight: 700 }}>{s.title}</h3>
+                  <div style={{ fontSize: 22, marginBottom: 12, paddingRight: 60, color: s.tagColor, fontWeight: 800, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>{s.title}</div>
 
                   {/* Desc */}
                   <p style={{ color: 'rgba(246,241,232,0.72)', fontSize: 15, lineHeight: 1.7, marginBottom: 24 }}>{s.desc}</p>
@@ -327,7 +327,7 @@ export default function ServicesPage() {
                   <div style={{ position: 'absolute', top: -10, right: -10, fontFamily: 'var(--font-display)', fontSize: 80, fontWeight: 900, color: `${step.color}15`, lineHeight: 1 }}>{step.n}</div>
                   <div style={{ width: 48, height: 48, borderRadius: '50%', background: `${step.color}20`, border: `1px solid ${step.color}40`, color: step.color, fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20, flexShrink: 0 }}>{step.n}</div>
                   <div style={{ color: step.color, marginBottom: 12 }}>{step.svg}</div>
-                  <h3 style={{ fontSize: 20, marginBottom: 12, color: step.color, fontWeight: 700 }}>{step.title}</h3>
+                  <div style={{ fontSize: 20, marginBottom: 12, color: step.color, fontWeight: 800, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{step.title}</div>
                   <p style={{ color: 'rgba(246,241,232,0.70)', fontSize: 15, lineHeight: 1.65 }}>{step.desc}</p>
                 </div>
               ))}

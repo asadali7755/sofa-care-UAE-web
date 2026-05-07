@@ -406,6 +406,15 @@ select.form-input option { background: var(--bg-raised); }
   .card { padding: 16px 14px !important; }
 }
 
+/* ─── Dark card title override — prevents h3 global rule from overriding accent colors ─── */
+.dark-card-title {
+  color: inherit !important;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
 /* ─── WhyChooseUs: desktop/mobile layout switch ─── */
 .why-desktop { display: grid; }
 .why-mobile  { display: none; }
