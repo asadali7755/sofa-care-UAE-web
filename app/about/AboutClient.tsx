@@ -141,8 +141,8 @@ export default function AboutPage() {
                   }}
                 >
                   <div style={{ color: item.accent, marginBottom: 16 }}>{item.icon}</div>
-                  <h3 style={{ fontSize: 17, marginBottom: 10, color: '#F6F1E8', fontWeight: 700 }}>{item.title}</h3>
-                  <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 14, lineHeight: 1.65 }}>{item.desc}</p>
+                  <h3 style={{ fontSize: 17, marginBottom: 10, color: item.accent, fontWeight: 700 }}>{item.title}</h3>
+                  <p style={{ color: 'rgba(246,241,232,0.70)', fontSize: 14, lineHeight: 1.65 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
