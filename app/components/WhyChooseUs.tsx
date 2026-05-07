@@ -11,7 +11,7 @@ const features = [
     icon: <IconClock size={26}/>,
     title: 'Same Day Service',
     desc: 'Book today, cleaned today. Same-day appointments across all UAE.',
-    accent: 'var(--accent)',
+    accent: '#F59E0B',
   },
   {
     icon: <IconHome size={26}/>,
@@ -23,7 +23,7 @@ const features = [
     icon: <IconShield size={26}/>,
     title: 'Certified Technicians',
     desc: 'Trained professionals handling every sofa type with care and expertise.',
-    accent: 'var(--accent)',
+    accent: '#3B82F6',
   },
 ];
 
@@ -36,7 +36,7 @@ const checklist = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="section why-section" style={{ borderBottom: '1px solid var(--line)' }}>
+    <section className="section why-section" style={{ borderBottom: '1px solid var(--line)' }}>
       <div className="container-x">
 
         {/* ── Desktop layout: 2-col ── */}
@@ -59,12 +59,20 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
+          {/* Desktop: 2x2 feature cards — dark background */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {features.map((f, i) => (
-              <div key={f.title} className={`card reveal reveal-delay-${i + 1}`} style={{ padding: 24 }}>
+              <div key={f.title} className={`reveal reveal-delay-${i + 1}`} style={{
+                background: '#141210',
+                border: `1px solid ${f.accent}30`,
+                borderTop: `3px solid ${f.accent}`,
+                borderRadius: 14,
+                padding: 24,
+                transition: 'transform 0.2s, box-shadow 0.2s',
+              }}>
                 <div style={{ color: f.accent, marginBottom: 14 }}>{f.icon}</div>
-                <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 10 }}>{f.title}</h3>
-                <p style={{ color: 'var(--fg-muted)', fontSize: 13, lineHeight: 1.6 }}>{f.desc}</p>
+                <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 10, color: f.accent }}>{f.title}</h3>
+                <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.6 }}>{f.desc}</p>
               </div>
             ))}
           </div>
@@ -73,7 +81,7 @@ export default function WhyChooseUs() {
         {/* ── Mobile layout: centered heading + horizontal rows ── */}
         <div className="why-mobile">
           {/* Centered header */}
-          <div className="reveal" style={{ textAlign: 'center', marginBottom: 36 }}>
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 32 }}>
             <div className="section-tag" style={{ margin: '0 auto 16px' }}>Why Al Haya</div>
             <h2 style={{ fontSize: 'clamp(26px, 7vw, 36px)', marginBottom: 14, lineHeight: 1.15 }}>
               Why Clients Choose{' '}
@@ -84,33 +92,51 @@ export default function WhyChooseUs() {
             </p>
           </div>
 
-          {/* Feature rows — horizontal on mobile */}
-          <div className="reveal" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {/* Feature rows — horizontal cards with dark background */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {features.map((f, i) => (
-              <div key={f.title} className={`why-row-card reveal reveal-delay-${i + 1}`}>
-                <div className="why-row-icon" style={{ color: f.accent, background: `color-mix(in oklab, ${f.accent} 12%, transparent)`, border: `1px solid color-mix(in oklab, ${f.accent} 25%, transparent)` }}>
+              <div key={f.title} className={`reveal reveal-delay-${i + 1}`} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 16,
+                padding: 16,
+                background: '#141210',
+                border: `1px solid ${f.accent}30`,
+                borderLeft: `3px solid ${f.accent}`,
+                borderRadius: 14,
+              }}>
+                {/* Icon box */}
+                <div style={{
+                  width: 48, height: 48, borderRadius: 12, flexShrink: 0,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: f.accent,
+                  background: `${f.accent}18`,
+                  border: `1px solid ${f.accent}35`,
+                }}>
                   {f.icon}
                 </div>
-                <div className="why-row-text">
-                  <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--fg)', marginBottom: 4 }}>{f.title}</div>
-                  <div style={{ fontSize: 13, color: 'var(--fg-muted)', lineHeight: 1.55 }}>{f.desc}</div>
+                {/* Text */}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontWeight: 700, fontSize: 15, color: f.accent, marginBottom: 4 }}>{f.title}</div>
+                  <div style={{ fontSize: 13, color: 'rgba(246,241,232,0.65)', lineHeight: 1.5 }}>{f.desc}</div>
                 </div>
-                <div className="why-row-check" style={{ color: f.accent }}>✓</div>
+                {/* Check */}
+                <div style={{ color: f.accent, fontSize: 18, fontWeight: 700, flexShrink: 0 }}>✓</div>
               </div>
             ))}
           </div>
 
           {/* Stats strip */}
-          <div className="reveal why-stats-strip" style={{ marginTop: 28, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
+          <div className="reveal" style={{ marginTop: 24, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
             {[
               { n: '500+', l: 'Happy Clients' },
               { n: '4.9 ★', l: 'Average Rating' },
               { n: 'Same Day', l: 'Service' },
               { n: '5+ Yrs', l: 'Experience' },
             ].map((s) => (
-              <div key={s.l} style={{ background: 'var(--bg-elev)', border: '1px solid var(--line)', borderRadius: 12, padding: '14px 16px', textAlign: 'center' }}>
+              <div key={s.l} style={{ background: '#141210', border: '1px solid rgba(246,241,232,0.10)', borderRadius: 12, padding: '14px 16px', textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 900, color: 'var(--accent)' }}>{s.n}</div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--fg-muted)', marginTop: 3, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{s.l}</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'rgba(246,241,232,0.55)', marginTop: 3, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{s.l}</div>
               </div>
             ))}
           </div>

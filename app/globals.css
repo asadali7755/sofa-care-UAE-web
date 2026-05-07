@@ -406,6 +406,14 @@ select.form-input option { background: var(--bg-raised); }
   .card { padding: 16px 14px !important; }
 }
 
+/* ─── WhyChooseUs: desktop/mobile layout switch ─── */
+.why-desktop { display: grid; }
+.why-mobile  { display: none; }
+@media (max-width: 768px) {
+  .why-desktop { display: none !important; }
+  .why-mobile  { display: block !important; }
+}
+
 /* ─── Page-specific mobile grid fixes ─── */
 @media (max-width: 768px) {
   /* About page — Our Story 2-col */
