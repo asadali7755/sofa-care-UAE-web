@@ -254,37 +254,44 @@ export default function ServicesPage() {
                   waText: 'Hi%2C%20I%20need%20fabric%20protection%20for%20my%20sofa.',
                 },
               ].map((s, i) => (
-                <div key={s.id} id={s.id} className={`card reveal reveal-delay-${(i % 3) + 1}`} style={{ position: 'relative', padding: '36px 32px', borderTop: `3px solid ${s.tagColor}`, borderLeft: 'none', display: 'flex', flexDirection: 'column' }}>
+                <div key={s.id} id={s.id} className={`reveal reveal-delay-${(i % 3) + 1}`} style={{
+                  position: 'relative', padding: '36px 32px', display: 'flex', flexDirection: 'column',
+                  background: '#141210',
+                  border: `1px solid ${s.tagColor}30`,
+                  borderTop: `3px solid ${s.tagColor}`,
+                  borderRadius: 16,
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                }}>
                   {/* Badge */}
                   <div style={{ position: 'absolute', top: 20, right: 20 }}>
-                    <span style={{ padding: '4px 12px', borderRadius: 999, fontFamily: 'var(--font-mono)', fontSize: 9, fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase', background: `${s.tagColor}20`, color: s.tagColor, border: `1px solid ${s.tagColor}50` }}>{s.tag}</span>
+                    <span style={{ padding: '4px 12px', borderRadius: 999, fontFamily: 'var(--font-mono)', fontSize: 9, fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase', background: `${s.tagColor}25`, color: s.tagColor, border: `1px solid ${s.tagColor}60` }}>{s.tag}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 style={{ fontSize: 22, marginBottom: 12, paddingRight: 60, color: 'var(--fg)' }}>{s.title}</h3>
+                  <h3 style={{ fontSize: 22, marginBottom: 12, paddingRight: 60, color: s.tagColor, fontWeight: 700 }}>{s.title}</h3>
 
                   {/* Desc */}
-                  <p style={{ color: 'var(--fg-muted)', fontSize: 15, lineHeight: 1.7, marginBottom: 24 }}>{s.desc}</p>
+                  <p style={{ color: 'rgba(246,241,232,0.72)', fontSize: 15, lineHeight: 1.7, marginBottom: 24 }}>{s.desc}</p>
 
                   {/* Features */}
                   <div className="service-features-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 12px', marginBottom: 28, flex: 1 }}>
                     {s.features.map((f) => (
                       <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                         <span style={{ color: s.tagColor, fontWeight: 700, fontSize: 14, flexShrink: 0 }}>✓</span>
-                        <span style={{ color: 'var(--fg-muted)', fontSize: 13, lineHeight: 1.4 }}>{f}</span>
+                        <span style={{ color: 'rgba(246,241,232,0.60)', fontSize: 13, lineHeight: 1.4 }}>{f}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Price + CTA */}
-                  <div style={{ borderTop: '1px solid var(--line)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ borderTop: '1px solid rgba(246,241,232,0.10)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
-                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--fg-dim)', marginBottom: 4, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Starting from · {s.time}</div>
+                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'rgba(246,241,232,0.40)', marginBottom: 4, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Starting from · {s.time}</div>
                       <div style={{ fontFamily: 'var(--font-display)', fontSize: 26, fontWeight: 900, color: s.tagColor }}>{s.price}</div>
                     </div>
                     <div style={{ display: 'flex', gap: 8 }}>
                       <a href={`https://wa.me/971547199189?text=${s.waText}`} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ padding: '10px 16px', fontSize: 13 }}>WhatsApp</a>
-                      <Link href="/contact" className="btn btn-ghost" style={{ padding: '10px 16px', fontSize: 13, display: 'flex', alignItems: 'center', gap: 6 }}>Book <IconArrow size={12}/></Link>
+                      <Link href="/contact" className="btn btn-ghost" style={{ padding: '10px 16px', fontSize: 13, display: 'flex', alignItems: 'center', gap: 6, borderColor: 'rgba(246,241,232,0.25)', color: '#F6F1E8' }}>Book <IconArrow size={12}/></Link>
                     </div>
                   </div>
                 </div>
@@ -304,16 +311,24 @@ export default function ServicesPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 32 }}>
               {[
-                { n: '01', title: 'Inspection', desc: 'Our technician inspects your sofa fabric, identifies stains, and selects the ideal cleaning method and products for your specific upholstery.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> },
-                { n: '02', title: 'Deep Clean', desc: 'Using professional equipment, we deep clean your sofa — extracting dust, treating every stain, and sanitizing the fabric from top to bottom.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg> },
-                { n: '03', title: 'Fast Dry', desc: 'High-power drying equipment reduces drying time to just 2-4 hours. Your sofa is clean, fresh, and ready to use the same day.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg> },
+                { n: '01', title: 'Inspection', color: '#F59E0B', desc: 'Our technician inspects your sofa fabric, identifies stains, and selects the ideal cleaning method and products for your specific upholstery.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> },
+                { n: '02', title: 'Deep Clean', color: '#3B82F6', desc: 'Using professional equipment, we deep clean your sofa — extracting dust, treating every stain, and sanitizing the fabric from top to bottom.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg> },
+                { n: '03', title: 'Fast Dry', color: '#10B981', desc: 'High-power drying equipment reduces drying time to just 2-4 hours. Your sofa is clean, fresh, and ready to use the same day.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg> },
               ].map((step, i) => (
-                <div key={step.n} className={`card reveal reveal-delay-${i + 1}`} style={{ position: 'relative', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', top: -10, right: -10, fontFamily: 'var(--font-display)', fontSize: 80, fontWeight: 900, color: 'var(--line)', lineHeight: 1 }}>{step.n}</div>
-                  <div className="step-number" style={{ marginBottom: 20 }}>{step.n}</div>
-                  <div style={{ color: 'var(--accent)', marginBottom: 12 }}>{step.svg}</div>
-                  <h3 style={{ fontSize: 20, marginBottom: 12 }}>{step.title}</h3>
-                  <p style={{ color: 'var(--fg-muted)', fontSize: 15, lineHeight: 1.65 }}>{step.desc}</p>
+                <div key={step.n} className={`reveal reveal-delay-${i + 1}`} style={{
+                  position: 'relative', overflow: 'hidden',
+                  background: '#141210',
+                  border: `1px solid ${step.color}30`,
+                  borderTop: `3px solid ${step.color}`,
+                  borderRadius: 16,
+                  padding: 28,
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                }}>
+                  <div style={{ position: 'absolute', top: -10, right: -10, fontFamily: 'var(--font-display)', fontSize: 80, fontWeight: 900, color: `${step.color}15`, lineHeight: 1 }}>{step.n}</div>
+                  <div style={{ width: 48, height: 48, borderRadius: '50%', background: `${step.color}20`, border: `1px solid ${step.color}40`, color: step.color, fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20, flexShrink: 0 }}>{step.n}</div>
+                  <div style={{ color: step.color, marginBottom: 12 }}>{step.svg}</div>
+                  <h3 style={{ fontSize: 20, marginBottom: 12, color: step.color, fontWeight: 700 }}>{step.title}</h3>
+                  <p style={{ color: 'rgba(246,241,232,0.70)', fontSize: 15, lineHeight: 1.65 }}>{step.desc}</p>
                 </div>
               ))}
             </div>
