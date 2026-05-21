@@ -159,13 +159,13 @@ export const metadata: Metadata = {
     siteName: 'Al Haya Sofa Care UAE',
     locale: 'en_AE',
     type: 'website',
-    images: [{ url: '/hero-sofa.webp', width: 1200, height: 630, alt: 'Al Haya Sofa Deep Cleaning UAE — Professional At-Home Service' }],
+    images: [{ url: '/sofa-cleaning-dubai-professional.webp', width: 1200, height: 630, alt: 'Al Haya Sofa Deep Cleaning UAE — Professional At-Home Service' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sofa Deep Shampoo & Steam Cleaning UAE | Al Haya',
     description: 'Professional sofa cleaning in Dubai, Sharjah, Ajman & Abu Dhabi. Same-day service. Call +971547199189.',
-    images: ['/hero-sofa.webp'],
+    images: ['/sofa-cleaning-dubai-professional.webp'],
   },
   alternates: {
     canonical: 'https://sofashampooingdubai.com',
@@ -191,7 +191,7 @@ const localBusinessSchema = {
   url: 'https://sofashampooingdubai.com',
   telephone: '+971547199189',
   email: 'info@sofashampooingdubai.com',
-  image: 'https://sofashampooingdubai.com/hero-sofa.webp',
+  image: 'https://sofashampooingdubai.com/sofa-cleaning-dubai-professional.webp',
   logo: 'https://sofashampooingdubai.com/favicon.svg',
   priceRange: 'AED 39 - AED 299',
   currenciesAccepted: 'AED',
@@ -303,7 +303,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preload" href="/hero-mobile.webp" as="image" type="image/webp" media="(max-width: 768px)" />
-        <link rel="preload" href="/hero-sofa.webp" as="image" type="image/webp" media="(min-width: 769px)" />
+        <link rel="preload" href="/sofa-cleaning-dubai-professional.webp" as="image" type="image/webp" media="(min-width: 769px)" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#0B0B0B" />

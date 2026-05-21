@@ -138,7 +138,7 @@ const services = [
     features: ['Coffee, tea & food stains', 'Ink & dye removal', 'Pet accident treatment', 'Old set-in stains'],
     price: 'AED 100',
     href: '/contact',
-    bgImage: '/home/stain.webp',
+    bgImage: '/home/sofa-stain-removal-dubai.webp',
   },
   {
     icon: <IconDiamond size={36}/>,
@@ -149,7 +149,7 @@ const services = [
     features: ['pH-safe leather cleaner', 'Deep conditioning treatment', 'Crack & dryness prevention', 'Protective coat finish'],
     price: 'AED 50 / seat',
     href: '/contact',
-    bgImage: '/home/leather.webp',
+    bgImage: '/home/leather-sofa-cleaning-dubai.webp',
   },
   {
     icon: <IconWind size={36}/>,
@@ -160,7 +160,7 @@ const services = [
     features: ['Pet odor elimination', 'Smoke & food odors', 'Anti-bacterial treatment', 'Humidity-proof freshness'],
     price: 'AED 59',
     href: '/contact',
-    bgImage: '/home/Odor-Treatment.webp',
+    bgImage: '/home/sofa-odor-treatment-dubai.webp',
   },
   {
     icon: <IconPaw size={36}/>,
@@ -171,7 +171,7 @@ const services = [
     features: ['Deep pet hair extraction', 'Anti-allergen treatment', 'Safe for all fabrics', 'Deodorizing included'],
     price: 'AED 39',
     href: '/contact',
-    bgImage: '/home/pet.webp',
+    bgImage: '/home/pet-hair-removal-sofa-dubai.webp',
   },
   {
     icon: <IconSparkle size={36}/>,
@@ -182,7 +182,7 @@ const services = [
     features: ['99.9% bacteria kill rate', 'High-temp steam extraction', 'Child & pet safe', 'WHO-approved solutions'],
     price: 'AED 49',
     href: '/contact',
-    bgImage: '/home/Sofa-Sanitization.webp',
+    bgImage: '/home/sofa-sanitization-dubai.webp',
   },
   {
     icon: <IconFabric size={36}/>,
@@ -193,7 +193,7 @@ const services = [
     features: ['Low-moisture velvet care', 'Microfiber deep clean', 'Pile restoration', 'No shrinkage or fading'],
     price: 'AED 99',
     href: '/contact',
-    bgImage: '/home/Velvet-Microfiber.webp',
+    bgImage: '/home/velvet-microfiber-sofa-cleaning.webp',
   },
   {
     icon: <IconShield size={36}/>,
@@ -204,7 +204,7 @@ const services = [
     features: ['Invisible stain shield', 'Spill repellent coat', 'UV fade protection', 'Lasts 12+ months'],
     price: 'AED 69',
     href: '/contact',
-    bgImage: '/home/Fabric-Protection.webp',
+    bgImage: '/home/sofa-fabric-protection-dubai.webp',
   },
   {
     icon: <IconSofa size={36}/>,
@@ -215,7 +215,7 @@ const services = [
     features: ['Full L-shape coverage', 'All IKEA fabric types', 'Corner & seam cleaning', 'Same-day service'],
     price: 'AED 150',
     href: '/contact',
-    bgImage: '/L-shape/L-shape.webp',
+    bgImage: '/L-shape/ikea-lshape-clean.webp',
   },
 ];
 
