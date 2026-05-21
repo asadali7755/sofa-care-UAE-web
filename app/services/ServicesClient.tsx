@@ -110,7 +110,7 @@ export default function ServicesPage() {
                   <div style={{ padding: '20px 24px', background: 'var(--bg-elev)', borderRadius: 12, border: '1px solid var(--line)', marginBottom: 28, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
                       <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--fg-dim)', marginBottom: 4, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Starting Price</div>
-                      <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 900, color: 'var(--accent)' }}>AED 99</div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 900, color: 'var(--accent)' }}>AED 50 / seat</div>
                     </div>
                     <div style={{ textAlign: 'right' }}>
                       <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--fg-dim)', marginBottom: 4 }}>Service Time</div>
@@ -179,7 +179,7 @@ export default function ServicesPage() {
                   <div style={{ padding: '20px 24px', background: 'var(--bg-raised)', borderRadius: 12, border: '1px solid var(--line)', marginBottom: 28, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
                       <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--fg-dim)', marginBottom: 4, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Starting Price</div>
-                      <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 900, color: 'var(--accent)' }}>AED 79</div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 900, color: 'var(--accent)' }}>AED 40 / seat</div>
                     </div>
                     <div style={{ textAlign: 'right' }}>
                       <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--fg-dim)', marginBottom: 4 }}>Dry Time</div>
@@ -217,7 +217,7 @@ export default function ServicesPage() {
                   id: 'stain-removal',
                   tag: 'Specialist', tagColor: '#FF5A3C',
                   title: 'Stain Removal',
-                  price: 'AED 49', time: '30–60 min',
+                  price: 'AED 100', time: '30–60 min',
                   desc: 'Targeted treatment for coffee, food, ink, wine, and other stubborn stains that regular cleaning simply cannot remove. Our specialist formula works on even old, set-in stains.',
                   features: ['Coffee & tea stains', 'Ink & dye removal', 'Food & grease stains', 'Wine & juice stains', 'Old set-in stains', 'Blood & protein stains'],
                   waText: 'Hi%2C%20I%20need%20stain%20removal%20service%20for%20my%20sofa.',
@@ -226,7 +226,7 @@ export default function ServicesPage() {
                   id: 'leather-cleaning',
                   tag: 'Premium', tagColor: '#8B5CF6',
                   title: 'Leather Sofa Cleaning',
-                  price: 'AED 129', time: '2–3 hrs',
+                  price: 'AED 50 / seat', time: '2–3 hrs',
                   desc: 'Specialist leather care using pH-balanced solutions, deep conditioning treatment and protective coating to restore your leather sofa to its original shine and softness.',
                   features: ['pH-safe leather cleaner', 'Deep conditioning treatment', 'Crack & peel prevention', 'Stain & scuff removal', 'UV fade protection', 'Protective coat finish'],
                   waText: 'Hi%2C%20I%20need%20leather%20sofa%20cleaning%20in%20Dubai.',
@@ -412,7 +412,7 @@ export default function ServicesPage() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 800, margin: '0 auto' }}>
               {[
-                { q: 'How much does sofa cleaning cost in Dubai?', a: 'Sofa cleaning in Dubai starts from AED 39 for pet hair removal, AED 79 for shampooing, AED 89 for steam cleaning, and AED 99 for deep cleaning. Leather sofa cleaning starts from AED 129. All prices include at-home doorstep service with no hidden fees.' },
+                { q: 'How much does sofa cleaning cost in Dubai?', a: 'Sofa cleaning in Dubai starts from AED 40/seat for shampooing, AED 50/seat for deep cleaning, AED 100 for stain removal, and AED 50/seat for leather sofa cleaning. All prices include at-home doorstep service with no hidden fees.' },
                 { q: 'How often should I professionally clean my couch in Dubai?', a: 'Due to Dubai\'s high dust levels and humidity, we recommend a professional deep clean every 6 to 12 months. If you have pets or children, a 6-month interval is ideal to remove allergens, dust mites and embedded desert dust that standard vacuums cannot reach.' },
                 { q: 'Is professional sofa cleaning safe for all sofa materials?', a: 'Yes. Our technicians perform a fabric inspection and pH test before selecting cleaners. We use pH-neutral solutions for delicate natural fibers (wool, silk, linen) to prevent browning or dye bleeding, and specialist low-moisture techniques for velvet and microfiber.' },
                 { q: 'Will deep cleaning remove bad odors from my sofa?', a: 'Yes. Our eco-friendly deodorizers neutralize pet, smoke, food and moisture odors at the molecular source — not just mask them. This is especially effective in Dubai\'s humid climate where odors can linger deep within fabric fibers.' },

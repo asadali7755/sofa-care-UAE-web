@@ -1020,7 +1020,3 @@ section, footer, nav { max-width: 100%; }
   .hero-video-desktop { display: block; }
   .hero-img-mobile    { display: none; }
 }
-x) {
-  .hero-video-desktop { display: block; }
-  .hero-img-mobile    { display: none; }
-}

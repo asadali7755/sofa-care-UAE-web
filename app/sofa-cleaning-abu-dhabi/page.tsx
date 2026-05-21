@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-abu-dhabi' },
   openGraph: {
     title: 'Sofa Cleaning Abu Dhabi | Al Haya Sofa Care UAE',
-    description: 'Professional sofa deep shampoo & steam cleaning in Abu Dhabi. At-home service, same-day available. Starting AED 79. Call +971547199189.',
+    description: 'Professional sofa deep shampoo & steam cleaning in Abu Dhabi. At-home service, same-day available. Starting AED 40/seat. Call +971547199189.',
     url: 'https://sofashampooingdubai.com/sofa-cleaning-abu-dhabi',
     type: 'website',
   },
@@ -94,7 +94,7 @@ export default function SofaCleaningAbuDhabi() {
               </a>
             </div>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-              {[{ n: 'AED 79', l: 'Starting Price' }, { n: 'Same Day', l: 'Service' }, { n: '16+ Areas', l: 'Abu Dhabi Coverage' }, { n: '4.9 ★', l: 'Rating' }].map((s) => (
+              {[{ n: 'AED 40', l: 'Starting Price' }, { n: 'Same Day', l: 'Service' }, { n: '16+ Areas', l: 'Abu Dhabi Coverage' }, { n: '4.9 ★', l: 'Rating' }].map((s) => (
                 <div key={s.l}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 900, color: 'var(--accent)' }}>{s.n}</div>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--fg-dim)', letterSpacing: '0.06em', textTransform: 'uppercase', marginTop: 3 }}>{s.l}</div>
@@ -152,8 +152,8 @@ export default function SofaCleaningAbuDhabi() {
                 </div>
                 <div style={{ padding: '20px 24px', background: 'var(--bg-elev)', borderRadius: 14, border: '1px solid var(--line-strong)' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--accent)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Starting Price</div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, fontWeight: 900, color: 'var(--fg)', marginBottom: 4 }}>AED 79</div>
-                  <div style={{ color: 'var(--fg-muted)', fontSize: 14 }}>Sofa shampoo cleaning. Deep cleaning from AED 99.</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, fontWeight: 900, color: 'var(--fg)', marginBottom: 4 }}>AED 40 / seat</div>
+                  <div style={{ color: 'var(--fg-muted)', fontSize: 14 }}>Sofa shampoo cleaning. Deep cleaning from AED 50/seat.</div>
                 </div>
               </div>
             </div>

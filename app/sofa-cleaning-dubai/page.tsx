@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-dubai' },
   openGraph: {
     title: 'Sofa Cleaning Dubai | Al Haya Sofa Care UAE',
-    description: 'Professional sofa deep shampoo & steam cleaning in Dubai. At-home service, same-day available, eco-friendly. Starting AED 79. Call +971547199189.',
+    description: 'Professional sofa deep shampoo & steam cleaning in Dubai. At-home service, same-day available, eco-friendly. Starting AED 40/seat. Call +971547199189.',
     url: 'https://sofashampooingdubai.com/sofa-cleaning-dubai',
     type: 'website',
   },
@@ -135,7 +135,7 @@ export default function SofaCleaningDubai() {
               </a>
             </div>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-              {[{ n: 'AED 79', l: 'Starting Price' }, { n: 'Same Day', l: 'Service' }, { n: '20+ Areas', l: 'Dubai Coverage' }, { n: '4.9 ★', l: 'Rating' }].map((s) => (
+              {[{ n: 'AED 40', l: 'Starting Price' }, { n: 'Same Day', l: 'Service' }, { n: '20+ Areas', l: 'Dubai Coverage' }, { n: '4.9 ★', l: 'Rating' }].map((s) => (
                 <div key={s.l}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 900, color: 'var(--accent)' }}>{s.n}</div>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--fg-dim)', letterSpacing: '0.06em', textTransform: 'uppercase', marginTop: 3 }}>{s.l}</div>
@@ -270,7 +270,7 @@ export default function SofaCleaningDubai() {
                 Book Sofa Cleaning in <span style={{ color: 'var(--accent)' }}>Dubai</span> Today
               </h2>
               <p style={{ color: 'var(--fg-muted)', fontSize: 16, marginBottom: 28, maxWidth: 500, margin: '0 auto 28px' }}>
-                Same-day service available. Al Haya Sofa Care UAE comes to you with all equipment — starting from AED 79.
+                Same-day service available. Al Haya Sofa Care UAE comes to you with all equipment — starting from AED 40/seat.
               </p>
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Link href="/contact" className="btn btn-primary">Book Now <IconArrow size={14} /></Link>

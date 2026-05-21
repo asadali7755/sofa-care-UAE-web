@@ -67,6 +67,7 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <a href="tel:+971547199189" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>+971 54 719 9189</a>
               <a href="https://wa.me/971547199189" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>WhatsApp Us</a>
+              <a href="https://www.google.com/maps/place/AL+HAYA+cleaning+services/@25.2959258,55.3600450,17z" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>View on Google Maps</a>
               <div style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Dubai, UAE</div>
               <div style={{ color: 'var(--fg-muted)', fontSize: 13 }}>7 AM – 10 PM Daily</div>
             </div>
