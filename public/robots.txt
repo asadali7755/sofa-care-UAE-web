@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
 
+# Block old WordPress query parameter URLs
+Disallow: /*?feed=
+Disallow: /*?cat=
+Disallow: /*?tag=
+Disallow: /*?page_id=
+Disallow: /*?paged=
+Disallow: /*?author=
+Disallow: /*?p=
+Disallow: /*?s=
+Disallow: /*?attachment_id=
+
+# Block Next.js internal build files (fonts, chunks) from being indexed
+Disallow: /_next/static/
+Disallow: /favicon.ico?
+
 Sitemap: https://sofashampooingdubai.com/sitemap.xml
