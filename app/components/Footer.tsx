@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="footer-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, marginBottom: 40 }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-              <img src="/al-haya-sofa-care-logo.webp" alt="Al Haya Sofa Care UAE Logo" width="36" height="36" style={{ borderRadius: 8, objectFit: 'cover', display: 'block' }} />
+              <img src="/al-haya-sofa-care-logo.webp" alt="Al Haya Sofa Care UAE — professional sofa cleaning Dubai" width="36" height="36" style={{ borderRadius: 8, objectFit: 'cover', display: 'block' }} />
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 15, color: 'var(--fg)' }}>Al Haya Sofa Care</div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Sofa Care UAE</div>
