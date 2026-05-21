@@ -1020,3 +1020,14 @@ section, footer, nav { max-width: 100%; }
   .hero-video-desktop { display: block; }
   .hero-img-mobile    { display: none; }
 }
+
+/* ── Gallery auto-play animations ── */
+@keyframes gallery-progress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes gallery-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}

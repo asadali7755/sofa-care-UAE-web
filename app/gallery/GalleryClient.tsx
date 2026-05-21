@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -17,31 +17,90 @@ const galleryItems = [
   { id: 6, cat: 'Stain Removal', label: 'Pet Stain Removal — Ajman', altBefore: 'Sofa with pet stain before cleaning in Ajman UAE', altAfter: 'Sofa after pet stain removal in Ajman UAE — Al Haya Sofa Care', before: '/pet-stain/before.webp', after: '/pet-stain/after.webp' },
 ];
 
+const SWITCH_MS = 2500;
+
 function GalleryCard({ item }: { item: typeof galleryItems[0] }) {
   const [showAfter, setShowAfter] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+
+    const start = () => {
+      if (timerRef.current) return;
+      timerRef.current = setInterval(() => setShowAfter((p) => !p), SWITCH_MS);
+    };
+    const stop = () => {
+      if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
+    };
+
+    const io = new IntersectionObserver(
+      ([entry]) => { entry.isIntersecting ? start() : stop(); },
+      { threshold: 0.45 }
+    );
+    io.observe(el);
+    return () => { io.disconnect(); stop(); };
+  }, []);
 
   return (
-    <div className="card reveal" style={{ padding: 0, overflow: 'hidden', cursor: 'pointer' }} onClick={() => setShowAfter(!showAfter)}>
+    <div ref={cardRef} className="card reveal" style={{ padding: 0, overflow: 'hidden' }}>
       <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden' }}>
+
+        {/* Before image */}
         <img
-          src={showAfter ? item.after : item.before}
-          alt={showAfter ? item.altAfter : item.altBefore}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'opacity 0.4s' }}
+          src={item.before}
+          alt={item.altBefore}
+          style={{
+            position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+            opacity: showAfter ? 0 : 1, transition: 'opacity 0.75s ease-in-out',
+          }}
         />
-        <div style={{ position: 'absolute', top: 12, left: 12, display: 'flex', gap: 8 }}>
+        {/* After image */}
+        <img
+          src={item.after}
+          alt={item.altAfter}
+          style={{
+            position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+            opacity: showAfter ? 1 : 0, transition: 'opacity 0.75s ease-in-out',
+          }}
+        />
+
+        {/* BEFORE / AFTER badge */}
+        <div style={{ position: 'absolute', top: 12, left: 12 }}>
           <span style={{
-            padding: '4px 10px', borderRadius: 999, fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 600,
-            background: showAfter ? 'var(--accent)' : 'rgba(11,11,11,0.75)',
+            padding: '4px 12px', borderRadius: 999, fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700,
+            background: showAfter ? 'var(--accent)' : 'rgba(11,11,11,0.78)',
             color: showAfter ? 'var(--ink)' : 'var(--fg)',
             backdropFilter: 'blur(8px)',
+            transition: 'background 0.5s, color 0.5s',
+            letterSpacing: '0.06em',
           }}>
             {showAfter ? 'AFTER ✓' : 'BEFORE'}
           </span>
         </div>
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '32px 16px 16px', background: 'linear-gradient(transparent, rgba(11,11,11,0.8))' }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'rgba(246,241,232,0.6)', marginBottom: 4 }}>Tap to toggle</div>
+
+        {/* Auto-play indicator */}
+        <div style={{ position: 'absolute', top: 12, right: 12, display: 'flex', alignItems: 'center', gap: 5,
+          padding: '4px 10px', borderRadius: 999, background: 'rgba(11,11,11,0.65)', backdropFilter: 'blur(8px)' }}>
+          <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block',
+            animation: 'gallery-pulse 1.2s ease-in-out infinite' }} />
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'rgba(246,241,232,0.7)', letterSpacing: '0.05em' }}>AUTO</span>
+        </div>
+
+        {/* Progress bar — restarts on each toggle via key prop */}
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 3, background: 'rgba(255,255,255,0.12)' }}>
+          <div
+            key={`${item.id}-${String(showAfter)}`}
+            style={{
+              height: '100%', background: 'var(--accent)',
+              animation: `gallery-progress ${SWITCH_MS}ms linear forwards`,
+            }}
+          />
         </div>
       </div>
+
       <div style={{ padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--fg)' }}>{item.label}</span>
         <span className="badge" style={{ fontSize: 10 }}>{item.cat}</span>
@@ -85,7 +144,7 @@ export default function GalleryPage() {
               Before &amp; <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>After</span> Gallery
             </h1>
             <p className="reveal reveal-delay-1" style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 520, lineHeight: 1.65 }}>
-              See real results from our sofa cleaning jobs across Dubai, Sharjah &amp; Ajman. Tap any image to see the transformation.
+              See real results from our sofa cleaning jobs across Dubai, Sharjah &amp; Ajman. Images auto-play before &amp; after — just scroll down.
             </p>
           </div>
         </section>
