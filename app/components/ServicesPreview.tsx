@@ -206,6 +206,17 @@ const services = [
     href: '/contact',
     bgImage: '/home/Fabric-Protection.webp',
   },
+  {
+    icon: <IconSofa size={36}/>,
+    tag: 'IKEA Special',
+    tagColor: '#0058A3',
+    title: 'IKEA L-Shape Sofa Cleaning',
+    desc: 'Complete deep cleaning for IKEA L-shape sofas — the most popular sofa style in UAE homes. Full coverage of all sections, cushions, corners and seams with our specialist equipment.',
+    features: ['Full L-shape coverage', 'All IKEA fabric types', 'Corner & seam cleaning', 'Same-day service'],
+    price: 'AED 150',
+    href: '/contact',
+    bgImage: '/L-shape/L-shape.webp',
+  },
 ];
 
 export default function ServicesPreview() {

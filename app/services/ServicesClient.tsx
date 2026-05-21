@@ -198,6 +198,63 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* IKEA L-Shape Sofa Cleaning */}
+        <section id="ikea-lshape" className="section" style={{ borderBottom: '1px solid var(--line)', background: 'var(--bg-raised)' }}>
+          <div className="container-x">
+            <div className="service-detail-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+              <div className="reveal">
+                <span className="badge" style={{ marginBottom: 20, display: 'inline-flex', background: '#0058A315', color: '#0058A3', border: '1px solid #0058A360' }}>IKEA Special</span>
+                <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', marginBottom: 16, fontFamily: 'var(--font-display)', fontWeight: 900, lineHeight: 1.1 }}>
+                  IKEA <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>L-Shape Sofa</span> Cleaning Dubai
+                </h2>
+                <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.7, marginBottom: 24 }}>
+                  IKEA L-shape sofas are among the most common in UAE homes — but their size and multi-section design makes them difficult to clean thoroughly. Our specialist team covers every corner, seam, cushion and armrest of your IKEA sofa.
+                </p>
+                <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
+                  We are trained on all IKEA fabric types including KIVIK, EKTORP, VIMLE and FRIHETEN. Safe, eco-friendly cleaning agents, fast dry time, and complete allergen removal — all at your doorstep.
+                </p>
+                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 32 }}>
+                  {['IKEA sofa cleaning Dubai', 'L-shape sofa cleaning', 'IKEA KIVIK cleaning', 'IKEA EKTORP cleaning', 'L-shape sofa Dubai'].map((kw) => (
+                    <span key={kw} className="badge" style={{ fontSize: 11 }}>{kw}</span>
+                  ))}
+                </div>
+                <div style={{ padding: '20px 24px', background: 'var(--bg-elev)', borderRadius: 12, border: '1px solid var(--line)', marginBottom: 28, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--fg-dim)', marginBottom: 4, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Fixed Price</div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 900, color: '#0058A3' }}>AED 150</div>
+                  </div>
+                  <div style={{ textAlign: 'right' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--fg-dim)', marginBottom: 4 }}>Service Time</div>
+                    <div style={{ fontSize: 18, fontWeight: 700 }}>2 – 3 hrs</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                  <Link href="/contact" className="btn btn-primary">Book Now <IconArrow size={14}/></Link>
+                  <a href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20IKEA%20L-shape%20sofa%20cleaning%20in%20Dubai." target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <IconWhatsApp size={16}/> WhatsApp
+                  </a>
+                </div>
+              </div>
+              <div className="reveal reveal-delay-2">
+                <div style={{ borderRadius: 20, overflow: 'hidden', border: '1px solid var(--line)', aspectRatio: '4/3', position: 'relative' }}>
+                  <img src="/L-shape/L-shape.webp" alt="IKEA L-Shape Sofa Cleaning Dubai" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ marginTop: 24, background: 'var(--bg-elev)', borderRadius: 16, padding: 24, border: '1px solid var(--line)', borderLeft: '3px solid #0058A3' }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#0058A3', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>What&apos;s Included</div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px 16px' }}>
+                    {['Full L-shape coverage', 'All IKEA fabric types', 'Corner & seam deep clean', 'Allergen & dust extraction', 'Sanitization included', 'Fast-dry formula', 'Deodorizing treatment', 'Same-day service available'].map((f) => (
+                      <div key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
+                        <div style={{ color: '#0058A3', marginTop: 2, flexShrink: 0 }}><IconCheck size={14}/></div>
+                        <span style={{ color: 'var(--fg-muted)', fontSize: 14, lineHeight: 1.5 }}>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* All Other Services */}
         <section className="section" style={{ borderBottom: '1px solid var(--line)' }}>
           <div className="container-x">
@@ -275,6 +332,15 @@ export default function ServicesPage() {
                   desc: 'Invisible shield coating repels future stains, spills and dirt — keeping your sofa cleaner for much longer. Best applied after a deep clean for maximum effect.',
                   features: ['Invisible stain shield', 'Spill repellent coating', 'UV fade protection', 'Dust repellent barrier', 'Lasts 12+ months', 'Safe for all fabric types'],
                   waText: 'Hi%2C%20I%20need%20fabric%20protection%20for%20my%20sofa.',
+                },
+                {
+                  id: 'ikea-lshape',
+                  tag: 'IKEA Special', tagColor: '#0058A3',
+                  title: 'IKEA L-Shape Sofa Cleaning',
+                  price: 'AED 150', time: '2–3 hrs',
+                  desc: 'Complete deep cleaning for IKEA L-shape sofas — the most popular sofa style in UAE homes. Full coverage of all sections, cushions, corners and seams with our specialist equipment.',
+                  features: ['Full L-shape coverage', 'All IKEA fabric types', 'Corner & seam deep clean', 'Allergen & dust extraction', 'Sanitization included', 'Same-day service available'],
+                  waText: 'Hi%2C%20I%20need%20IKEA%20L-shape%20sofa%20cleaning.',
                 },
               ].map((s, i) => (
                 <div key={s.id} id={s.id} className={`reveal reveal-delay-${(i % 3) + 1}`} style={{
