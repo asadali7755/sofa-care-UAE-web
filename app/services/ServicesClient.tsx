@@ -277,7 +277,7 @@ const services: ServiceSectionProps[] = [
     timeLabel: 'Service Time',
     time: '2 – 3 hrs',
     waText: 'Hi%2C%20I%20need%20IKEA%20L-shape%20sofa%20cleaning%20in%20Dubai.',
-    image: '/L-shape/after.webp',
+    image: '/L-shape/ikea-lshape-clean.webp',
     imageAlt: 'IKEA L-Shape Sofa Cleaning Dubai — Al Haya Sofa Care UAE',
     features: ['Full L-shape coverage', 'All IKEA fabric types', 'Corner & seam deep clean', 'Allergen & dust extraction', 'Sanitization included', 'Fast-dry formula', 'Deodorizing treatment', 'Same-day service'],
     flip: true,
