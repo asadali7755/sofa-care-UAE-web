@@ -19,33 +19,10 @@ const galleryItems = [
 
 const SWITCH_MS = 2500;
 
-function GalleryCard({ item }: { item: typeof galleryItems[0] }) {
-  const [showAfter, setShowAfter] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  useEffect(() => {
-    const el = cardRef.current;
-    if (!el) return;
-
-    const start = () => {
-      if (timerRef.current) return;
-      timerRef.current = setInterval(() => setShowAfter((p) => !p), SWITCH_MS);
-    };
-    const stop = () => {
-      if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
-    };
-
-    const io = new IntersectionObserver(
-      ([entry]) => { entry.isIntersecting ? start() : stop(); },
-      { threshold: 0.45 }
-    );
-    io.observe(el);
-    return () => { io.disconnect(); stop(); };
-  }, []);
-
+// Single shared showAfter prop — all cards sync to same timer in parent
+function GalleryCard({ item, showAfter }: { item: typeof galleryItems[0]; showAfter: boolean }) {
   return (
-    <div ref={cardRef} className="card reveal" style={{ padding: 0, overflow: 'hidden' }}>
+    <div className="card reveal" style={{ padding: 0, overflow: 'hidden' }}>
       <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden' }}>
 
         {/* Before image */}
@@ -89,10 +66,10 @@ function GalleryCard({ item }: { item: typeof galleryItems[0] }) {
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'rgba(246,241,232,0.7)', letterSpacing: '0.05em' }}>AUTO</span>
         </div>
 
-        {/* Progress bar — restarts on each toggle via key prop */}
+        {/* Progress bar — key resets animation on every toggle */}
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 3, background: 'rgba(255,255,255,0.12)' }}>
           <div
-            key={`${item.id}-${String(showAfter)}`}
+            key={String(showAfter)}
             style={{
               height: '100%', background: 'var(--accent)',
               animation: `gallery-progress ${SWITCH_MS}ms linear forwards`,
@@ -111,7 +88,11 @@ function GalleryCard({ item }: { item: typeof galleryItems[0] }) {
 
 export default function GalleryPage() {
   const [active, setActive] = useState('All');
+  const [showAfter, setShowAfter] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
+  // Reveal animation observer
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }),
@@ -120,6 +101,27 @@ export default function GalleryPage() {
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, [active]);
+
+  // Single shared timer — starts when grid is visible, all cards sync together
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    const start = () => {
+      if (timerRef.current) return;
+      timerRef.current = setInterval(() => setShowAfter((p) => !p), SWITCH_MS);
+    };
+    const stop = () => {
+      if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
+    };
+
+    const io = new IntersectionObserver(
+      ([entry]) => { entry.isIntersecting ? start() : stop(); },
+      { threshold: 0.1 }
+    );
+    io.observe(grid);
+    return () => { io.disconnect(); stop(); };
+  }, []);
 
   const filtered = active === 'All' ? galleryItems : galleryItems.filter((g) => g.cat === active);
 
@@ -161,9 +163,9 @@ export default function GalleryPage() {
               ))}
             </div>
 
-            {/* Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 24 }}>
-              {filtered.map((item) => <GalleryCard key={item.id} item={item} />)}
+            {/* Grid — ref used for single shared timer */}
+            <div ref={gridRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 24 }}>
+              {filtered.map((item) => <GalleryCard key={item.id} item={item} showAfter={showAfter} />)}
             </div>
 
             {/* CTA */}
