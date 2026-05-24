@@ -35,20 +35,11 @@ const stats = [
 
 export default function Hero() {
   const role = useTypewriter(['Sofa Deep Cleaning', 'Sofa Shampooing', 'Stain Removal', 'Same Day Service', 'At-Home Service']);
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 769px)');
-    setIsDesktop(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
 
   return (
     <section id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', borderBottom: '1px solid var(--line)', background: '#0B0B0B' }}>
       <div style={{ position: 'absolute', inset: 0, zIndex: 0, background: '#0B0B0B' }}>
-        {/* Mobile: dedicated portrait image (768x1376, 83KB WebP) */}
+        {/* Mobile portrait image — CSS hides on desktop instantly (no JS delay, no flash) */}
         <img
           src="/hero-mobile.webp"
           alt="Professional sofa cleaning service in Dubai UAE — Al Haya Sofa Care at-home deep cleaning"
@@ -57,28 +48,27 @@ export default function Hero() {
           loading="eager"
           width={768}
           height={1376}
+          className="hero-img-mobile"
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
             objectFit: 'cover', objectPosition: 'center top',
-            display: isDesktop ? 'none' : 'block',
           }}
         />
-        {/* Desktop only: video (never rendered on mobile — prevents 3.5MB download) */}
-        {isDesktop && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            poster="/sofa-cleaning-dubai-professional.webp"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-          >
-            <source src="/hero-bg.webm" type="video/webm" />
-            <source src="/hero-bg.mp4" type="video/mp4" />
-          </video>
-        )}
+        {/* Desktop video — CSS hides on mobile, preload=none prevents download on mobile */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster="/sofa-cleaning-dubai-professional.webp"
+          className="hero-video-desktop"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+        >
+          <source src="/hero-bg.webm" type="video/webm" />
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.60) 0%, rgba(11,11,11,0.40) 55%, rgba(11,11,11,0.25) 100%)' }}/>
         <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
       </div>

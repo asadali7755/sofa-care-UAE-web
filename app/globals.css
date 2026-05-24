@@ -990,32 +990,12 @@ section, footer, nav { max-width: 100%; }
   .card h3 { font-size: 16px !important; }
 }
 
-/* ── Hero: mobile = image only, desktop = video ── */
-/* Mobile default: show image, hide video */
+/* ── Hero: mobile = portrait image, desktop = video background ── */
+/* Mobile default: image visible, video hidden (preload=none prevents download) */
 .hero-video-desktop { display: none; }
 .hero-img-mobile    { display: block; }
 
-/* Desktop: show video, hide static image */
-@media (min-width: 769px) {
-  .hero-video-desktop { display: block; }
-  .hero-img-mobile    { display: none; }
-}
-
-/* ─── Hero: image on mobile, video on desktop ─── */
-/* Mobile: hide video (saves 2.6MB), show image */
-.hero-video-desktop { display: none; }
-.hero-img-mobile    { display: block; }
-
-/* Desktop: show video, hide image (video has poster fallback) */
-@media (min-width: 769px) {
-  .hero-video-desktop { display: block; }
-  .hero-img-mobile    { display: none; }
-}
-
-/* ── Hero: mobile = image only, desktop = video ── */
-.hero-video-desktop { display: none; }
-.hero-img-mobile    { display: block; }
-
+/* Desktop: video visible, portrait image hidden */
 @media (min-width: 769px) {
   .hero-video-desktop { display: block; }
   .hero-img-mobile    { display: none; }
