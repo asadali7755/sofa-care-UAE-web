@@ -25,10 +25,10 @@ const navLinks = [
 ];
 
 const locationLinks = [
-  { href: '/sofa-cleaning-dubai', label: 'Dubai', flag: '🏙️' },
-  { href: '/sofa-cleaning-sharjah', label: 'Sharjah', flag: '🌆' },
-  { href: '/sofa-cleaning-ajman', label: 'Ajman', flag: '🌇' },
-  { href: '/sofa-cleaning-abu-dhabi', label: 'Abu Dhabi', flag: '🕌' },
+  { href: '/sofa-cleaning-dubai', label: 'Dubai', img: '/cities/dubai.webp' },
+  { href: '/sofa-cleaning-sharjah', label: 'Sharjah', img: '/cities/sharjah.webp' },
+  { href: '/sofa-cleaning-ajman', label: 'Ajman', img: '/cities/ajman.webp' },
+  { href: '/sofa-cleaning-abu-dhabi', label: 'Abu Dhabi', img: '/cities/abu-dhabi.webp' },
 ];
 
 export default function Navbar() {
@@ -126,30 +126,33 @@ export default function Navbar() {
                   position: 'absolute', top: 'calc(100% + 12px)', left: '50%',
                   transform: 'translateX(-50%)',
                   background: '#141414', border: '1px solid var(--line)',
-                  borderRadius: 12, padding: '8px 0',
-                  minWidth: 180, boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
+                  borderRadius: 16, padding: 12,
+                  width: 320, boxShadow: '0 16px 44px rgba(0,0,0,0.6)',
                   zIndex: 300,
                 }}>
-                  {locationLinks.map((l) => (
-                    <Link
-                      key={l.href}
-                      href={l.href}
-                      onClick={() => setLocOpen(false)}
-                      style={{
-                        display: 'flex', alignItems: 'center', gap: 10,
-                        padding: '11px 18px',
-                        fontFamily: 'var(--font-sans)', fontWeight: 500, fontSize: 14,
-                        color: pathname === l.href ? 'var(--accent)' : 'var(--fg)',
-                        textDecoration: 'none',
-                        background: pathname === l.href ? 'color-mix(in srgb, var(--accent) 8%, transparent)' : 'transparent',
-                        transition: 'background 0.15s',
-                        borderLeft: pathname === l.href ? '3px solid var(--accent)' : '3px solid transparent',
-                      }}
-                    >
-                      <span style={{ fontSize: 16 }}>{l.flag}</span>
-                      {l.label}
-                    </Link>
-                  ))}
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg-dim)', padding: '2px 4px 12px' }}>Sofa Cleaning by City</div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                    {locationLinks.map((l) => (
+                      <Link
+                        key={l.href}
+                        href={l.href}
+                        onClick={() => setLocOpen(false)}
+                        className="loc-card"
+                        style={{
+                          position: 'relative', display: 'block', height: 90, borderRadius: 12, overflow: 'hidden',
+                          textDecoration: 'none',
+                          border: pathname === l.href ? '1px solid var(--accent)' : '1px solid var(--line)',
+                        }}
+                      >
+                        <Image src={l.img} alt={`Sofa cleaning ${l.label}`} fill sizes="150px" style={{ objectFit: 'cover' }} />
+                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.05) 100%)' }} />
+                        <div style={{ position: 'absolute', left: 11, right: 8, bottom: 9 }}>
+                          <div style={{ color: '#fff', fontWeight: 800, fontSize: 15, fontFamily: 'var(--font-display)', lineHeight: 1 }}>{l.label}</div>
+                          <div style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.06em', marginTop: 4 }}>SOFA CLEANING →</div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -300,16 +303,16 @@ export default function Navbar() {
                   href={l.href}
                   onClick={() => setOpen(false)}
                   style={{
-                    display: 'flex', alignItems: 'center', gap: 14,
-                    padding: '13px 24px 13px 48px',
+                    display: 'flex', alignItems: 'center', gap: 12,
+                    padding: '11px 24px 11px 40px',
                     borderBottom: '1px solid var(--line)',
-                    fontFamily: 'var(--font-sans)', fontWeight: 400, fontSize: 15,
+                    fontFamily: 'var(--font-sans)', fontWeight: 500, fontSize: 15,
                     color: pathname === l.href ? 'var(--accent)' : 'var(--fg-muted)',
                     textDecoration: 'none',
                     borderLeft: pathname === l.href ? '3px solid var(--accent)' : '3px solid transparent',
                   }}
                 >
-                  <span style={{ fontSize: 18 }}>{l.flag}</span>
+                  <Image src={l.img} alt={`Sofa cleaning ${l.label}`} width={40} height={30} style={{ borderRadius: 6, objectFit: 'cover', flexShrink: 0 }} />
                   {l.label}
                 </Link>
               ))}
