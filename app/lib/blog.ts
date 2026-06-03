@@ -199,6 +199,171 @@ export const blogPosts: BlogPost[] = [
       { q: 'Can you restore a cracked or faded leather sofa?', a: 'Mild dryness and surface marks respond well to cleaning and conditioning. Deep cracks may need specialist restoration — we’ll assess and advise honestly.' },
     ],
   },
+
+  {
+    slug: 'remove-pet-hair-smell-sofa-dubai',
+    title: 'How to Remove Pet Hair & Smell from Your Sofa',
+    h1: 'How to Remove Pet Hair & Smell from Your Sofa',
+    description: 'Practical ways to remove embedded pet hair and odor from your sofa in Dubai — DIY tips plus when professional extraction and enzyme treatment are worth it.',
+    excerpt: 'Get embedded pet hair and lingering odor out of your sofa — DIY steps and when to call the pros.',
+    image: '/home/pet-hair-removal-sofa-dubai.webp',
+    datePublished: '2026-06-03',
+    readMins: 5,
+    intro: [
+      'Pets are family — but their hair and odor work deep into sofa fabric and are tough to remove with a normal vacuum. Here’s how to tackle both at home, and when a professional clean is the smarter choice.',
+    ],
+    sections: [
+      { heading: 'Removing embedded pet hair', bullets: [
+        'Rubber glove or damp sponge — wipe in one direction to clump hair',
+        'A rubber squeegee dragged across the fabric lifts stubborn hair',
+        'Vacuum with an upholstery brush afterward',
+        'For deeply embedded hair, professional high-suction extraction works best',
+      ] },
+      { heading: 'Neutralising pet odor (not masking it)', body: [
+        'Sprays only mask the smell temporarily. Pet odor lives in the fibres and padding, so it needs an enzyme-based treatment that breaks down the odor molecules at the source — which also stops pets re-marking the same spot.',
+      ] },
+      { heading: 'Why professional treatment helps', body: [
+        'For set-in odor or accidents, our steam sanitization plus enzyme treatment removes bacteria and odor that home methods leave behind — safe for pets and kids, with fast drying.',
+      ] },
+    ],
+    faqs: [
+      { q: 'Will cleaning stop my pet re-marking the sofa?', a: 'Enzyme treatment breaks down the scent markers pets are drawn to, which greatly reduces re-marking. Surface sprays do not, because the scent remains in the padding.' },
+      { q: 'Is the treatment safe for pets?', a: 'Yes — we use eco-friendly, non-toxic, pet-safe products throughout.' },
+    ],
+  },
+
+  {
+    slug: 'velvet-microfiber-sofa-care',
+    title: 'Velvet & Microfiber Sofa Cleaning: A Care Guide',
+    h1: 'Velvet & Microfiber Sofa Cleaning Guide',
+    description: 'Velvet and microfiber sofas need gentle, low-moisture care. Learn how to clean and maintain delicate upholstery in Dubai without crushing the pile or leaving marks.',
+    excerpt: 'How to clean and protect delicate velvet and microfiber sofas without ruining the pile.',
+    image: '/home/velvet-microfiber-sofa-cleaning.webp',
+    datePublished: '2026-06-03',
+    readMins: 4,
+    intro: [
+      'Velvet and microfiber sofas look luxurious but are easy to damage with the wrong cleaning. Too much moisture crushes velvet pile and leaves water rings on microfiber. Here’s how to care for them properly.',
+    ],
+    sections: [
+      { heading: 'Velvet care', bullets: [
+        'Vacuum gently with a soft brush in the direction of the pile',
+        'Use minimal moisture — over-wetting flattens the pile permanently',
+        'Blot spills immediately; never rub velvet',
+        'Brush the pile back up while slightly damp',
+      ] },
+      { heading: 'Microfiber care', bullets: [
+        'Check the cleaning code (W, S, S-W, X) before using any liquid',
+        '“S” means solvent-only — water can leave rings',
+        'Work in small sections and dry-brush to restore texture',
+      ] },
+      { heading: 'When to go professional', body: [
+        'Because velvet and microfiber are unforgiving, professional low-moisture cleaning is the safest option for a deep refresh — we use fabric-specific methods that protect texture and colour.',
+      ] },
+    ],
+    faqs: [
+      { q: 'Can velvet sofas be steam cleaned?', a: 'Velvet needs careful, low-moisture handling. We use gentle techniques that refresh velvet without crushing or marking the pile rather than heavy steam.' },
+      { q: 'Why does my microfiber sofa get water rings?', a: 'Some microfiber is solvent-only (“S” code). Water leaves rings on these fabrics, so they need a dry/solvent method — which a professional can identify and use safely.' },
+    ],
+  },
+
+  {
+    slug: 'move-in-move-out-sofa-cleaning-dubai',
+    title: 'Move-In / Move-Out Sofa Cleaning in Dubai',
+    h1: 'Move-In / Move-Out Sofa & Upholstery Cleaning in Dubai',
+    description: 'Moving home in Dubai? Professional sofa and upholstery cleaning for move-in/move-out helps with handover, hygiene and deposits. Here’s what to know.',
+    excerpt: 'Why move-in/move-out sofa cleaning matters in Dubai — for hygiene, handover and deposits.',
+    image: '/home/sofa-deep-cleaning.webp',
+    datePublished: '2026-06-03',
+    readMins: 4,
+    intro: [
+      'Moving home is the perfect time to deep-clean upholstery. Whether you’re leaving a rental or settling into a new place, professional sofa cleaning makes the transition healthier and smoother.',
+    ],
+    sections: [
+      { heading: 'Moving out', body: [
+        'If furniture is included in your tenancy, landlords and agencies in Dubai expect it returned clean. A professional sofa and upholstery clean helps with handover and protects your security deposit.',
+      ] },
+      { heading: 'Moving in', body: [
+        'Starting fresh in a new home? Deep-cleaning any existing or second-hand sofas removes the previous owner’s dust, allergens and bacteria before you settle in — important for families with kids.',
+      ] },
+      { heading: 'What we clean', bullets: [
+        'Sofas, armchairs, dining chairs and ottomans',
+        'Mattresses and headboards (on request)',
+        'Stain, odor and pet-hair removal',
+        'Steam sanitization for a hygienic fresh start',
+      ] },
+    ],
+    faqs: [
+      { q: 'Can you clean upholstery the same day as my move?', a: 'Yes — we offer same-day at-home service across Dubai, so you can book around your moving schedule.' },
+      { q: 'Do you provide an invoice for handover?', a: 'Yes, we can provide a service invoice that some agencies request at handover.' },
+    ],
+  },
+
+  {
+    slug: 'protect-sofa-from-dubai-dust',
+    title: 'How to Protect Your Sofa from Dubai’s Dust & Humidity',
+    h1: 'How to Protect Your Sofa from Dubai’s Dust & Humidity',
+    description: 'Dubai’s fine dust and humidity wear down sofas fast. Simple habits and fabric protection that keep upholstery cleaner, fresher and lasting longer.',
+    excerpt: 'Simple habits + fabric protection to keep your sofa cleaner and lasting longer in Dubai.',
+    image: '/home/sofa-fabric-protection-dubai.webp',
+    datePublished: '2026-06-03',
+    readMins: 4,
+    intro: [
+      'Dubai’s environment is hard on furniture — fine desert dust and high humidity settle into sofas and break down fibres over time. A few habits and a fabric protection treatment can make a big difference.',
+    ],
+    sections: [
+      { heading: 'Everyday habits', bullets: [
+        'Vacuum the sofa weekly with an upholstery brush',
+        'Keep windows closed during dusty/sandy weather',
+        'Run AC with clean filters to reduce circulating dust',
+        'Blot spills immediately — don’t let them soak in',
+      ] },
+      { heading: 'Fabric protection treatment', body: [
+        'A professional fabric protection coat creates an invisible barrier that repels dust, liquids and stains, making everyday cleaning easier and extending the time between deep cleans. It’s especially worthwhile in Dubai’s dusty climate.',
+      ] },
+      { heading: 'Regular professional cleaning', body: [
+        'Even with good habits, a professional deep clean every 6–12 months removes the abrasive micro-dust that vacuuming can’t reach, protecting your sofa’s fabric and appearance.',
+      ] },
+    ],
+    faqs: [
+      { q: 'Is fabric protection worth it in Dubai?', a: 'Yes — given Dubai’s dust and humidity, a protective coat repels dust and spills, keeps the sofa cleaner for longer, and makes future cleaning easier.' },
+      { q: 'How long does fabric protection last?', a: 'Typically several months to a year depending on use; we can reapply it during your next professional clean.' },
+    ],
+  },
+
+  {
+    slug: 'sofa-sanitization-dubai-guide',
+    title: 'Sofa Sanitization in Dubai: Why Steam Disinfection Matters',
+    h1: 'Sofa Sanitization in Dubai: Why Steam Disinfection Matters',
+    description: 'Your sofa harbours bacteria, dust mites and allergens. Here’s how professional steam sanitization works and why it matters for homes with kids, pets or allergies in Dubai.',
+    excerpt: 'Why steam sanitization matters — killing bacteria, dust mites and allergens hiding in your sofa.',
+    image: '/home/sofa-sanitization-dubai.webp',
+    datePublished: '2026-06-03',
+    readMins: 4,
+    intro: [
+      'Your sofa sees daily use — and quietly collects bacteria, dust mites, sweat and allergens deep in the cushions. In Dubai’s warm, humid climate these build up fast. Professional steam sanitization tackles what vacuuming can’t.',
+    ],
+    sections: [
+      { heading: 'What’s hiding in your sofa', bullets: [
+        'Dust mites and their allergens (a top trigger for allergies)',
+        'Bacteria from food, hands, pets and sweat',
+        'Mould spores in humid conditions',
+        'Fine dust that irritates the airways',
+      ] },
+      { heading: 'How steam sanitization works', body: [
+        'High-temperature steam penetrates deep into the fabric and padding, killing 99.9% of bacteria, germs and dust mites without harsh chemicals. Combined with extraction, it removes the loosened debris and most of the moisture for fast drying.',
+      ] },
+      { heading: 'Who benefits most', bullets: [
+        'Homes with babies and young children',
+        'Allergy and asthma sufferers',
+        'Pet owners',
+        'Anyone wanting a genuinely hygienic, fresh sofa',
+      ] },
+    ],
+    faqs: [
+      { q: 'Does steam cleaning really kill bacteria?', a: 'Yes — high-temperature steam kills 99.9% of bacteria, germs and dust mites, which is why it’s ideal for hygiene-focused cleaning in homes with kids, pets or allergies.' },
+      { q: 'Is steam sanitization chemical-free?', a: 'Steam itself uses heat, not chemicals. Any pre-treatment products we use are eco-friendly and non-toxic.' },
+    ],
+  },
 ];
 
 export const getBlogPost = (slug: string): BlogPost | undefined =>
