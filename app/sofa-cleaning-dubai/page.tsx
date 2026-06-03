@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { IconArrow, IconWhatsApp } from '../components/Icons';
+import { dubaiAreas as dubaiAreaPages } from '../lib/dubaiAreas';
 
 export const metadata: Metadata = {
   title: 'Sofa Cleaning Dubai | Professional Sofa Deep Shampoo & Steam Cleaning',
@@ -227,6 +228,16 @@ export default function SofaCleaningDubai() {
                   fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--fg-muted)',
                 }}>{area}</span>
               ))}
+            </div>
+            <div style={{ textAlign: 'center', marginBottom: 40 }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--fg-dim)', marginBottom: 14 }}>Dedicated area pages</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
+                {dubaiAreaPages.map((a) => (
+                  <Link key={a.slug} href={`/sofa-cleaning-dubai/${a.slug}`} style={{ padding: '8px 16px', borderRadius: 999, background: 'var(--bg-elev)', border: '1px solid var(--line-strong)', fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--accent)', textDecoration: 'none' }}>
+                    Sofa Cleaning {a.short} →
+                  </Link>
+                ))}
+              </div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <p style={{ color: 'var(--fg-muted)', fontSize: 14, marginBottom: 20 }}>Don&apos;t see your area? WhatsApp us — we most likely cover it.</p>

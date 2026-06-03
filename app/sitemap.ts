@@ -1,9 +1,17 @@
 import { MetadataRoute } from 'next';
+import { dubaiAreas } from './lib/dubaiAreas';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://sofashampooingdubai.com';
   const now = new Date();
+  const areaRoutes: MetadataRoute.Sitemap = dubaiAreas.map((a) => ({
+    url: `${baseUrl}/sofa-cleaning-dubai/${a.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
   return [
+    ...areaRoutes,
     // Core pages
     { url: baseUrl, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${baseUrl}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
