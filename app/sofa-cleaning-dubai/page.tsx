@@ -4,7 +4,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { IconArrow, IconWhatsApp } from '../components/Icons';
-import { dubaiAreas as dubaiAreaPages } from '../lib/dubaiAreas';
+import { emirates } from '../lib/areas';
+const dubaiAreaPages = emirates.dubai.areas;
 
 export const metadata: Metadata = {
   title: 'Sofa Cleaning Dubai | Professional Sofa Deep Shampoo & Steam Cleaning',

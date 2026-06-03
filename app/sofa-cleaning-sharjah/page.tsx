@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { IconArrow, IconWhatsApp } from '../components/Icons';
+import { emirates } from '../lib/areas';
 
 export const metadata: Metadata = {
   title: 'Sofa Cleaning Sharjah | Professional Sofa Deep Shampoo & Steam Cleaning',
@@ -141,6 +142,17 @@ export default function SofaCleaningSharjah() {
                       fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--fg-muted)',
                     }}>{area}</span>
                   ))}
+                </div>
+                {/* Dedicated area pages — internal linking */}
+                <div style={{ marginBottom: 20 }}>
+                  <p style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--fg-dim)', marginBottom: 12 }}>Dedicated area pages</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+                    {emirates['sharjah'].areas.map((a) => (
+                      <a key={a.slug} href={`/sofa-cleaning-sharjah/${a.slug}`} style={{ padding: '8px 16px', borderRadius: 999, background: 'var(--bg-elev)', border: '1px solid var(--line-strong)', fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--accent)', textDecoration: 'none' }}>
+                        Sofa Cleaning {a.short} →
+                      </a>
+                    ))}
+                  </div>
                 </div>
                 <div style={{ padding: '20px 24px', background: 'var(--bg-elev)', borderRadius: 14, border: '1px solid var(--line-strong)' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--accent)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Starting Price</div>

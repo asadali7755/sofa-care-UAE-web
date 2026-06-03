@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import AreaPage from '../../components/AreaPage';
 import { emirates, buildAreaMetadata } from '../../lib/areas';
 
-const EMIRATE = 'dubai';
+const EMIRATE = 'ajman';
 type Props = { params: Promise<{ area: string }> };
 
 export const dynamicParams = false;

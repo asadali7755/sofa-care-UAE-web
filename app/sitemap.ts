@@ -1,15 +1,18 @@
 import { MetadataRoute } from 'next';
-import { dubaiAreas } from './lib/dubaiAreas';
+import { emirates } from './lib/areas';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://sofashampooingdubai.com';
   const now = new Date();
-  const areaRoutes: MetadataRoute.Sitemap = dubaiAreas.map((a) => ({
-    url: `${baseUrl}/sofa-cleaning-dubai/${a.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.85,
-  }));
+  // All area sub-pages across every emirate
+  const areaRoutes: MetadataRoute.Sitemap = Object.values(emirates).flatMap((em) =>
+    em.areas.map((a) => ({
+      url: `${baseUrl}/${em.citySlug}/${a.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    }))
+  );
   return [
     ...areaRoutes,
     // Core pages
