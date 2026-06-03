@@ -149,7 +149,7 @@ const services: ServiceSectionProps[] = [
     timeLabel: 'Service Time',
     time: '30 – 60 min',
     waText: 'Hi%2C%20I%20need%20stain%20removal%20service%20for%20my%20sofa.',
-    image: '/coffee/after.webp',
+    image: '/home/sofa-stain-removal-dubai.webp',
     imageAlt: 'Sofa stain removal service Dubai — Al Haya Sofa Care UAE',
     features: ['Coffee & tea stains', 'Ink & dye removal', 'Food & grease stains', 'Wine & juice stains', 'Old set-in stains', 'Blood & protein stains', 'No discoloration', 'All fabric types'],
     flip: false,
