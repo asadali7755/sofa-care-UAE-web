@@ -5,8 +5,10 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/_next/'],
+        // Allow Googlebot to fetch JS/CSS bundles so it can render pages.
+        // Only block API routes; never block /_next/static or /_next/image.
+        allow: ['/', '/_next/static/', '/_next/image/'],
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://sofashampooingdubai.com/sitemap.xml',

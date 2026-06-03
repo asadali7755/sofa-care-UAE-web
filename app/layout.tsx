@@ -198,7 +198,7 @@ const localBusinessSchema = {
   paymentAccepted: 'Cash, Credit Card, Bank Transfer',
   openingHours: 'Mo-Su 07:00-22:00',
   openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '07:00', closes: '22:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Monday','https://schema.org/Tuesday','https://schema.org/Wednesday','https://schema.org/Thursday','https://schema.org/Friday','https://schema.org/Saturday','https://schema.org/Sunday'], opens: '07:00', closes: '22:00' },
   ],
   address: {
     '@type': 'PostalAddress',
@@ -232,18 +232,9 @@ const localBusinessSchema = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Velvet & Microfiber Sofa Cleaning UAE', description: 'Specialist cleaning for delicate velvet and microfiber upholstery' }, price: '99', priceCurrency: 'AED' },
     ],
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '500',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: [
-    { '@type': 'Review', reviewRating: { '@type': 'Rating', ratingValue: '5' }, author: { '@type': 'Person', name: 'Ahmed Al Mansouri' }, reviewBody: 'Best sofa cleaning service in Dubai. My sofa looks brand new after Al Haya deep cleaned it!' },
-    { '@type': 'Review', reviewRating: { '@type': 'Rating', ratingValue: '5' }, author: { '@type': 'Person', name: 'Sarah Johnson' }, reviewBody: 'Amazing results! They removed all stains from my leather sofa in Abu Dhabi. Highly recommended.' },
-    { '@type': 'Review', reviewRating: { '@type': 'Rating', ratingValue: '5' }, author: { '@type': 'Person', name: 'Mohammad Al Hashimi' }, reviewBody: 'Quick same-day service in Sharjah. The sofa shampoo cleaning was thorough and smells fresh.' },
-  ],
+  // NOTE: aggregateRating + review removed — they were placeholder/demo data.
+  // Fabricated review markup risks a Google manual action. Re-add real
+  // AggregateRating only once genuine, verifiable reviews exist (e.g. from GBP).
   sameAs: [
     'https://wa.me/971547199189',
     'https://www.servedubai.com',
