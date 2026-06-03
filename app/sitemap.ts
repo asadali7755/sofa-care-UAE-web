@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { emirates } from './lib/areas';
+import { blogPosts } from './lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://sofashampooingdubai.com';
@@ -13,8 +14,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     }))
   );
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${baseUrl}/blog/${p.slug}`,
+    lastModified: new Date(p.datePublished),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
   return [
     ...areaRoutes,
+    ...blogRoutes,
+    { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     // Core pages
     { url: baseUrl, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${baseUrl}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },

@@ -19,6 +19,7 @@ const navLinks = [
   { href: '/', label: 'Home', icon: '🏠' },
   { href: '/services', label: 'Services', icon: '🛋️' },
   { href: '/gallery', label: 'Gallery', icon: '🖼️' },
+  { href: '/blog', label: 'Blog', icon: '📝' },
   { href: '/about', label: 'About', icon: '👥' },
   { href: '/contact', label: 'Contact', icon: '📞' },
 ];
