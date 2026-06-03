@@ -21,7 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const area = getDubaiArea(slug);
   if (!area) return {};
   const url = `https://sofashampooingdubai.com/sofa-cleaning-dubai/${slug}`;
-  const title = `Sofa Cleaning ${area.name} | At-Home Deep Shampoo & Steam Cleaning`;
+  // Keep concise — layout's title template appends " | Al Haya Sofa Care UAE".
+  const title = `Sofa Cleaning ${area.short}, Dubai`;
   const description =
     `Professional sofa cleaning in ${area.name}, Dubai — at-home deep shampoo, steam cleaning, stain & pet-hair removal for ${area.propertyType}. Same-day service from AED 79. Call +971547199189.`.slice(0, 158);
   return {
