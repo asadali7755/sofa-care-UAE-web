@@ -56,15 +56,24 @@ export default function CitiesSection() {
 
         <div className="cities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
           {cities.map((c, i) => (
-            <div key={c.city} className={`reveal reveal-delay-${i + 1}`} style={{
-              background: '#141210',
-              border: `1px solid ${c.accent}30`,
-              borderTop: `3px solid ${c.accent}`,
-              borderRadius: 16,
-              padding: '28px 22px',
-              display: 'flex',
-              flexDirection: 'column',
-            }}>
+            <Link
+              href={c.href}
+              key={c.city}
+              aria-label={`View ${c.city} sofa cleaning services`}
+              className={`reveal reveal-delay-${i + 1} loc-city-card`}
+              style={{
+                background: '#141210',
+                border: `1px solid ${c.accent}30`,
+                borderTop: `3px solid ${c.accent}`,
+                borderRadius: 16,
+                padding: '28px 22px',
+                display: 'flex',
+                flexDirection: 'column',
+                textDecoration: 'none',
+                color: 'inherit',
+                cursor: 'pointer',
+              }}
+            >
               <h3 style={{
                 fontSize: 20, fontWeight: 900, fontFamily: 'var(--font-display)',
                 color: c.accent, letterSpacing: '-0.02em', marginBottom: 12,
@@ -82,24 +91,30 @@ export default function CitiesSection() {
                 ))}
               </ul>
 
-              <Link href={c.href} style={{
+              <span style={{
                 display: 'block', textAlign: 'center',
                 padding: '10px 16px', borderRadius: 8,
                 border: `1px solid ${c.accent}50`,
                 background: `${c.accent}15`,
                 color: c.accent,
                 fontFamily: 'var(--font-mono)', fontSize: 12, fontWeight: 600,
-                textDecoration: 'none',
               }}>
                 View {c.city} Services
-              </Link>
-            </div>
+              </span>
+            </Link>
           ))}
         </div>
 
       </div>
 
       <style jsx>{`
+        .loc-city-card {
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .loc-city-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
         @media (max-width: 900px) {
           .cities-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
