@@ -1,38 +1,39 @@
 'use client';
+import Link from 'next/link';
 export default function ServiceCoverageSection() {
   const cities = [
     {
-      city: 'Dubai', count: '20+', label: 'Areas Covered',
+      city: 'Dubai', href: '/sofa-cleaning-dubai', count: '20+', label: 'Areas Covered',
       img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=65&auto=format',
       color: 'var(--accent)',
       areas: ['JVC', 'Downtown', 'Business Bay', 'Marina', 'JBR', 'Al Barsha', 'Jumeirah', 'Deira', 'Palm Jumeirah', 'Dubai Hills', 'Silicon Oasis', 'Mirdif'],
     },
     {
-      city: 'Abu Dhabi', count: '8+', label: 'Areas Covered',
+      city: 'Abu Dhabi', href: '/sofa-cleaning-abu-dhabi', count: '8+', label: 'Areas Covered',
       img: 'https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=500&q=65&auto=format',
       color: '#8B5CF6',
       areas: ['Al Khalidiyah', 'Al Reem Island', 'Khalifa City', 'Yas Island', 'Saadiyat Island', 'Al Mushrif', 'Al Muroor', 'Corniche'],
     },
     {
-      city: 'Sharjah', count: '10+', label: 'Areas Covered',
+      city: 'Sharjah', href: '/sofa-cleaning-sharjah', count: '10+', label: 'Areas Covered',
       img: 'https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=500&q=65&auto=format',
       color: '#0891B2',
       areas: ['Al Nahda', 'Al Qasimia', 'Al Majaz', 'Al Taawun', 'Muwaileh', 'Al Khan', 'University City', 'Al Mareija'],
     },
     {
-      city: 'Ajman', count: '8+', label: 'Areas Covered',
+      city: 'Ajman', href: '/sofa-cleaning-ajman', count: '8+', label: 'Areas Covered',
       img: 'https://images.unsplash.com/photo-1596005554384-d293674c91d7?w=500&q=65&auto=format',
       color: '#F59E0B',
       areas: ['Al Nuaimia', 'Al Rashidiya', 'Al Jurf', 'Al Hamidiya', 'Emirates City', 'Al Bustan', 'Al Mowaihat', 'Al Rumailah'],
     },
     {
-      city: 'Ras Al Khaimah', count: '5+', label: 'Areas Covered',
+      city: 'Ras Al Khaimah', href: '/contact', count: '5+', label: 'Areas Covered',
       img: 'https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=500&q=65&auto=format',
       color: '#059669',
       areas: ['RAK City', 'Al Hamra Village', 'Mina Al Arab', 'Al Nakheel', 'Al Rams', 'Khuzam'],
     },
     {
-      city: 'Fujairah & UAQ', count: '4+', label: 'Areas Covered',
+      city: 'Fujairah & UAQ', href: '/contact', count: '4+', label: 'Areas Covered',
       img: 'https://images.unsplash.com/photo-1586611292717-f828b167408c?w=500&q=65&auto=format',
       color: '#EC4899',
       areas: ['Fujairah City', 'Al Faseel', 'UAQ City', 'Khor Fakkan', 'Dibba', 'Al Gurfa'],
@@ -62,9 +63,9 @@ export default function ServiceCoverageSection() {
         {/* City cards */}
         <div className="reveal scs-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: 48 }}>
           {cities.map((c) => (
-            <div key={c.city} className="scs-card" style={{
+            <Link key={c.city} href={c.href} aria-label={`Sofa cleaning in ${c.city}`} className="scs-card" style={{
               position: 'relative', borderRadius: 20, overflow: 'hidden',
-              height: 380, cursor: 'pointer',
+              height: 380, cursor: 'pointer', display: 'block', textDecoration: 'none',
               boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
               border: `1px solid ${c.color}40`,
             }}>
@@ -121,7 +122,7 @@ export default function ServiceCoverageSection() {
                   ))}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
