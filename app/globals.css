@@ -103,6 +103,13 @@ a { color: inherit; text-decoration: none; }
 .js-ready .reveal-delay-4 { transition-delay: 0.20s; }
 .js-ready .reveal-delay-5 { transition-delay: 0.25s; }
 
+/* ─── Clickable location cards (homepage) ─── */
+.loc-city-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.loc-city-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
 /* ─── Buttons ─── */
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
