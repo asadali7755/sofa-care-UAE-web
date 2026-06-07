@@ -110,6 +110,26 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
+/* ─── City (location) page hero image ─── */
+.city-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+}
+.city-hero-img {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  aspect-ratio: 4 / 3;
+}
+.city-hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 860px) {
+  .city-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .city-hero-img { aspect-ratio: 16 / 9; }
+}
+
 /* ─── Buttons ─── */
 .btn {
   display: inline-flex; align-items: center; gap: 10px;

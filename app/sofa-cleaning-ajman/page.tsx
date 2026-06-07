@@ -74,6 +74,8 @@ export default function SofaCleaningAjman() {
               <span>›</span>
               <span style={{ color: 'var(--fg-muted)' }}>Sofa Cleaning Ajman</span>
             </div>
+            <div className="city-hero-grid">
+              <div>
             <div className="section-tag" style={{ marginBottom: 16 }}>Ajman Service</div>
             <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 72px)', lineHeight: 1.0, marginBottom: 20, fontFamily: 'var(--font-display)', fontWeight: 900 }}>
               Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Ajman</span>
@@ -94,6 +96,11 @@ export default function SofaCleaningAjman() {
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--fg-dim)', letterSpacing: '0.06em', textTransform: 'uppercase', marginTop: 3 }}>{s.l}</div>
                 </div>
               ))}
+            </div>
+              </div>
+              <div className="city-hero-img">
+                <img src="/cities/ajman.webp" alt="Professional sofa cleaning service in Ajman by Al Haya Sofa Care" loading="eager" />
+              </div>
             </div>
           </div>
         </section>
