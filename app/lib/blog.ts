@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
     h1: 'How Often Should You Clean Your Sofa in the UAE?',
     description: 'Dubai’s dust and humidity mean sofas need cleaning more often than you think. Here’s how often to deep-clean your sofa in the UAE — by household type.',
     excerpt: 'A simple schedule for how often to deep-clean your sofa in the UAE’s dusty, humid climate.',
-    image: '/pet-stain.webp',
+    image: '/home/sofa-odor-treatment-dubai.webp',
     datePublished: '2026-06-03',
     readMins: 4,
     intro: [
@@ -103,7 +103,7 @@ export const blogPosts: BlogPost[] = [
     h1: 'Sofa Shampoo vs Steam Cleaning: Which Is Better?',
     description: 'Confused between sofa shampoo cleaning and steam cleaning? Here’s the difference, when to use each, and why combining both gives the best results in Dubai.',
     excerpt: 'The real difference between sofa shampoo and steam cleaning — and which your sofa actually needs.',
-    image: '/sofa-cleaning-dubai-professional.webp',
+    image: '/home/sofa-shampoo.webp',
     datePublished: '2026-06-03',
     readMins: 4,
     intro: [
@@ -134,7 +134,7 @@ export const blogPosts: BlogPost[] = [
     h1: 'How to Remove Common Sofa Stains (Coffee, Pet & Wine)',
     description: 'Practical steps to treat coffee, pet and red-wine stains on your sofa before they set — plus when to call a professional in Dubai.',
     excerpt: 'Quick first-aid for coffee, pet and wine sofa stains — and when to call the pros.',
-    image: '/coffee.webp',
+    image: '/home/sofa-stain-removal-dubai.webp',
     datePublished: '2026-06-03',
     readMins: 5,
     intro: [
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
     h1: 'Leather Sofa Care in Dubai’s Climate',
     description: 'Dubai’s heat and humidity are tough on leather sofas. Here’s how to clean, condition and protect leather upholstery to prevent cracking and fading.',
     excerpt: 'How to keep a leather sofa soft and crack-free in Dubai’s heat and humidity.',
-    image: '/leather.webp',
+    image: '/home/leather-sofa-cleaning-dubai.webp',
     datePublished: '2026-06-03',
     readMins: 4,
     intro: [
