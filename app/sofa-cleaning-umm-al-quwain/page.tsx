@@ -4,40 +4,112 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { IconArrow, IconWhatsApp } from '../components/Icons';
+import { getCityPage } from '@/sanity/lib/queries';
+import { urlForImage } from '@/sanity/lib/image';
 
-export const metadata: Metadata = {
-  title: 'Sofa Cleaning Umm Al Quwain | Sofa Deep Shampoo & Steam Cleaning',
-  description: 'Al Haya Sofa Care — professional sofa deep shampoo & steam cleaning in Umm Al Quwain (UAQ). At-home doorstep service. Stain removal, leather care, pet hair removal. Same-day service. Call +971547199189.',
-  keywords: [
-    'sofa cleaning Umm Al Quwain',
-    'sofa cleaning UAQ',
-    'sofa deep cleaning Umm Al Quwain',
-    'sofa shampooing UAQ',
-    'sofa steam cleaning Umm Al Quwain',
-    'upholstery cleaning UAQ',
-    'sofa stain removal Umm Al Quwain',
-    'leather sofa cleaning UAQ',
-    'sofa cleaning Al Salamah',
-    'sofa cleaning Al Raas',
-    'sofa cleaning near me Umm Al Quwain',
-    'same day sofa cleaning UAQ',
-    'professional sofa cleaning Umm Al Quwain',
-    'تنظيف كنب أم القيوين',
+const SLUG = 'umm-al-quwain';
+
+// Hardcoded fallbacks — used when the Sanity document is empty/unavailable so
+// the live page never breaks. The client can override any of these in the Studio.
+const defaults = {
+  metaTitle: 'Sofa Cleaning Umm Al Quwain | Sofa Deep Shampoo & Steam Cleaning',
+  metaDescription:
+    'Al Haya Sofa Care — professional sofa deep shampoo & steam cleaning in Umm Al Quwain (UAQ). At-home doorstep service. Stain removal, leather care, pet hair removal. Same-day service. Call +971547199189.',
+  heroTagline: 'Umm Al Quwain Service',
+  heroHeadingLead: 'Sofa Cleaning',
+  heroHeadingAccent: 'Umm Al Quwain',
+  heroSubtext:
+    'Expert sofa deep shampoo & steam cleaning in Umm Al Quwain. Al Haya Sofa Care UAE comes to your villa or family home with full professional equipment — affordable, fast, and completely thorough.',
+  heroImageUrl: '/sofa-cleaning-dubai-professional.webp',
+  heroImageAlt: 'Professional sofa cleaning service in Umm Al Quwain by Al Haya Sofa Care',
+  introHeadingAccent: 'in Umm Al Quwain',
+  introParagraph1:
+    'Al Haya Sofa Care UAE brings the same high-standard professional sofa cleaning trusted across Dubai, Sharjah and Ajman to Umm Al Quwain. Our mobile team arrives equipped with industrial shampoo machines and high-temperature steam cleaners, ready to restore your sofa to like-new condition — from UAQ City and Al Salamah to the quiet family communities of Falaj Al Mualla.',
+  introParagraph2:
+    "Umm Al Quwain's coastal lagoon humidity and desert dust settle deep into sofa fabric over time. Our 2-in-1 deep shampoo and steam cleaning method removes dust mites, bacteria, stubborn stains and unpleasant odors in a single visit. We handle all sofa types including fabric, leather, velvet, microfiber and suede.",
+  whyChooseBullets: [
+    'Mobile team comes to your home anywhere in Umm Al Quwain',
+    'Ideal for large villa and family-home sofas',
+    'All sofa types handled — fabric, leather, velvet, suede',
+    'Stain removal for coffee, food, ink and pet stains',
+    'Odor and humidity treatment — eliminated, not masked',
+    'Affordable rates — transparent pricing, no hidden costs',
   ],
-  alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-umm-al-quwain' },
-  openGraph: {
-    title: 'Sofa Cleaning Umm Al Quwain | Al Haya Sofa Care UAE',
-    description: 'Professional sofa deep shampoo & steam cleaning in Umm Al Quwain. At-home service, same-day available. Starting AED 40/seat. Call +971547199189.',
-    url: 'https://sofashampooingdubai.com/sofa-cleaning-umm-al-quwain',
-    type: 'website',
-  },
+  areas: [
+    'UAQ City', 'Al Salamah', 'Al Raas', 'Al Haditha',
+    'Al Maidan', 'King Faisal Road', 'Falaj Al Mualla', 'Al Aahad',
+    'Al Dar Al Baida', 'Al Humrah', 'Old Town UAQ', 'Al Riqqah',
+  ],
+  startingPriceValue: 'AED 40 / seat',
+  startingPriceNote: 'Sofa shampoo cleaning. Deep cleaning from AED 50/seat.',
+  services: [
+    { title: 'Sofa Deep Cleaning UAQ', desc: 'Industrial extraction removes embedded dust, allergens and bacteria from every sofa type across Umm Al Quwain.' },
+    { title: 'Sofa Shampooing UAQ', desc: 'Professional foam shampoo treatment lifts deep grime and stains. Fast-dry formula — ready in 2–4 hours.' },
+    { title: 'Pet Hair Removal UAQ', desc: 'Specialist vacuum and roller treatment removes embedded pet hair from all cushions and seams.' },
+    { title: 'Sofa Sanitization UAQ', desc: 'Hospital-grade disinfection kills 99.9% of bacteria and germs. Safe for children and pets.' },
+  ],
 };
 
-const uaqAreas = [
-  'UAQ City', 'Al Salamah', 'Al Raas', 'Al Haditha',
-  'Al Maidan', 'King Faisal Road', 'Falaj Al Mualla', 'Al Aahad',
-  'Al Dar Al Baida', 'Al Humrah', 'Old Town UAQ', 'Al Riqqah',
-];
+const SERVICE_COLORS = ['var(--accent)', '#F59E0B', '#D97706', '#059669'];
+
+const nonEmpty = <T,>(a: T[] | undefined | null): T[] | undefined =>
+  Array.isArray(a) && a.length > 0 ? a : undefined;
+
+async function getContent() {
+  const cms = await getCityPage(SLUG);
+  const heroImageUrl =
+    (cms?.heroImage && urlForImage(cms.heroImage)?.width(1100).height(800).fit('crop').url()) ||
+    defaults.heroImageUrl;
+  return {
+    metaTitle: cms?.metaTitle || defaults.metaTitle,
+    metaDescription: cms?.metaDescription || defaults.metaDescription,
+    heroTagline: cms?.heroTagline || defaults.heroTagline,
+    heroHeadingLead: cms?.heroHeadingLead || defaults.heroHeadingLead,
+    heroHeadingAccent: cms?.heroHeadingAccent || defaults.heroHeadingAccent,
+    heroSubtext: cms?.heroSubtext || defaults.heroSubtext,
+    heroImageUrl,
+    heroImageAlt: cms?.heroImageAlt || defaults.heroImageAlt,
+    introHeadingAccent: cms?.introHeadingAccent || defaults.introHeadingAccent,
+    introParagraph1: cms?.introParagraph1 || defaults.introParagraph1,
+    introParagraph2: cms?.introParagraph2 || defaults.introParagraph2,
+    whyChooseBullets: nonEmpty(cms?.whyChooseBullets) ?? defaults.whyChooseBullets,
+    areas: nonEmpty(cms?.areas) ?? defaults.areas,
+    startingPriceValue: cms?.startingPriceValue || defaults.startingPriceValue,
+    startingPriceNote: cms?.startingPriceNote || defaults.startingPriceNote,
+    services: nonEmpty(cms?.services?.filter((s) => s.title)) ?? defaults.services,
+  };
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const cms = await getCityPage(SLUG);
+  return {
+    title: cms?.metaTitle || defaults.metaTitle,
+    description: cms?.metaDescription || defaults.metaDescription,
+    keywords: [
+      'sofa cleaning Umm Al Quwain',
+      'sofa cleaning UAQ',
+      'sofa deep cleaning Umm Al Quwain',
+      'sofa shampooing UAQ',
+      'sofa steam cleaning Umm Al Quwain',
+      'upholstery cleaning UAQ',
+      'sofa stain removal Umm Al Quwain',
+      'leather sofa cleaning UAQ',
+      'sofa cleaning Al Salamah',
+      'sofa cleaning Al Raas',
+      'sofa cleaning near me Umm Al Quwain',
+      'same day sofa cleaning UAQ',
+      'professional sofa cleaning Umm Al Quwain',
+      'تنظيف كنب أم القيوين',
+    ],
+    alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-umm-al-quwain' },
+    openGraph: {
+      title: 'Sofa Cleaning Umm Al Quwain | Al Haya Sofa Care UAE',
+      description: 'Professional sofa deep shampoo & steam cleaning in Umm Al Quwain. At-home service, same-day available. Starting AED 40/seat. Call +971547199189.',
+      url: 'https://sofashampooingdubai.com/sofa-cleaning-umm-al-quwain',
+      type: 'website',
+    },
+  };
+}
 
 const uaqSchema = {
   '@context': 'https://schema.org',
@@ -57,7 +129,8 @@ const uaqSchema = {
   ],
 };
 
-export default function SofaCleaningUmmAlQuwain() {
+export default async function SofaCleaningUmmAlQuwain() {
+  const c = await getContent();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(uaqSchema) }} />
@@ -76,12 +149,12 @@ export default function SofaCleaningUmmAlQuwain() {
             </div>
             <div className="city-hero-grid">
               <div>
-            <div className="section-tag" style={{ marginBottom: 16 }}>Umm Al Quwain Service</div>
+            <div className="section-tag" style={{ marginBottom: 16 }}>{c.heroTagline}</div>
             <h1 style={{ fontSize: 'clamp(34px, 5vw, 68px)', lineHeight: 1.0, marginBottom: 20, fontFamily: 'var(--font-display)', fontWeight: 900 }}>
-              Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Umm Al Quwain</span>
+              {c.heroHeadingLead} <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{c.heroHeadingAccent}</span>
             </h1>
             <p style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 600, lineHeight: 1.7, marginBottom: 32 }}>
-              Expert sofa deep shampoo &amp; steam cleaning in Umm Al Quwain. Al Haya Sofa Care UAE comes to your villa or family home with full professional equipment — affordable, fast, and completely thorough.
+              {c.heroSubtext}
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 32 }}>
               <Link href="/contact" className="btn btn-primary">Book in UAQ <IconArrow size={14} /></Link>
@@ -99,7 +172,7 @@ export default function SofaCleaningUmmAlQuwain() {
             </div>
               </div>
               <div className="city-hero-img">
-                <img src="/sofa-cleaning-dubai-professional.webp" alt="Professional sofa cleaning service in Umm Al Quwain by Al Haya Sofa Care" loading="eager" />
+                <img src={c.heroImageUrl} alt={c.heroImageAlt} loading="eager" />
               </div>
             </div>
           </div>
@@ -111,23 +184,16 @@ export default function SofaCleaningUmmAlQuwain() {
               <div>
                 <div className="section-tag">Our Service in UAQ</div>
                 <h2 style={{ fontSize: 'clamp(24px, 2.8vw, 40px)', marginBottom: 20, lineHeight: 1.15 }}>
-                  Professional Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>in Umm Al Quwain</span>
+                  Professional Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>{c.introHeadingAccent}</span>
                 </h2>
                 <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 20 }}>
-                  Al Haya Sofa Care UAE brings the same high-standard professional sofa cleaning trusted across Dubai, Sharjah and Ajman to Umm Al Quwain. Our mobile team arrives equipped with industrial shampoo machines and high-temperature steam cleaners, ready to restore your sofa to like-new condition — from UAQ City and Al Salamah to the quiet family communities of Falaj Al Mualla.
+                  {c.introParagraph1}
                 </p>
                 <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 28 }}>
-                  Umm Al Quwain&apos;s coastal lagoon humidity and desert dust settle deep into sofa fabric over time. Our 2-in-1 deep shampoo and steam cleaning method removes dust mites, bacteria, stubborn stains and unpleasant odors in a single visit. We handle all sofa types including fabric, leather, velvet, microfiber and suede.
+                  {c.introParagraph2}
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  {[
-                    'Mobile team comes to your home anywhere in Umm Al Quwain',
-                    'Ideal for large villa and family-home sofas',
-                    'All sofa types handled — fabric, leather, velvet, suede',
-                    'Stain removal for coffee, food, ink and pet stains',
-                    'Odor and humidity treatment — eliminated, not masked',
-                    'Affordable rates — transparent pricing, no hidden costs',
-                  ].map((item) => (
+                  {c.whyChooseBullets.map((item) => (
                     <div key={item} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', color: 'var(--fg-muted)', fontSize: 15 }}>
                       <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0 }}>✓</span> {item}
                     </div>
@@ -140,7 +206,7 @@ export default function SofaCleaningUmmAlQuwain() {
                   All Umm Al Quwain <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Areas</span>
                 </h2>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
-                  {uaqAreas.map((area) => (
+                  {c.areas.map((area) => (
                     <span key={area} style={{
                       padding: '7px 14px', borderRadius: 999,
                       background: 'var(--bg-elev)', border: '1px solid var(--line-strong)',
@@ -150,8 +216,8 @@ export default function SofaCleaningUmmAlQuwain() {
                 </div>
                 <div style={{ padding: '20px 24px', background: 'var(--bg-elev)', borderRadius: 14, border: '1px solid var(--line-strong)' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--accent)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Starting Price</div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, fontWeight: 900, color: 'var(--fg)', marginBottom: 4 }}>AED 40 / seat</div>
-                  <div style={{ color: 'var(--fg-muted)', fontSize: 14 }}>Sofa shampoo cleaning. Deep cleaning from AED 50/seat.</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, fontWeight: 900, color: 'var(--fg)', marginBottom: 4 }}>{c.startingPriceValue}</div>
+                  <div style={{ color: 'var(--fg-muted)', fontSize: 14 }}>{c.startingPriceNote}</div>
                 </div>
               </div>
             </div>
@@ -164,21 +230,19 @@ export default function SofaCleaningUmmAlQuwain() {
             <div style={{ textAlign: 'center', marginBottom: 40 }}>
               <div className="section-tag">Sofa Cleaning Services UAQ</div>
               <h2 style={{ fontSize: 'clamp(24px, 3vw, 42px)', marginBottom: 12 }}>
-                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Umm Al Quwain</span>
+                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{c.heroHeadingAccent}</span>
               </h2>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
-              {[
-                { title: 'Sofa Deep Cleaning UAQ', desc: 'Industrial extraction removes embedded dust, allergens and bacteria from every sofa type across Umm Al Quwain.', color: 'var(--accent)' },
-                { title: 'Sofa Shampooing UAQ', desc: 'Professional foam shampoo treatment lifts deep grime and stains. Fast-dry formula — ready in 2–4 hours.', color: '#F59E0B' },
-                { title: 'Pet Hair Removal UAQ', desc: 'Specialist vacuum and roller treatment removes embedded pet hair from all cushions and seams.', color: '#D97706' },
-                { title: 'Sofa Sanitization UAQ', desc: 'Hospital-grade disinfection kills 99.9% of bacteria and germs. Safe for children and pets.', color: '#059669' },
-              ].map((s) => (
-                <div key={s.title} style={{ background: '#141210', border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 14, padding: '22px 20px' }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 800, color: s.color, fontFamily: 'var(--font-display)', marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
-                </div>
-              ))}
+              {c.services.map((s, i) => {
+                const color = SERVICE_COLORS[i % SERVICE_COLORS.length];
+                return (
+                  <div key={s.title ?? i} style={{ background: '#141210', border: `1px solid ${color}30`, borderTop: `3px solid ${color}`, borderRadius: 14, padding: '22px 20px' }}>
+                    <h3 style={{ fontSize: 16, fontWeight: 800, color, fontFamily: 'var(--font-display)', marginBottom: 10 }}>{s.title}</h3>
+                    <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -187,7 +251,7 @@ export default function SofaCleaningUmmAlQuwain() {
           <div className="container-x">
             <div style={{ textAlign: 'center', padding: '48px 24px', background: 'var(--bg-elev)', borderRadius: 20, border: '1px solid var(--line-strong)' }}>
               <h2 style={{ fontSize: 'clamp(22px, 2.8vw, 38px)', marginBottom: 16 }}>
-                Book Sofa Cleaning in <span style={{ color: 'var(--accent)' }}>Umm Al Quwain</span>
+                Book Sofa Cleaning in <span style={{ color: 'var(--accent)' }}>{c.heroHeadingAccent}</span>
               </h2>
               <p style={{ color: 'var(--fg-muted)', fontSize: 16, marginBottom: 28 }}>
                 Same-day service available. Call or WhatsApp now.
