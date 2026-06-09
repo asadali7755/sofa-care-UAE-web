@@ -29,6 +29,8 @@ const locationLinks = [
   { href: '/sofa-cleaning-sharjah', label: 'Sharjah', img: '/cities/sharjah.webp' },
   { href: '/sofa-cleaning-ajman', label: 'Ajman', img: '/cities/ajman.webp' },
   { href: '/sofa-cleaning-abu-dhabi', label: 'Abu Dhabi', img: '/cities/abu-dhabi.webp' },
+  { href: '/sofa-cleaning-ras-al-khaimah', label: 'Ras Al Khaimah', img: 'https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=300&q=60&auto=format' },
+  { href: '/sofa-cleaning-umm-al-quwain', label: 'Umm Al Quwain', img: 'https://images.unsplash.com/photo-1586611292717-f828b167408c?w=300&q=60&auto=format' },
 ];
 
 export default function Navbar() {

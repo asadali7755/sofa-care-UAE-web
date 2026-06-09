@@ -53,6 +53,8 @@ export default function Footer() {
                 { href: '/sofa-cleaning-abu-dhabi', label: 'Sofa Cleaning Abu Dhabi' },
                 { href: '/sofa-cleaning-sharjah', label: 'Sofa Cleaning Sharjah' },
                 { href: '/sofa-cleaning-ajman', label: 'Sofa Cleaning Ajman' },
+                { href: '/sofa-cleaning-ras-al-khaimah', label: 'Sofa Cleaning Ras Al Khaimah' },
+                { href: '/sofa-cleaning-umm-al-quwain', label: 'Sofa Cleaning Umm Al Quwain' },
               ].map((l) => (
                 <Link key={l.href} href={l.href} style={{ color: 'var(--fg-muted)', fontSize: 13 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--fg)')}
@@ -114,7 +116,7 @@ export default function Footer() {
             Al Haya Sofa Care UAE — sofashampooingdubai.com
           </p>
           <p style={{ color: 'var(--fg-dim)', fontSize: 12, fontFamily: 'var(--font-mono)' }}>
-            Dubai · Sharjah · Ajman · Abu Dhabi · Al Ain · RAK
+            Dubai · Abu Dhabi · Sharjah · Ajman · Ras Al Khaimah · Umm Al Quwain
           </p>
         </div>
       </div>

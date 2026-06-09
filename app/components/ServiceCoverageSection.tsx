@@ -27,16 +27,22 @@ export default function ServiceCoverageSection() {
       areas: ['Al Nuaimia', 'Al Rashidiya', 'Al Jurf', 'Al Hamidiya', 'Emirates City', 'Al Bustan', 'Al Mowaihat', 'Al Rumailah'],
     },
     {
-      city: 'Ras Al Khaimah', href: '/contact', count: '5+', label: 'Areas Covered',
+      city: 'Ras Al Khaimah', href: '/sofa-cleaning-ras-al-khaimah', count: '12+', label: 'Areas Covered',
       img: 'https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=500&q=65&auto=format',
       color: '#059669',
-      areas: ['RAK City', 'Al Hamra Village', 'Mina Al Arab', 'Al Nakheel', 'Al Rams', 'Khuzam'],
+      areas: ['RAK City', 'Al Hamra Village', 'Mina Al Arab', 'Al Marjan Island', 'Al Nakheel', 'Al Rams'],
     },
     {
-      city: 'Fujairah & UAQ', href: '/contact', count: '4+', label: 'Areas Covered',
+      city: 'Umm Al Quwain', href: '/sofa-cleaning-umm-al-quwain', count: '12+', label: 'Areas Covered',
       img: 'https://images.unsplash.com/photo-1586611292717-f828b167408c?w=500&q=65&auto=format',
       color: '#EC4899',
-      areas: ['Fujairah City', 'Al Faseel', 'UAQ City', 'Khor Fakkan', 'Dibba', 'Al Gurfa'],
+      areas: ['UAQ City', 'Al Salamah', 'Al Raas', 'Al Haditha', 'Falaj Al Mualla', 'Al Maidan'],
+    },
+    {
+      city: 'Fujairah', href: '/contact', count: '4+', label: 'Areas Covered',
+      img: 'https://images.unsplash.com/photo-1586611292717-f828b167408c?w=500&q=65&auto=format',
+      color: '#6366F1',
+      areas: ['Fujairah City', 'Al Faseel', 'Khor Fakkan', 'Dibba', 'Al Gurfa', 'Mirbah'],
     },
   ];
 
