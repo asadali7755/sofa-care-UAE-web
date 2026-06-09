@@ -49,7 +49,9 @@ export async function getCityPage(slug: string): Promise<CityPageData | null> {
     return await client.fetch<CityPageData | null>(
       cityPageQuery,
       { slug },
-      { next: { tags: [CITY_PAGES_TAG, `cityPage:${slug}`] } }
+      // tags → instant refresh via the publish webhook; revalidate → 60s
+      // fallback so edits still go live even if the webhook is ever missed.
+      { next: { tags: [CITY_PAGES_TAG, `cityPage:${slug}`], revalidate: 60 } }
     );
   } catch {
     return null;
