@@ -8,6 +8,105 @@ import ServiceCoverageSection from '../components/ServiceCoverageSection';
 
 const categories = ['All', 'Sofa Cleaning', 'Stain Removal', 'Leather', 'Shampooing'];
 
+const videoResults = [
+  { src: '/videos/sofa-deep-cleaning-result-dubai-1.mp4', title: 'Sofa Deep Cleaning Result Dubai', alt: 'Before and after sofa deep cleaning result in Dubai — professional fabric sofa restored by Al Haya Sofa Care UAE', label: 'Deep Cleaning Result' },
+  { src: '/videos/sofa-shampooing-result-dubai-2.mp4', title: 'Sofa Shampooing Result Dubai', alt: 'Before and after sofa shampooing result in Dubai — stained sofa cleaned with eco-friendly shampoo by Al Haya', label: 'Shampooing Result' },
+  { src: '/videos/upholstery-cleaning-before-after-dubai-3.mp4', title: 'Upholstery Cleaning Before After Dubai', alt: 'Upholstery cleaning before and after in Dubai — complete fabric transformation by Al Haya Sofa Care', label: 'Upholstery Cleaning' },
+  { src: '/videos/sofa-cleaning-quick-result-dubai-4.mp4', title: 'Sofa Cleaning Quick Result Dubai', alt: 'Quick sofa cleaning result in Dubai — fast same-day sofa restoration by Al Haya professionals', label: 'Quick Result' },
+  { src: '/videos/fabric-sofa-deep-clean-dubai-5.mp4', title: 'Fabric Sofa Deep Clean Dubai', alt: 'Fabric sofa deep clean before and after in Dubai — heavy stain removal by Al Haya Sofa Care UAE', label: 'Fabric Deep Clean' },
+  { src: '/videos/sofa-steam-cleaning-result-dubai-6.mp4', title: 'Sofa Steam Cleaning Result Dubai', alt: 'Sofa steam cleaning result in Dubai — high-temperature sanitization and deep clean by Al Haya', label: 'Steam Cleaning' },
+  { src: '/videos/couch-cleaning-before-after-dubai-7.mp4', title: 'Couch Cleaning Before After Dubai', alt: 'Couch cleaning before and after in Dubai — dirty couch restored to like-new condition by Al Haya', label: 'Couch Cleaning' },
+  { src: '/videos/sofa-sanitization-result-dubai-8.mp4', title: 'Sofa Sanitization Result Dubai', alt: 'Sofa sanitization result in Dubai — bacteria and allergen removal with eco-friendly products by Al Haya', label: 'Sanitization Result' },
+  { src: '/videos/sofa-stain-removal-before-after-dubai.mp4', title: 'Sofa Stain Removal Before After Dubai', alt: 'Sofa stain removal before and after in Dubai — tough stains eliminated by Al Haya professional cleaning', label: 'Stain Removal' },
+  { src: '/videos/single-seat-sofa-cleaning-dubai.mp4', title: 'Single Seat Sofa Cleaning Dubai', alt: 'Single seat sofa cleaning in Dubai — individual cushion deep cleaning result by Al Haya Sofa Care UAE', label: 'Single Seat Clean' },
+];
+
+function VideoCard({ video, index }: { video: typeof videoResults[0]; index: number }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    const vid = videoRef.current;
+    if (!card || !vid) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          vid.play().catch(() => {});
+          setIsPlaying(true);
+        } else {
+          vid.pause();
+          setIsPlaying(false);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    io.observe(card);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      className="card reveal"
+      style={{ padding: 0, overflow: 'hidden', position: 'relative' }}
+    >
+      <div style={{ position: 'relative', aspectRatio: '9/16', maxHeight: 480, overflow: 'hidden', background: '#0a0a0a' }}>
+        <video
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          preload="none"
+          title={video.title}
+          aria-label={video.alt}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        >
+          <source src={video.src} type="video/mp4" />
+        </video>
+
+        {/* Play state indicator */}
+        <div style={{
+          position: 'absolute', top: 12, right: 12,
+          display: 'flex', alignItems: 'center', gap: 5,
+          padding: '4px 10px', borderRadius: 999,
+          background: 'rgba(11,11,11,0.65)', backdropFilter: 'blur(8px)',
+        }}>
+          <span style={{
+            width: 6, height: 6, borderRadius: '50%',
+            background: isPlaying ? '#6DD5C2' : 'rgba(255,255,255,0.4)',
+            display: 'inline-block',
+            animation: isPlaying ? 'gallery-pulse 1.2s ease-in-out infinite' : 'none',
+          }} />
+          <span style={{
+            fontFamily: 'var(--font-mono)', fontSize: 9,
+            color: 'rgba(255,255,255,0.7)', letterSpacing: '0.05em',
+          }}>
+            {isPlaying ? 'PLAYING' : 'PAUSED'}
+          </span>
+        </div>
+
+        {/* Video number badge */}
+        <div style={{
+          position: 'absolute', top: 12, left: 12,
+          padding: '4px 12px', borderRadius: 999,
+          background: 'var(--accent)', color: '#fff',
+          fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700,
+          letterSpacing: '0.06em',
+        }}>
+          {String(index + 1).padStart(2, '0')}
+        </div>
+      </div>
+
+      <div style={{ padding: '14px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--fg)' }}>{video.label}</span>
+        <span className="badge" style={{ fontSize: 10 }}>Before &amp; After</span>
+      </div>
+    </div>
+  );
+}
+
 const galleryItems = [
   { id: 1, cat: 'Sofa Cleaning', label: '3-Seater Sofa — Before & After', altBefore: 'Dirty 3-seater sofa before professional deep shampoo cleaning in Dubai UAE', altAfter: 'Clean 3-seater sofa after professional deep shampoo cleaning in Dubai UAE by Al Haya Sofa Care', before: '/3seater/before.webp', after: '/3seater/after.webp' },
   { id: 2, cat: 'Stain Removal', label: 'Coffee Stain Removal — JVC', altBefore: 'Sofa with coffee stain before removal — JVC Dubai', altAfter: 'Sofa after coffee stain removal in JVC Dubai — Al Haya Sofa Care UAE', before: '/coffee/before.webp', after: '/coffee/after.webp' },
@@ -161,7 +260,28 @@ export default function GalleryPage() {
           </div>
         </section>
 
-        {/* Gallery */}
+        {/* Magic Results — Video Section */}
+        <section className="section" style={{ paddingBottom: 0 }}>
+          <div className="container-x">
+            <div style={{ textAlign: 'center', marginBottom: 48 }}>
+              <div className="section-tag reveal">Real Results</div>
+              <h2 className="reveal" style={{ fontSize: 'clamp(28px, 4.5vw, 52px)', lineHeight: 1.05, marginBottom: 16 }}>
+                Magic <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Results</span>
+              </h2>
+              <p className="reveal reveal-delay-1" style={{ color: 'var(--fg-muted)', fontSize: 16, maxWidth: 540, margin: '0 auto', lineHeight: 1.65 }}>
+                Watch real before &amp; after sofa cleaning transformations from our projects across Dubai, Sharjah &amp; Ajman. Every video is from a real client job.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 20 }}>
+              {videoResults.map((video, i) => (
+                <VideoCard key={video.src} video={video} index={i} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Before & After Images Gallery */}
         <section className="section">
           <div className="container-x">
             {/* Filter tabs */}
