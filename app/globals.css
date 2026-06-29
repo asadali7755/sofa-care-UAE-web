@@ -775,6 +775,20 @@ section, footer, nav { max-width: 100%; }
   50%       { opacity: 0.4; transform: scale(0.7); }
 }
 
+/* Video results — stack on mobile */
+@media (max-width: 768px) {
+  .video-row {
+    flex-direction: column !important;
+    gap: 24px !important;
+    text-align: center;
+  }
+  .video-row > div:first-child {
+    width: 100% !important;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+
 /* Navbar Locations dropdown — city image cards */
 .loc-card { transition: border-color 0.25s ease, transform 0.25s ease; }
 .loc-card img { transition: transform 0.5s cubic-bezier(0.2,0.7,0.2,1); }

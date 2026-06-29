@@ -9,27 +9,28 @@ import ServiceCoverageSection from '../components/ServiceCoverageSection';
 const categories = ['All', 'Sofa Cleaning', 'Stain Removal', 'Leather', 'Shampooing'];
 
 const videoResults = [
-  { src: '/videos/sofa-deep-cleaning-result-dubai-1.mp4', title: 'Sofa Deep Cleaning Result Dubai', alt: 'Before and after sofa deep cleaning result in Dubai — professional fabric sofa restored by Al Haya Sofa Care UAE', label: 'Deep Cleaning Result' },
-  { src: '/videos/sofa-shampooing-result-dubai-2.mp4', title: 'Sofa Shampooing Result Dubai', alt: 'Before and after sofa shampooing result in Dubai — stained sofa cleaned with eco-friendly shampoo by Al Haya', label: 'Shampooing Result' },
-  { src: '/videos/upholstery-cleaning-before-after-dubai-3.mp4', title: 'Upholstery Cleaning Before After Dubai', alt: 'Upholstery cleaning before and after in Dubai — complete fabric transformation by Al Haya Sofa Care', label: 'Upholstery Cleaning' },
-  { src: '/videos/sofa-cleaning-quick-result-dubai-4.mp4', title: 'Sofa Cleaning Quick Result Dubai', alt: 'Quick sofa cleaning result in Dubai — fast same-day sofa restoration by Al Haya professionals', label: 'Quick Result' },
-  { src: '/videos/fabric-sofa-deep-clean-dubai-5.mp4', title: 'Fabric Sofa Deep Clean Dubai', alt: 'Fabric sofa deep clean before and after in Dubai — heavy stain removal by Al Haya Sofa Care UAE', label: 'Fabric Deep Clean' },
-  { src: '/videos/sofa-steam-cleaning-result-dubai-6.mp4', title: 'Sofa Steam Cleaning Result Dubai', alt: 'Sofa steam cleaning result in Dubai — high-temperature sanitization and deep clean by Al Haya', label: 'Steam Cleaning' },
-  { src: '/videos/couch-cleaning-before-after-dubai-7.mp4', title: 'Couch Cleaning Before After Dubai', alt: 'Couch cleaning before and after in Dubai — dirty couch restored to like-new condition by Al Haya', label: 'Couch Cleaning' },
-  { src: '/videos/sofa-sanitization-result-dubai-8.mp4', title: 'Sofa Sanitization Result Dubai', alt: 'Sofa sanitization result in Dubai — bacteria and allergen removal with eco-friendly products by Al Haya', label: 'Sanitization Result' },
-  { src: '/videos/sofa-stain-removal-before-after-dubai.mp4', title: 'Sofa Stain Removal Before After Dubai', alt: 'Sofa stain removal before and after in Dubai — tough stains eliminated by Al Haya professional cleaning', label: 'Stain Removal' },
-  { src: '/videos/single-seat-sofa-cleaning-dubai.mp4', title: 'Single Seat Sofa Cleaning Dubai', alt: 'Single seat sofa cleaning in Dubai — individual cushion deep cleaning result by Al Haya Sofa Care UAE', label: 'Single Seat Clean' },
+  { src: '/videos/sofa-deep-cleaning-result-dubai-1.mp4', title: 'Sofa Deep Cleaning Result Dubai', alt: 'Before and after sofa deep cleaning result in Dubai — professional fabric sofa restored by Al Haya Sofa Care UAE', label: 'Deep Cleaning Result', heading: 'Sofa Deep Cleaning', desc: 'Watch how our professional team transforms a heavily soiled fabric sofa back to its original condition. Using industrial-grade extraction equipment and eco-friendly shampoo, we remove deep-seated dust, allergens, and stains in a single session.', highlights: ['Deep extraction cleaning', 'Eco-friendly products', 'Same-day service'] },
+  { src: '/videos/sofa-shampooing-result-dubai-2.mp4', title: 'Sofa Shampooing Result Dubai', alt: 'Before and after sofa shampooing result in Dubai — stained sofa cleaned with eco-friendly shampoo by Al Haya', label: 'Shampooing Result', heading: 'Sofa Shampooing', desc: 'Professional foam shampoo treatment that breaks down oils, grease, and embedded dirt from fabric fibers. Our quick-dry technology means your sofa is ready to use within hours, not days.', highlights: ['pH-balanced foam shampoo', 'Quick-dry technology', '4-8 hour dry time'] },
+  { src: '/videos/upholstery-cleaning-before-after-dubai-3.mp4', title: 'Upholstery Cleaning Before After Dubai', alt: 'Upholstery cleaning before and after in Dubai — complete fabric transformation by Al Haya Sofa Care', label: 'Upholstery Cleaning', heading: 'Upholstery Transformation', desc: 'Complete upholstery fabric restoration — from dull, stained fabric to vibrant, fresh-smelling upholstery. Our multi-step process includes pre-treatment, deep cleaning, and fabric conditioning.', highlights: ['Multi-step process', 'Fabric conditioning', 'Color restoration'] },
+  { src: '/videos/sofa-cleaning-quick-result-dubai-4.mp4', title: 'Sofa Cleaning Quick Result Dubai', alt: 'Quick sofa cleaning result in Dubai — fast same-day sofa restoration by Al Haya professionals', label: 'Quick Result', heading: 'Quick Turnaround Clean', desc: 'Need your sofa cleaned fast? This video shows our express cleaning service — professional results in under 45 minutes. Perfect for last-minute guests or urgent cleaning needs across Dubai.', highlights: ['Under 45 minutes', 'Express service available', 'No compromise on quality'] },
+  { src: '/videos/fabric-sofa-deep-clean-dubai-5.mp4', title: 'Fabric Sofa Deep Clean Dubai', alt: 'Fabric sofa deep clean before and after in Dubai — heavy stain removal by Al Haya Sofa Care UAE', label: 'Fabric Deep Clean', heading: 'Fabric Sofa Deep Clean', desc: 'Heavy stain removal from delicate fabric upholstery. Our technicians assess the fabric type first, then apply the right cleaning method — whether hot water extraction, dry cleaning, or steam treatment.', highlights: ['Fabric-specific treatment', 'Heavy stain removal', 'Safe for all fabrics'] },
+  { src: '/videos/sofa-steam-cleaning-result-dubai-6.mp4', title: 'Sofa Steam Cleaning Result Dubai', alt: 'Sofa steam cleaning result in Dubai — high-temperature sanitization and deep clean by Al Haya', label: 'Steam Cleaning', heading: 'Steam Cleaning & Sanitization', desc: 'High-temperature steam cleaning that kills 99.9% of bacteria, dust mites, and germs. Ideal for homes with babies, pets, or allergy sufferers. Chemical-free sanitization using only pure steam.', highlights: ['99.9% bacteria elimination', 'Chemical-free process', 'Safe for babies & pets'] },
+  { src: '/videos/couch-cleaning-before-after-dubai-7.mp4', title: 'Couch Cleaning Before After Dubai', alt: 'Couch cleaning before and after in Dubai — dirty couch restored to like-new condition by Al Haya', label: 'Couch Cleaning', heading: 'Full Couch Restoration', desc: 'Complete couch cleaning transformation — from visibly dirty and worn to like-new condition. We clean every surface including cushions, armrests, and hard-to-reach crevices where dust accumulates.', highlights: ['Full surface cleaning', 'Cushion deep clean', 'Crevice extraction'] },
+  { src: '/videos/sofa-sanitization-result-dubai-8.mp4', title: 'Sofa Sanitization Result Dubai', alt: 'Sofa sanitization result in Dubai — bacteria and allergen removal with eco-friendly products by Al Haya', label: 'Sanitization Result', heading: 'Anti-Bacterial Sanitization', desc: 'Hospital-grade disinfection service for your sofa. In Dubai\'s humid climate, sofas can harbor bacteria and allergens invisible to the eye. Our sanitization treatment eliminates them completely.', highlights: ['Hospital-grade disinfection', 'Allergen removal', 'Odor elimination'] },
+  { src: '/videos/sofa-stain-removal-before-after-dubai.mp4', title: 'Sofa Stain Removal Before After Dubai', alt: 'Sofa stain removal before and after in Dubai — tough stains eliminated by Al Haya professional cleaning', label: 'Stain Removal', heading: 'Tough Stain Removal', desc: 'Coffee, food, ink, pet stains — watch how our specialized stain removal process eliminates even the most stubborn marks. Pre-treatment with targeted agents followed by deep extraction leaves zero trace.', highlights: ['Coffee & food stains', 'Ink & pet stains', 'Zero-trace results'] },
+  { src: '/videos/single-seat-sofa-cleaning-dubai.mp4', title: 'Single Seat Sofa Cleaning Dubai', alt: 'Single seat sofa cleaning in Dubai — individual cushion deep cleaning result by Al Haya Sofa Care UAE', label: 'Single Seat Clean', heading: 'Single Seat Cleaning', desc: 'Even a single armchair or accent chair deserves professional care. This video shows our detailed single-seat cleaning process — perfect for spot treatments or maintaining individual furniture pieces.', highlights: ['Individual piece care', 'Accent chair cleaning', 'Affordable per-seat pricing'] },
 ];
 
-function VideoCard({ video, index }: { video: typeof videoResults[0]; index: number }) {
+function VideoSection({ video, index }: { video: typeof videoResults[0]; index: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const isReversed = index % 2 === 1;
 
   useEffect(() => {
-    const card = cardRef.current;
+    const section = sectionRef.current;
     const vid = videoRef.current;
-    if (!card || !vid) return;
+    if (!section || !vid) return;
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -40,68 +41,94 @@ function VideoCard({ video, index }: { video: typeof videoResults[0]; index: num
           setIsPlaying(false);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     );
-    io.observe(card);
+    io.observe(section);
     return () => io.disconnect();
   }, []);
 
   return (
     <div
-      ref={cardRef}
-      className="card reveal"
-      style={{ padding: 0, overflow: 'hidden', position: 'relative' }}
+      ref={sectionRef}
+      className="reveal video-row"
+      style={{
+        display: 'flex',
+        flexDirection: isReversed ? 'row-reverse' : 'row',
+        gap: 'clamp(24px, 4vw, 48px)',
+        alignItems: 'center',
+        padding: 'clamp(32px, 5vw, 64px) 0',
+        borderBottom: index < videoResults.length - 1 ? '1px solid var(--line)' : 'none',
+      }}
     >
-      <div style={{ position: 'relative', aspectRatio: '9/16', maxHeight: 480, overflow: 'hidden', background: '#0a0a0a' }}>
-        <video
-          ref={videoRef}
-          muted
-          loop
-          playsInline
-          preload="none"
-          title={video.title}
-          aria-label={video.alt}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-        >
-          <source src={video.src} type="video/mp4" />
-        </video>
+      {/* Video side */}
+      <div style={{ flex: '0 0 auto', width: 'clamp(260px, 35vw, 380px)', position: 'relative' }}>
+        <div className="card" style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
+          <div style={{ position: 'relative', aspectRatio: '9/16', maxHeight: 560, overflow: 'hidden', background: '#0a0a0a', borderRadius: 'inherit' }}>
+            <video
+              ref={videoRef}
+              muted
+              loop
+              playsInline
+              preload="none"
+              title={video.title}
+              aria-label={video.alt}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            >
+              <source src={video.src} type="video/mp4" />
+            </video>
 
-        {/* Play state indicator */}
-        <div style={{
-          position: 'absolute', top: 12, right: 12,
-          display: 'flex', alignItems: 'center', gap: 5,
-          padding: '4px 10px', borderRadius: 999,
-          background: 'rgba(11,11,11,0.65)', backdropFilter: 'blur(8px)',
-        }}>
-          <span style={{
-            width: 6, height: 6, borderRadius: '50%',
-            background: isPlaying ? '#6DD5C2' : 'rgba(255,255,255,0.4)',
-            display: 'inline-block',
-            animation: isPlaying ? 'gallery-pulse 1.2s ease-in-out infinite' : 'none',
-          }} />
-          <span style={{
-            fontFamily: 'var(--font-mono)', fontSize: 9,
-            color: 'rgba(255,255,255,0.7)', letterSpacing: '0.05em',
-          }}>
-            {isPlaying ? 'PLAYING' : 'PAUSED'}
-          </span>
-        </div>
+            <div style={{
+              position: 'absolute', top: 12, left: 12,
+              padding: '4px 12px', borderRadius: 999,
+              background: 'var(--accent)', color: '#fff',
+              fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700,
+              letterSpacing: '0.06em',
+            }}>
+              {String(index + 1).padStart(2, '0')} / {videoResults.length}
+            </div>
 
-        {/* Video number badge */}
-        <div style={{
-          position: 'absolute', top: 12, left: 12,
-          padding: '4px 12px', borderRadius: 999,
-          background: 'var(--accent)', color: '#fff',
-          fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700,
-          letterSpacing: '0.06em',
-        }}>
-          {String(index + 1).padStart(2, '0')}
+            <div style={{
+              position: 'absolute', top: 12, right: 12,
+              display: 'flex', alignItems: 'center', gap: 5,
+              padding: '4px 10px', borderRadius: 999,
+              background: 'rgba(11,11,11,0.65)', backdropFilter: 'blur(8px)',
+            }}>
+              <span style={{
+                width: 6, height: 6, borderRadius: '50%',
+                background: isPlaying ? '#6DD5C2' : 'rgba(255,255,255,0.4)',
+                display: 'inline-block',
+                animation: isPlaying ? 'gallery-pulse 1.2s ease-in-out infinite' : 'none',
+              }} />
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'rgba(255,255,255,0.7)', letterSpacing: '0.05em' }}>
+                {isPlaying ? 'PLAYING' : 'PAUSED'}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div style={{ padding: '14px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--fg)' }}>{video.label}</span>
-        <span className="badge" style={{ fontSize: 10 }}>Before &amp; After</span>
+      {/* Content side */}
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <span className="badge" style={{ fontSize: 10, marginBottom: 12, display: 'inline-block' }}>Before &amp; After</span>
+        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, lineHeight: 1.1, marginBottom: 16, color: 'var(--fg)' }}>
+          {video.heading}
+        </h3>
+        <p style={{ color: 'var(--fg-muted)', fontSize: 'clamp(14px, 1.2vw, 16px)', lineHeight: 1.7, marginBottom: 24, maxWidth: 480 }}>
+          {video.desc}
+        </p>
+        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px 0', display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {video.highlights.map((h) => (
+            <li key={h} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 14, color: 'var(--fg)' }}>
+              <span style={{ width: 20, height: 20, borderRadius: '50%', background: 'color-mix(in oklab, var(--accent) 15%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </span>
+              {h}
+            </li>
+          ))}
+        </ul>
+        <a href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20sofa%20cleaning%20in%20Dubai." target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ fontSize: 14 }}>
+          Get This Result →
+        </a>
       </div>
     </div>
   );
@@ -263,7 +290,7 @@ export default function GalleryPage() {
         {/* Magic Results — Video Section */}
         <section className="section" style={{ paddingBottom: 0 }}>
           <div className="container-x">
-            <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <div style={{ textAlign: 'center', marginBottom: 24 }}>
               <div className="section-tag reveal">Real Results</div>
               <h2 className="reveal" style={{ fontSize: 'clamp(28px, 4.5vw, 52px)', lineHeight: 1.05, marginBottom: 16 }}>
                 Magic <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Results</span>
@@ -273,11 +300,9 @@ export default function GalleryPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 20 }}>
-              {videoResults.map((video, i) => (
-                <VideoCard key={video.src} video={video} index={i} />
-              ))}
-            </div>
+            {videoResults.map((video, i) => (
+              <VideoSection key={video.src} video={video} index={i} />
+            ))}
           </div>
         </section>
 
