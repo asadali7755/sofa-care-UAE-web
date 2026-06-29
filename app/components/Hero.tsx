@@ -73,8 +73,8 @@ export default function Hero() {
         <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
       </div>
 
-      <div className="container-x" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24 }}>
-        <div style={{ maxWidth: 640, textAlign: 'left', marginRight: 'auto' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24, paddingLeft: 'clamp(24px, 5vw, 80px)', paddingRight: 24 }}>
+        <div style={{ maxWidth: 600, textAlign: 'left' }}>
           <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '6px 12px', borderRadius: 999, background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.15)', fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.75)', marginBottom: 20 }}>
             <span className="pulse-dot"/> Trusted by 500+ clients &nbsp;·&nbsp; Dubai, UAE
           </div>
