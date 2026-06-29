@@ -79,7 +79,7 @@ export default function SofaCleaningSharjah() {
               <div>
             <div className="section-tag" style={{ marginBottom: 16 }}>Sharjah Service</div>
             <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 72px)', lineHeight: 1.0, marginBottom: 20, fontFamily: 'var(--font-display)', fontWeight: 900 }}>
-              Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sharjah</span>
+              Sofa Cleaning <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sharjah</span>
             </h1>
             <p style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 600, lineHeight: 1.7, marginBottom: 32 }}>
               Professional sofa deep shampoo &amp; steam cleaning across all Sharjah areas. Al Haya Sofa Care UAE brings certified technicians and industrial equipment directly to your home — no fuss, no transport.
@@ -113,7 +113,7 @@ export default function SofaCleaningSharjah() {
               <div>
                 <div className="section-tag">Why Choose Al Haya in Sharjah</div>
                 <h2 style={{ fontSize: 'clamp(24px, 2.8vw, 40px)', marginBottom: 20, lineHeight: 1.15 }}>
-                  Trusted Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Across Sharjah</span>
+                  Trusted Sofa Cleaning <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Across Sharjah</span>
                 </h2>
                 <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 20 }}>
                   From Al Nahda to Muwaileh and University City — Al Haya Sofa Care UAE serves all of Sharjah with professional sofa cleaning that goes deep beyond the surface. Our team arrives equipped with industrial shampoo machines and steam cleaners, ready to restore your sofa.
@@ -139,7 +139,7 @@ export default function SofaCleaningSharjah() {
               <div>
                 <div className="section-tag">Sharjah Areas We Cover</div>
                 <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 36px)', marginBottom: 20, lineHeight: 1.15 }}>
-                  All Sharjah <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Neighbourhoods</span>
+                  All Sharjah <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Neighbourhoods</span>
                 </h2>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
                   {sharjahAreas.map((area) => (
@@ -177,7 +177,7 @@ export default function SofaCleaningSharjah() {
             <div style={{ textAlign: 'center', marginBottom: 40 }}>
               <div className="section-tag">Sofa Cleaning Services Sharjah</div>
               <h2 style={{ fontSize: 'clamp(24px, 3vw, 42px)', marginBottom: 12 }}>
-                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sharjah</span>
+                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sharjah</span>
               </h2>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
@@ -187,9 +187,9 @@ export default function SofaCleaningSharjah() {
                 { title: 'Leather Sofa Cleaning Sharjah', desc: 'Specialist pH-safe leather conditioning and protective coat. Prevents cracking in Sharjah\'s climate.', color: '#8B5CF6' },
                 { title: 'Sofa Stain Removal Sharjah', desc: 'Coffee, food, ink and pet stains removed safely from all fabric types across all Sharjah areas.', color: '#FF5A3C' },
               ].map((s) => (
-                <div key={s.title} style={{ background: '#141210', border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 14, padding: '22px 20px' }}>
+                <div key={s.title} style={{ background: '#FFFFFF', border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 14, padding: '22px 20px' }}>
                   <h3 style={{ fontSize: 16, fontWeight: 800, color: s.color, fontFamily: 'var(--font-display)', marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
+                  <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
                 </div>
               ))}
             </div>

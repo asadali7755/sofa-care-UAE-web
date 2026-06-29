@@ -66,7 +66,7 @@ export default function SofaCleaningAjman() {
         <section className="page-hero" style={{ minHeight: '60vh' }}>
           <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
             <div className="grid-bg" />
-            <div style={{ position: 'absolute', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, color-mix(in oklab, #F59E0B 12%, transparent), transparent 70%)', filter: 'blur(60px)', top: 0, right: 0 }} />
+            <div style={{ position: 'absolute', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, color-mix(in oklab, #1D6A5B 12%, transparent), transparent 70%)', filter: 'blur(60px)', top: 0, right: 0 }} />
           </div>
           <div className="container-x" style={{ position: 'relative', zIndex: 1 }}>
             <div className="breadcrumb">
@@ -78,7 +78,7 @@ export default function SofaCleaningAjman() {
               <div>
             <div className="section-tag" style={{ marginBottom: 16 }}>Ajman Service</div>
             <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 72px)', lineHeight: 1.0, marginBottom: 20, fontFamily: 'var(--font-display)', fontWeight: 900 }}>
-              Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Ajman</span>
+              Sofa Cleaning <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Ajman</span>
             </h1>
             <p style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 600, lineHeight: 1.7, marginBottom: 32 }}>
               Expert sofa deep shampoo &amp; steam cleaning in Ajman. Al Haya Sofa Care UAE comes to your home with full professional equipment — affordable, fast, and completely thorough.
@@ -111,7 +111,7 @@ export default function SofaCleaningAjman() {
               <div>
                 <div className="section-tag">Our Service in Ajman</div>
                 <h2 style={{ fontSize: 'clamp(24px, 2.8vw, 40px)', marginBottom: 20, lineHeight: 1.15 }}>
-                  Professional Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>in Ajman</span>
+                  Professional Sofa Cleaning <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>in Ajman</span>
                 </h2>
                 <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 20 }}>
                   Al Haya Sofa Care UAE proudly serves Ajman with the same high-standard professional sofa cleaning used across Dubai and Sharjah. Our mobile team arrives equipped with industrial shampoo machines and high-temperature steam cleaners, ready to restore your sofa to like-new condition.
@@ -137,7 +137,7 @@ export default function SofaCleaningAjman() {
               <div>
                 <div className="section-tag">Areas We Cover</div>
                 <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 36px)', marginBottom: 20, lineHeight: 1.15 }}>
-                  All Ajman <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Areas</span>
+                  All Ajman <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Areas</span>
                 </h2>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
                   {ajmanAreas.map((area) => (
@@ -175,19 +175,19 @@ export default function SofaCleaningAjman() {
             <div style={{ textAlign: 'center', marginBottom: 40 }}>
               <div className="section-tag">Sofa Cleaning Services Ajman</div>
               <h2 style={{ fontSize: 'clamp(24px, 3vw, 42px)', marginBottom: 12 }}>
-                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Ajman</span>
+                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Ajman</span>
               </h2>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
               {[
                 { title: 'Sofa Deep Cleaning Ajman', desc: 'Industrial extraction removes embedded dust, allergens and bacteria from every sofa type across Ajman.', color: 'var(--accent)' },
-                { title: 'Sofa Shampooing Ajman', desc: 'Professional foam shampoo treatment lifts deep grime and stains. Fast-dry formula — ready in 2–4 hours.', color: '#F59E0B' },
-                { title: 'Pet Hair Removal Ajman', desc: 'Specialist vacuum and roller treatment removes embedded pet hair from all cushions and seams.', color: '#D97706' },
+                { title: 'Sofa Shampooing Ajman', desc: 'Professional foam shampoo treatment lifts deep grime and stains. Fast-dry formula — ready in 2–4 hours.', color: '#1D6A5B' },
+                { title: 'Pet Hair Removal Ajman', desc: 'Specialist vacuum and roller treatment removes embedded pet hair from all cushions and seams.', color: '#1D6A5B' },
                 { title: 'Sofa Sanitization Ajman', desc: 'Hospital-grade disinfection kills 99.9% of bacteria and germs. Safe for children and pets.', color: '#059669' },
               ].map((s) => (
-                <div key={s.title} style={{ background: '#141210', border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 14, padding: '22px 20px' }}>
+                <div key={s.title} style={{ background: '#FFFFFF', border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 14, padding: '22px 20px' }}>
                   <h3 style={{ fontSize: 16, fontWeight: 800, color: s.color, fontFamily: 'var(--font-display)', marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
+                  <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
                 </div>
               ))}
             </div>

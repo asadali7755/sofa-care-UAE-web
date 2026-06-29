@@ -85,7 +85,7 @@ export default function SofaCleaningAbuDhabi() {
               <div>
             <div className="section-tag" style={{ marginBottom: 16 }}>Abu Dhabi Service</div>
             <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 72px)', lineHeight: 1.0, marginBottom: 20, fontFamily: 'var(--font-display)', fontWeight: 900 }}>
-              Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Abu Dhabi</span>
+              Sofa Cleaning <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Abu Dhabi</span>
             </h1>
             <p style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 600, lineHeight: 1.7, marginBottom: 32 }}>
               Professional sofa deep shampoo &amp; steam cleaning across Abu Dhabi. Al Haya Sofa Care UAE brings expert technicians and industrial-grade equipment directly to your home — covering Khalifa City, Al Reem Island, Yas Island and all Abu Dhabi areas.
@@ -118,7 +118,7 @@ export default function SofaCleaningAbuDhabi() {
               <div>
                 <div className="section-tag">Why Abu Dhabi Clients Choose Al Haya</div>
                 <h2 style={{ fontSize: 'clamp(24px, 2.8vw, 40px)', marginBottom: 20, lineHeight: 1.15 }}>
-                  Abu Dhabi&apos;s Trusted <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Sofa Cleaning</span> Experts
+                  Abu Dhabi&apos;s Trusted <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Sofa Cleaning</span> Experts
                 </h2>
                 <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 20 }}>
                   Abu Dhabi&apos;s humid coastal climate and frequent sandstorms create the perfect conditions for dust mites, allergens and bacteria to accumulate deep inside sofa fibers. Regular vacuuming removes only surface dirt — our professional deep cleaning goes all the way in.
@@ -147,7 +147,7 @@ export default function SofaCleaningAbuDhabi() {
               <div>
                 <div className="section-tag">Abu Dhabi Areas We Cover</div>
                 <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 36px)', marginBottom: 20, lineHeight: 1.15 }}>
-                  All Abu Dhabi <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Neighbourhoods</span>
+                  All Abu Dhabi <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Neighbourhoods</span>
                 </h2>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
                   {abuDhabiAreas.map((area) => (
@@ -185,7 +185,7 @@ export default function SofaCleaningAbuDhabi() {
             <div style={{ textAlign: 'center', marginBottom: 40 }}>
               <div className="section-tag">Sofa Cleaning Services Abu Dhabi</div>
               <h2 style={{ fontSize: 'clamp(24px, 3vw, 42px)', marginBottom: 12 }}>
-                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Abu Dhabi</span>
+                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Abu Dhabi</span>
               </h2>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
@@ -195,9 +195,9 @@ export default function SofaCleaningAbuDhabi() {
                 { title: 'Leather Sofa Cleaning Abu Dhabi', desc: 'pH-safe leather conditioning and protective coat restores luxury sofas across Khalifa City and Yas Island.', color: '#3B82F6' },
                 { title: 'Sofa Shampooing Abu Dhabi', desc: 'Professional foam shampoo lifts deep grime from fabric sofas. Same-day sofa cleaning Abu Dhabi available.', color: '#0891B2' },
               ].map((s) => (
-                <div key={s.title} style={{ background: '#141210', border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 14, padding: '22px 20px' }}>
+                <div key={s.title} style={{ background: '#FFFFFF', border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 14, padding: '22px 20px' }}>
                   <h3 style={{ fontSize: 16, fontWeight: 800, color: s.color, fontFamily: 'var(--font-display)', marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
+                  <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
                 </div>
               ))}
             </div>

@@ -17,7 +17,7 @@ export default function CTABanner() {
 
           <div className="section-tag" style={{ margin: '0 auto 20px' }}>Book Today</div>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', marginBottom: 16, position: 'relative' }}>
-            Ready for a <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Cleaner</span> Sofa?
+            Ready for a <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Cleaner</span> Sofa?
           </h2>
           <p style={{ color: 'var(--fg-muted)', fontSize: 17, maxWidth: 520, margin: '0 auto 36px', lineHeight: 1.65, position: 'relative' }}>
             Book your appointment today — we come to you with all the equipment. Same-day service available across Dubai, Sharjah &amp; Ajman.

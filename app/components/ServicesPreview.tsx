@@ -52,7 +52,7 @@ function AnimatedServiceContent() {
 
       {/* Big heading */}
       <h2 style={{ fontSize: 'clamp(28px, 3vw, 44px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 20 }}>
-        United Arab Emirates <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Most Trusted</span><br/>Sofa Experts
+        United Arab Emirates <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Most Trusted</span><br/>Sofa Experts
       </h2>
 
       {/* Animated typewriter */}
@@ -165,7 +165,7 @@ const services = [
   {
     icon: <IconPaw size={36}/>,
     tag: 'Pet-Friendly',
-    tagColor: '#D97706',
+    tagColor: '#1D6A5B',
     title: 'Pet Hair Removal',
     desc: 'Specialized vacuum and roller treatment removes embedded pet hair from every cushion, seam and corner.',
     features: ['Deep pet hair extraction', 'Anti-allergen treatment', 'Safe for all fabrics', 'Deodorizing included'],
@@ -228,7 +228,7 @@ export default function ServicesPreview() {
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 56 }}>
           <div className="section-tag">Our Services</div>
           <h2 style={{ fontSize: 'clamp(32px, 4vw, 56px)', marginBottom: 16 }}>
-            Professional <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Cleaning</span> Services in Dubai
+            Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Cleaning</span> Services in Dubai
           </h2>
           <p style={{ color: 'var(--fg-muted)', maxWidth: 580, margin: '0 auto', fontSize: 17, lineHeight: 1.65 }}>
             In Dubai, &ldquo;surface cleaning&rdquo; isn&apos;t enough. Fine desert dust settles deep into fabric fibers, while humidity locks in allergens and bacteria. Our certified technicians use industrial-grade extraction and pH-balanced cleaners to restore every sofa type across Dubai, Sharjah, Ajman &amp; Abu Dhabi.

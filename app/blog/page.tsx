@@ -36,7 +36,7 @@ export default function BlogIndex() {
             </div>
             <div className="section-tag" style={{ marginBottom: 16 }}>Sofa Cleaning Tips & Guides</div>
             <h1 style={{ fontSize: 'clamp(32px, 5vw, 60px)', lineHeight: 1.05, marginBottom: 16, fontFamily: 'var(--font-display)', fontWeight: 900 }}>
-              The Al Haya <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Care</span> Blog
+              The Al Haya <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Care</span> Blog
             </h1>
             <p style={{ color: 'var(--fg-muted)', fontSize: 17, maxWidth: 620, lineHeight: 1.7 }}>
               Practical, UAE-specific advice on sofa cleaning — real prices, care schedules, stain removal and leather care to help you keep your sofa fresh and make smart booking decisions.

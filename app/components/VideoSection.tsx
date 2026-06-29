@@ -24,7 +24,7 @@ export default function VideoSection() {
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 48 }}>
           <div className="section-tag">Watch &amp; See</div>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', marginBottom: 16 }}>
-            See the <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Transformation</span>
+            See the <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Transformation</span>
           </h2>
           <p style={{ color: 'var(--fg-muted)', maxWidth: 480, margin: '0 auto', fontSize: 16, lineHeight: 1.65 }}>
             Watch how we restore your sofa to brand-new condition — from dirty &amp; stained to fresh &amp; clean.
@@ -38,8 +38,8 @@ export default function VideoSection() {
               position: 'relative', width: '100%', maxWidth: 380,
               borderRadius: 20, overflow: 'hidden',
               border: '1px solid var(--line-strong)',
-              boxShadow: '0 32px 80px rgba(0,0,0,0.5)',
-              aspectRatio: '9/16', background: '#000',
+              boxShadow: '0 32px 80px rgba(12,17,14,0.15)',
+              aspectRatio: '9/16', background: '#E5EDE6',
             }}
           >
             {loaded ? (
@@ -54,14 +54,14 @@ export default function VideoSection() {
             ) : (
               <div style={{
                 position: 'absolute', inset: 0,
-                background: 'linear-gradient(135deg, #0f1a1a, #0f0f0f)',
+                background: 'linear-gradient(135deg, #E5EDE6, #F3F7F4)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 flexDirection: 'column', gap: 16,
               }}>
                 <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="#000"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 </div>
-                <span style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-mono)', fontSize: 11 }}>Loading video...</span>
+                <span style={{ color: 'rgba(12,17,14,0.45)', fontFamily: 'var(--font-mono)', fontSize: 11 }}>Loading video...</span>
               </div>
             )}
           </div>

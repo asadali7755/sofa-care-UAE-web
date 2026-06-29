@@ -52,7 +52,7 @@ export default function MarqueeBanner() {
                       : item.accent
                       ? 'var(--accent)'
                       : 'var(--fg)',
-                    fontFamily: item.serif ? 'var(--font-serif)' : undefined,
+                    fontFamily: item.serif ? 'var(--font-display)' : undefined,
                     fontStyle: item.serif ? 'italic' : undefined,
                     fontWeight: item.serif ? 400 : 900,
                     margin: item.dim ? '0 14px' : '0 4px',

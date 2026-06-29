@@ -23,8 +23,8 @@ const stats = [
 ];
 
 const whyUs = [
-  { icon: <IconLeaf size={28}/>, title: 'Eco-Friendly', desc: 'Non-toxic, biodegradable cleaning solutions safe for children, pets & sensitive skin.', accent: '#D9F15A' },
-  { icon: <IconClock size={28}/>, title: 'Fast Service', desc: 'Same-day appointments available across Dubai, Sharjah & Ajman.', accent: '#F59E0B' },
+  { icon: <IconLeaf size={28}/>, title: 'Eco-Friendly', desc: 'Non-toxic, biodegradable cleaning solutions safe for children, pets & sensitive skin.', accent: '#6DD5C2' },
+  { icon: <IconClock size={28}/>, title: 'Fast Service', desc: 'Same-day appointments available across Dubai, Sharjah & Ajman.', accent: '#1D6A5B' },
   { icon: <IconHome size={28}/>, title: 'At-Home Convenience', desc: 'We come to you with all equipment — no need to move furniture or travel.', accent: '#FF5A3C' },
   { icon: <IconShield size={28}/>, title: 'Certified Team', desc: 'Trained, experienced technicians who handle every sofa type with care.', accent: '#3B82F6' },
   { icon: <IconTag size={28}/>, title: 'Transparent Pricing', desc: 'Starting from AED 79 with no hidden fees — affordable quality cleaning.', accent: '#10B981' },
@@ -70,7 +70,7 @@ export default function AboutPage() {
             </div>
             <div className="section-tag">About Al Haya</div>
             <h1 className="reveal" style={{ fontSize: 'clamp(36px, 6vw, 80px)', lineHeight: 1.0, marginBottom: 20 }}>
-              About <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span><br/>Cleaning Services
+              About <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span><br/>Cleaning Services
             </h1>
             <p className="reveal reveal-delay-1" style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 560, lineHeight: 1.65 }}>
               Dubai&apos;s trusted name in professional sofa cleaning — delivering exceptional results at your doorstep since 2019.
@@ -85,7 +85,7 @@ export default function AboutPage() {
               <div>
                 <div className="reveal section-tag">Our Story</div>
                 <h2 className="reveal" style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', marginBottom: 24 }}>
-                  Cleaning Dubai Homes <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Since 2019</span>
+                  Cleaning Dubai Homes <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Since 2019</span>
                 </h2>
                 <div className="reveal reveal-delay-1" style={{ display: 'flex', flexDirection: 'column', gap: 16, color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75 }}>
                   <p>Al Haya Sofa Care UAE was founded with one simple mission: to provide Dubai families and businesses with a professional, reliable, and convenient sofa cleaning experience — right at their doorstep.</p>
@@ -123,7 +123,7 @@ export default function AboutPage() {
             <div className="reveal" style={{ textAlign: 'center', marginBottom: 56 }}>
               <div className="section-tag">Our Promise</div>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}>
-                Why Choose <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span>
+                Why Choose <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span>
               </h2>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
@@ -132,7 +132,7 @@ export default function AboutPage() {
                   key={item.title}
                   className={`reveal reveal-delay-${(i % 3) + 1}`}
                   style={{
-                    background: '#141210',
+                    background: '#FFFFFF',
                     border: `1px solid ${item.accent}30`,
                     borderTop: `3px solid ${item.accent}`,
                     borderRadius: 16,
@@ -142,7 +142,7 @@ export default function AboutPage() {
                 >
                   <div style={{ color: item.accent, marginBottom: 16 }}>{item.icon}</div>
                   <div style={{ fontSize: 17, marginBottom: 10, color: item.accent, fontWeight: 800, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{item.title}</div>
-                  <p style={{ color: 'rgba(246,241,232,0.70)', fontSize: 14, lineHeight: 1.65 }}>{item.desc}</p>
+                  <p style={{ color: 'rgba(12,17,14,0.60)', fontSize: 14, lineHeight: 1.65 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -155,7 +155,7 @@ export default function AboutPage() {
             <div className="reveal" style={{ textAlign: 'center', marginBottom: 52 }}>
               <div className="section-tag">How We Clean</div>
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}>
-                Our Professional <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Cleaning Process</span>
+                Our Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Cleaning Process</span>
               </h2>
               <p style={{ color: 'var(--fg-muted)', maxWidth: 520, margin: '16px auto 0', fontSize: 17, lineHeight: 1.65 }}>
                 A rigorous 4-step protocol to achieve like-new results on every sofa type across the UAE.
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 },
               ].map((p, i) => (
                 <div key={p.step} className={`reveal reveal-delay-${i + 1}`} style={{
-                  background: '#141210',
+                  background: '#FFFFFF',
                   border: `1px solid ${p.accent}30`,
                   borderTop: `3px solid ${p.accent}`,
                   borderRadius: 16,
@@ -197,7 +197,7 @@ export default function AboutPage() {
                 }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: p.accent, letterSpacing: '0.1em', marginBottom: 12, textTransform: 'uppercase' }}>Step {p.step}</div>
                   <div style={{ fontSize: 17, fontWeight: 800, color: p.accent, fontFamily: 'var(--font-display)', marginBottom: 12, letterSpacing: '-0.02em' }}>{p.title}</div>
-                  <p style={{ color: 'rgba(246,241,232,0.70)', fontSize: 14, lineHeight: 1.65 }}>{p.desc}</p>
+                  <p style={{ color: 'rgba(12,17,14,0.60)', fontSize: 14, lineHeight: 1.65 }}>{p.desc}</p>
                 </div>
               ))}
             </div>

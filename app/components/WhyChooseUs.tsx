@@ -5,13 +5,13 @@ const features = [
     icon: <IconLeaf size={26}/>,
     title: 'Eco-Friendly Products',
     desc: 'Non-toxic, biodegradable solutions — safe for kids, pets & sensitive skin.',
-    accent: '#D9F15A',
+    accent: '#6DD5C2',
   },
   {
     icon: <IconClock size={26}/>,
     title: 'Same Day Service',
     desc: 'Book today, cleaned today. Same-day appointments across all UAE.',
-    accent: '#F59E0B',
+    accent: '#1D6A5B',
   },
   {
     icon: <IconHome size={26}/>,
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
           <div>
             <div className="section-tag">Why Al Haya</div>
             <h2 style={{ fontSize: 'clamp(30px, 3.5vw, 52px)', marginBottom: 20, lineHeight: 1.1 }}>
-              Why Clients Choose <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span>
+              Why Clients Choose <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span>
             </h2>
             <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
               For over 5 years, Al Haya Sofa Care UAE has been Dubai&apos;s go-to name for professional sofa cleaning. We combine advanced equipment with genuine care for your home.
@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {features.map((f, i) => (
               <div key={f.title} className={`reveal reveal-delay-${i + 1}`} style={{
-                background: '#141210',
+                background: '#FFFFFF',
                 border: `1px solid ${f.accent}30`,
                 borderTop: `3px solid ${f.accent}`,
                 borderRadius: 14,
@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
               }}>
                 <div style={{ color: f.accent, marginBottom: 14 }}>{f.icon}</div>
                 <div style={{ fontSize: 16, fontWeight: 800, marginBottom: 10, color: f.accent, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{f.title}</div>
-                <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.6 }}>{f.desc}</p>
+                <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 13, lineHeight: 1.6 }}>{f.desc}</p>
               </div>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
             <div className="section-tag" style={{ margin: '0 auto 16px' }}>Why Al Haya</div>
             <h2 style={{ fontSize: 'clamp(26px, 7vw, 36px)', marginBottom: 14, lineHeight: 1.15 }}>
               Why Clients Choose{' '}
-              <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span>
             </h2>
             <p style={{ color: 'var(--fg-muted)', fontSize: 15, lineHeight: 1.65, maxWidth: 360, margin: '0 auto' }}>
               Dubai&apos;s trusted sofa cleaning experts — 500+ clients, same-day service, guaranteed results.
@@ -100,7 +100,7 @@ export default function WhyChooseUs() {
                 alignItems: 'center',
                 gap: 16,
                 padding: 16,
-                background: '#141210',
+                background: '#FFFFFF',
                 border: `1px solid ${f.accent}30`,
                 borderLeft: `3px solid ${f.accent}`,
                 borderRadius: 14,
@@ -118,7 +118,7 @@ export default function WhyChooseUs() {
                 {/* Text */}
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontWeight: 700, fontSize: 15, color: f.accent, marginBottom: 4 }}>{f.title}</div>
-                  <div style={{ fontSize: 13, color: 'rgba(246,241,232,0.65)', lineHeight: 1.5 }}>{f.desc}</div>
+                  <div style={{ fontSize: 13, color: 'rgba(12,17,14,0.56)', lineHeight: 1.5 }}>{f.desc}</div>
                 </div>
                 {/* Check */}
                 <div style={{ color: f.accent, fontSize: 18, fontWeight: 700, flexShrink: 0 }}>✓</div>
@@ -134,9 +134,9 @@ export default function WhyChooseUs() {
               { n: 'Same Day', l: 'Service' },
               { n: '5+ Yrs', l: 'Experience' },
             ].map((s) => (
-              <div key={s.l} style={{ background: '#141210', border: '1px solid rgba(246,241,232,0.10)', borderRadius: 12, padding: '14px 16px', textAlign: 'center' }}>
+              <div key={s.l} style={{ background: '#FFFFFF', border: '1px solid rgba(12,17,14,0.10)', borderRadius: 12, padding: '14px 16px', textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 900, color: 'var(--accent)' }}>{s.n}</div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'rgba(246,241,232,0.55)', marginTop: 3, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{s.l}</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'rgba(12,17,14,0.45)', marginTop: 3, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{s.l}</div>
               </div>
             ))}
           </div>

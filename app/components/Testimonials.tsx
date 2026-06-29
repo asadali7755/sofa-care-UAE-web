@@ -29,7 +29,7 @@ export default function Testimonials() {
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 56 }}>
           <div className="section-tag">Client Reviews</div>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', marginBottom: 16 }}>
-            What Our <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Clients</span> Say
+            What Our <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Clients</span> Say
           </h2>
           <p style={{ color: 'var(--fg-muted)', maxWidth: 440, margin: '0 auto', fontSize: 16 }}>
             Trusted by hundreds of families and professionals across the UAE.

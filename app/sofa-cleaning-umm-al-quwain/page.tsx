@@ -50,7 +50,7 @@ const defaults = {
   ],
 };
 
-const SERVICE_COLORS = ['var(--accent)', '#F59E0B', '#D97706', '#059669'];
+const SERVICE_COLORS = ['var(--accent)', '#1D6A5B', '#1D6A5B', '#059669'];
 
 const nonEmpty = <T,>(a: T[] | undefined | null): T[] | undefined =>
   Array.isArray(a) && a.length > 0 ? a : undefined;
@@ -139,7 +139,7 @@ export default async function SofaCleaningUmmAlQuwain() {
         <section className="page-hero" style={{ minHeight: '60vh' }}>
           <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
             <div className="grid-bg" />
-            <div style={{ position: 'absolute', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, color-mix(in oklab, #F59E0B 12%, transparent), transparent 70%)', filter: 'blur(60px)', top: 0, right: 0 }} />
+            <div style={{ position: 'absolute', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, color-mix(in oklab, #1D6A5B 12%, transparent), transparent 70%)', filter: 'blur(60px)', top: 0, right: 0 }} />
           </div>
           <div className="container-x" style={{ position: 'relative', zIndex: 1 }}>
             <div className="breadcrumb">
@@ -151,7 +151,7 @@ export default async function SofaCleaningUmmAlQuwain() {
               <div>
             <div className="section-tag" style={{ marginBottom: 16 }}>{c.heroTagline}</div>
             <h1 style={{ fontSize: 'clamp(34px, 5vw, 68px)', lineHeight: 1.0, marginBottom: 20, fontFamily: 'var(--font-display)', fontWeight: 900 }}>
-              {c.heroHeadingLead} <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{c.heroHeadingAccent}</span>
+              {c.heroHeadingLead} <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{c.heroHeadingAccent}</span>
             </h1>
             <p style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 600, lineHeight: 1.7, marginBottom: 32 }}>
               {c.heroSubtext}
@@ -184,7 +184,7 @@ export default async function SofaCleaningUmmAlQuwain() {
               <div>
                 <div className="section-tag">Our Service in UAQ</div>
                 <h2 style={{ fontSize: 'clamp(24px, 2.8vw, 40px)', marginBottom: 20, lineHeight: 1.15 }}>
-                  Professional Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>{c.introHeadingAccent}</span>
+                  Professional Sofa Cleaning <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>{c.introHeadingAccent}</span>
                 </h2>
                 <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 20 }}>
                   {c.introParagraph1}
@@ -203,7 +203,7 @@ export default async function SofaCleaningUmmAlQuwain() {
               <div>
                 <div className="section-tag">Areas We Cover</div>
                 <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 36px)', marginBottom: 20, lineHeight: 1.15 }}>
-                  All Umm Al Quwain <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Areas</span>
+                  All Umm Al Quwain <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'var(--accent)', fontWeight: 400 }}>Areas</span>
                 </h2>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
                   {c.areas.map((area) => (
@@ -230,16 +230,16 @@ export default async function SofaCleaningUmmAlQuwain() {
             <div style={{ textAlign: 'center', marginBottom: 40 }}>
               <div className="section-tag">Sofa Cleaning Services UAQ</div>
               <h2 style={{ fontSize: 'clamp(24px, 3vw, 42px)', marginBottom: 12 }}>
-                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{c.heroHeadingAccent}</span>
+                Our Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{c.heroHeadingAccent}</span>
               </h2>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
               {c.services.map((s, i) => {
                 const color = SERVICE_COLORS[i % SERVICE_COLORS.length];
                 return (
-                  <div key={s.title ?? i} style={{ background: '#141210', border: `1px solid ${color}30`, borderTop: `3px solid ${color}`, borderRadius: 14, padding: '22px 20px' }}>
+                  <div key={s.title ?? i} style={{ background: '#FFFFFF', border: `1px solid ${color}30`, borderTop: `3px solid ${color}`, borderRadius: 14, padding: '22px 20px' }}>
                     <h3 style={{ fontSize: 16, fontWeight: 800, color, fontFamily: 'var(--font-display)', marginBottom: 10 }}>{s.title}</h3>
-                    <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
+                    <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
                   </div>
                 );
               })}

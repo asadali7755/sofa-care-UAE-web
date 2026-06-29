@@ -23,7 +23,7 @@ export default function ServiceCoverageSection() {
     {
       city: 'Ajman', href: '/sofa-cleaning-ajman', count: '8+', label: 'Areas Covered',
       img: 'https://images.unsplash.com/photo-1596005554384-d293674c91d7?w=500&q=65&auto=format',
-      color: '#F59E0B',
+      color: '#1D6A5B',
       areas: ['Al Nuaimia', 'Al Rashidiya', 'Al Jurf', 'Al Hamidiya', 'Emirates City', 'Al Bustan', 'Al Mowaihat', 'Al Rumailah'],
     },
     {
@@ -59,7 +59,7 @@ export default function ServiceCoverageSection() {
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 60 }}>
           <div className="section-tag" style={{ margin: '0 auto 20px' }}>Service Coverage</div>
           <h2 style={{ fontSize: 'clamp(32px, 4vw, 56px)', marginBottom: 16 }}>
-            We Cover All <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>7 Emirates</span>
+            We Cover All <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>7 Emirates</span>
           </h2>
           <p style={{ color: 'var(--fg-muted)', fontSize: 17, maxWidth: 540, margin: '0 auto', lineHeight: 1.65 }}>
             From Abu Dhabi to Fujairah — our professional sofa cleaning team reaches every corner of the UAE.
@@ -72,7 +72,7 @@ export default function ServiceCoverageSection() {
             <Link key={c.city} href={c.href} aria-label={`Sofa cleaning in ${c.city}`} className="scs-card" style={{
               position: 'relative', borderRadius: 20, overflow: 'hidden',
               height: 380, cursor: 'pointer', display: 'block', textDecoration: 'none',
-              boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
+              boxShadow: '0 20px 60px rgba(12,17,14,0.12)',
               border: `1px solid ${c.color}40`,
             }}>
               {/* Background image */}

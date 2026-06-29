@@ -55,7 +55,7 @@ export default function ContactPage() {
             </div>
             <div className="section-tag">Book Now</div>
             <h1 className="reveal" style={{ fontSize: 'clamp(36px, 6vw, 80px)', lineHeight: 1.0, marginBottom: 20 }}>
-              Book Your <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Cleaning</span>
+              Book Your <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Cleaning</span>
             </h1>
             <p className="reveal reveal-delay-1" style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 500, lineHeight: 1.65 }}>
               Get in touch — we respond within 1 hour and offer same-day appointments across Dubai, Sharjah &amp; Ajman.

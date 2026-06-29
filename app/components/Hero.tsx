@@ -74,38 +74,38 @@ export default function Hero() {
       </div>
 
       <div className="container-x" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24 }}>
-        <div>
+        <div style={{ maxWidth: 640, textAlign: 'left' }}>
           <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '6px 12px', borderRadius: 999, background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.15)', fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.75)', marginBottom: 20 }}>
             <span className="pulse-dot"/> Trusted by 500+ clients &nbsp;·&nbsp; Dubai, UAE
           </div>
 
           <h1 className="reveal reveal-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(38px, 5.5vw, 80px)', lineHeight: 0.94, fontWeight: 900, letterSpacing: '-0.03em', marginBottom: 6 }}>
             <span style={{ display: 'block', color: 'rgba(255,255,255,0.65)', fontWeight: 500, fontSize: 'clamp(14px, 1.4vw, 18px)', letterSpacing: '-0.01em', marginBottom: 12, fontFamily: 'var(--font-sans)' }}>Dubai&apos;s Most Trusted</span>
-            <span style={{ display: 'block', color: '#ffffff' }}>Sofa <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: '#89CFF0' }}>Cleaning</span></span>
+            <span style={{ display: 'block', color: '#ffffff' }}>Sofa <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#6DD5C2' }}>Cleaning</span></span>
             <span style={{ display: 'block', color: '#ffffff' }}>Experts</span>
           </h1>
 
-          {/* Typewriter — yellow bg grows with text, black font */}
+          {/* Typewriter — teal bg grows with text */}
           <div className="reveal reveal-delay-2" style={{ marginTop: 18, marginBottom: 20, minHeight: '1.5em' }}>
             <span style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
-              background: 'var(--accent)',
+              background: '#1D6A5B',
               padding: '6px 14px',
               fontFamily: 'var(--font-mono)',
               fontSize: 'clamp(14px, 1.6vw, 22px)',
               fontWeight: 700,
-              color: '#000000',
+              color: '#ffffff',
               letterSpacing: '-0.01em',
               borderRadius: 4,
-              boxShadow: '0 0 0 2px var(--accent), 0 0 0 4px rgba(255,193,7,0.3)',
+              boxShadow: '0 0 0 2px #1D6A5B, 0 0 0 4px rgba(29,106,91,0.3)',
               transition: 'width 0.1s ease',
             }}>
-              &gt; <span>{role}</span><span className="cursor-blink" style={{ color: '#000' }}>_</span>
+              &gt; <span>{role}</span><span className="cursor-blink" style={{ color: '#6DD5C2' }}>_</span>
             </span>
           </div>
 
-          <h2 className="reveal reveal-delay-3" style={{ fontSize: 'clamp(15px, 1.25vw, 19px)', fontWeight: 600, color: '#FFF8E7', maxWidth: 520, lineHeight: 1.75, marginBottom: 24, fontFamily: 'var(--font-sans)', textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)', letterSpacing: '0.01em' }}>
-            In Dubai, desert dust, humidity &amp; daily use turn your sofa into a filter for allergens. Al Haya brings <em style={{ fontFamily: 'var(--font-serif)', color: '#89CFF0', fontStyle: 'italic', fontWeight: 600 }}>certified deep cleaning</em> directly to your doorstep — eco-friendly solutions, fast-dry results, same-day service across Dubai, Sharjah, Ajman &amp; Abu Dhabi.
+          <h2 className="reveal reveal-delay-3" style={{ fontSize: 'clamp(15px, 1.25vw, 19px)', fontWeight: 600, color: 'rgba(255,255,255,0.90)', maxWidth: 520, lineHeight: 1.75, marginBottom: 24, fontFamily: 'var(--font-sans)', textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)', letterSpacing: '0.01em' }}>
+            In Dubai, desert dust, humidity &amp; daily use turn your sofa into a filter for allergens. Al Haya brings <em style={{ fontFamily: 'var(--font-display)', color: '#6DD5C2', fontStyle: 'italic', fontWeight: 600 }}>certified deep cleaning</em> directly to your doorstep — eco-friendly solutions, fast-dry results, same-day service across Dubai, Sharjah, Ajman &amp; Abu Dhabi.
           </h2>
 
           <div className="reveal reveal-delay-4" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 32 }}>

@@ -21,7 +21,7 @@ const cities = [
   {
     city: 'Ajman',
     href: '/sofa-cleaning-ajman',
-    accent: '#F59E0B',
+    accent: '#1D6A5B',
     keyword: 'Sofa Cleaning Ajman',
     desc: 'Affordable sofa cleaning in Ajman — Al Nuaimiya, Al Rashidiya, Al Jurf, Emirates City & all Ajman areas. Reliable sofa cleaning Ajman at-home service.',
     services: ['Sofa Deep Cleaning Ajman', 'Sofa Shampooing Ajman', 'Pet Hair Removal Ajman', 'Sofa Sanitization Ajman'],
@@ -45,7 +45,7 @@ export default function CitiesSection() {
           <div className="section-tag">UAE Coverage</div>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', marginBottom: 16 }}>
             Professional Sofa Cleaning in{' '}
-            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>
               Dubai, Sharjah, Ajman &amp; Abu Dhabi
             </span>
           </h2>
@@ -62,7 +62,7 @@ export default function CitiesSection() {
               aria-label={`View ${c.city} sofa cleaning services`}
               className={`reveal reveal-delay-${i + 1} loc-city-card`}
               style={{
-                background: '#141210',
+                background: '#FFFFFF',
                 border: `1px solid ${c.accent}30`,
                 borderTop: `3px solid ${c.accent}`,
                 borderRadius: 16,
@@ -79,13 +79,13 @@ export default function CitiesSection() {
                 color: c.accent, letterSpacing: '-0.02em', marginBottom: 12,
               }}>{c.keyword}</h3>
 
-              <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.65, marginBottom: 18, flex: 1 }}>
+              <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 13, lineHeight: 1.65, marginBottom: 18, flex: 1 }}>
                 {c.desc}
               </p>
 
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {c.services.map((s) => (
-                  <li key={s} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, color: 'rgba(246,241,232,0.55)', fontSize: 12 }}>
+                  <li key={s} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, color: 'rgba(12,17,14,0.45)', fontSize: 12 }}>
                     <span style={{ color: c.accent, fontWeight: 700, flexShrink: 0 }}>›</span> {s}
                   </li>
                 ))}
@@ -113,7 +113,7 @@ export default function CitiesSection() {
         }
         .loc-city-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 12px 30px rgba(12, 17, 14, 0.10);
         }
         @media (max-width: 900px) {
           .cities-grid { grid-template-columns: repeat(2, 1fr) !important; }

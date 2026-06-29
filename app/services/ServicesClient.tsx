@@ -103,7 +103,7 @@ const services: ServiceSectionProps[] = [
     id: 'deep-cleaning',
     badge: 'Most Popular',
     badgeColor: 'var(--accent)',
-    title: <>Sofa Deep Cleaning &amp; <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Steam Extraction</span></>,
+    title: <>Sofa Deep Cleaning &amp; <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Steam Extraction</span></>,
     desc1: "Dubai's fine micro-dust particles act like sandpaper deep inside fabric fibers, wearing down your sofa over time. Al Haya's industrial extraction removes embedded desert dust, dust mites and allergens — while our pH-tested steam kills 99.9% of bacteria.",
     desc2: "We combine two of the most effective techniques: premium eco-friendly shampoos that break down grease and lift heavy stains without damaging the fabric, plus industrial-grade high-temperature steam that penetrates deep into the cushions.",
     keywords: ['sofa cleaning Dubai', 'sofa deep clean', 'steam extraction', 'allergen removal', 'same day service'],
@@ -122,7 +122,7 @@ const services: ServiceSectionProps[] = [
     id: 'shampooing',
     badge: 'Fast-Dry Formula',
     badgeColor: '#06B6D4',
-    title: <>Professional <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Shampooing</span> Dubai</>,
+    title: <>Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Shampooing</span> Dubai</>,
     desc1: "Professional foam shampoo treatment that goes deep into your sofa's fabric, lifting dirt, grime, and stains that regular vacuuming can't touch. Our shampoo service is perfect for fabric sofas that need a thorough refresh.",
     desc2: "Keep your sofa fresh, hygienic, and guest-ready. Experts inspect the fabric, treat stains, and deep clean — no need to move furniture. Fast-drying, same-day service ideal for busy families.",
     keywords: ['sofa shampooing Dubai', 'couch cleaning Dubai', 'eco-friendly sofa cleaning', 'sofa dry cleaning Dubai'],
@@ -141,7 +141,7 @@ const services: ServiceSectionProps[] = [
     id: 'stain-removal',
     badge: 'Specialist',
     badgeColor: '#FF5A3C',
-    title: <>Professional <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: '#FF5A3C' }}>Stain Removal</span> Dubai</>,
+    title: <>Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#FF5A3C' }}>Stain Removal</span> Dubai</>,
     desc1: "Targeted treatment for coffee, food, ink, wine, and other stubborn stains that regular cleaning simply cannot remove. Our specialist formula penetrates deep into fibers and works on even old, set-in stains without damaging fabric.",
     keywords: ['stain removal Dubai', 'sofa stain removal', 'coffee stain removal', 'ink stain sofa', 'pet stain removal'],
     priceLabel: 'Starting Price',
@@ -159,7 +159,7 @@ const services: ServiceSectionProps[] = [
     id: 'leather-cleaning',
     badge: 'Premium',
     badgeColor: '#8B5CF6',
-    title: <>Leather Sofa <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: '#8B5CF6' }}>Deep Cleaning</span> Dubai</>,
+    title: <>Leather Sofa <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#8B5CF6' }}>Deep Cleaning</span> Dubai</>,
     desc1: "Specialist pH-safe leather care prevents cracking in Dubai's harsh climate. We deep clean, condition, restore suppleness and apply a protective coat — preserving your leather sofa for years.",
     desc2: "Dubai's dry heat causes leather to crack and fade faster than anywhere else. Our conditioning treatment replenishes lost moisture and creates a barrier against UV damage and everyday wear.",
     keywords: ['leather sofa cleaning Dubai', 'leather couch cleaning', 'leather conditioning UAE', 'leather sofa care Dubai'],
@@ -178,7 +178,7 @@ const services: ServiceSectionProps[] = [
     id: 'odor-treatment',
     badge: 'Freshness',
     badgeColor: '#0891B2',
-    title: <>Sofa <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: '#0891B2' }}>Odor Treatment</span> Dubai</>,
+    title: <>Sofa <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#0891B2' }}>Odor Treatment</span> Dubai</>,
     desc1: "Dubai's humid climate lets odors linger deep within fabric fibers for months. Our eco-friendly deodorizers neutralize pet, smoke, food and moisture odors at the molecular source — not just mask them.",
     keywords: ['sofa odor removal Dubai', 'couch smell removal', 'pet odor sofa', 'smoke smell sofa UAE'],
     priceLabel: 'Starting Price',
@@ -195,8 +195,8 @@ const services: ServiceSectionProps[] = [
   {
     id: 'pet-hair',
     badge: 'Pet-Friendly',
-    badgeColor: '#D97706',
-    title: <>Pet Hair <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: '#D97706' }}>Removal</span> Service</>,
+    badgeColor: '#1D6A5B',
+    title: <>Pet Hair <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#1D6A5B' }}>Removal</span> Service</>,
     desc1: "Specialized vacuum and roller treatment removes embedded pet hair from every cushion, seam and corner of your sofa. Includes anti-allergen treatment completely safe for your pets and family members.",
     keywords: ['pet hair removal sofa Dubai', 'dog hair sofa cleaning', 'cat hair sofa Dubai', 'pet dander removal UAE'],
     priceLabel: 'Starting Price',
@@ -214,7 +214,7 @@ const services: ServiceSectionProps[] = [
     id: 'sanitization',
     badge: 'Hygienic',
     badgeColor: '#059669',
-    title: <>Sofa <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: '#059669' }}>Sanitization</span> &amp; Disinfection</>,
+    title: <>Sofa <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#059669' }}>Sanitization</span> &amp; Disinfection</>,
     desc1: "Hospital-grade disinfection kills 99.9% of bacteria, viruses and germs lurking deep in your sofa — completely safe for children and pets. Ideal after illness, for allergy sufferers, or for a seasonal deep clean.",
     keywords: ['sofa sanitization Dubai', 'sofa disinfection UAE', 'bacteria removal sofa', 'allergy sofa cleaning Dubai'],
     priceLabel: 'Starting Price',
@@ -232,7 +232,7 @@ const services: ServiceSectionProps[] = [
     id: 'velvet-microfiber',
     badge: 'Delicate Care',
     badgeColor: '#EC4899',
-    title: <>Velvet &amp; Microfiber <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: '#EC4899' }}>Cleaning</span></>,
+    title: <>Velvet &amp; Microfiber <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#EC4899' }}>Cleaning</span></>,
     desc1: "Gentle specialist cleaning for delicate velvet, microfiber and suede upholstery. Our low-moisture technique restores pile without any damage, shrinkage or colour fading — specialist tools for every curve.",
     keywords: ['velvet sofa cleaning Dubai', 'microfiber sofa clean', 'suede sofa UAE', 'delicate fabric cleaning Dubai'],
     priceLabel: 'Starting Price',
@@ -250,7 +250,7 @@ const services: ServiceSectionProps[] = [
     id: 'fabric-protection',
     badge: 'Protection',
     badgeColor: '#3B82F6',
-    title: <>Fabric <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: '#3B82F6' }}>Protection</span> Coat</>,
+    title: <>Fabric <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#3B82F6' }}>Protection</span> Coat</>,
     desc1: "Invisible shield coating repels future stains, spills and desert dust — keeping your sofa cleaner for up to 12+ months. Best applied immediately after a deep clean for maximum penetration and effect.",
     keywords: ['fabric protection Dubai', 'sofa stain protection UAE', 'scotchgard sofa Dubai', 'sofa shield coating'],
     priceLabel: 'Starting Price',
@@ -268,7 +268,7 @@ const services: ServiceSectionProps[] = [
     id: 'ikea-lshape',
     badge: 'IKEA Special',
     badgeColor: '#0058A3',
-    title: <>IKEA <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>L-Shape Sofa</span> Cleaning Dubai</>,
+    title: <>IKEA <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>L-Shape Sofa</span> Cleaning Dubai</>,
     desc1: "IKEA L-shape sofas are among the most common in UAE homes — but their size and multi-section design makes them difficult to clean thoroughly. Our specialist team covers every corner, seam, cushion and armrest.",
     desc2: "We are trained on all IKEA fabric types including KIVIK, EKTORP, VIMLE and FRIHETEN. Safe, eco-friendly cleaning agents, fast dry time, and complete allergen removal — all at your doorstep.",
     keywords: ['IKEA sofa cleaning Dubai', 'L-shape sofa cleaning', 'IKEA KIVIK cleaning', 'IKEA EKTORP cleaning'],
@@ -314,14 +314,14 @@ export default function ServicesPage() {
             </div>
             <div className="section-tag">Our Services</div>
             <h1 className="reveal" style={{ fontSize: 'clamp(36px, 6vw, 80px)', lineHeight: 1.0, marginBottom: 20 }}>
-              Professional Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Dubai &amp; UAE</span>
+              Professional Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Dubai &amp; UAE</span>
             </h1>
             <p className="reveal reveal-delay-1" style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 620, lineHeight: 1.65 }}>
               In Dubai, where luxury meets the desert, your sofa acts as a filter for fine sand, allergens and bacteria. Al Haya Sofa Care UAE uses industrial-grade extraction and pH-balanced cleaners to restore your upholstery — at your doorstep, same-day, across Dubai, Sharjah, Ajman &amp; Abu Dhabi.
             </p>
             <div className="reveal reveal-delay-2" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 24 }}>
               {['Dubai', 'Sharjah', 'Ajman', 'Abu Dhabi', 'Al Ain', 'RAK'].map((city) => (
-                <span key={city} style={{ padding: '5px 14px', borderRadius: 999, fontFamily: 'var(--font-mono)', fontSize: 11, background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.7)' }}>
+                <span key={city} style={{ padding: '5px 14px', borderRadius: 999, fontFamily: 'var(--font-mono)', fontSize: 11, background: 'rgba(12,17,14,0.06)', border: '1px solid rgba(12,17,14,0.12)', color: 'rgba(12,17,14,0.60)' }}>
                   📍 {city}
                 </span>
               ))}
@@ -334,7 +334,7 @@ export default function ServicesPage() {
           <div className="container-x" style={{ textAlign: 'center' }}>
             <div className="section-tag" style={{ margin: '0 auto 16px' }}>Core Services</div>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 52px)', marginBottom: 12 }}>
-              Our Comprehensive <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Upholstery Care</span> Solutions
+              Our Comprehensive <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Upholstery Care</span> Solutions
             </h2>
             <p style={{ color: 'var(--fg-muted)', maxWidth: 560, margin: '0 auto', fontSize: 16, lineHeight: 1.65 }}>
               From deep extraction to steam sanitization — every method tailored to your fabric type and cleaning need.
@@ -351,7 +351,7 @@ export default function ServicesPage() {
             <div className="reveal" style={{ textAlign: 'center', marginBottom: 56 }}>
               <div className="section-tag">Technical Protocol</div>
               <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}>
-                The Al Haya <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Technical Cleaning</span> Process
+                The Al Haya <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Technical Cleaning</span> Process
               </h2>
               <p style={{ color: 'var(--fg-muted)', maxWidth: 520, margin: '12px auto 0', fontSize: 16, lineHeight: 1.65 }}>
                 Transparency builds trust. Here is the exact protocol our certified technicians follow — designed to achieve like-new results on every sofa type.
@@ -359,16 +359,16 @@ export default function ServicesPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 32 }}>
               {[
-                { n: '01', title: 'Inspection', color: '#F59E0B', desc: 'Our technician inspects your sofa fabric, identifies stains, and selects the ideal cleaning method and products for your specific upholstery.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> },
+                { n: '01', title: 'Inspection', color: '#1D6A5B', desc: 'Our technician inspects your sofa fabric, identifies stains, and selects the ideal cleaning method and products for your specific upholstery.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> },
                 { n: '02', title: 'Deep Clean', color: '#3B82F6', desc: 'Using professional equipment, we deep clean your sofa — extracting dust, treating every stain, and sanitizing the fabric from top to bottom.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg> },
                 { n: '03', title: 'Fast Dry', color: '#10B981', desc: 'High-power drying equipment reduces drying time to just 2-4 hours. Your sofa is clean, fresh, and ready to use the same day.', svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg> },
               ].map((step, i) => (
-                <div key={step.n} className={`reveal reveal-delay-${i + 1}`} style={{ position: 'relative', overflow: 'hidden', background: '#141210', border: `1px solid ${step.color}30`, borderTop: `3px solid ${step.color}`, borderRadius: 16, padding: 28, transition: 'transform 0.2s, box-shadow 0.2s' }}>
+                <div key={step.n} className={`reveal reveal-delay-${i + 1}`} style={{ position: 'relative', overflow: 'hidden', background: '#FFFFFF', border: `1px solid ${step.color}30`, borderTop: `3px solid ${step.color}`, borderRadius: 16, padding: 28, transition: 'transform 0.2s, box-shadow 0.2s' }}>
                   <div style={{ position: 'absolute', top: -10, right: -10, fontFamily: 'var(--font-display)', fontSize: 80, fontWeight: 900, color: `${step.color}15`, lineHeight: 1 }}>{step.n}</div>
                   <div style={{ width: 48, height: 48, borderRadius: '50%', background: `${step.color}20`, border: `1px solid ${step.color}40`, color: step.color, fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20, flexShrink: 0 }}>{step.n}</div>
                   <div style={{ color: step.color, marginBottom: 12 }}>{step.svg}</div>
                   <h3 style={{ fontSize: 20, marginBottom: 12, color: step.color, fontWeight: 800, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{step.title}</h3>
-                  <p style={{ color: 'rgba(246,241,232,0.70)', fontSize: 15, lineHeight: 1.65 }}>{step.desc}</p>
+                  <p style={{ color: 'rgba(12,17,14,0.60)', fontSize: 15, lineHeight: 1.65 }}>{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -381,7 +381,7 @@ export default function ServicesPage() {
             <div className="reveal" style={{ textAlign: 'center', marginBottom: 48 }}>
               <div className="section-tag">FAQs</div>
               <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}>
-                Sofa Cleaning <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>FAQs</span>
+                Sofa Cleaning <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>FAQs</span>
               </h2>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 800, margin: '0 auto' }}>
@@ -391,9 +391,9 @@ export default function ServicesPage() {
                 { q: 'Is professional sofa cleaning safe for all sofa materials?', a: 'Yes. Our technicians perform a fabric inspection and pH test before selecting cleaners. We use pH-neutral solutions for delicate natural fibers (wool, silk, linen) to prevent browning or dye bleeding, and specialist low-moisture techniques for velvet and microfiber.' },
                 { q: 'Will deep cleaning remove bad odors from my sofa?', a: "Yes. Our eco-friendly deodorizers neutralize pet, smoke, food and moisture odors at the molecular source — not just mask them. This is especially effective in Dubai's humid climate where odors can linger deep within fabric fibers." },
               ].map((item, i) => (
-                <div key={i} className={`reveal reveal-delay-${i + 1}`} style={{ background: '#141210', border: '1px solid rgba(246,241,232,0.10)', borderLeft: '3px solid var(--accent)', borderRadius: 14, padding: '24px 28px' }}>
+                <div key={i} className={`reveal reveal-delay-${i + 1}`} style={{ background: '#FFFFFF', border: '1px solid rgba(12,17,14,0.10)', borderLeft: '3px solid var(--accent)', borderRadius: 14, padding: '24px 28px' }}>
                   <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--fg)', marginBottom: 12 }}>{item.q}</h3>
-                  <p style={{ color: 'rgba(246,241,232,0.68)', fontSize: 15, lineHeight: 1.7 }}>{item.a}</p>
+                  <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 15, lineHeight: 1.7 }}>{item.a}</p>
                 </div>
               ))}
             </div>

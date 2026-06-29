@@ -67,7 +67,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
             </div>
             <div className="section-tag" style={{ marginBottom: 16 }}>{em.cityName} · {area.short}</div>
             <h1 style={{ fontSize: 'clamp(32px, 5vw, 64px)', lineHeight: 1.04, marginBottom: 20, fontFamily: 'var(--font-display)', fontWeight: 900 }}>
-              Sofa Cleaning in <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{area.name}</span>
+              Sofa Cleaning in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{area.name}</span>
             </h1>
             <p style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 640, lineHeight: 1.7, marginBottom: 28 }}>{area.intro}</p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 28 }}>
@@ -98,7 +98,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
           <div className="container-x">
             <div className="section-tag">Local Coverage</div>
             <h2 style={{ fontSize: 'clamp(24px, 3vw, 40px)', marginBottom: 16, lineHeight: 1.15 }}>
-              Sofa Cleaning Across <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{area.name}</span>
+              Sofa Cleaning Across <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{area.name}</span>
             </h2>
             <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 24, maxWidth: 760 }}>{area.localNote}</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
@@ -115,7 +115,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
             <div style={{ textAlign: 'center', marginBottom: 40 }}>
               <div className="section-tag">Services</div>
               <h2 style={{ fontSize: 'clamp(24px, 3vw, 42px)', marginBottom: 12 }}>
-                What We Clean in <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{area.short}</span>
+                What We Clean in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{area.short}</span>
               </h2>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
@@ -125,9 +125,9 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
                 { title: 'Leather Sofa Cleaning', desc: `Specialist pH-safe leather care and conditioning, ideal for ${area.propertyType}.`, color: '#8B5CF6' },
                 { title: 'Stain & Pet-Hair Removal', desc: 'Coffee, wine, food and pet stains removed safely, plus deep pet-hair extraction.', color: '#FF5A3C' },
               ].map((s) => (
-                <div key={s.title} style={{ background: '#141210', border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 14, padding: '22px 20px' }}>
+                <div key={s.title} style={{ background: '#FFFFFF', border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 14, padding: '22px 20px' }}>
                   <h3 style={{ fontSize: 16, fontWeight: 800, color: s.color, fontFamily: 'var(--font-display)', marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
+                  <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 13, lineHeight: 1.65 }}>{s.desc}</p>
                 </div>
               ))}
             </div>

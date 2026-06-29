@@ -3,9 +3,9 @@ import Script from 'next/script';
 import './globals.css';
 import { Archivo, Inter, JetBrains_Mono, Fraunces } from 'next/font/google';
 
-const fontDisplay = Archivo({
+const fontDisplay = Fraunces({
   subsets: ['latin'],
-  weight: ['500', '800', '900'],
+  style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -21,10 +21,10 @@ const fontMono = JetBrains_Mono({
   variable: '--font-mono',
   display: 'swap',
 });
-const fontSerif = Fraunces({
+const fontGrot = Archivo({
   subsets: ['latin'],
-  style: ['normal', 'italic'],
-  variable: '--font-serif',
+  weight: ['500', '600', '700', '800', '900'],
+  variable: '--font-grot',
   display: 'swap',
 });
 
@@ -215,14 +215,14 @@ const faqSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} ${fontSerif.variable}`}>
+    <html lang="en" className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} ${fontGrot.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preload" href="/hero-mobile.webp" as="image" type="image/webp" media="(max-width: 768px)" />
         <link rel="preload" href="/sofa-cleaning-dubai-professional.webp" as="image" type="image/webp" media="(min-width: 769px)" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#0B0B0B" />
+        <meta name="theme-color" content="#F3F7F4" />
         <meta name="geo.region" content="AE-DU" />
         <meta name="geo.placename" content="Dubai, United Arab Emirates" />
         <meta name="geo.position" content="25.2048;55.2708" />

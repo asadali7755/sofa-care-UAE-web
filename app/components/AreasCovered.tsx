@@ -5,7 +5,7 @@ import { emirates } from '../lib/areas';
 const ACCENTS: Record<string, string> = {
   dubai: 'var(--accent)',
   sharjah: '#0891B2',
-  ajman: '#F59E0B',
+  ajman: '#1D6A5B',
   'abu-dhabi': '#8B5CF6',
 };
 
@@ -21,7 +21,7 @@ export default function AreasCovered() {
           <div className="section-tag">Areas We Cover</div>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', marginBottom: 16 }}>
             Sofa Cleaning in{' '}
-            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>
               {totalAreas}+ Areas
             </span>{' '}
             Across the UAE

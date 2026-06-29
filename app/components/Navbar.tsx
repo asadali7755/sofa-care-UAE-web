@@ -81,7 +81,7 @@ export default function Navbar() {
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
         borderBottom: `1px solid ${scrolled ? 'var(--line)' : 'transparent'}`,
-        background: scrolled ? 'rgba(11,11,11,0.92)' : 'transparent',
+        background: scrolled ? 'rgba(243,247,244,0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(16px)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
         transition: 'background 0.3s, border-color 0.3s',
@@ -127,9 +127,9 @@ export default function Navbar() {
                 <div style={{
                   position: 'absolute', top: 'calc(100% + 12px)', left: '50%',
                   transform: 'translateX(-50%)',
-                  background: '#141414', border: '1px solid var(--line)',
+                  background: '#FFFFFF', border: '1px solid var(--line)',
                   borderRadius: 16, padding: 12,
-                  width: 320, boxShadow: '0 16px 44px rgba(0,0,0,0.6)',
+                  width: 320, boxShadow: '0 16px 44px rgba(12,17,14,0.12)',
                   zIndex: 300,
                 }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--fg-dim)', padding: '2px 4px 12px' }}>Sofa Cleaning by City</div>
@@ -206,7 +206,7 @@ export default function Navbar() {
           position: 'fixed', top: 0, right: 0, bottom: 0,
           width: 'min(320px, 85vw)',
           zIndex: 199,
-          background: '#0F0F0F',
+          background: '#FFFFFF',
           borderLeft: '1px solid var(--line)',
           transform: open ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)',

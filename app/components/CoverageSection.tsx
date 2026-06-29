@@ -9,7 +9,7 @@ const areas = [
     desc: 'All Dubai areas — Marina, JVC, Downtown, Deira, Bur Dubai, Jumeirah, Palm Jumeirah & more.',
     tags: ['Marina', 'JVC', 'Downtown', 'Jumeirah', 'Deira'],
     accent: 'var(--accent)',
-    gradient: 'linear-gradient(135deg, #003d4a 0%, #0B0B0B 100%)',
+    gradient: 'linear-gradient(135deg, #E5EDE6 0%, #FFFFFF 100%)',
   },
   {
     city: 'Abu Dhabi',
@@ -18,7 +18,7 @@ const areas = [
     desc: 'Serving all Abu Dhabi areas — Khalifa City, Al Reem Island, Yas Island, Saadiyat Island & Al Muroor.',
     tags: ['Khalifa City', 'Al Reem Island', 'Yas Island', 'Al Muroor'],
     accent: '#3B82F6',
-    gradient: 'linear-gradient(135deg, #001a3d 0%, #0B0B0B 100%)',
+    gradient: 'linear-gradient(135deg, #E5EDE6 0%, #FFFFFF 100%)',
   },
   {
     city: 'Sharjah',
@@ -26,8 +26,8 @@ const areas = [
     image: '/cities/sharjah.webp',
     desc: 'Covering all Sharjah neighborhoods — Al Nahda, Al Majaz, Al Qasimia & surrounding areas.',
     tags: ['Al Nahda', 'Al Majaz', 'Al Qasimia', 'Muwaileh'],
-    accent: '#D9F15A',
-    gradient: 'linear-gradient(135deg, #2a3000 0%, #0B0B0B 100%)',
+    accent: '#6DD5C2',
+    gradient: 'linear-gradient(135deg, #E5EDE6 0%, #FFFFFF 100%)',
   },
   {
     city: 'Ajman',
@@ -36,7 +36,7 @@ const areas = [
     desc: 'Full coverage in Ajman — Al Nuaimiya, Al Rashidiya, Al Jurf & all residential areas.',
     tags: ['Al Nuaimiya', 'Al Rashidiya', 'Al Jurf', 'Al Hamidiya'],
     accent: '#FF5A3C',
-    gradient: 'linear-gradient(135deg, #3d0f00 0%, #0B0B0B 100%)',
+    gradient: 'linear-gradient(135deg, #E5EDE6 0%, #FFFFFF 100%)',
   },
 ];
 
@@ -49,7 +49,7 @@ export default function CoverageSection() {
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 52 }}>
           <div className="section-tag">Service Areas</div>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', marginBottom: 16 }}>
-            We Cover <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>All of UAE</span>
+            We Cover <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>All of UAE</span>
           </h2>
           <p style={{ color: 'var(--fg-muted)', maxWidth: 480, margin: '0 auto', fontSize: 17, lineHeight: 1.65 }}>
             Professional sofa cleaning delivered directly to your doorstep — wherever you are in the UAE.
@@ -111,7 +111,7 @@ export default function CoverageSection() {
               {/* Card content */}
               <div style={{ padding: '20px 22px', background: area.gradient }}>
                 {/* Desc */}
-                <p style={{ color: 'rgba(246,241,232,0.65)', fontSize: 13, lineHeight: 1.65, marginBottom: 16 }}>
+                <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 13, lineHeight: 1.65, marginBottom: 16 }}>
                   {area.desc}
                 </p>
 
@@ -137,7 +137,7 @@ export default function CoverageSection() {
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#25D366', display: 'inline-block', flexShrink: 0 }}/>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'rgba(246,241,232,0.5)' }}>Same-day</span>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'rgba(12,17,14,0.45)' }}>Same-day</span>
                   </div>
                   <Link href={area.href} style={{
                     fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 600,

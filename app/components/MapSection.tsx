@@ -9,7 +9,7 @@ export default function MapSection() {
           <div className="section-tag">Find Us</div>
           <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 46px)', marginBottom: 12 }}>
             AL HAYA Cleaning Services —{' '}
-            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Dubai, UAE</span>
+            <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Dubai, UAE</span>
           </h2>
           <p style={{ color: 'var(--fg-muted)', fontSize: 16, maxWidth: 480, margin: '0 auto', lineHeight: 1.65 }}>
             Serving all UAE emirates. Book via WhatsApp or call us — we come to your doorstep.
