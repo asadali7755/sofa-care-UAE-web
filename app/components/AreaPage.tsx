@@ -93,6 +93,19 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
           </div>
         </section>
 
+        {/* Why professional cleaning matters here */}
+        {area.whyClean && (
+        <section className="section" style={{ borderBottom: '1px solid var(--line)' }}>
+          <div className="container-x">
+            <div className="section-tag">Why Professional Cleaning</div>
+            <h2 style={{ fontSize: 'clamp(24px, 3vw, 40px)', marginBottom: 16, lineHeight: 1.15 }}>
+              Why Your Sofa in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{area.short}</span> Needs Deep Cleaning
+            </h2>
+            <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 24, maxWidth: 760 }}>{area.whyClean}</p>
+          </div>
+        </section>
+        )}
+
         {/* Local context */}
         <section className="section" style={{ borderBottom: '1px solid var(--line)' }}>
           <div className="container-x">
@@ -108,6 +121,19 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
             </div>
           </div>
         </section>
+
+        {/* Our process in this area */}
+        {area.serviceDetail && (
+        <section className="section" style={{ borderBottom: '1px solid var(--line)' }}>
+          <div className="container-x">
+            <div className="section-tag">Our Process</div>
+            <h2 style={{ fontSize: 'clamp(24px, 3vw, 40px)', marginBottom: 16, lineHeight: 1.15 }}>
+              How We Clean Sofas in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{area.short}</span>
+            </h2>
+            <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 24, maxWidth: 760 }}>{area.serviceDetail}</p>
+          </div>
+        </section>
+        )}
 
         {/* Services */}
         <section className="section" style={{ borderBottom: '1px solid var(--line)', background: 'var(--bg-elev)' }}>
