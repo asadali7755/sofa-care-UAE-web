@@ -1,16 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// WordPress query parameters that should redirect to homepage
 const WP_PARAMS = ['feed', 'cat', 'tag', 'page_id', 'paged', 'author', 'p', 's', 'attachment_id'];
 
 export function middleware(request: NextRequest) {
   const { searchParams } = request.nextUrl;
 
-  // Redirect any URL with old WordPress query params → homepage (301 permanent)
+  // 410 Gone for old WordPress URLs — tells Google to permanently drop them from index
   const hasWpParam = WP_PARAMS.some((param) => searchParams.has(param));
   if (hasWpParam) {
-    const homeUrl = new URL('/', request.url);
-    return NextResponse.redirect(homeUrl, { status: 301 });
+    return new NextResponse(null, { status: 410, statusText: 'Gone' });
   }
 
   return NextResponse.next();
