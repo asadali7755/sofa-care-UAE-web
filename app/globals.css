@@ -914,6 +914,7 @@ section, footer, nav { max-width: 100%; }
 }
 .hero-enquiry-card > p { font-size: 13px; color: var(--fg-muted); margin: 0; }
 .hero-enquiry-card select,
+.hero-enquiry-card input[type="text"],
 .hero-enquiry-card input[type="tel"] {
   width: 100%; padding: 12px 14px; border: 1.5px solid var(--line-strong);
   border-radius: 10px; font-size: 15px; background: var(--bg); color: var(--fg);
