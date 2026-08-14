@@ -898,6 +898,10 @@ section, footer, nav { max-width: 100%; }
 
 /* ─── Hero Enquiry Card ─── */
 .hero-enquiry-card {
+  --fg: #0C110E;
+  --fg-muted: rgba(12,17,14,0.56);
+  --bg: #F3F7F4;
+  --line-strong: rgba(12,17,14,0.12);
   background: #fff; border: 1px solid var(--line-strong);
   border-radius: 16px; padding: 28px 24px;
   display: flex; flex-direction: column; gap: 12px;
