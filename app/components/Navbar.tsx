@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { IconClose } from './Icons';
+import { useRequestCall } from '@/app/components/RequestCallModal';
 
 function HamburgerIcon() {
   return (
@@ -34,6 +35,7 @@ const locationLinks = [
 ];
 
 export default function Navbar() {
+  const { open: openCallModal } = useRequestCall();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [locOpen, setLocOpen] = useState(false);
@@ -165,6 +167,7 @@ export default function Navbar() {
             <a href="tel:+971547199189" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--fg-muted)', display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
               +971 54 719 9189
             </a>
+            <button onClick={openCallModal} className="nav-request-call" style={{ padding: '9px 18px', fontSize: 13, whiteSpace: 'nowrap', background: 'none', border: '1.5px solid var(--accent)', borderRadius: 8, color: 'var(--accent)', cursor: 'pointer', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Request a Call</button>
             <Link href="/contact" className="btn btn-primary" style={{ padding: '9px 18px', fontSize: 13, whiteSpace: 'nowrap' }}>Book Now →</Link>
           </div>
 
@@ -359,6 +362,22 @@ export default function Navbar() {
             </svg>
             WhatsApp Us
           </a>
+          <button
+            onClick={() => { setOpen(false); openCallModal(); }}
+            style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
+              padding: '13px 16px', borderRadius: 10,
+              background: 'transparent', color: 'var(--accent)',
+              fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: 600,
+              textDecoration: 'none', border: '1.5px solid var(--accent)',
+              cursor: 'pointer',
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Request a Call
+          </button>
           <Link
             href="/contact"
             className="btn btn-primary"

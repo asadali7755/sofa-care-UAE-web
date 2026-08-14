@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 import { Archivo, Inter, JetBrains_Mono, Fraunces } from 'next/font/google';
+import ClientProviders from '@/app/components/ClientProviders';
 
 const fontDisplay = Fraunces({
   subsets: ['latin'],
@@ -242,7 +243,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('js', new Date());
           gtag('config', 'G-YPV76TBPNB');
         `}</Script>
-        <div id="page-wrapper" style={{ overflowX: 'hidden', width: '100%', position: 'relative' }}>{children}</div>
+        <ClientProviders>
+          <div id="page-wrapper" style={{ overflowX: 'hidden', width: '100%', position: 'relative' }}>{children}</div>
+        </ClientProviders>
       </body>
     </html>
   );

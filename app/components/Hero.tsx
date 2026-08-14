@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { IconArrow, IconWhatsApp } from './Icons';
+import HeroEnquiryCard from './HeroEnquiryCard';
 
 function useTypewriter(words: string[], typingSpeed = 80, deleteSpeed = 40, pauseMs = 1600) {
   const [text, setText] = useState('');
@@ -73,8 +74,8 @@ export default function Hero() {
         <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
       </div>
 
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24, paddingLeft: 'clamp(24px, 5vw, 80px)', paddingRight: 24 }}>
-        <div style={{ maxWidth: 600, textAlign: 'left' }}>
+      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24, paddingLeft: 'clamp(24px, 5vw, 80px)', paddingRight: 'clamp(24px, 5vw, 80px)', gap: 40 }} className="hero-inner">
+        <div style={{ maxWidth: 600, textAlign: 'left', flex: 1 }}>
           <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '6px 12px', borderRadius: 999, background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.15)', fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.75)', marginBottom: 20 }}>
             <span className="pulse-dot"/> Trusted by 500+ clients &nbsp;·&nbsp; Dubai, UAE
           </div>
@@ -124,10 +125,16 @@ export default function Hero() {
             ))}
           </div>
         </div>
+        <div className="hero-enquiry-wrapper" style={{ flexShrink: 0 }}>
+          <HeroEnquiryCard />
+        </div>
       </div>
       <style jsx>{`
         @media (max-width: 640px) {
           .hero-stats { grid-template-columns: repeat(2, 1fr) !important; max-width: 280px !important; }
+        }
+        @media (max-width: 900px) {
+          .hero-inner { flex-direction: column !important; align-items: flex-start !important; }
         }
       `}</style>
     </section>

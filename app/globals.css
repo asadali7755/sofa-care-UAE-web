@@ -794,3 +794,136 @@ section, footer, nav { max-width: 100%; }
 .loc-card img { transition: transform 0.5s cubic-bezier(0.2,0.7,0.2,1); }
 .loc-card:hover { border-color: var(--teal) !important; transform: translateY(-2px); }
 .loc-card:hover img { transform: scale(1.09); }
+
+/* ─── Request-a-Call Modal ─── */
+.rcm-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.55); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  animation: rcmFadeIn 0.2s ease;
+}
+@keyframes rcmFadeIn { from { opacity: 0; } to { opacity: 1; } }
+.rcm-modal {
+  position: relative; width: 100%; max-width: 380px;
+  background: #fff; border-radius: 18px; padding: 36px 28px 28px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+  animation: rcmSlide 0.25s ease;
+}
+@keyframes rcmSlide { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.rcm-close {
+  position: absolute; top: 14px; right: 14px;
+  background: var(--bg-raised); border: 1px solid var(--line);
+  border-radius: 8px; padding: 6px; cursor: pointer; color: var(--fg-muted);
+  display: flex; align-items: center;
+}
+.rcm-close:hover { background: var(--line); }
+.rcm-label {
+  display: inline-block; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+  background: var(--teal-bg); padding: 3px 10px; border-radius: 6px;
+  margin-bottom: 14px;
+}
+.rcm-modal h3 {
+  font-family: var(--font-display); font-size: 22px; font-weight: 800;
+  color: var(--fg); margin: 0 0 6px; line-height: 1.2;
+}
+.rcm-modal > p { font-size: 14px; color: var(--fg-muted); margin: 0 0 20px; line-height: 1.5; }
+.rcm-modal form input[type="tel"] {
+  width: 100%; padding: 13px 14px; border: 1.5px solid var(--line-strong);
+  border-radius: 10px; font-size: 16px; font-family: var(--font-mono);
+  background: var(--bg); color: var(--fg); outline: none;
+  transition: border-color 0.2s;
+}
+.rcm-modal form input[type="tel"]:focus { border-color: var(--accent); }
+.rcm-submit {
+  width: 100%; margin-top: 12px; padding: 14px; border: none;
+  border-radius: 10px; background: var(--accent); color: #fff;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+  font-family: var(--font-sans); transition: background 0.2s;
+}
+.rcm-submit:hover { background: var(--teal-l); }
+.rcm-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.rcm-or {
+  text-align: center; font-size: 12px; color: var(--fg-dim);
+  margin: 18px 0 12px; font-family: var(--font-mono);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.rcm-alt { display: flex; gap: 10px; }
+.rcm-alt a {
+  flex: 1; text-align: center; padding: 10px; border-radius: 8px;
+  border: 1px solid var(--line-strong); font-size: 13px; font-weight: 600;
+  color: var(--fg); text-decoration: none; font-family: var(--font-sans);
+  transition: background 0.2s;
+}
+.rcm-alt a:hover { background: var(--bg-raised); }
+
+/* ─── Success Toast ─── */
+.success-toast {
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+  z-index: 10000; display: flex; align-items: center; gap: 12px;
+  background: #fff; border: 1px solid var(--line-strong);
+  border-radius: 14px; padding: 14px 18px; min-width: 280px; max-width: 420px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  animation: toastIn 0.3s ease;
+}
+@keyframes toastIn { from { transform: translateX(-50%) translateY(20px); opacity: 0; } to { transform: translateX(-50%) translateY(0); opacity: 1; } }
+.st-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.st-body { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.st-title { font-size: 13px; font-weight: 700; color: var(--fg); }
+.st-msg { font-size: 12px; color: var(--fg-muted); }
+.st-close {
+  background: none; border: none; color: var(--fg-dim); cursor: pointer;
+  padding: 4px; display: flex; align-items: center; flex-shrink: 0;
+}
+
+/* ─── Fab (WhatsApp + Request Call) ─── */
+.fab-stack {
+  position: fixed; bottom: 24px; right: 24px; z-index: 190;
+  display: flex; flex-direction: column; gap: 12px; align-items: center;
+}
+.fab-btn {
+  width: 54px; height: 54px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.fab-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
+.fab-wa { background: #25D366; color: #fff; }
+.fab-call { background: var(--accent); color: #fff; }
+
+/* ─── Hero Enquiry Card ─── */
+.hero-enquiry-card {
+  background: #fff; border: 1px solid var(--line-strong);
+  border-radius: 16px; padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  width: 100%; max-width: 360px;
+}
+.hero-enquiry-card h3 {
+  font-family: var(--font-display); font-size: 20px; font-weight: 800;
+  color: var(--fg); margin: 0;
+}
+.hero-enquiry-card > p { font-size: 13px; color: var(--fg-muted); margin: 0; }
+.hero-enquiry-card select,
+.hero-enquiry-card input[type="tel"] {
+  width: 100%; padding: 12px 14px; border: 1.5px solid var(--line-strong);
+  border-radius: 10px; font-size: 15px; background: var(--bg); color: var(--fg);
+  font-family: var(--font-sans); outline: none; appearance: none;
+  -webkit-appearance: none;
+}
+.hero-enquiry-card select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='2,4 6,8 10,4' fill='none' stroke='%230C110E' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+.hero-enquiry-card select:focus,
+.hero-enquiry-card input:focus { border-color: var(--accent); }
+.hero-enquiry-card button[type="submit"] {
+  width: 100%; padding: 13px; border: none; border-radius: 10px;
+  background: var(--accent); color: #fff; font-size: 15px;
+  font-weight: 700; cursor: pointer; font-family: var(--font-sans);
+  transition: background 0.2s;
+}
+.hero-enquiry-card button[type="submit"]:hover { background: var(--teal-l); }
+.hero-enquiry-card button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }
