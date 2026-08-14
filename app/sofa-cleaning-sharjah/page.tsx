@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { IconArrow, IconWhatsApp } from '../components/Icons';
+import QuoteCallSection from '../components/QuoteCallSection';
 import { emirates } from '../lib/areas';
 
 export const metadata: Metadata = {
@@ -204,6 +205,8 @@ export default function SofaCleaningSharjah() {
             </div>
           </div>
         </section>
+
+        <QuoteCallSection />
 
         {/* CTA */}
         <section className="section-sm">

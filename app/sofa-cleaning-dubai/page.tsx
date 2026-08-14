@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { IconArrow, IconWhatsApp } from '../components/Icons';
 import { emirates } from '../lib/areas';
+import QuoteCallSection from '../components/QuoteCallSection';
 const dubaiAreaPages = emirates.dubai.areas;
 
 export const metadata: Metadata = {
@@ -289,6 +290,8 @@ export default function SofaCleaningDubai() {
             </div>
           </div>
         </section>
+
+        <QuoteCallSection />
 
         {/* CTA */}
         <section className="section-sm" style={{ borderBottom: '1px solid var(--line)' }}>

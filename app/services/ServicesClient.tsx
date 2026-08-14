@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { IconArrow, IconWhatsApp, IconCheck } from '../components/Icons';
 import ServiceCoverageSection from '../components/ServiceCoverageSection';
+import QuoteCallSection from '../components/QuoteCallSection';
 
 /* ─── Reusable Section Component ─── */
 type ServiceSectionProps = {
@@ -417,6 +418,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        <QuoteCallSection />
         <ServiceCoverageSection />
       </main>
       <Footer />

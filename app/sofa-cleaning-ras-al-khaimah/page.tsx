@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { IconArrow, IconWhatsApp } from '../components/Icons';
+import QuoteCallSection from '../components/QuoteCallSection';
 import { getCityPage } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
 
@@ -255,6 +256,8 @@ export default async function SofaCleaningRasAlKhaimah() {
             </div>
           </div>
         </section>
+
+        <QuoteCallSection />
 
         <section className="section-sm">
           <div className="container-x">

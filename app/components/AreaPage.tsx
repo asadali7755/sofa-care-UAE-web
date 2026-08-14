@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import WhatsAppButton from './WhatsAppButton';
 import { IconArrow, IconWhatsApp } from './Icons';
+import QuoteCallSection from './QuoteCallSection';
 import { getEmirate, getArea } from '../lib/areas';
 
 const BASE = 'https://sofashampooingdubai.com';
@@ -194,6 +195,8 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
             </div>
           </div>
         </section>
+
+        <QuoteCallSection />
 
         {/* CTA */}
         <section className="section-sm" style={{ borderBottom: '1px solid var(--line)' }}>

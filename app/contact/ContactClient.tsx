@@ -9,12 +9,14 @@ import MapSection from '../components/MapSection';
 import { IconPhone, IconWhatsApp, IconLocation, IconArrow } from '../components/Icons';
 import { trackEnquirySubmit, trackWhatsAppClick } from '../lib/gtag';
 import { sendEnquiry } from '../lib/sendEmail';
+import QuoteCallSection from '../components/QuoteCallSection';
 
 export default function ContactPage() {
   const [bookForm, setBookForm] = useState({ name: '', phone: '', email: '', service: '', date: '', time: '', area: '', notes: '' });
   const [contactForm, setContactForm] = useState({ name: '', phone: '', message: '' });
   const [bookSent, setBookSent] = useState(false);
   const [contactSent, setContactSent] = useState(false);
+  const [quoteSent, setQuoteSent] = useState(false);
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -306,6 +308,7 @@ export default function ContactPage() {
           </div>
         </section>
 
+        <QuoteCallSection />
         <MapSection />
         <ServiceCoverageSection />
       </main>
