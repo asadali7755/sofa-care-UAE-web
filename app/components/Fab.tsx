@@ -1,5 +1,6 @@
 'use client';
 import { useRequestCall } from '@/app/components/RequestCallModal';
+import { trackWhatsAppClick } from '@/app/lib/gtag';
 import { IconWhatsApp } from './Icons';
 
 export default function Fab() {
@@ -12,6 +13,7 @@ export default function Fab() {
         rel="noopener noreferrer"
         className="fab-btn fab-wa"
         aria-label="Chat with us on WhatsApp"
+        onClick={() => trackWhatsAppClick('floating_button')}
       >
         <IconWhatsApp size={24} />
       </a>

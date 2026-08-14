@@ -1,6 +1,7 @@
 'use client';
 import { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
 import { sendEnquiry } from '@/app/lib/sendEmail';
+import { trackEnquirySubmit, trackPhoneCall, trackWhatsAppClick } from '@/app/lib/gtag';
 
 const WA_LINK = 'https://wa.me/971547199189';
 const PHONE_TEL = '+971547199189';
@@ -79,7 +80,10 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
     if (!phone.trim()) { setErr('Phone number is required'); return; }
     setErr('');
     setLoading(true);
-    try { await sendEnquiry({ type: 'Request a Call', phone }); } catch {}
+    try {
+      await sendEnquiry({ type: 'Request a Call', phone });
+      trackEnquirySubmit('request_call_modal');
+    } catch {}
     setLoading(false);
     onSent('We got your number! Expect a call back shortly.');
   };
@@ -110,8 +114,8 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
         </form>
         <div className="rcm-or">Or reach us instantly</div>
         <div className="rcm-alt">
-          <a href={`tel:${PHONE_TEL}`}>Call {PHONE_DISPLAY}</a>
-          <a href={`${WA_LINK}?text=${encodeURIComponent("Hi, I need sofa cleaning services.")}`} target="_blank" rel="noopener">WhatsApp</a>
+          <a href={`tel:${PHONE_TEL}`} onClick={() => trackPhoneCall('request_call_modal')}>Call {PHONE_DISPLAY}</a>
+          <a href={`${WA_LINK}?text=${encodeURIComponent("Hi, I need sofa cleaning services.")}`} target="_blank" rel="noopener" onClick={() => trackWhatsAppClick('request_call_modal')}>WhatsApp</a>
         </div>
       </div>
     </div>

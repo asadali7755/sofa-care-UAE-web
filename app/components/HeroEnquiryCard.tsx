@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { sendEnquiry } from '@/app/lib/sendEmail';
+import { trackEnquirySubmit } from '@/app/lib/gtag';
 import { useToast } from '@/app/components/RequestCallModal';
 
 export default function HeroEnquiryCard() {
@@ -15,6 +16,7 @@ export default function HeroEnquiryCard() {
     setLoading(true);
     try {
       await sendEnquiry({ type: 'Hero Enquiry', phone, work: work || 'Sofa Cleaning' });
+      trackEnquirySubmit('hero_card', work || 'Sofa Cleaning');
     } catch {}
     setLoading(false);
     setPhone('');
