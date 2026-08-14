@@ -27,14 +27,25 @@ export default function ContactPage() {
     return () => io.disconnect();
   }, []);
 
-  const handleBook = (e: React.FormEvent) => {
+  const [bookLoading, setBookLoading] = useState(false);
+
+  const handleBook = async (e: React.FormEvent) => {
     e.preventDefault();
-    const wa = `Hi Al Haya,%0AName: ${bookForm.name}%0APhone: ${bookForm.phone}%0AService: ${bookForm.service}%0ADate: ${bookForm.date}%0ATime: ${bookForm.time}%0AArea: ${bookForm.area}%0ANotes: ${bookForm.notes}`;
-    window.open(`https://wa.me/971547199189?text=${wa}`, '_blank');
-    sendEnquiry({ type: 'Booking Form', phone: bookForm.phone, name: bookForm.name, work: bookForm.service }).catch(() => {});
-    trackEnquirySubmit('booking_form', bookForm.service);
-    trackWhatsAppClick('booking_form');
-    setBookSent(true);
+    setBookLoading(true);
+    try {
+      await sendEnquiry({
+        type: 'Booking Form',
+        phone: bookForm.phone,
+        name: bookForm.name,
+        work: `Service: ${bookForm.service} | Date: ${bookForm.date} | Time: ${bookForm.time} | Area: ${bookForm.area} | Notes: ${bookForm.notes}`,
+      });
+      trackEnquirySubmit('booking_form', bookForm.service);
+      setBookSent(true);
+    } catch {
+      alert('Something went wrong. Please try again or contact us via WhatsApp.');
+    } finally {
+      setBookLoading(false);
+    }
   };
 
   const handleContact = (e: React.FormEvent) => {
@@ -112,11 +123,11 @@ export default function ContactPage() {
                   <p style={{ color: 'var(--fg-muted)', fontSize: 15 }}>Fill in the details and we&apos;ll confirm your booking via WhatsApp.</p>
                 </div>
                 {bookSent ? (
-                  <div style={{ background: 'color-mix(in oklab, #25D366 15%, transparent)', border: '1px solid #25D366', borderRadius: 16, padding: 32, textAlign: 'center' }}>
-                    <div style={{ width:48,height:48,borderRadius:'50%',background:'color-mix(in oklab,#25D366 20%,transparent)',border:'1px solid #25D366',display:'flex',alignItems:'center',justifyContent:'center',marginBottom:16,fontSize:24,color:'#25D366' }}>&#10003;</div>
-                    <h3 style={{ marginBottom: 8 }}>Booking Sent!</h3>
-                    <p style={{ color: 'var(--fg-muted)' }}>Your request has been sent to WhatsApp. We&apos;ll confirm shortly!</p>
-                    <button onClick={() => setBookSent(false)} className="btn btn-ghost" style={{ marginTop: 20 }}>Make Another Booking</button>
+                  <div style={{ background: 'color-mix(in oklab, var(--accent) 12%, transparent)', border: '1px solid var(--accent)', borderRadius: 16, padding: 32, textAlign: 'center' }}>
+                    <div style={{ width:48,height:48,borderRadius:'50%',background:'color-mix(in oklab,var(--accent) 20%,transparent)',border:'1px solid var(--accent)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px',fontSize:24,color:'var(--accent)' }}>&#10003;</div>
+                    <h3 style={{ marginBottom: 8 }}>Booking Request Sent!</h3>
+                    <p style={{ color: 'var(--fg-muted)' }}>Your appointment request has been emailed to our team. We&apos;ll confirm within 1 hour!</p>
+                    <button onClick={() => { setBookSent(false); setBookForm({ name: '', phone: '', email: '', service: '', date: '', time: '', area: '', notes: '' }); }} className="btn btn-ghost" style={{ marginTop: 20 }}>Make Another Booking</button>
                   </div>
                 ) : (
                   <form onSubmit={handleBook} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -244,8 +255,8 @@ export default function ContactPage() {
                       <label className="form-label">Additional Notes</label>
                       <textarea className="form-input" rows={3} placeholder="e.g. 3-seater fabric sofa, has coffee stains on cushions..." value={bookForm.notes} onChange={(e) => setBookForm({ ...bookForm, notes: e.target.value })} style={{ resize: 'vertical' }}/>
                     </div>
-                    <button type="submit" className="btn btn-primary" style={{ fontSize: 15, padding: '16px 32px', justifyContent: 'center' }}>
-                      Send Booking via WhatsApp <IconArrow size={14}/>
+                    <button type="submit" disabled={bookLoading} className="btn btn-primary" style={{ fontSize: 15, padding: '16px 32px', justifyContent: 'center', opacity: bookLoading ? 0.7 : 1 }}>
+                      {bookLoading ? 'Sending...' : 'Send Email'} <IconArrow size={14}/>
                     </button>
                     <p style={{ color: 'var(--fg-dim)', fontSize: 13, textAlign: 'center' }}>
                       We&apos;ll confirm your appointment within 1 hour

@@ -5,6 +5,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import ServiceCoverageSection from '../components/ServiceCoverageSection';
+import QuoteCallSection from '../components/QuoteCallSection';
+import { useRequestCall } from '../components/RequestCallModal';
+import { IconWhatsApp } from '../components/Icons';
 
 const categories = ['All', 'Sofa Cleaning', 'Stain Removal', 'Leather', 'Shampooing'];
 
@@ -20,6 +23,32 @@ const videoResults = [
   { src: '/videos/sofa-stain-removal-before-after-dubai.mp4', title: 'Sofa Stain Removal Before After Dubai', alt: 'Sofa stain removal before and after in Dubai — tough stains eliminated by Al Haya professional cleaning', label: 'Stain Removal', heading: 'Tough Stain Removal', desc: 'Coffee, food, ink, pet stains — watch how our specialized stain removal process eliminates even the most stubborn marks. Pre-treatment with targeted agents followed by deep extraction leaves zero trace.', highlights: ['Coffee & food stains', 'Ink & pet stains', 'Zero-trace results'] },
   { src: '/videos/single-seat-sofa-cleaning-dubai.mp4', title: 'Single Seat Sofa Cleaning Dubai', alt: 'Single seat sofa cleaning in Dubai — individual cushion deep cleaning result by Al Haya Sofa Care UAE', label: 'Single Seat Clean', heading: 'Single Seat Cleaning', desc: 'Even a single armchair or accent chair deserves professional care. This video shows our detailed single-seat cleaning process — perfect for spot treatments or maintaining individual furniture pieces.', highlights: ['Individual piece care', 'Accent chair cleaning', 'Affordable per-seat pricing'] },
 ];
+
+function BottomCTACallButton() {
+  const { open } = useRequestCall();
+  return (
+    <button onClick={open} className="btn btn-ghost" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Request a Call
+    </button>
+  );
+}
+
+function VideoCTAButtons() {
+  const { open } = useRequestCall();
+  return (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+      <a href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20sofa%20cleaning%20in%20Dubai." target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14 }}>
+        <IconWhatsApp size={16} /> WhatsApp
+      </a>
+      <button onClick={open} className="btn btn-ghost" style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14 }}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Request a Call
+      </button>
+      <Link href="/contact" className="btn btn-primary" style={{ fontSize: 14 }}>Get a Quote</Link>
+    </div>
+  );
+}
 
 function VideoSection({ video, index }: { video: typeof videoResults[0]; index: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -126,9 +155,7 @@ function VideoSection({ video, index }: { video: typeof videoResults[0]; index: 
             </li>
           ))}
         </ul>
-        <a href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20sofa%20cleaning%20in%20Dubai." target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ fontSize: 14 }}>
-          Get This Result →
-        </a>
+        <VideoCTAButtons />
       </div>
     </div>
   );
@@ -328,12 +355,14 @@ export default function GalleryPage() {
               <h3 style={{ fontSize: 24, marginBottom: 12 }}>Want results like these for your sofa?</h3>
               <p style={{ color: 'var(--fg-muted)', marginBottom: 28 }}>Book your appointment today — same-day service available.</p>
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/contact" className="btn btn-primary">Book Now →</Link>
-                <a href="https://wa.me/971547199189" target="_blank" rel="noopener noreferrer" className="btn btn-wa">WhatsApp</a>
+                <a href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20sofa%20cleaning%20in%20Dubai." target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ display: 'flex', alignItems: 'center', gap: 8 }}><IconWhatsApp size={16} /> WhatsApp</a>
+                <BottomCTACallButton />
+                <Link href="/contact" className="btn btn-primary">Get a Quote →</Link>
               </div>
             </div>
           </div>
         </section>
+        <QuoteCallSection />
         <ServiceCoverageSection />
       </main>
       <Footer />

@@ -6,6 +6,8 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton';
 import { IconArrow, IconWhatsApp } from '../../components/Icons';
+import BlogCTAButtons from '../../components/BlogCTAButtons';
+import QuoteCallSection from '../../components/QuoteCallSection';
 import { blogPosts, getBlogPost } from '../../lib/blog';
 
 const BASE = 'https://sofashampooingdubai.com';
@@ -119,12 +121,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div style={{ marginTop: 36, textAlign: 'center', padding: '36px 24px', background: 'var(--bg-elev)', borderRadius: 18, border: '1px solid var(--line-strong)' }}>
               <h2 style={{ fontSize: 'clamp(20px, 2.6vw, 30px)', marginBottom: 12 }}>Book Professional Sofa Cleaning</h2>
               <p style={{ color: 'var(--fg-muted)', fontSize: 15, marginBottom: 22, maxWidth: 460, margin: '0 auto 22px' }}>Same-day at-home service across Dubai &amp; the UAE — from AED 79.</p>
-              <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/contact" className="btn btn-primary">Book Now <IconArrow size={14} /></Link>
-                <a href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20sofa%20cleaning." target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <IconWhatsApp size={16} /> WhatsApp
-                </a>
-              </div>
+              <BlogCTAButtons />
             </div>
 
             {/* FAQ */}
@@ -147,6 +144,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
         </article>
+        <QuoteCallSection />
       </main>
       <Footer />
       <WhatsAppButton />
