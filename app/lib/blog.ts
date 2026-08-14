@@ -20,7 +20,9 @@ export interface BlogPost {
   faqs: { q: string; a: string }[];
 }
 
-export const blogPosts: BlogPost[] = [
+import generatedPosts from './generated-blog-posts.json'
+
+const handWrittenBlogPosts: BlogPost[] = [
   {
     slug: 'sofa-cleaning-cost-dubai',
     title: 'How Much Does Sofa Cleaning Cost in Dubai?',
@@ -365,6 +367,11 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+export const blogPosts: BlogPost[] = [
+  ...handWrittenBlogPosts,
+  ...(generatedPosts as BlogPost[]),
+]
 
 export const getBlogPost = (slug: string): BlogPost | undefined =>
   blogPosts.find((p) => p.slug === slug);
