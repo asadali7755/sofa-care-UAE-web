@@ -39,6 +39,14 @@ const ajmanAreas = [
   'Al Zahra', 'Ajman Downtown', 'Al Helio', 'Corniche Ajman',
 ];
 
+const ajmanBreadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sofashampooingdubai.com' },
+    { '@type': 'ListItem', position: 2, name: 'Sofa Cleaning Ajman', item: 'https://sofashampooingdubai.com/sofa-cleaning-ajman' },
+  ],
+};
+
 const ajmanSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -61,6 +69,7 @@ export default function SofaCleaningAjman() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ajmanSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ajmanBreadcrumb) }} />
       <Navbar />
       <main>
         <section className="page-hero" style={{ minHeight: '60vh' }}>

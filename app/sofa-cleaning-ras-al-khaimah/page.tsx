@@ -111,6 +111,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const rakBreadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sofashampooingdubai.com' },
+    { '@type': 'ListItem', position: 2, name: 'Sofa Cleaning Ras Al Khaimah', item: 'https://sofashampooingdubai.com/sofa-cleaning-ras-al-khaimah' },
+  ],
+};
+
 const rakSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -134,6 +142,7 @@ export default async function SofaCleaningRasAlKhaimah() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(rakSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(rakBreadcrumb) }} />
       <Navbar />
       <main>
         <section className="page-hero" style={{ minHeight: '60vh' }}>

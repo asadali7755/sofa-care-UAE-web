@@ -111,6 +111,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const uaqBreadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sofashampooingdubai.com' },
+    { '@type': 'ListItem', position: 2, name: 'Sofa Cleaning Umm Al Quwain', item: 'https://sofashampooingdubai.com/sofa-cleaning-umm-al-quwain' },
+  ],
+};
+
 const uaqSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -134,6 +142,7 @@ export default async function SofaCleaningUmmAlQuwain() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(uaqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(uaqBreadcrumb) }} />
       <Navbar />
       <main>
         <section className="page-hero" style={{ minHeight: '60vh' }}>

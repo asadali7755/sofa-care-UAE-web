@@ -1,5 +1,14 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import AboutClient from './AboutClient';
+
+const aboutBreadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sofashampooingdubai.com' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://sofashampooingdubai.com/about' },
+  ],
+};
 
 export const metadata: Metadata = {
   title: 'About Al Haya Sofa Care UAE | Trusted Sofa Cleaning Dubai',
@@ -22,5 +31,10 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return <AboutClient />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumb) }} />
+      <AboutClient />
+    </>
+  );
 }

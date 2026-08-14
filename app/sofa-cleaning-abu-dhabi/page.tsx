@@ -44,6 +44,14 @@ const abuDhabiAreas = [
   'Tourist Club Area', 'Al Bateen', 'Electra Street', 'Hamdan Street',
 ];
 
+const abuDhabiBreadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sofashampooingdubai.com' },
+    { '@type': 'ListItem', position: 2, name: 'Sofa Cleaning Abu Dhabi', item: 'https://sofashampooingdubai.com/sofa-cleaning-abu-dhabi' },
+  ],
+};
+
 const abuDhabiSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -68,6 +76,7 @@ export default function SofaCleaningAbuDhabi() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(abuDhabiSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(abuDhabiBreadcrumb) }} />
       <Navbar />
       <main>
         <section className="page-hero" style={{ minHeight: '60vh' }}>

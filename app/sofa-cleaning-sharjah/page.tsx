@@ -40,6 +40,14 @@ const sharjahAreas = [
   'Al Yarmook', 'Al Gharb', 'Al Nud', 'Halwan', 'Rolla',
 ];
 
+const sharjahBreadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sofashampooingdubai.com' },
+    { '@type': 'ListItem', position: 2, name: 'Sofa Cleaning Sharjah', item: 'https://sofashampooingdubai.com/sofa-cleaning-sharjah' },
+  ],
+};
+
 const sharjahSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -62,6 +70,7 @@ export default function SofaCleaningSharjah() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sharjahSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sharjahBreadcrumb) }} />
       <Navbar />
       <main>
         <section className="page-hero" style={{ minHeight: '60vh' }}>

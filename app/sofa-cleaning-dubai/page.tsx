@@ -85,6 +85,14 @@ const dubaiAreas = [
   'Sheikh Zayed Road',
 ];
 
+const dubaiBreadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sofashampooingdubai.com' },
+    { '@type': 'ListItem', position: 2, name: 'Sofa Cleaning Dubai', item: 'https://sofashampooingdubai.com/sofa-cleaning-dubai' },
+  ],
+};
+
 const dubaiLocalSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -109,6 +117,7 @@ export default function SofaCleaningDubai() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(dubaiLocalSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(dubaiBreadcrumb) }} />
       <Navbar />
       <main>
         {/* Hero */}

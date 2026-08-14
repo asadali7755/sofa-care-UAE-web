@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
 import ContactClient from './ContactClient';
 
+const contactBreadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sofashampooingdubai.com' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://sofashampooingdubai.com/contact' },
+  ],
+};
+
 export const metadata: Metadata = {
   title: 'Book Sofa Cleaning Dubai | Contact Al Haya Sofa Care UAE',
   description: 'Book professional sofa cleaning in Dubai, Sharjah & Ajman. Call or WhatsApp +971547199189. Same-day service available. Online booking form. Fast response guaranteed.',
@@ -23,5 +31,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactClient />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactBreadcrumb) }} />
+      <ContactClient />
+    </>
+  );
 }

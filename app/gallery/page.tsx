@@ -53,6 +53,14 @@ const videoJsonLd = videoSchemas.map((v) => ({
   },
 }));
 
+const galleryBreadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sofashampooingdubai.com' },
+    { '@type': 'ListItem', position: 2, name: 'Gallery', item: 'https://sofashampooingdubai.com/gallery' },
+  ],
+};
+
 export default function GalleryPage() {
   return (
     <>
@@ -61,6 +69,7 @@ export default function GalleryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryBreadcrumb) }} />
       <GalleryClient />
     </>
   );
