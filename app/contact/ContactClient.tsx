@@ -8,6 +8,7 @@ import ServiceCoverageSection from '../components/ServiceCoverageSection';
 import MapSection from '../components/MapSection';
 import { IconPhone, IconWhatsApp, IconLocation, IconArrow } from '../components/Icons';
 import { trackEnquirySubmit, trackWhatsAppClick } from '../lib/gtag';
+import { sendEnquiry } from '../lib/sendEmail';
 
 export default function ContactPage() {
   const [bookForm, setBookForm] = useState({ name: '', phone: '', email: '', service: '', date: '', time: '', area: '', notes: '' });
@@ -28,6 +29,7 @@ export default function ContactPage() {
     e.preventDefault();
     const wa = `Hi Al Haya,%0AName: ${bookForm.name}%0APhone: ${bookForm.phone}%0AService: ${bookForm.service}%0ADate: ${bookForm.date}%0ATime: ${bookForm.time}%0AArea: ${bookForm.area}%0ANotes: ${bookForm.notes}`;
     window.open(`https://wa.me/971547199189?text=${wa}`, '_blank');
+    sendEnquiry({ type: 'Booking Form', phone: bookForm.phone, name: bookForm.name, work: bookForm.service }).catch(() => {});
     trackEnquirySubmit('booking_form', bookForm.service);
     trackWhatsAppClick('booking_form');
     setBookSent(true);
@@ -37,6 +39,7 @@ export default function ContactPage() {
     e.preventDefault();
     const wa = `Hi Al Haya,%0AName: ${contactForm.name}%0APhone: ${contactForm.phone}%0AMessage: ${contactForm.message}`;
     window.open(`https://wa.me/971547199189?text=${wa}`, '_blank');
+    sendEnquiry({ type: 'Contact Form', phone: contactForm.phone, name: contactForm.name, work: contactForm.message }).catch(() => {});
     trackEnquirySubmit('contact_form');
     trackWhatsAppClick('contact_form');
     setContactSent(true);
