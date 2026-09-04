@@ -10,7 +10,7 @@ const contactBreadcrumb = {
 };
 
 export const metadata: Metadata = {
-  title: 'Book Sofa Cleaning Dubai | Contact Al Haya Sofa Care UAE',
+  title: 'Book Sofa Cleaning Dubai | Contact Us',
   description: 'Book professional sofa cleaning in Dubai, Sharjah & Ajman. Call or WhatsApp +971547199189. Same-day service available. Online booking form. Fast response guaranteed.',
   keywords: [
     'book sofa cleaning Dubai',

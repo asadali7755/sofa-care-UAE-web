@@ -11,7 +11,7 @@ const aboutBreadcrumb = {
 };
 
 export const metadata: Metadata = {
-  title: 'About Al Haya Sofa Care UAE | Trusted Sofa Cleaning Dubai',
+  title: 'About Us | Trusted Sofa Cleaning Dubai',
   description: 'Al Haya Sofa Care UAE — Dubai\'s trusted sofa cleaning experts with 5+ years experience, 500+ happy clients & 4.9★ rating. Professional, eco-friendly at-home service across UAE.',
   keywords: [
     'Al Haya Sofa Care UAE Dubai',

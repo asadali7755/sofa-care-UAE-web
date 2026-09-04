@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ServicesClient from './ServicesClient';
 
 export const metadata: Metadata = {
-  title: 'Sofa Deep Shampoo & Steam Cleaning Services UAE | Al Haya Sofa Care',
+  title: 'Sofa Deep Shampoo & Steam Cleaning Services UAE',
   description: 'Professional sofa deep shampoo & steam cleaning services across UAE. Deep cleaning (AED 99), shampooing (AED 79), steam cleaning, stain removal, leather care, pet hair removal. Same-day at-home service in Dubai, Sharjah, Ajman & Abu Dhabi.',
   keywords: [
     // Service keywords
