@@ -161,9 +161,13 @@ const localBusinessSchema = {
   // NOTE: aggregateRating + review removed — they were placeholder/demo data.
   // Fabricated review markup risks a Google manual action. Re-add real
   // AggregateRating only once genuine, verifiable reviews exist (e.g. from GBP).
+  // sameAs must only list THIS business's own official profiles. It
+  // previously included www.servedubai.com -- a different Al Haya company
+  // (general/villa cleaning, different phone number) -- which falsely told
+  // Google's Knowledge Graph these two separate businesses are the same
+  // entity. Removed rather than left in.
   sameAs: [
     'https://wa.me/971547199189',
-    'https://www.servedubai.com',
   ],
 };
 

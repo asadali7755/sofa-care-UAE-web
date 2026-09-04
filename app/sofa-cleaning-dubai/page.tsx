@@ -149,7 +149,7 @@ export default function SofaCleaningDubai() {
               </a>
             </div>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-              {[{ n: 'AED 40', l: 'Starting Price' }, { n: 'Same Day', l: 'Service' }, { n: '20+ Areas', l: 'Dubai Coverage' }, { n: '4.9 ★', l: 'Rating' }].map((s) => (
+              {[{ n: 'AED 40', l: 'Starting Price' }, { n: 'Same Day', l: 'Service' }, { n: '20+ Areas', l: 'Dubai Coverage' }, { n: 'Certified', l: 'Team' }].map((s) => (
                 <div key={s.l}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 900, color: 'var(--accent)' }}>{s.n}</div>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--fg-dim)', letterSpacing: '0.06em', textTransform: 'uppercase', marginTop: 3 }}>{s.l}</div>

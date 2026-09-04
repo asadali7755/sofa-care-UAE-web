@@ -28,7 +28,7 @@ const features = [
 ];
 
 const checklist = [
-  '500+ satisfied clients in Dubai & UAE',
+  'Eco-friendly, non-toxic cleaning products',
   'All sofa types: fabric, leather, microfiber',
   'Transparent pricing — no hidden fees',
   '24/7 WhatsApp booking support',
@@ -88,7 +88,7 @@ export default function WhyChooseUs() {
               <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span>
             </h2>
             <p style={{ color: 'var(--fg-muted)', fontSize: 15, lineHeight: 1.65, maxWidth: 360, margin: '0 auto' }}>
-              Dubai&apos;s trusted sofa cleaning experts — 500+ clients, same-day service, guaranteed results.
+              Dubai&apos;s trusted sofa cleaning experts — eco-friendly products, same-day service, guaranteed results.
             </p>
           </div>
 
@@ -129,8 +129,8 @@ export default function WhyChooseUs() {
           {/* Stats strip */}
           <div className="reveal" style={{ marginTop: 24, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
             {[
-              { n: '500+', l: 'Happy Clients' },
-              { n: '4.9 ★', l: 'Average Rating' },
+              { n: 'Eco-Friendly', l: 'Products' },
+              { n: 'Certified', l: 'Technicians' },
               { n: 'Same Day', l: 'Service' },
               { n: '5+ Yrs', l: 'Experience' },
             ].map((s) => (

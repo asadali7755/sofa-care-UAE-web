@@ -16,9 +16,9 @@ function IconTag({ size = 28 }: { size?: number }) {
 }
 
 const stats = [
-  { n: '500+', l: 'Happy Clients' },
+  { n: 'Eco-Friendly', l: 'Products Used' },
   { n: '5+', l: 'Years in Business' },
-  { n: '4.9★', l: 'Average Rating' },
+  { n: 'Certified', l: 'Technicians' },
   { n: 'Same Day', l: 'Service Available' },
 ];
 
@@ -91,7 +91,7 @@ export default function AboutPage() {
                   <p>Al Haya Sofa Care UAE was founded with one simple mission: to provide Dubai families and businesses with a professional, reliable, and convenient sofa cleaning experience — right at their doorstep.</p>
                   <p>In a city like Dubai, where luxury meets the desert, your home is your sanctuary. The combination of fine sand, high humidity, and daily use means your sofa — the centerpiece of your living room — acts like a giant filter for dust, allergens, and pollutants. Surface cleaning simply isn&apos;t enough.</p>
                   <p>We bring professional-grade industrial equipment and eco-friendly solutions directly to you. Our certified technicians identify your upholstery type, test pH levels, and use cleaners specifically tailored to your fabric — preventing browning or dye bleeding while lifting deep-seated dirt.</p>
-                  <p>Today, Al Haya Sofa Care UAE proudly serves 500+ happy clients across Dubai, Sharjah, Ajman &amp; Abu Dhabi with a 4.9-star rating and same-day service availability.</p>
+                  <p>Today, Al Haya Sofa Care UAE proudly serves families and businesses across Dubai, Sharjah, Ajman &amp; Abu Dhabi with same-day service availability and a commitment to eco-friendly, professional-grade cleaning.</p>
                 </div>
               </div>
               <div className="reveal reveal-delay-2">

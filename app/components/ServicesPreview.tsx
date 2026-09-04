@@ -80,8 +80,8 @@ function AnimatedServiceContent() {
       {/* Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 36 }}>
         {[
-          { val: '500+', label: 'Happy Clients' },
-          { val: '4.9 ★', label: 'Average Rating' },
+          { val: 'Eco-Friendly', label: 'Products' },
+          { val: 'Certified', label: 'Technicians' },
           { val: 'Same Day', label: 'Service Available' },
           { val: '5+ Yrs', label: 'Experience' },
         ].map(s => (

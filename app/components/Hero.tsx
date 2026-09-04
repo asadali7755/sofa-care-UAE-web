@@ -28,9 +28,9 @@ function useTypewriter(words: string[], typingSpeed = 80, deleteSpeed = 40, paus
 }
 
 const stats = [
-  { n: '500+', l: 'Happy Clients' },
+  { n: 'Eco-Friendly', l: 'Products Used' },
   { n: '5+', l: 'Years Experience' },
-  { n: '4.9★', l: 'Client Rating' },
+  { n: 'Certified', l: 'Technicians' },
   { n: 'Same Day', l: 'Service Available' },
 ];
 
@@ -77,7 +77,7 @@ export default function Hero() {
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24, paddingLeft: 'clamp(24px, 5vw, 80px)', paddingRight: 'clamp(24px, 5vw, 80px)', gap: 40 }} className="hero-inner">
         <div style={{ maxWidth: 600, textAlign: 'left', flex: 1 }}>
           <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '6px 12px', borderRadius: 999, background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.15)', fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.75)', marginBottom: 20 }}>
-            <span className="pulse-dot"/> Trusted by 500+ clients &nbsp;·&nbsp; Dubai, UAE
+            <span className="pulse-dot"/> Same-Day At-Home Service &nbsp;·&nbsp; Dubai, UAE
           </div>
 
           <h1 className="reveal reveal-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(38px, 5.5vw, 80px)', lineHeight: 0.94, fontWeight: 900, letterSpacing: '-0.03em', marginBottom: 6 }}>
