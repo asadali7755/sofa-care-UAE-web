@@ -16,6 +16,8 @@ export interface Area {
   landmarks: string[];
   localNote: string;
   faqs: { q: string; a: string }[];
+  /** Optional real photo of this specific area, overriding the generic banner */
+  image?: string;
 }
 
 export interface EmirateConfig {
@@ -375,7 +377,8 @@ export const emirates: Record<string, EmirateConfig> = {
           { q: 'How long does it take to reach Dibba from booking?', a: 'Dibba is served on our scheduled east-coast route, so smaller jobs combine with nearby bookings within a week or two. Larger villa jobs are scheduled with a dedicated time block — message us to check the next available slot.' },
           { q: 'Can you clean sofas in Dibba holiday homes that have sat empty?', a: 'Yes. Properties that sit unused for months often develop musty odors from trapped humidity — our antimicrobial treatment addresses this at the source, not just with fragrance.' },
           { q: 'Do you cover both Dibba Al-Fujairah and Dibba Al-Hisn?', a: 'Yes. We treat both sides of Dibba as one combined service area with the same pricing.' },
-        ] },
+        ],
+        image: '/locations/dibba-al-hisn-corniche-pavilion.webp' },
     ],
   },
 };

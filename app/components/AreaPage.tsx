@@ -85,7 +85,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
           <div className="container-x" style={{ paddingTop: 0, paddingBottom: 0 }}>
             <div style={{ position: 'relative', width: '100%', height: 'clamp(220px, 38vw, 420px)', borderRadius: 16, overflow: 'hidden', margin: '0 0 -1px' }}>
               <Image
-                src="/sofa-cleaning-dubai-professional.webp"
+                src={area.image ?? '/sofa-cleaning-dubai-professional.webp'}
                 alt={`Professional at-home sofa cleaning in ${area.name}, ${em.cityName} — Al Haya Sofa Care deep shampoo & steam cleaning for ${area.propertyType}`}
                 title={`Sofa Cleaning ${area.name} | Al Haya Sofa Care`}
                 fill sizes="(max-width: 768px) 100vw, 1100px" style={{ objectFit: 'cover' }} priority

@@ -107,7 +107,7 @@ export default function SofaCleaningFujairah() {
             </div>
               </div>
               <div className="city-hero-img">
-                <img src="/sofa-cleaning-dubai-professional.webp" alt="Professional sofa cleaning service in Fujairah by Al Haya Sofa Care" loading="eager" />
+                <img src="/locations/dibba-town-center-roundabout.webp" alt="Dibba, Fujairah — Al Haya Sofa Care serves the east coast including Dibba" loading="eager" />
               </div>
             </div>
           </div>
