@@ -360,6 +360,24 @@ export const emirates: Record<string, EmirateConfig> = {
         ] },
     ],
   },
+  fujairah: {
+    key: 'fujairah', cityName: 'Fujairah', citySlug: 'sofa-cleaning-fujairah',
+    areas: [
+      { slug: 'dibba', name: 'Dibba', short: 'Dibba', propertyType: 'villas and coastal homes',
+        intro: 'Dibba is the UAE\'s east-coast town split across Fujairah and Sharjah, where the Hajar Mountains meet the Gulf of Oman. Its villas and coastal homes — spanning both Dibba Al-Fujairah and Dibba Al-Hisn — face a different climate to the western emirates, with sea humidity and mountain dust both settling into upholstery over time. Al Haya Sofa Care brings the same at-home deep shampoo, steam cleaning and leather care we deliver across the UAE out to Dibba, covering both sides of town on the same visit.',
+        whyClean: 'Dibba\'s coastal position means sofas absorb sea-air humidity much like Fujairah City and Khor Fakkan, while the surrounding mountains trap dust that settles into fabric through open windows and balconies. Many Dibba homes are villas or holiday properties that sit unused for stretches at a time, so sofas can go months without airing out before a family visit or a change of season. Left untreated, that combination of humidity and dust leads to musty odors and embedded grime that ordinary vacuuming can\'t reach.',
+        serviceDetail: 'Because Dibba is a longer trip from our Dubai base, we schedule visits as part of our regular Fujairah / east-coast route — smaller residential jobs combine with nearby bookings, and larger villa jobs get a dedicated time block. We use the same hot-water extraction shampooing and fast-dry techniques used across the east coast, with an antimicrobial treatment for musty, humidity-related odors. Leather sofas receive pH-safe conditioning to counter the coastal air. We bring all equipment, so nothing needs to be moved or prepared in advance.',
+        landmarks: ['Dibba Al-Fujairah Corniche', 'Dibba Al-Hisn', 'Dibba Port', 'Al Aqah Beach'],
+        localNote: 'Dibba\'s coastal humidity and mountain dust mean a deep clean every 4–6 months keeps sofas fresh, and holiday-home owners often book ahead of a family visit after the property has sat empty for a while. We serve both Dibba Al-Fujairah and Dibba Al-Hisn on the same route, so there\'s no extra charge for either side of town.',
+        faqs: [
+          { q: 'Do you serve Dibba on the east coast?', a: 'Yes. Dibba is on our regular Fujairah / east-coast route, covering both Dibba Al-Fujairah and Dibba Al-Hisn in Sharjah.' },
+          { q: 'How much does sofa cleaning cost in Dibba?', a: 'From AED 79 for shampooing, AED 89 for steam cleaning, AED 99 for deep cleaning, and AED 129 for leather sofas. WhatsApp +971547199189 for a quote.' },
+          { q: 'How long does it take to reach Dibba from booking?', a: 'Dibba is served on our scheduled east-coast route, so smaller jobs combine with nearby bookings within a week or two. Larger villa jobs are scheduled with a dedicated time block — message us to check the next available slot.' },
+          { q: 'Can you clean sofas in Dibba holiday homes that have sat empty?', a: 'Yes. Properties that sit unused for months often develop musty odors from trapped humidity — our antimicrobial treatment addresses this at the source, not just with fragrance.' },
+          { q: 'Do you cover both Dibba Al-Fujairah and Dibba Al-Hisn?', a: 'Yes. We treat both sides of Dibba as one combined service area with the same pricing.' },
+        ] },
+    ],
+  },
 };
 
 export const getEmirate = (key: string): EmirateConfig | undefined => emirates[key];

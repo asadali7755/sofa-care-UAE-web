@@ -37,5 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/sofa-cleaning-ajman`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/sofa-cleaning-ras-al-khaimah`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/sofa-cleaning-umm-al-quwain`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/sofa-cleaning-fujairah`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
   ];
 }

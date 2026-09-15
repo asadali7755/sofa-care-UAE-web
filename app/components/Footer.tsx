@@ -55,6 +55,7 @@ export default function Footer() {
                 { href: '/sofa-cleaning-ajman', label: 'Sofa Cleaning Ajman' },
                 { href: '/sofa-cleaning-ras-al-khaimah', label: 'Sofa Cleaning Ras Al Khaimah' },
                 { href: '/sofa-cleaning-umm-al-quwain', label: 'Sofa Cleaning Umm Al Quwain' },
+                { href: '/sofa-cleaning-fujairah', label: 'Sofa Cleaning Fujairah' },
               ].map((l) => (
                 <Link key={l.href} href={l.href} style={{ color: 'var(--fg-muted)', fontSize: 13 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--fg)')}
