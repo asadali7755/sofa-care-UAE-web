@@ -1,7 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRequestCall } from './RequestCallModal';
-import { sendEnquiry } from '@/app/lib/sendEmail';
 import { trackEnquirySubmit } from '@/app/lib/gtag';
 import { useToast } from './RequestCallModal';
 
@@ -14,17 +13,49 @@ export default function QuoteCallSection() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const quote = params.get('quote');
+    const source = params.get('source');
+    if (source === 'quote_section') {
+      if (quote === 'success') {
+        setSent(true);
+        showToast('Payment received! We will contact you shortly with your quote.');
+      } else if (quote === 'cancelled') {
+        showToast('Payment cancelled. You can try again anytime.');
+      }
+      if (quote) {
+        params.delete('quote');
+        params.delete('source');
+        params.delete('session_id');
+        const query = params.toString();
+        window.history.replaceState({}, '', window.location.pathname + (query ? `?${query}` : ''));
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!phone.trim()) return;
     setLoading(true);
     try {
-      await sendEnquiry({ type: 'Free Quote Request', phone, name: name || '—', work: work || 'Sofa Cleaning' });
       trackEnquirySubmit('quote_section', work || 'Sofa Cleaning');
-    } catch {}
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name || '—', phone, work: work || 'Sofa Cleaning', source: 'quote_section', returnPath: window.location.pathname }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      showToast('Could not start payment. Please try again.');
+    } catch {
+      showToast('Could not start payment. Please try again.');
+    }
     setLoading(false);
-    setSent(true);
-    showToast('Quote request sent! We will contact you shortly.');
   };
 
   return (
@@ -68,14 +99,14 @@ export default function QuoteCallSection() {
             <div style={{ background: 'var(--bg-elev)', border: '1px solid var(--line-strong)', borderRadius: 20, padding: 'clamp(24px, 4vw, 36px)', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'var(--accent)' }} />
               <div className="section-tag" style={{ marginBottom: 8 }}>Quick Response</div>
-              <h3 style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', marginBottom: 8 }}>Get a Free Quote</h3>
+              <h3 style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', marginBottom: 8 }}>Quote Request — AED 50</h3>
               <p style={{ color: 'var(--fg-muted)', fontSize: 14, marginBottom: 24, lineHeight: 1.6 }}>
-                Fill in your details and we will get back to you within 30 minutes with a no-obligation quote.
+                Fill in your details and pay a small AED 50 fee to confirm your request — adjustable against your final booking. We will get back to you within 30 minutes.
               </p>
               {sent ? (
                 <div style={{ textAlign: 'center', padding: '32px 16px' }}>
                   <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'color-mix(in oklab, var(--accent) 15%, transparent)', border: '2px solid var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', fontSize: 24, color: 'var(--accent)' }}>&#10003;</div>
-                  <h4 style={{ marginBottom: 8, fontSize: 18 }}>Quote Request Sent!</h4>
+                  <h4 style={{ marginBottom: 8, fontSize: 18 }}>Payment Received!</h4>
                   <p style={{ color: 'var(--fg-muted)', fontSize: 14, marginBottom: 20 }}>We will call you back shortly with your quote.</p>
                   <button onClick={() => setSent(false)} className="btn btn-ghost" style={{ fontSize: 13 }}>Submit Another</button>
                 </div>
@@ -112,10 +143,10 @@ export default function QuoteCallSection() {
                     <option value="Curtain Cleaning">Curtain Cleaning</option>
                   </select>
                   <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%', justifyContent: 'center', fontSize: 15, padding: '14px 24px' }}>
-                    {loading ? 'Sending...' : 'Get My Free Quote'}
+                    {loading ? 'Redirecting...' : 'Pay AED 50 & Get Quote'}
                   </button>
                   <p style={{ color: 'var(--fg-dim)', fontSize: 12, textAlign: 'center' }}>
-                    No spam. No obligation. Just a fair quote.
+                    AED 50 fee — adjustable against your final booking. Secure payment via Stripe.
                   </p>
                 </form>
               )}
