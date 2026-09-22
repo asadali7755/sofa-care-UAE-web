@@ -26,10 +26,18 @@ export default function HeroEnquiryCard() {
     showToast('Enquiry sent! We will call you shortly.');
   };
 
+  const waPhotoHref = `https://wa.me/971547199189?text=${encodeURIComponent("Hi, I'd like a free quote — here are photos of what needs cleaning:")}`;
+
   return (
     <form className="hero-enquiry-card" onSubmit={submit}>
-      <h3>Get a Free Quote</h3>
-      <p>Quick response. No obligation.</p>
+      <h3>Get a Free Visit</h3>
+      <p>
+        Quick response. No obligation. Prefer not to have a visit?{' '}
+        <a href={waPhotoHref} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
+          WhatsApp us photos
+        </a>{' '}
+        for a free quote instead.
+      </p>
       <input
         type="text"
         placeholder="Your Name *"
@@ -55,7 +63,7 @@ export default function HeroEnquiryCard() {
         <option value="Curtain Cleaning">Curtain Cleaning</option>
       </select>
       <button type="submit" disabled={loading}>
-        {loading ? 'Sending...' : 'Send Enquiry'}
+        {loading ? 'Sending...' : 'Request Visit'}
       </button>
     </form>
   );

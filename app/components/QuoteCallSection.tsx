@@ -63,20 +63,20 @@ export default function QuoteCallSection() {
             </div>
           </div>
 
-          {/* Get a Free Quote Card */}
+          {/* Get a Free Visit Card */}
           <div className="quote-call-right">
             <div style={{ background: 'var(--bg-elev)', border: '1px solid var(--line-strong)', borderRadius: 20, padding: 'clamp(24px, 4vw, 36px)', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'var(--accent)' }} />
               <div className="section-tag" style={{ marginBottom: 8 }}>Quick Response</div>
-              <h3 style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', marginBottom: 8 }}>Get a Free Quote</h3>
+              <h3 style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', marginBottom: 8 }}>Get a Free Visit</h3>
               <p style={{ color: 'var(--fg-muted)', fontSize: 14, marginBottom: 24, lineHeight: 1.6 }}>
-                Fill in your details and we will get back to you within 30 minutes with a no-obligation quote.
+                Fill in your details and we will get back to you within 30 minutes to arrange a free visit.
               </p>
               {sent ? (
                 <div style={{ textAlign: 'center', padding: '32px 16px' }}>
                   <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'color-mix(in oklab, var(--accent) 15%, transparent)', border: '2px solid var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', fontSize: 24, color: 'var(--accent)' }}>&#10003;</div>
-                  <h4 style={{ marginBottom: 8, fontSize: 18 }}>Quote Request Sent!</h4>
-                  <p style={{ color: 'var(--fg-muted)', fontSize: 14, marginBottom: 20 }}>We will call you back shortly with your quote.</p>
+                  <h4 style={{ marginBottom: 8, fontSize: 18 }}>Visit Request Sent!</h4>
+                  <p style={{ color: 'var(--fg-muted)', fontSize: 14, marginBottom: 20 }}>We will call you back shortly to arrange your visit.</p>
                   <button onClick={() => setSent(false)} className="btn btn-ghost" style={{ fontSize: 13 }}>Submit Another</button>
                 </div>
               ) : (
@@ -112,10 +112,18 @@ export default function QuoteCallSection() {
                     <option value="Curtain Cleaning">Curtain Cleaning</option>
                   </select>
                   <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%', justifyContent: 'center', fontSize: 15, padding: '14px 24px' }}>
-                    {loading ? 'Sending...' : 'Get My Free Quote'}
+                    {loading ? 'Sending...' : 'Request Free Visit'}
                   </button>
                   <p style={{ color: 'var(--fg-dim)', fontSize: 12, textAlign: 'center' }}>
-                    No spam. No obligation. Just a fair quote.
+                    No spam. No obligation.{' '}
+                    <a
+                      href={`https://wa.me/971547199189?text=${encodeURIComponent("Hi, I'd like a free quote — here are photos of what needs cleaning:")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'inherit', textDecoration: 'underline' }}
+                    >
+                      Prefer to WhatsApp photos instead?
+                    </a>
                   </p>
                 </form>
               )}
