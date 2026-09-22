@@ -16,6 +16,7 @@ export default function ContactPage() {
   const [contactForm, setContactForm] = useState({ name: '', phone: '', message: '' });
   const [bookSent, setBookSent] = useState(false);
   const [contactSent, setContactSent] = useState(false);
+  const [quoteSent, setQuoteSent] = useState(false);
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -23,21 +24,6 @@ export default function ContactPage() {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-
-    const params = new URLSearchParams(window.location.search);
-    const quote = params.get('quote');
-    const source = params.get('source');
-    if (source === 'booking_form') {
-      if (quote === 'success') setBookSent(true);
-      if (quote) {
-        params.delete('quote');
-        params.delete('source');
-        params.delete('session_id');
-        const query = params.toString();
-        window.history.replaceState({}, '', window.location.pathname + (query ? `?${query}` : ''));
-      }
-    }
-
     return () => io.disconnect();
   }, []);
 
@@ -47,25 +33,14 @@ export default function ContactPage() {
     e.preventDefault();
     setBookLoading(true);
     try {
-      trackEnquirySubmit('booking_form', bookForm.service);
-      const res = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: 'Booking Form',
-          phone: bookForm.phone,
-          name: bookForm.name,
-          work: `Service: ${bookForm.service} | Date: ${bookForm.date} | Time: ${bookForm.time} | Area: ${bookForm.area} | Notes: ${bookForm.notes}`,
-          source: 'booking_form',
-          returnPath: window.location.pathname,
-        }),
+      await sendEnquiry({
+        type: 'Booking Form',
+        phone: bookForm.phone,
+        name: bookForm.name,
+        work: `Service: ${bookForm.service} | Date: ${bookForm.date} | Time: ${bookForm.time} | Area: ${bookForm.area} | Notes: ${bookForm.notes}`,
       });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-        return;
-      }
-      alert('Could not start payment. Please try again or contact us via WhatsApp.');
+      trackEnquirySubmit('booking_form', bookForm.service);
+      setBookSent(true);
     } catch {
       alert('Something went wrong. Please try again or contact us via WhatsApp.');
     } finally {
@@ -144,13 +119,13 @@ export default function ContactPage() {
               <div className="reveal">
                 <div style={{ marginBottom: 32 }}>
                   <div className="section-tag">Appointment</div>
-                  <h2 style={{ fontSize: 'clamp(26px, 3vw, 40px)', marginBottom: 10 }}>Book an Appointment — AED 50</h2>
-                  <p style={{ color: 'var(--fg-muted)', fontSize: 15 }}>Fill in the details and pay AED 50 to confirm — adjustable against your final booking.</p>
+                  <h2 style={{ fontSize: 'clamp(26px, 3vw, 40px)', marginBottom: 10 }}>Book an Appointment</h2>
+                  <p style={{ color: 'var(--fg-muted)', fontSize: 15 }}>Fill in the details and we&apos;ll confirm your booking via WhatsApp.</p>
                 </div>
                 {bookSent ? (
                   <div style={{ background: 'color-mix(in oklab, var(--accent) 12%, transparent)', border: '1px solid var(--accent)', borderRadius: 16, padding: 32, textAlign: 'center' }}>
                     <div style={{ width:48,height:48,borderRadius:'50%',background:'color-mix(in oklab,var(--accent) 20%,transparent)',border:'1px solid var(--accent)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px',fontSize:24,color:'var(--accent)' }}>&#10003;</div>
-                    <h3 style={{ marginBottom: 8 }}>Payment Received!</h3>
+                    <h3 style={{ marginBottom: 8 }}>Booking Request Sent!</h3>
                     <p style={{ color: 'var(--fg-muted)' }}>Your appointment request has been emailed to our team. We&apos;ll confirm within 1 hour!</p>
                     <button onClick={() => { setBookSent(false); setBookForm({ name: '', phone: '', email: '', service: '', date: '', time: '', area: '', notes: '' }); }} className="btn btn-ghost" style={{ marginTop: 20 }}>Make Another Booking</button>
                   </div>
@@ -281,10 +256,10 @@ export default function ContactPage() {
                       <textarea className="form-input" rows={3} placeholder="e.g. 3-seater fabric sofa, has coffee stains on cushions..." value={bookForm.notes} onChange={(e) => setBookForm({ ...bookForm, notes: e.target.value })} style={{ resize: 'vertical' }}/>
                     </div>
                     <button type="submit" disabled={bookLoading} className="btn btn-primary" style={{ fontSize: 15, padding: '16px 32px', justifyContent: 'center', opacity: bookLoading ? 0.7 : 1 }}>
-                      {bookLoading ? 'Redirecting...' : 'Pay AED 50 & Book'} <IconArrow size={14}/>
+                      {bookLoading ? 'Sending...' : 'Send Email'} <IconArrow size={14}/>
                     </button>
                     <p style={{ color: 'var(--fg-dim)', fontSize: 13, textAlign: 'center' }}>
-                      AED 50 fee — adjustable against your final booking. We&apos;ll confirm within 1 hour
+                      We&apos;ll confirm your appointment within 1 hour
                     </p>
                   </form>
                 )}
