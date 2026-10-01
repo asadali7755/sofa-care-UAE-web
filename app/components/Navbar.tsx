@@ -25,6 +25,8 @@ const navLinks = [
   { href: '/contact', label: 'Contact', icon: '📞' },
 ];
 
+const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61580647541867';
+
 const locationLinks = [
   { href: '/sofa-cleaning-dubai', label: 'Dubai', img: '/cities/dubai.webp' },
   { href: '/sofa-cleaning-sharjah', label: 'Sharjah', img: '/cities/sharjah.webp' },
@@ -164,12 +166,21 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Right: Phone + CTA */}
-          <div className="nav-desktop-right" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div className="nav-desktop-right" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <a href="tel:+971547199189" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--fg-muted)', display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
               +971 54 719 9189
             </a>
-            <button onClick={openCallModal} className="nav-request-call" style={{ padding: '9px 18px', fontSize: 13, whiteSpace: 'nowrap', background: 'none', border: '1.5px solid var(--accent)', borderRadius: 8, color: 'var(--accent)', cursor: 'pointer', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Request a Call</button>
-            <Link href="/contact" className="btn btn-primary" style={{ padding: '9px 18px', fontSize: 13, whiteSpace: 'nowrap' }}>Book Now →</Link>
+            <a
+              href={FACEBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 28, height: 28, borderRadius: 8, color: 'var(--fg-muted)', flexShrink: 0 }}
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+            </a>
+            <button onClick={openCallModal} className="nav-request-call" style={{ padding: '8px 14px', fontSize: 12.5, whiteSpace: 'nowrap', background: 'none', border: '1.5px solid var(--accent)', borderRadius: 8, color: 'var(--accent)', cursor: 'pointer', fontFamily: 'var(--font-sans)', fontWeight: 600 }}>Request a Call</button>
+            <Link href="/contact" className="btn btn-primary" style={{ padding: '9px 16px', fontSize: 12.5, whiteSpace: 'nowrap' }}>Book Now →</Link>
           </div>
 
           {/* Mobile Right: Hamburger only */}
@@ -345,6 +356,22 @@ export default function Navbar() {
           >
             <span style={{ fontSize: 18 }}>📞</span>
             +971 54 719 9189
+          </a>
+          <a
+            href={FACEBOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            style={{
+              display: 'flex', alignItems: 'center', gap: 10,
+              padding: '12px 16px', borderRadius: 10,
+              background: 'var(--bg-raised)', border: '1px solid var(--line)',
+              fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--fg)',
+              textDecoration: 'none', fontWeight: 600,
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+            Facebook
           </a>
           <a
             href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20sofa%20cleaning%20in%20Dubai."

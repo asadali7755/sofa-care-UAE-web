@@ -1,6 +1,8 @@
 'use client';
 import Link from 'next/link';
 
+const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61580647541867';
+
 export default function Footer() {
   return (
     <footer style={{ borderTop: '1px solid var(--line)', background: 'var(--bg-elev)', padding: '48px 0 24px' }}>
@@ -70,6 +72,7 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <a href="tel:+971547199189" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>+971 54 719 9189</a>
               <a href="https://wa.me/971547199189" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>WhatsApp Us</a>
+              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Facebook</a>
               <a href="mailto:info@sofashampooingdubai.com" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>info@sofashampooingdubai.com</a>
               <a href="https://www.google.com/maps/place/AL+HAYA+cleaning+services/@25.2959258,55.3600450,17z" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>View on Google Maps</a>
               <a href="https://www.google.com/maps/place/AL+HAYA+cleaning+services/@25.2959258,55.3600450,17z" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontSize: 13, fontWeight: 600 }}>★ Review Us on Google</a>
@@ -103,6 +106,7 @@ export default function Footer() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 <a href="tel:+971547199189" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Call Us</a>
                 <a href="https://wa.me/971547199189" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>WhatsApp</a>
+                <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Facebook</a>
                 <a href="mailto:info@sofashampooingdubai.com" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Email Us</a>
                 <Link href="/contact" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Book Now</Link>
               </div>
