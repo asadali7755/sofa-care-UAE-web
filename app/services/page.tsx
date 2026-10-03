@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ServicesClient from './ServicesClient';
-import { SERVICES, SERVICE_FAQS, EMIRATE_LINKS, SITE } from './servicesData';
+import { SERVICES, EMIRATE_LINKS, SITE } from './servicesData';
 
 export const metadata: Metadata = {
   title: 'Sofa Cleaning in All 7 UAE Emirates',
@@ -101,22 +101,11 @@ const servicesSchema = {
   })),
 };
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: SERVICE_FAQS.map((f) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
-};
-
 export default function ServicesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesBreadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ServicesClient />
     </>
   );
