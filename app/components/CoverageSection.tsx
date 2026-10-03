@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { CITY_IMAGES } from '../lib/cityImages';
 
 const areas = [
   {
     city: 'Dubai',
     href: '/sofa-cleaning-dubai',
-    image: '/cities/dubai.webp',
+    image: CITY_IMAGES['dubai'].src,
+    imageAlt: CITY_IMAGES['dubai'].alt,
     desc: 'All Dubai areas — Marina, JVC, Downtown, Deira, Bur Dubai, Jumeirah, Palm Jumeirah & more.',
     tags: ['Marina', 'JVC', 'Downtown', 'Jumeirah', 'Deira'],
     accent: 'var(--accent)',
@@ -14,7 +16,8 @@ const areas = [
   {
     city: 'Abu Dhabi',
     href: '/sofa-cleaning-abu-dhabi',
-    image: '/cities/abu-dhabi.webp',
+    image: CITY_IMAGES['abu-dhabi'].src,
+    imageAlt: CITY_IMAGES['abu-dhabi'].alt,
     desc: 'Serving all Abu Dhabi areas — Khalifa City, Al Reem Island, Yas Island, Saadiyat Island & Al Muroor.',
     tags: ['Khalifa City', 'Al Reem Island', 'Yas Island', 'Al Muroor'],
     accent: '#3B82F6',
@@ -23,7 +26,8 @@ const areas = [
   {
     city: 'Sharjah',
     href: '/sofa-cleaning-sharjah',
-    image: '/cities/sharjah.webp',
+    image: CITY_IMAGES['sharjah'].src,
+    imageAlt: CITY_IMAGES['sharjah'].alt,
     desc: 'Covering all Sharjah neighborhoods — Al Nahda, Al Majaz, Al Qasimia & surrounding areas.',
     tags: ['Al Nahda', 'Al Majaz', 'Al Qasimia', 'Muwaileh'],
     accent: '#6DD5C2',
@@ -32,7 +36,8 @@ const areas = [
   {
     city: 'Ajman',
     href: '/sofa-cleaning-ajman',
-    image: '/cities/ajman.webp',
+    image: CITY_IMAGES['ajman'].src,
+    imageAlt: CITY_IMAGES['ajman'].alt,
     desc: 'Full coverage in Ajman — Al Nuaimiya, Al Rashidiya, Al Jurf & all residential areas.',
     tags: ['Al Nuaimiya', 'Al Rashidiya', 'Al Jurf', 'Al Hamidiya'],
     accent: '#FF5A3C',
@@ -82,7 +87,7 @@ export default function CoverageSection() {
               <div style={{ position: 'relative', width: '100%', height: 160, overflow: 'hidden' }}>
                 <Image
                   src={area.image}
-                  alt={`Sofa cleaning service in ${area.city} UAE`}
+                  alt={area.imageAlt}
                   fill
                   sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 25vw"
                   style={{ objectFit: 'cover', objectPosition: 'center' }}

@@ -1,4 +1,5 @@
 'use client';
+import { CITY_IMAGES } from '../lib/cityImages';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -28,13 +29,13 @@ const navLinks = [
 const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61580647541867';
 
 const locationLinks = [
-  { href: '/sofa-cleaning-dubai', label: 'Dubai', img: '/cities/dubai.webp' },
-  { href: '/sofa-cleaning-sharjah', label: 'Sharjah', img: '/cities/sharjah.webp' },
-  { href: '/sofa-cleaning-ajman', label: 'Ajman', img: '/cities/ajman.webp' },
-  { href: '/sofa-cleaning-abu-dhabi', label: 'Abu Dhabi', img: '/cities/abu-dhabi.webp' },
-  { href: '/sofa-cleaning-ras-al-khaimah', label: 'Ras Al Khaimah', img: 'https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=300&q=60&auto=format' },
-  { href: '/sofa-cleaning-umm-al-quwain', label: 'Umm Al Quwain', img: 'https://images.unsplash.com/photo-1586611292717-f828b167408c?w=300&q=60&auto=format' },
-  { href: '/sofa-cleaning-fujairah', label: 'Fujairah', img: '/locations/dibba-town-center-roundabout.webp' },
+  { href: '/sofa-cleaning-dubai', label: 'Dubai', img: CITY_IMAGES.dubai.src, alt: CITY_IMAGES.dubai.thumbAlt },
+  { href: '/sofa-cleaning-sharjah', label: 'Sharjah', img: CITY_IMAGES.sharjah.src, alt: CITY_IMAGES.sharjah.thumbAlt },
+  { href: '/sofa-cleaning-ajman', label: 'Ajman', img: CITY_IMAGES.ajman.src, alt: CITY_IMAGES.ajman.thumbAlt },
+  { href: '/sofa-cleaning-abu-dhabi', label: 'Abu Dhabi', img: CITY_IMAGES['abu-dhabi'].src, alt: CITY_IMAGES['abu-dhabi'].thumbAlt },
+  { href: '/sofa-cleaning-ras-al-khaimah', label: 'Ras Al Khaimah', img: 'https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=300&q=60&auto=format', alt: CITY_IMAGES['ras-al-khaimah'].thumbAlt },
+  { href: '/sofa-cleaning-umm-al-quwain', label: 'Umm Al Quwain', img: 'https://images.unsplash.com/photo-1586611292717-f828b167408c?w=300&q=60&auto=format', alt: CITY_IMAGES['umm-al-quwain'].thumbAlt },
+  { href: '/sofa-cleaning-fujairah', label: 'Fujairah', img: CITY_IMAGES.fujairah.src, alt: CITY_IMAGES.fujairah.thumbAlt },
 ];
 
 export default function Navbar() {
@@ -151,7 +152,7 @@ export default function Navbar() {
                           border: pathname === l.href ? '1px solid var(--accent)' : '1px solid var(--line)',
                         }}
                       >
-                        <Image src={l.img} alt={`Sofa cleaning ${l.label}`} fill sizes="150px" style={{ objectFit: 'cover' }} />
+                        <Image src={l.img} alt={l.alt} fill sizes="150px" style={{ objectFit: 'cover' }} />
                         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.05) 100%)' }} />
                         <div style={{ position: 'absolute', left: 11, right: 8, bottom: 9 }}>
                           <div style={{ color: '#fff', fontWeight: 800, fontSize: 15, fontFamily: 'var(--font-display)', lineHeight: 1 }}>{l.label}</div>
@@ -329,7 +330,7 @@ export default function Navbar() {
                     borderLeft: pathname === l.href ? '3px solid var(--accent)' : '3px solid transparent',
                   }}
                 >
-                  <Image src={l.img} alt={`Sofa cleaning ${l.label}`} width={40} height={30} style={{ borderRadius: 6, objectFit: 'cover', flexShrink: 0 }} />
+                  <Image src={l.img} alt={l.alt} width={40} height={30} style={{ borderRadius: 6, objectFit: 'cover', flexShrink: 0 }} />
                   {l.label}
                 </Link>
               ))}
