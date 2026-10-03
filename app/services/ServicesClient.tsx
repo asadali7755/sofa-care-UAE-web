@@ -8,27 +8,9 @@ import { IconArrow, IconWhatsApp, IconCheck } from '../components/Icons';
 import ServiceCoverageSection from '../components/ServiceCoverageSection';
 import QuoteCallSection from '../components/QuoteCallSection';
 import { useRequestCall } from '../components/RequestCallModal';
+import { SERVICES, SERVICE_FAQS, EMIRATE_LINKS, serviceAreaLinks, type ServiceItem } from './servicesData';
 
-/* ─── Reusable Section Component ─── */
-type ServiceSectionProps = {
-  id: string;
-  badge: string;
-  badgeColor: string;
-  title: React.ReactNode;
-  desc1: string;
-  desc2?: string;
-  keywords: string[];
-  priceLabel: string;
-  price: string;
-  timeLabel: string;
-  time: string;
-  waText: string;
-  image: string;
-  imageAlt: string;
-  features: string[];
-  flip?: boolean;
-  bg?: string;
-};
+type ServiceSectionProps = ServiceItem & { index: number };
 
 function ServiceCTAButtons({ waText }: { waText: string }) {
   const { open } = useRequestCall();
@@ -47,10 +29,18 @@ function ServiceCTAButtons({ waText }: { waText: string }) {
 }
 
 function ServiceSection({
-  id, badge, badgeColor, title, desc1, desc2, keywords,
+  id, badge, badgeColor, titlePre, titleEm, titlePost, emColor, desc1, desc2, keywords,
   priceLabel, price, timeLabel, time, waText,
-  image, imageAlt, features, flip = false, bg,
+  image, imageAlt, features, flip = false, bg, linkLabel, index,
 }: ServiceSectionProps) {
+  const areaLinks = serviceAreaLinks(index, linkLabel);
+  const title = (
+    <>
+      {titlePre}
+      <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: emColor ?? badgeColor }}>{titleEm}</span>
+      {titlePost}
+    </>
+  );
   const textBlock = (
     <div className="reveal">
       <span className="badge" style={{ marginBottom: 20, display: 'inline-flex', background: `${badgeColor}18`, color: badgeColor, border: `1px solid ${badgeColor}55` }}>
@@ -66,6 +56,16 @@ function ServiceSection({
           <span key={kw} className="badge" style={{ fontSize: 11 }}>{kw}</span>
         ))}
       </div>
+      <nav aria-label={`${linkLabel} by emirate`} style={{ marginBottom: 24 }}>
+        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--fg-dim)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Available in these emirates</div>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          {areaLinks.map((l) => (
+            <Link key={l.href} href={l.href} title={`${linkLabel} in ${l.emirate}`} style={{ padding: '5px 12px', borderRadius: 999, fontSize: 12, textDecoration: 'none', color: badgeColor, background: `${badgeColor}12`, border: `1px solid ${badgeColor}40` }}>
+              {l.text}
+            </Link>
+          ))}
+        </div>
+      </nav>
       <div style={{ padding: '18px 22px', background: 'var(--bg-elev)', borderRadius: 12, border: '1px solid var(--line)', marginBottom: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--fg-dim)', marginBottom: 4, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{priceLabel}</div>
@@ -110,194 +110,6 @@ function ServiceSection({
   );
 }
 
-/* ─── Services Data ─── */
-const services: ServiceSectionProps[] = [
-  {
-    id: 'deep-cleaning',
-    badge: 'Most Popular',
-    badgeColor: 'var(--accent)',
-    title: <>Sofa Deep Cleaning &amp; <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Steam Extraction</span></>,
-    desc1: "Dubai's fine micro-dust particles act like sandpaper deep inside fabric fibers, wearing down your sofa over time. Al Haya's industrial extraction removes embedded desert dust, dust mites and allergens — while our pH-tested steam kills 99.9% of bacteria.",
-    desc2: "We combine two of the most effective techniques: premium eco-friendly shampoos that break down grease and lift heavy stains without damaging the fabric, plus industrial-grade high-temperature steam that penetrates deep into the cushions.",
-    keywords: ['sofa cleaning Dubai', 'sofa deep clean', 'steam extraction', 'allergen removal', 'same day service'],
-    priceLabel: 'Starting Price',
-    price: 'AED 50 / seat',
-    timeLabel: 'Service Time',
-    time: '1.5 – 3 hrs',
-    waText: 'Hi%2C%20I%20need%20sofa%20deep%20cleaning%20in%20Dubai.',
-    image: '/home/sofa-deep-cleaning.webp',
-    imageAlt: 'Professional sofa deep cleaning Dubai — Al Haya Sofa Care UAE',
-    features: ['Industrial power vacuuming', 'Allergen & bacteria extraction', 'Deep stain treatment', 'pH-steam sanitization', 'Fabric protection coat', 'Eco-friendly agents', 'All fabric types safe', 'Same-day service'],
-    flip: false,
-    bg: undefined,
-  },
-  {
-    id: 'shampooing',
-    badge: 'Fast-Dry Formula',
-    badgeColor: '#06B6D4',
-    title: <>Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Shampooing</span> Dubai</>,
-    desc1: "Professional foam shampoo treatment that goes deep into your sofa's fabric, lifting dirt, grime, and stains that regular vacuuming can't touch. Our shampoo service is perfect for fabric sofas that need a thorough refresh.",
-    desc2: "Keep your sofa fresh, hygienic, and guest-ready. Experts inspect the fabric, treat stains, and deep clean — no need to move furniture. Fast-drying, same-day service ideal for busy families.",
-    keywords: ['sofa shampooing Dubai', 'couch cleaning Dubai', 'eco-friendly sofa cleaning', 'sofa dry cleaning Dubai'],
-    priceLabel: 'Starting Price',
-    price: 'AED 40 / seat',
-    timeLabel: 'Dry Time',
-    time: '2 – 4 hrs',
-    waText: 'Hi%2C%20I%20need%20sofa%20shampooing%20in%20Dubai.',
-    image: '/home/sofa-shampoo.webp',
-    imageAlt: 'Professional sofa shampooing service Dubai — Al Haya Sofa Care UAE',
-    features: ['pH-balanced shampoo', 'Oil & grease breakdown', 'Fast-dry technology', 'Sanitization included', 'Deodorizing treatment', 'No fading guarantee', 'Pet hair removal', 'Same-day service'],
-    flip: true,
-    bg: 'var(--bg-elev)',
-  },
-  {
-    id: 'stain-removal',
-    badge: 'Specialist',
-    badgeColor: '#FF5A3C',
-    title: <>Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#FF5A3C' }}>Stain Removal</span> Dubai</>,
-    desc1: "Targeted treatment for coffee, food, ink, wine, and other stubborn stains that regular cleaning simply cannot remove. Our specialist formula penetrates deep into fibers and works on even old, set-in stains without damaging fabric.",
-    keywords: ['stain removal Dubai', 'sofa stain removal', 'coffee stain removal', 'ink stain sofa', 'pet stain removal'],
-    priceLabel: 'Starting Price',
-    price: 'AED 100',
-    timeLabel: 'Service Time',
-    time: '30 – 60 min',
-    waText: 'Hi%2C%20I%20need%20stain%20removal%20service%20for%20my%20sofa.',
-    image: '/home/sofa-stain-removal-dubai.webp',
-    imageAlt: 'Sofa stain removal service Dubai — Al Haya Sofa Care UAE',
-    features: ['Coffee & tea stains', 'Ink & dye removal', 'Food & grease stains', 'Wine & juice stains', 'Old set-in stains', 'Blood & protein stains', 'No discoloration', 'All fabric types'],
-    flip: false,
-    bg: 'var(--bg-raised)',
-  },
-  {
-    id: 'leather-cleaning',
-    badge: 'Premium',
-    badgeColor: '#8B5CF6',
-    title: <>Leather Sofa <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#8B5CF6' }}>Deep Cleaning</span> Dubai</>,
-    desc1: "Specialist pH-safe leather care prevents cracking in Dubai's harsh climate. We deep clean, condition, restore suppleness and apply a protective coat — preserving your leather sofa for years.",
-    desc2: "Dubai's dry heat causes leather to crack and fade faster than anywhere else. Our conditioning treatment replenishes lost moisture and creates a barrier against UV damage and everyday wear.",
-    keywords: ['leather sofa cleaning Dubai', 'leather couch cleaning', 'leather conditioning UAE', 'leather sofa care Dubai'],
-    priceLabel: 'Starting Price',
-    price: 'AED 50 / seat',
-    timeLabel: 'Service Time',
-    time: '2 – 3 hrs',
-    waText: 'Hi%2C%20I%20need%20leather%20sofa%20cleaning%20in%20Dubai.',
-    image: '/home/leather-sofa-cleaning-dubai.webp',
-    imageAlt: 'Leather sofa cleaning and conditioning Dubai — Al Haya Sofa Care UAE',
-    features: ['pH-safe leather cleaner', 'Deep conditioning treatment', 'Crack & peel prevention', 'Stain & scuff removal', 'UV fade protection', 'Protective coat finish', 'Colour restoration', 'Same-day service'],
-    flip: true,
-    bg: 'var(--bg-elev)',
-  },
-  {
-    id: 'odor-treatment',
-    badge: 'Freshness',
-    badgeColor: '#0891B2',
-    title: <>Sofa <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#0891B2' }}>Odor Treatment</span> Dubai</>,
-    desc1: "Dubai's humid climate lets odors linger deep within fabric fibers for months. Our eco-friendly deodorizers neutralize pet, smoke, food and moisture odors at the molecular source — not just mask them.",
-    keywords: ['sofa odor removal Dubai', 'couch smell removal', 'pet odor sofa', 'smoke smell sofa UAE'],
-    priceLabel: 'Starting Price',
-    price: 'AED 59',
-    timeLabel: 'Service Time',
-    time: '1 – 2 hrs',
-    waText: 'Hi%2C%20I%20need%20sofa%20odor%20treatment%20service.',
-    image: '/home/sofa-odor-treatment-dubai.webp',
-    imageAlt: 'Sofa odor treatment and deodorizing Dubai — Al Haya Sofa Care UAE',
-    features: ['Pet odor elimination', 'Smoke & cigarette odors', 'Food & cooking odors', 'Moisture & mold odors', 'Anti-bacterial treatment', 'Long-lasting freshness', 'Eco-friendly formula', 'Humidity-proof result'],
-    flip: false,
-    bg: undefined,
-  },
-  {
-    id: 'pet-hair',
-    badge: 'Pet-Friendly',
-    badgeColor: '#1D6A5B',
-    title: <>Pet Hair <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#1D6A5B' }}>Removal</span> Service</>,
-    desc1: "Specialized vacuum and roller treatment removes embedded pet hair from every cushion, seam and corner of your sofa. Includes anti-allergen treatment completely safe for your pets and family members.",
-    keywords: ['pet hair removal sofa Dubai', 'dog hair sofa cleaning', 'cat hair sofa Dubai', 'pet dander removal UAE'],
-    priceLabel: 'Starting Price',
-    price: 'AED 39',
-    timeLabel: 'Service Time',
-    time: '45 – 90 min',
-    waText: 'Hi%2C%20I%20need%20pet%20hair%20removal%20from%20my%20sofa.',
-    image: '/home/pet-hair-removal-sofa-dubai.webp',
-    imageAlt: 'Pet hair removal from sofa Dubai — Al Haya Sofa Care UAE',
-    features: ['Deep pet hair extraction', 'Anti-allergen treatment', 'Safe for all fabrics', 'Deodorizing included', 'Seam & corner cleaning', 'Post-treatment sanitization', 'Child & pet safe', 'Same-day service'],
-    flip: true,
-    bg: 'var(--bg-elev)',
-  },
-  {
-    id: 'sanitization',
-    badge: 'Hygienic',
-    badgeColor: '#059669',
-    title: <>Sofa <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#059669' }}>Sanitization</span> &amp; Disinfection</>,
-    desc1: "Hospital-grade disinfection kills 99.9% of bacteria, viruses and germs lurking deep in your sofa — completely safe for children and pets. Ideal after illness, for allergy sufferers, or for a seasonal deep clean.",
-    keywords: ['sofa sanitization Dubai', 'sofa disinfection UAE', 'bacteria removal sofa', 'allergy sofa cleaning Dubai'],
-    priceLabel: 'Starting Price',
-    price: 'AED 49',
-    timeLabel: 'Service Time',
-    time: '30 – 60 min',
-    waText: 'Hi%2C%20I%20need%20sofa%20sanitization%20service.',
-    image: '/home/sofa-sanitization-dubai.webp',
-    imageAlt: 'Sofa sanitization and disinfection Dubai — Al Haya Sofa Care UAE',
-    features: ['99.9% bacteria kill rate', 'Child & pet safe formula', 'Virus & germ elimination', 'WHO-approved solutions', 'No harsh chemicals', 'Allergy sufferer safe', 'High-temp steam', 'Same-day service'],
-    flip: false,
-    bg: 'var(--bg-raised)',
-  },
-  {
-    id: 'velvet-microfiber',
-    badge: 'Delicate Care',
-    badgeColor: '#EC4899',
-    title: <>Velvet &amp; Microfiber <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#EC4899' }}>Cleaning</span></>,
-    desc1: "Gentle specialist cleaning for delicate velvet, microfiber and suede upholstery. Our low-moisture technique restores pile without any damage, shrinkage or colour fading — specialist tools for every curve.",
-    keywords: ['velvet sofa cleaning Dubai', 'microfiber sofa clean', 'suede sofa UAE', 'delicate fabric cleaning Dubai'],
-    priceLabel: 'Starting Price',
-    price: 'AED 99',
-    timeLabel: 'Service Time',
-    time: '2 – 3 hrs',
-    waText: 'Hi%2C%20I%20need%20velvet%20or%20microfiber%20sofa%20cleaning.',
-    image: '/home/velvet-microfiber-sofa-cleaning.webp',
-    imageAlt: 'Velvet and microfiber sofa cleaning Dubai — Al Haya Sofa Care UAE',
-    features: ['Velvet-safe technique', 'Microfiber deep clean', 'Suede restoration', 'Pile direction restored', 'No shrinkage guarantee', 'No fading guarantee', 'Low-moisture method', 'Specialist tools'],
-    flip: true,
-    bg: 'var(--bg-elev)',
-  },
-  {
-    id: 'fabric-protection',
-    badge: 'Protection',
-    badgeColor: '#3B82F6',
-    title: <>Fabric <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#3B82F6' }}>Protection</span> Coat</>,
-    desc1: "Invisible shield coating repels future stains, spills and desert dust — keeping your sofa cleaner for up to 12+ months. Best applied immediately after a deep clean for maximum penetration and effect.",
-    keywords: ['fabric protection Dubai', 'sofa stain protection UAE', 'scotchgard sofa Dubai', 'sofa shield coating'],
-    priceLabel: 'Starting Price',
-    price: 'AED 69',
-    timeLabel: 'Service Time',
-    time: '30 – 45 min',
-    waText: 'Hi%2C%20I%20need%20fabric%20protection%20for%20my%20sofa.',
-    image: '/home/sofa-fabric-protection-dubai.webp',
-    imageAlt: 'Fabric protection coat for sofa Dubai — Al Haya Sofa Care UAE',
-    features: ['Invisible stain shield', 'Spill repellent coating', 'UV fade protection', 'Dust repellent barrier', 'Lasts 12+ months', 'Safe for all fabrics', 'No texture change', 'Same-day add-on'],
-    flip: false,
-    bg: undefined,
-  },
-  {
-    id: 'ikea-lshape',
-    badge: 'IKEA Special',
-    badgeColor: '#0058A3',
-    title: <>IKEA <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>L-Shape Sofa</span> Cleaning Dubai</>,
-    desc1: "IKEA L-shape sofas are among the most common in UAE homes — but their size and multi-section design makes them difficult to clean thoroughly. Our specialist team covers every corner, seam, cushion and armrest.",
-    desc2: "We are trained on all IKEA fabric types including KIVIK, EKTORP, VIMLE and FRIHETEN. Safe, eco-friendly cleaning agents, fast dry time, and complete allergen removal — all at your doorstep.",
-    keywords: ['IKEA sofa cleaning Dubai', 'L-shape sofa cleaning', 'IKEA KIVIK cleaning', 'IKEA EKTORP cleaning'],
-    priceLabel: 'Fixed Price',
-    price: 'AED 150',
-    timeLabel: 'Service Time',
-    time: '2 – 3 hrs',
-    waText: 'Hi%2C%20I%20need%20IKEA%20L-shape%20sofa%20cleaning%20in%20Dubai.',
-    image: '/L-shape/ikea-lshape-clean.webp',
-    imageAlt: 'IKEA L-Shape Sofa Cleaning Dubai — Al Haya Sofa Care UAE',
-    features: ['Full L-shape coverage', 'All IKEA fabric types', 'Corner & seam deep clean', 'Allergen & dust extraction', 'Sanitization included', 'Fast-dry formula', 'Deodorizing treatment', 'Same-day service'],
-    flip: true,
-    bg: 'var(--bg-raised)',
-  },
-];
-
 /* ─── Page ─── */
 export default function ServicesPage() {
   useEffect(() => {
@@ -327,16 +139,16 @@ export default function ServicesPage() {
             </div>
             <div className="section-tag">Our Services</div>
             <h1 className="reveal" style={{ fontSize: 'clamp(36px, 6vw, 80px)', lineHeight: 1.0, marginBottom: 20 }}>
-              Professional Sofa Cleaning Services in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Dubai &amp; UAE</span>
+              Professional Sofa Cleaning Services Across <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>All 7 Emirates</span>
             </h1>
             <p className="reveal reveal-delay-1" style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 620, lineHeight: 1.65 }}>
-              In Dubai, where luxury meets the desert, your sofa acts as a filter for fine sand, allergens and bacteria. Al Haya Sofa Care UAE uses industrial-grade extraction and pH-balanced cleaners to restore your upholstery — at your doorstep, same-day, across Dubai, Sharjah, Ajman &amp; Abu Dhabi.
+              Wherever you live in the UAE, your sofa acts as a filter for fine sand, humidity, allergens and bacteria. Al Haya Sofa Care UAE uses industrial-grade extraction and pH-balanced cleaners to restore your upholstery at your doorstep — in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain.
             </p>
             <div className="reveal reveal-delay-2" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 24 }}>
-              {['Dubai', 'Sharjah', 'Ajman', 'Abu Dhabi', 'Al Ain', 'RAK'].map((city) => (
-                <span key={city} style={{ padding: '5px 14px', borderRadius: 999, fontFamily: 'var(--font-mono)', fontSize: 11, background: 'rgba(12,17,14,0.06)', border: '1px solid rgba(12,17,14,0.12)', color: 'rgba(12,17,14,0.60)' }}>
-                  📍 {city}
-                </span>
+              {EMIRATE_LINKS.map((e) => (
+                <Link key={e.key} href={`/${e.slug}`} style={{ padding: '5px 14px', borderRadius: 999, fontFamily: 'var(--font-mono)', fontSize: 11, textDecoration: 'none', background: 'rgba(12,17,14,0.06)', border: '1px solid rgba(12,17,14,0.12)', color: 'rgba(12,17,14,0.60)' }}>
+                  {e.name}
+                </Link>
               ))}
             </div>
           </div>
@@ -356,7 +168,7 @@ export default function ServicesPage() {
         </section>
 
         {/* All Service Sections */}
-        {services.map((s) => <ServiceSection key={s.id} {...s} />)}
+        {SERVICES.map((s, i) => <ServiceSection key={s.id} {...s} index={i} />)}
 
         {/* 3-Step Process */}
         <section className="section" style={{ borderBottom: '1px solid var(--line)' }}>
@@ -394,16 +206,11 @@ export default function ServicesPage() {
             <div className="reveal" style={{ textAlign: 'center', marginBottom: 48 }}>
               <div className="section-tag">FAQs</div>
               <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}>
-                Sofa Cleaning <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>FAQs</span>
+                Sofa Cleaning <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>FAQs</span> — UAE-Wide
               </h2>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 800, margin: '0 auto' }}>
-              {[
-                { q: 'How much does sofa cleaning cost in Dubai?', a: 'Sofa cleaning in Dubai starts from AED 40/seat for shampooing, AED 50/seat for deep cleaning, AED 100 for stain removal, and AED 50/seat for leather sofa cleaning. All prices include at-home doorstep service with no hidden fees.' },
-                { q: 'How often should I professionally clean my couch in Dubai?', a: "Due to Dubai's high dust levels and humidity, we recommend a professional deep clean every 6 to 12 months. If you have pets or children, a 6-month interval is ideal to remove allergens, dust mites and embedded desert dust that standard vacuums cannot reach." },
-                { q: 'Is professional sofa cleaning safe for all sofa materials?', a: 'Yes. Our technicians perform a fabric inspection and pH test before selecting cleaners. We use pH-neutral solutions for delicate natural fibers (wool, silk, linen) to prevent browning or dye bleeding, and specialist low-moisture techniques for velvet and microfiber.' },
-                { q: 'Will deep cleaning remove bad odors from my sofa?', a: "Yes. Our eco-friendly deodorizers neutralize pet, smoke, food and moisture odors at the molecular source — not just mask them. This is especially effective in Dubai's humid climate where odors can linger deep within fabric fibers." },
-              ].map((item, i) => (
+              {SERVICE_FAQS.map((item, i) => (
                 <div key={i} className={`reveal reveal-delay-${i + 1}`} style={{ background: '#FFFFFF', border: '1px solid rgba(12,17,14,0.10)', borderLeft: '3px solid var(--accent)', borderRadius: 14, padding: '24px 28px' }}>
                   <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--fg)', marginBottom: 12 }}>{item.q}</h3>
                   <p style={{ color: 'rgba(12,17,14,0.56)', fontSize: 15, lineHeight: 1.7 }}>{item.a}</p>
@@ -418,10 +225,10 @@ export default function ServicesPage() {
           <div className="container-x" style={{ textAlign: 'center' }}>
             <div className="section-tag" style={{ margin: '0 auto 16px' }}>Locations</div>
             <h2 style={{ fontSize: 'clamp(24px, 3vw, 42px)', marginBottom: 16 }}>
-              Serving All Communities Across <span style={{ color: 'var(--accent)' }}>Dubai &amp; UAE</span>
+              Serving Homes in <span style={{ color: 'var(--accent)' }}>Every Emirate</span>
             </h2>
             <p style={{ color: 'var(--fg-muted)', fontSize: 16, maxWidth: 580, margin: '0 auto 28px', lineHeight: 1.65 }}>
-              Dubai Marina · Business Bay · Palm Jumeirah · Downtown · Al Barsha · JVC · Arabian Ranches · Mirdif · JLT · Abu Dhabi · Sharjah · Ajman
+              Dubai Marina · Business Bay · Khalifa City · Yas Island · Al Nahda Sharjah · Al Majaz · Ajman Corniche · Al Nuaimiya · Ras Al Khaimah · Dibba, Fujairah · Umm Al Quwain
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/contact" className="btn btn-primary">Book Now <IconArrow size={14}/></Link>

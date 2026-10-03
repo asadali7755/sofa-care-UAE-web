@@ -16,7 +16,8 @@ const cyclingLines = [
   'Same Day Available',
   'Eco-Friendly Products',
   'Certified Technicians',
-  'Dubai · Sharjah · Ajman',
+  'Dubai · Abu Dhabi · Sharjah',
+  'Ajman · RAK · Fujairah · UAQ',
 ];
 
 function useTypewriter(words: string[], speed = 75, deleteSpeed = 40, pause = 1400) {
@@ -74,7 +75,7 @@ function AnimatedServiceContent() {
 
       {/* Description */}
       <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 32 }}>
-        Dubai&apos;s micro-dust particles settle deep into fabric fibers, acting like sandpaper on your upholstery. Al Haya&apos;s certified technicians use industrial-grade extraction and pH-balanced cleaners tailored to your specific fabric — protecting your investment and ensuring a healthy home across Dubai, Sharjah, Ajman &amp; Abu Dhabi.
+        Fine desert dust and coastal humidity settle deep into fabric fibers, acting like sandpaper on your upholstery. Al Haya&apos;s certified technicians use industrial-grade extraction and pH-balanced cleaners tailored to your specific fabric — protecting your investment and ensuring a healthy home in all seven emirates, from Dubai and Abu Dhabi to Ras Al Khaimah, Fujairah and Umm Al Quwain.
       </p>
 
       {/* Stats */}
@@ -106,13 +107,15 @@ function AnimatedServiceContent() {
   );
 }
 
+const ALT_EMIRATES = ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah', 'Fujairah', 'Umm Al Quwain'];
+
 const services = [
   {
     icon: <IconSofa size={36}/>,
     tag: 'Most Popular',
     tagColor: 'var(--accent)',
     title: 'Sofa Deep Cleaning',
-    desc: 'Dubai\'s fine micro-dust particles act like sandpaper deep inside fabric fibers. Our industrial extraction removes embedded desert dust, allergens & tough stains — restoring your sofa and extending its lifespan.',
+    desc: 'Fine desert dust acts like sandpaper deep inside fabric fibers, from Abu Dhabi suburbs to Dubai high-rises. Our industrial extraction removes embedded dust, allergens & tough stains — restoring your sofa and extending its lifespan.',
     features: ['Industrial power vacuuming', 'Allergen & bacteria extraction', 'Deep stain treatment', 'Fabric protection coat'],
     price: 'AED 50 / seat',
     href: '/services#deep-cleaning',
@@ -145,7 +148,7 @@ const services = [
     tag: 'Premium',
     tagColor: '#8B5CF6',
     title: 'Leather Sofa Cleaning',
-    desc: 'Specialist pH-safe leather care prevents cracking in Dubai\'s climate. We condition, restore suppleness and apply a protective coat — preserving your leather sofa for years.',
+    desc: 'Specialist pH-safe leather care prevents cracking from dry AC air and strong sun in Ras Al Khaimah, Dubai and across the UAE. We condition, restore suppleness and apply a protective coat — preserving your leather sofa for years.',
     features: ['pH-safe leather cleaner', 'Deep conditioning treatment', 'Crack & dryness prevention', 'Protective coat finish'],
     price: 'AED 50 / seat',
     href: '/contact',
@@ -156,7 +159,7 @@ const services = [
     tag: 'Freshness',
     tagColor: '#0891B2',
     title: 'Odor Treatment',
-    desc: 'Dubai\'s humid climate lets odors linger deep within fabric fibers. Our eco-friendly deodorizers neutralize pet, smoke and food odors at the source — not just masked with perfume.',
+    desc: 'Coastal humidity in Fujairah, Sharjah and Ajman lets odors linger deep within fabric fibers. Our eco-friendly deodorizers neutralize pet, smoke and food odors at the source — not just masked with perfume.',
     features: ['Pet odor elimination', 'Smoke & food odors', 'Anti-bacterial treatment', 'Humidity-proof freshness'],
     price: 'AED 59',
     href: '/contact',
@@ -178,7 +181,7 @@ const services = [
     tag: 'Hygienic',
     tagColor: '#059669',
     title: 'Sofa Sanitization',
-    desc: 'High-temperature steam extraction kills 99.9% of bacteria, dust mites and germs — critical in Dubai\'s humid climate. WHO-approved solutions, completely safe for children and pets.',
+    desc: 'High-temperature steam extraction kills 99.9% of bacteria, dust mites and germs — ideal for family homes in Umm Al Quwain, Ajman and Sharjah. WHO-approved solutions, completely safe for children and pets.',
     features: ['99.9% bacteria kill rate', 'High-temp steam extraction', 'Child & pet safe', 'WHO-approved solutions'],
     price: 'AED 49',
     href: '/contact',
@@ -228,10 +231,10 @@ export default function ServicesPreview() {
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 56 }}>
           <div className="section-tag">Our Services</div>
           <h2 style={{ fontSize: 'clamp(32px, 4vw, 56px)', marginBottom: 16 }}>
-            Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Cleaning</span> Services in Dubai
+            Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Cleaning</span> Services Across the UAE
           </h2>
           <p style={{ color: 'var(--fg-muted)', maxWidth: 580, margin: '0 auto', fontSize: 17, lineHeight: 1.65 }}>
-            In Dubai, &ldquo;surface cleaning&rdquo; isn&apos;t enough. Fine desert dust settles deep into fabric fibers, while humidity locks in allergens and bacteria. Our certified technicians use industrial-grade extraction and pH-balanced cleaners to restore every sofa type across Dubai, Sharjah, Ajman &amp; Abu Dhabi.
+            Across the UAE, &ldquo;surface cleaning&rdquo; isn&apos;t enough. Fine desert dust settles deep into fabric fibers, while humidity locks in allergens and bacteria. Our certified technicians use industrial-grade extraction and pH-balanced cleaners to restore every sofa type in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah &amp; Umm Al Quwain.
           </p>
         </div>
 
@@ -245,7 +248,7 @@ export default function ServicesPreview() {
             >
               {('bgImage' in s && s.bgImage) && (
                 <>
-                  <Image src={s.bgImage} alt={`${s.title} in Dubai UAE — Al Haya Sofa Care professional at-home service`} fill loading={i < 2 ? 'eager' : 'lazy'} sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', zIndex: 0 }} />
+                  <Image src={s.bgImage} alt={`${s.title} in ${ALT_EMIRATES[i % ALT_EMIRATES.length]} and across UAE — Al Haya Sofa Care professional at-home service`} fill loading={i < 2 ? 'eager' : 'lazy'} sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', zIndex: 0 }} />
                   <div className="card-overlay" style={{ position: "absolute", inset: 0, background: "linear-gradient(rgba(11,11,11,0.55), rgba(11,11,11,0.65))", zIndex: 1 }} />
                 </>
               )}
