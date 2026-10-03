@@ -152,7 +152,7 @@ export default function CityLanding(p: CityLandingProps) {
       {/* ───────── HERO ───────── */}
       <section className={`cl-hero cl-hero-${t.heroLayout}`}>
         {t.heroLayout === 'bleed' && (
-          <div className="cl-hero-bg"><img src={p.image.src} alt="" width={p.image.width} height={p.image.height} aria-hidden="true" /></div>
+          <div className="cl-hero-bg"><img src={p.image.src} alt={p.image.alt} title={p.image.name ?? p.image.alt} width={p.image.width} height={p.image.height} loading="eager" fetchPriority="high" decoding="async" /></div>
         )}
         <CityHeroArt art={t.heroArt} />
         <div className="container-x cl-hero-inner">
