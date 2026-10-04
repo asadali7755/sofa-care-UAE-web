@@ -117,7 +117,7 @@ const services = [
     title: 'Sofa Deep Cleaning',
     desc: 'Fine desert dust acts like sandpaper deep inside fabric fibers, from Abu Dhabi suburbs to Dubai high-rises. Our industrial extraction removes embedded dust, allergens & tough stains — restoring your sofa and extending its lifespan.',
     features: ['Industrial power vacuuming', 'Allergen & bacteria extraction', 'Deep stain treatment', 'Fabric protection coat'],
-    price: 'AED 50 / seat',
+    price: 'Affordable',
     href: '/services#deep-cleaning',
     bgImage: '/home/sofa-deep-cleaning.webp',
   },
@@ -128,7 +128,7 @@ const services = [
     title: 'Sofa Shampooing',
     desc: 'pH-balanced foam shampoo breaks down oils, grease and grime from skin contact deep within the fabric. Sofa ready within 2–4 hours — ideal for regular deep cleaning in UAE homes.',
     features: ['pH-balanced shampoo formula', 'Oil & grease breakdown', 'Sanitization & deodorizing', 'Fast-dry technology'],
-    price: 'AED 40 / seat',
+    price: 'Affordable',
     href: '/services#shampooing',
     bgImage: '/home/sofa-shampoo.webp',
   },
@@ -139,7 +139,7 @@ const services = [
     title: 'Stain Removal',
     desc: 'pH-balanced cleaners tailored to your specific fabric type lift coffee, food, ink and pet stains without causing discoloration or dye bleeding — for all upholstery types.',
     features: ['Coffee, tea & food stains', 'Ink & dye removal', 'Pet accident treatment', 'Old set-in stains'],
-    price: 'AED 100',
+    price: 'Affordable',
     href: '/contact',
     bgImage: '/home/sofa-stain-removal-dubai.webp',
   },
@@ -150,7 +150,7 @@ const services = [
     title: 'Leather Sofa Cleaning',
     desc: 'Specialist pH-safe leather care prevents cracking from dry AC air and strong sun in Ras Al Khaimah, Dubai and across the UAE. We condition, restore suppleness and apply a protective coat — preserving your leather sofa for years.',
     features: ['pH-safe leather cleaner', 'Deep conditioning treatment', 'Crack & dryness prevention', 'Protective coat finish'],
-    price: 'AED 50 / seat',
+    price: 'Affordable',
     href: '/contact',
     bgImage: '/home/leather-sofa-cleaning-dubai.webp',
   },
@@ -161,7 +161,7 @@ const services = [
     title: 'Odor Treatment',
     desc: 'Coastal humidity in Fujairah, Sharjah and Ajman lets odors linger deep within fabric fibers. Our eco-friendly deodorizers neutralize pet, smoke and food odors at the source — not just masked with perfume.',
     features: ['Pet odor elimination', 'Smoke & food odors', 'Anti-bacterial treatment', 'Humidity-proof freshness'],
-    price: 'AED 59',
+    price: 'Affordable',
     href: '/contact',
     bgImage: '/home/sofa-odor-treatment-dubai.webp',
   },
@@ -172,7 +172,7 @@ const services = [
     title: 'Pet Hair Removal',
     desc: 'Specialized vacuum and roller treatment removes embedded pet hair from every cushion, seam and corner.',
     features: ['Deep pet hair extraction', 'Anti-allergen treatment', 'Safe for all fabrics', 'Deodorizing included'],
-    price: 'AED 39',
+    price: 'Affordable',
     href: '/contact',
     bgImage: '/home/pet-hair-removal-sofa-dubai.webp',
   },
@@ -183,7 +183,7 @@ const services = [
     title: 'Sofa Sanitization',
     desc: 'High-temperature steam extraction kills 99.9% of bacteria, dust mites and germs — ideal for family homes in Umm Al Quwain, Ajman and Sharjah. WHO-approved solutions, completely safe for children and pets.',
     features: ['99.9% bacteria kill rate', 'High-temp steam extraction', 'Child & pet safe', 'WHO-approved solutions'],
-    price: 'AED 49',
+    price: 'Affordable',
     href: '/contact',
     bgImage: '/home/sofa-sanitization-dubai.webp',
   },
@@ -194,7 +194,7 @@ const services = [
     title: 'Velvet & Microfiber',
     desc: 'Low-moisture techniques preserve velvet\'s soft texture, while microfiber gets a thorough deep clean. Specialist tools reach every curve of complex, sculptural sofa designs without shrinkage.',
     features: ['Low-moisture velvet care', 'Microfiber deep clean', 'Pile restoration', 'No shrinkage or fading'],
-    price: 'AED 99',
+    price: 'Affordable',
     href: '/contact',
     bgImage: '/home/velvet-microfiber-sofa-cleaning.webp',
   },
@@ -205,7 +205,7 @@ const services = [
     title: 'Fabric Protection',
     desc: 'Invisible shield coating repels future stains, spills and dirt — keeps your sofa cleaner for much longer.',
     features: ['Invisible stain shield', 'Spill repellent coat', 'UV fade protection', 'Lasts 12+ months'],
-    price: 'AED 69',
+    price: 'Affordable',
     href: '/contact',
     bgImage: '/home/sofa-fabric-protection-dubai.webp',
   },
@@ -216,7 +216,7 @@ const services = [
     title: 'IKEA L-Shape Sofa Cleaning',
     desc: 'Complete deep cleaning for IKEA L-shape sofas — the most popular sofa style in UAE homes. Full coverage of all sections, cushions, corners and seams with our specialist equipment.',
     features: ['Full L-shape coverage', 'All IKEA fabric types', 'Corner & seam cleaning', 'Same-day service'],
-    price: 'AED 150',
+    price: 'Affordable',
     href: '/contact',
     bgImage: '/L-shape/ikea-lshape-clean.webp',
   },
@@ -285,7 +285,7 @@ export default function ServicesPreview() {
               {/* Price + CTA */}
               <div style={{ borderTop: '1px solid var(--line)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative', zIndex: 2 }}>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--fg-dim)', marginBottom: 5, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Starting from</div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--fg-dim)', marginBottom: 5, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Pricing</div>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: 26, fontWeight: 900, color: s.tagColor }}>{s.price}</div>
                 </div>
                 <Link href={s.href} className="btn btn-ghost" style={{ padding: '12px 22px', fontSize: 14, display: 'flex', alignItems: 'center', gap: 6 }}>

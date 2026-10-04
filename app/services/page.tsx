@@ -4,7 +4,7 @@ import { SERVICES, EMIRATE_LINKS, SITE } from './servicesData';
 
 export const metadata: Metadata = {
   title: 'Sofa Cleaning in All 7 UAE Emirates',
-  description: 'Sofa cleaning in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah & Umm Al Quwain. Shampooing from AED 40, deep cleaning, stain removal, leather & pet hair care at home.',
+  description: 'Sofa cleaning in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah & Umm Al Quwain. Shampooing, deep cleaning, stain removal, leather & pet hair care at home at affordable rates.',
   keywords: [
     // Service keywords
     'sofa deep shampoo cleaning UAE',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sofashampooingdubai.com/services' },
   openGraph: {
     title: 'Sofa Cleaning Services in All 7 UAE Emirates | Al Haya',
-    description: 'Sofa shampooing, steam deep cleaning, stain removal, leather care & more at your door in Dubai, Abu Dhabi, Sharjah, Ajman, RAK, Fujairah & UAQ. Shampooing from AED 40.',
+    description: 'Sofa shampooing, steam deep cleaning, stain removal, leather care & more at your door in Dubai, Abu Dhabi, Sharjah, Ajman, RAK, Fujairah & UAQ. Affordable rates.',
     url: 'https://sofashampooingdubai.com/services',
     type: 'website',
   },

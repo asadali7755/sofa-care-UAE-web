@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-abu-dhabi' },
   openGraph: {
     title: 'Sofa Cleaning Abu Dhabi | Al Haya Sofa Care UAE',
-    description: 'Professional sofa deep shampoo & steam cleaning in Abu Dhabi. At-home service, same-day available. Starting AED 40/seat. Call +971547199189.',
+    description: 'Professional sofa deep shampoo & steam cleaning in Abu Dhabi. At-home service, same-day available. Affordable rates. Call +971547199189.',
     url: 'https://sofashampooingdubai.com/sofa-cleaning-abu-dhabi',
     type: 'website',
   },
@@ -57,12 +57,6 @@ const abuDhabiSchema = {
     url: 'https://sofashampooingdubai.com',
   },
   areaServed: { '@type': 'City', name: 'Abu Dhabi' },
-  offers: [
-    { '@type': 'Offer', name: 'Sofa Deep Cleaning Abu Dhabi', price: '50', priceCurrency: 'AED' },
-    { '@type': 'Offer', name: 'Sofa Shampooing Abu Dhabi', price: '40', priceCurrency: 'AED' },
-    { '@type': 'Offer', name: 'Sofa Steam Cleaning Abu Dhabi', price: '50', priceCurrency: 'AED' },
-    { '@type': 'Offer', name: 'Leather Sofa Cleaning Abu Dhabi', price: '50', priceCurrency: 'AED' },
-  ],
 };
 
 const content = CITY_CONTENT['abu-dhabi'];
@@ -87,8 +81,8 @@ export default function SofaCleaningAbuDhabi() {
           areas={content.areas}
           areasIntro={content.areasIntro}
           services={content.services}
-          priceValue="AED 40 / seat"
-          priceNote="Sofa shampoo cleaning. Deep cleaning from AED 50/seat."
+          priceValue="Affordable Pricing"
+          priceNote="Free quote on WhatsApp — no hidden fees."
           ctaText={content.ctaText}
         />
       </main>

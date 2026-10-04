@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-ajman' },
   openGraph: {
     title: 'Sofa Cleaning Ajman | Al Haya Sofa Care UAE',
-    description: 'Professional sofa deep shampoo & steam cleaning in Ajman. At-home service, same-day available. Starting AED 40/seat. Call +971547199189.',
+    description: 'Professional sofa deep shampoo & steam cleaning in Ajman. At-home service, same-day available. Affordable rates. Call +971547199189.',
     url: 'https://sofashampooingdubai.com/sofa-cleaning-ajman',
     type: 'website',
   },
@@ -53,10 +53,6 @@ const ajmanSchema = {
     url: 'https://sofashampooingdubai.com',
   },
   areaServed: { '@type': 'City', name: 'Ajman' },
-  offers: [
-    { '@type': 'Offer', name: 'Sofa Deep Cleaning Ajman', price: '50', priceCurrency: 'AED' },
-    { '@type': 'Offer', name: 'Sofa Shampooing Ajman', price: '40', priceCurrency: 'AED' },
-  ],
 };
 
 const content = CITY_CONTENT['ajman'];
@@ -81,8 +77,8 @@ export default function SofaCleaningAjman() {
           areas={content.areas}
           areasIntro={content.areasIntro}
           services={content.services}
-          priceValue="AED 40 / seat"
-          priceNote="Sofa shampoo cleaning. Deep cleaning from AED 50/seat."
+          priceValue="Affordable Pricing"
+          priceNote="Free quote on WhatsApp — no hidden fees."
           ctaText={content.ctaText}
         />
       </main>

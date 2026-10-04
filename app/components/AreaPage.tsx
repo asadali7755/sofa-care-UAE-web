@@ -28,10 +28,6 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
     areaServed: { '@type': 'Place', name: `${area.name}, ${em.cityName}, UAE` },
     url,
     offers: [
-      { '@type': 'Offer', name: 'Sofa Shampooing', price: '79', priceCurrency: 'AED' },
-      { '@type': 'Offer', name: 'Sofa Steam Cleaning', price: '89', priceCurrency: 'AED' },
-      { '@type': 'Offer', name: 'Sofa Deep Cleaning', price: '99', priceCurrency: 'AED' },
-      { '@type': 'Offer', name: 'Leather Sofa Cleaning', price: '129', priceCurrency: 'AED' },
     ],
   };
   const breadcrumbSchema = {
@@ -206,7 +202,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
                 Book Sofa Cleaning in <span style={{ color: 'var(--accent)' }}>{area.short}</span> Today
               </h2>
               <p style={{ color: 'var(--fg-muted)', fontSize: 16, marginBottom: 28, maxWidth: 520, margin: '0 auto 28px' }}>
-                Same-day at-home service across {area.name}. Starting from AED 79 — eco-friendly, quick-dry.
+                Same-day at-home service across {area.name}. Affordable rates — eco-friendly, quick-dry.
               </p>
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Link href="/contact" className="btn btn-primary">Book Now <IconArrow size={14} /></Link>

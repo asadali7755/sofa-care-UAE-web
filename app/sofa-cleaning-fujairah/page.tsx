@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-fujairah' },
   openGraph: {
     title: 'Sofa Cleaning Fujairah | Al Haya Sofa Care UAE',
-    description: 'Professional sofa deep shampoo & steam cleaning in Fujairah and Dibba. At-home service, eco-friendly, from AED 79. Call +971547199189.',
+    description: 'Professional sofa deep shampoo & steam cleaning in Fujairah and Dibba. At-home service, eco-friendly, affordable rates. Call +971547199189.',
     url: 'https://sofashampooingdubai.com/sofa-cleaning-fujairah',
     type: 'website',
   },
@@ -53,10 +53,6 @@ const fujairahSchema = {
     url: 'https://sofashampooingdubai.com',
   },
   areaServed: { '@type': 'City', name: 'Fujairah' },
-  offers: [
-    { '@type': 'Offer', name: 'Sofa Deep Cleaning Fujairah', price: '50', priceCurrency: 'AED' },
-    { '@type': 'Offer', name: 'Sofa Shampooing Fujairah', price: '40', priceCurrency: 'AED' },
-  ],
 };
 
 const content = CITY_CONTENT['fujairah'];
@@ -81,8 +77,8 @@ export default function SofaCleaningFujairah() {
           areas={content.areas}
           areasIntro={content.areasIntro}
           services={content.services}
-          priceValue="AED 40 / seat"
-          priceNote="Sofa shampoo cleaning. Deep cleaning from AED 50/seat."
+          priceValue="Affordable Pricing"
+          priceNote="Free quote on WhatsApp — no hidden fees."
           ctaText={content.ctaText}
         />
       </main>

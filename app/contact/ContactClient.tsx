@@ -149,8 +149,8 @@ export default function ContactPage() {
                       <label className="form-label">Service Required *</label>
                       <select className="form-input" required value={bookForm.service} onChange={(e) => setBookForm({ ...bookForm, service: e.target.value })}>
                         <option value="">Select a service...</option>
-                        <option value="Sofa Deep Cleaning">Sofa Deep Cleaning (from AED 99)</option>
-                        <option value="Sofa Shampooing">Sofa Shampooing (from AED 79)</option>
+                        <option value="Sofa Deep Cleaning">Sofa Deep Cleaning</option>
+                        <option value="Sofa Shampooing">Sofa Shampooing</option>
                         <option value="Both Services">Both Services — Deep Clean + Shampoo</option>
                       </select>
                     </div>

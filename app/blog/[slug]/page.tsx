@@ -120,7 +120,7 @@ export default async function BlogPostPage({ params }: Props) {
             {/* CTA */}
             <div style={{ marginTop: 36, textAlign: 'center', padding: '36px 24px', background: 'var(--bg-elev)', borderRadius: 18, border: '1px solid var(--line-strong)' }}>
               <h2 style={{ fontSize: 'clamp(20px, 2.6vw, 30px)', marginBottom: 12 }}>Book Professional Sofa Cleaning</h2>
-              <p style={{ color: 'var(--fg-muted)', fontSize: 15, marginBottom: 22, maxWidth: 460, margin: '0 auto 22px' }}>Same-day at-home service across Dubai &amp; the UAE — from AED 79.</p>
+              <p style={{ color: 'var(--fg-muted)', fontSize: 15, marginBottom: 22, maxWidth: 460, margin: '0 auto 22px' }}>Same-day at-home service across Dubai &amp; the UAE — at affordable rates.</p>
               <BlogCTAButtons />
             </div>
 

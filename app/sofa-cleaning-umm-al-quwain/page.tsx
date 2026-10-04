@@ -40,8 +40,8 @@ const defaults = {
     'Al Maidan', 'King Faisal Road', 'Falaj Al Mualla', 'Al Aahad',
     'Al Dar Al Baida', 'Al Humrah', 'Old Town UAQ', 'Al Riqqah',
   ],
-  startingPriceValue: 'AED 40 / seat',
-  startingPriceNote: 'Sofa shampoo cleaning. Deep cleaning from AED 50/seat.',
+  startingPriceValue: 'Affordable Pricing',
+  startingPriceNote: 'Free quote on WhatsApp — no hidden fees.',
   services: [
     { title: 'Sofa Deep Cleaning UAQ', desc: 'Industrial extraction removes embedded dust, allergens and bacteria from every sofa type across Umm Al Quwain.' },
     { title: 'Sofa Shampooing UAQ', desc: 'Professional foam shampoo treatment lifts deep grime and stains. Fast-dry formula — ready in 2–4 hours.' },
@@ -104,7 +104,7 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-umm-al-quwain' },
     openGraph: {
       title: 'Sofa Cleaning Umm Al Quwain | Al Haya Sofa Care UAE',
-      description: 'Professional sofa deep shampoo & steam cleaning in Umm Al Quwain. At-home service, same-day available. Starting AED 40/seat. Call +971547199189.',
+      description: 'Professional sofa deep shampoo & steam cleaning in Umm Al Quwain. At-home service, same-day available. Affordable rates. Call +971547199189.',
       url: 'https://sofashampooingdubai.com/sofa-cleaning-umm-al-quwain',
       type: 'website',
     },
@@ -131,10 +131,6 @@ const uaqSchema = {
     url: 'https://sofashampooingdubai.com',
   },
   areaServed: { '@type': 'City', name: 'Umm Al Quwain' },
-  offers: [
-    { '@type': 'Offer', name: 'Sofa Deep Cleaning Umm Al Quwain', price: '50', priceCurrency: 'AED' },
-    { '@type': 'Offer', name: 'Sofa Shampooing Umm Al Quwain', price: '40', priceCurrency: 'AED' },
-  ],
 };
 
 export default async function SofaCleaningUmmAlQuwain() {
@@ -162,7 +158,7 @@ export default async function SofaCleaningUmmAlQuwain() {
           }}
           waText={encodeURIComponent('Hi, I need sofa cleaning in Umm Al Quwain.')}
           stats={[
-            { n: 'AED 40', l: 'Starting Price' },
+            { n: 'Affordable', l: 'Pricing' },
             { n: 'Same Day', l: 'Service' },
             { n: `${c.areas.length}+ Areas`, l: 'Umm Al Quwain Coverage' },
             { n: 'Certified', l: 'Team' },
@@ -172,8 +168,8 @@ export default async function SofaCleaningUmmAlQuwain() {
           bullets={c.whyChooseBullets}
           areas={c.areas}
           services={c.services.map((s) => ({ title: s.title ?? '', desc: s.desc ?? '' }))}
-          priceValue={c.startingPriceValue}
-          priceNote={c.startingPriceNote}
+          priceValue={defaults.startingPriceValue}
+          priceNote={defaults.startingPriceNote}
         />
       </main>
       <Footer />

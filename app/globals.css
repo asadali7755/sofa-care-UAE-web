@@ -1262,7 +1262,7 @@ section, footer, nav { max-width: 100%; }
 @keyframes clRipple { 0% { transform: scale(.3); opacity: .9; } 100% { transform: scale(7); opacity: 0; } }
 @keyframes clMarquee { to { transform: translateX(-50%); } }
 @keyframes clBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-@keyframes clSlideIn { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: none; } }
+@keyframes clSlideIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @property --clAng { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 @keyframes clAng { to { --clAng: 360deg; } }
 
@@ -1307,4 +1307,44 @@ section, footer, nav { max-width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cl *, .cl *::before, .cl *::after { animation: none !important; transition: none !important; }
+}
+
+/* ── city pages: mobile hardening ── */
+.cl-hero-grid > *, .cl-split > *, .cl-panel > *, .cl-tabs > *, .cl-stats > *, .cl-bleed, .cl-hero-inner, .cl-orb-wrap > * { min-width: 0; }
+.cl-hero-bleed .cl-hero-inner { width: 100%; }
+.cl-h1, .cl-h2, .cl-hero-para, .cl-p, .cl-check, .cl-mini, .cl-tabpanel h3 { overflow-wrap: anywhere; }
+@media (max-width: 860px) {
+  .cl-hero-grid, .cl-split, .cl-panel, .cl-tabs { grid-template-columns: minmax(0, 1fr); }
+  .cl-hero { padding-top: 100px; }
+  .cl-bento-n, .cl-tabpanel-n { font-size: 40px; top: 12px; right: 16px; }
+  .cl-bento-card h3 { max-width: 72%; }
+  .cl-tabpanel-n { font-size: 72px; }
+  .cl-stat { padding: 14px; }
+  .cl-stat b { font-size: 19px; }
+  .cl-h1 { font-size: clamp(32px, 9.5vw, 56px); }
+  .cl-tag { font-size: 10px; letter-spacing: .06em; }
+  .cl-btn { padding: 13px 20px; font-size: 14px; }
+  .cl-cta-row .cl-btn { flex: 1 1 100%; justify-content: center; }
+  .cl-cta-center .cl-btn { flex: 1 1 100%; }
+  .cl-final { padding: 44px 18px; border-radius: 24px; }
+  .cl-car-card { flex-basis: 84%; padding: 24px; }
+  .cl-car-nav { display: none; }
+  .cl-timeline::before { left: 20px; }
+  .cl-orb-wrap { gap: 20px; }
+  .cl-ticker-item { padding: 10px 18px; font-size: 14px; }
+  .cl-flip, .cl-flip-in { min-height: 260px; }
+  .cl-areapages { padding: 18px; }
+  .cl-step { padding: 0; }
+}
+@media (max-width: 400px) {
+  .cl-stats { gap: 10px; }
+  .cl-stat b { font-size: 16px; }
+  .cl-stat span { font-size: 9px; }
+  .cl-container-x, .cl .container-x { padding-left: 16px; padding-right: 16px; }
+  .cl-eyebrow { font-size: 10px; padding: 5px 11px; }
+  .cl-price-chip b { font-size: 22px; }
+  .cl-photo-card { transform: none; }
+  .cl-float { padding: 8px 12px; }
+  .cl-float b { font-size: 15px; }
+  .cl-tl-item, .cl-tl-item.is-right { padding-left: 54px; }
 }

@@ -40,8 +40,8 @@ const defaults = {
     'Al Marjan Island', 'Al Rams', 'Khuzam', 'Al Qusaidat',
     'Al Dhait', 'Julphar', 'Dafan Al Khor', 'Al Jazeera Al Hamra',
   ],
-  startingPriceValue: 'AED 40 / seat',
-  startingPriceNote: 'Sofa shampoo cleaning. Deep cleaning from AED 50/seat.',
+  startingPriceValue: 'Affordable Pricing',
+  startingPriceNote: 'Free quote on WhatsApp — no hidden fees.',
   services: [
     { title: 'Sofa Deep Cleaning RAK', desc: 'Industrial extraction removes embedded dust, allergens and bacteria from every sofa type across Ras Al Khaimah.' },
     { title: 'Sofa Shampooing RAK', desc: 'Professional foam shampoo treatment lifts deep grime and stains. Fast-dry formula — ready in 2–4 hours.' },
@@ -104,7 +104,7 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-ras-al-khaimah' },
     openGraph: {
       title: 'Sofa Cleaning Ras Al Khaimah | Al Haya Sofa Care UAE',
-      description: 'Professional sofa deep shampoo & steam cleaning in Ras Al Khaimah. At-home service, same-day available. Starting AED 40/seat. Call +971547199189.',
+      description: 'Professional sofa deep shampoo & steam cleaning in Ras Al Khaimah. At-home service, same-day available. Affordable rates. Call +971547199189.',
       url: 'https://sofashampooingdubai.com/sofa-cleaning-ras-al-khaimah',
       type: 'website',
     },
@@ -131,10 +131,6 @@ const rakSchema = {
     url: 'https://sofashampooingdubai.com',
   },
   areaServed: { '@type': 'City', name: 'Ras Al Khaimah' },
-  offers: [
-    { '@type': 'Offer', name: 'Sofa Deep Cleaning Ras Al Khaimah', price: '50', priceCurrency: 'AED' },
-    { '@type': 'Offer', name: 'Sofa Shampooing Ras Al Khaimah', price: '40', priceCurrency: 'AED' },
-  ],
 };
 
 export default async function SofaCleaningRasAlKhaimah() {
@@ -162,7 +158,7 @@ export default async function SofaCleaningRasAlKhaimah() {
           }}
           waText={encodeURIComponent('Hi, I need sofa cleaning in Ras Al Khaimah.')}
           stats={[
-            { n: 'AED 40', l: 'Starting Price' },
+            { n: 'Affordable', l: 'Pricing' },
             { n: 'Same Day', l: 'Service' },
             { n: `${c.areas.length}+ Areas`, l: 'Ras Al Khaimah Coverage' },
             { n: 'Certified', l: 'Team' },
@@ -172,8 +168,8 @@ export default async function SofaCleaningRasAlKhaimah() {
           bullets={c.whyChooseBullets}
           areas={c.areas}
           services={c.services.map((s) => ({ title: s.title ?? '', desc: s.desc ?? '' }))}
-          priceValue={c.startingPriceValue}
-          priceNote={c.startingPriceNote}
+          priceValue={defaults.startingPriceValue}
+          priceNote={defaults.startingPriceNote}
         />
       </main>
       <Footer />

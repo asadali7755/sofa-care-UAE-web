@@ -27,13 +27,13 @@ const handWrittenBlogPosts: BlogPost[] = [
     slug: 'sofa-cleaning-cost-dubai',
     title: 'How Much Does Sofa Cleaning Cost in Dubai?',
     h1: 'How Much Does Sofa Cleaning Cost in Dubai?',
-    description: 'A clear 2026 price guide for sofa cleaning in Dubai — costs by seater, fabric vs leather, and what affects the price. At-home service from AED 79.',
-    excerpt: 'Real 2026 sofa cleaning prices in Dubai — by seater, fabric vs leather, and what changes the cost.',
+    description: 'What affects sofa cleaning cost in Dubai — by seater, fabric vs leather — and how to get a free quote. At-home service at affordable rates.',
+    excerpt: 'What affects sofa cleaning cost in Dubai — by seater, fabric vs leather — and how to get a free quote.',
     image: '/sofa-cleaning-dubai-professional.webp',
     datePublished: '2026-06-03',
     readMins: 5,
     intro: [
-      'If you are searching for sofa cleaning in Dubai, the first question is usually about price. The honest answer: it depends on the number of seats, the fabric type, and how deep the cleaning needs to be. This guide gives realistic 2026 ranges so you know what to expect before booking.',
+      'If you are searching for sofa cleaning in Dubai, the first question is usually about price. The honest answer: it depends on the number of seats, the fabric type, and how deep the cleaning needs to be. This guide explains what drives the price so you know what to expect before booking.',
       'At Al Haya Sofa Care, pricing is transparent with no hidden charges, and every quote is free on WhatsApp. Here is how sofa cleaning is typically priced across Dubai.',
     ],
     sections: [
@@ -49,17 +49,6 @@ const handWrittenBlogPosts: BlogPost[] = [
         'With high-suction extraction, most sofas are 90% dry and usable within 3–4 hours — convenient for busy Dubai apartments and villas.',
       ] },
     ],
-    costTable: {
-      title: 'Approximate sofa cleaning prices in Dubai (2026)',
-      rows: [
-        { label: 'Pet-hair removal', price: 'from AED 39' },
-        { label: 'Sofa shampooing (per seat)', price: 'from AED 79' },
-        { label: 'Sofa steam cleaning (per seat)', price: 'from AED 89' },
-        { label: 'Sofa deep cleaning (per seat)', price: 'from AED 99' },
-        { label: 'Leather sofa cleaning', price: 'from AED 129' },
-      ],
-      note: 'Indicative 2026 prices; final cost depends on size, material and condition. Free quote on WhatsApp.',
-    },
     faqs: [
       { q: 'Is professional sofa cleaning worth it in Dubai?', a: 'Yes. Dubai’s fine dust and humidity trap allergens deep in upholstery that home vacuuming cannot reach. Professional extraction removes dust mites, stains and odors and extends your sofa’s life.' },
       { q: 'Do you clean the sofa at home?', a: 'Yes — we bring all equipment to your home anywhere in Dubai. No need to move the sofa out, and same-day service is usually available.' },

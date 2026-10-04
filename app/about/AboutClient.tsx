@@ -27,7 +27,7 @@ const whyUs = [
   { icon: <IconClock size={28}/>, title: 'Fast Service', desc: 'Same-day appointments available across Dubai, Sharjah & Ajman.', accent: '#1D6A5B' },
   { icon: <IconHome size={28}/>, title: 'At-Home Convenience', desc: 'We come to you with all equipment — no need to move furniture or travel.', accent: '#FF5A3C' },
   { icon: <IconShield size={28}/>, title: 'Certified Team', desc: 'Trained, experienced technicians who handle every sofa type with care.', accent: '#3B82F6' },
-  { icon: <IconTag size={28}/>, title: 'Transparent Pricing', desc: 'Starting from AED 79 with no hidden fees — affordable quality cleaning.', accent: '#10B981' },
+  { icon: <IconTag size={28}/>, title: 'Transparent Pricing', desc: 'Affordable rates with no hidden fees — free quote on WhatsApp.', accent: '#10B981' },
   { icon: <IconShield size={28}/>, title: 'Satisfaction Guaranteed', desc: "We're not done until your sofa looks and smells exactly as you expect.", accent: '#8B5CF6' },
 ];
 

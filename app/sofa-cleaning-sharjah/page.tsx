@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-sharjah' },
   openGraph: {
     title: 'Sofa Cleaning Sharjah | Al Haya Sofa Care UAE',
-    description: 'Professional sofa deep shampoo & steam cleaning in Sharjah. At-home service, same-day available, eco-friendly. Starting AED 40/seat. Call +971547199189.',
+    description: 'Professional sofa deep shampoo & steam cleaning in Sharjah. At-home service, same-day available, eco-friendly. Affordable rates. Call +971547199189.',
     url: 'https://sofashampooingdubai.com/sofa-cleaning-sharjah',
     type: 'website',
   },
@@ -54,10 +54,6 @@ const sharjahSchema = {
     url: 'https://sofashampooingdubai.com',
   },
   areaServed: { '@type': 'City', name: 'Sharjah' },
-  offers: [
-    { '@type': 'Offer', name: 'Sofa Deep Cleaning Sharjah', price: '50', priceCurrency: 'AED' },
-    { '@type': 'Offer', name: 'Sofa Shampooing Sharjah', price: '40', priceCurrency: 'AED' },
-  ],
 };
 
 const content = CITY_CONTENT['sharjah'];
@@ -82,8 +78,8 @@ export default function SofaCleaningSharjah() {
           areas={content.areas}
           areasIntro={content.areasIntro}
           services={content.services}
-          priceValue="AED 40 / seat"
-          priceNote="Sofa shampoo cleaning. Deep cleaning from AED 50/seat."
+          priceValue="Affordable Pricing"
+          priceNote="Free quote on WhatsApp — no hidden fees."
           ctaText={content.ctaText}
         />
       </main>

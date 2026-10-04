@@ -50,8 +50,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
     ],
     "stats": [
       {
-        "n": "AED 40",
-        "l": "Starting Price"
+        "n": "Affordable",
+        "l": "Pricing"
       },
       {
         "n": "Same Day",
@@ -89,7 +89,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       }
     ],
     "wa": "Hi%2C%20I%20need%20sofa%20cleaning%20in%20Dubai.",
-    "ctaText": "Same-day service available. Al Haya Sofa Care UAE comes to you with all equipment — starting from AED 40/seat."
+    "ctaText": "Same-day service available. Al Haya Sofa Care UAE comes to you with all equipment — at affordable rates."
   },
   "abu-dhabi": {
     "key": "abu-dhabi",
@@ -130,8 +130,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
     ],
     "stats": [
       {
-        "n": "AED 40",
-        "l": "Starting Price"
+        "n": "Affordable",
+        "l": "Pricing"
       },
       {
         "n": "Same Day",
@@ -208,8 +208,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
     ],
     "stats": [
       {
-        "n": "AED 40",
-        "l": "Starting Price"
+        "n": "Affordable",
+        "l": "Pricing"
       },
       {
         "n": "Same Day",
@@ -283,8 +283,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
     ],
     "stats": [
       {
-        "n": "AED 40",
-        "l": "Starting Price"
+        "n": "Affordable",
+        "l": "Pricing"
       },
       {
         "n": "Same Day",
@@ -352,8 +352,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
     ],
     "stats": [
       {
-        "n": "AED 40",
-        "l": "Starting Price"
+        "n": "Affordable",
+        "l": "Pricing"
       },
       {
         "n": "East Coast",
