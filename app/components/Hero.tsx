@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { IconArrow, IconWhatsApp } from './Icons';
 import HeroEnquiryCard from './HeroEnquiryCard';
 
-function useTypewriter(words: string[], typingSpeed = 80, deleteSpeed = 40, pauseMs = 1600) {
+function useTypewriter(words: string[], typingSpeed = 70, deleteSpeed = 35, pauseMs = 1500) {
   const [text, setText] = useState('');
   const [idx, setIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
@@ -19,7 +19,7 @@ function useTypewriter(words: string[], typingSpeed = 80, deleteSpeed = 40, paus
       setIdx((i) => (i + 1) % words.length);
     } else {
       t = setTimeout(() => {
-        setText((s) => deleting ? s.slice(0, -1) : current.slice(0, s.length + 1));
+        setText((s) => (deleting ? s.slice(0, -1) : current.slice(0, s.length + 1)));
       }, deleting ? deleteSpeed : typingSpeed);
     }
     return () => { if (t) clearTimeout(t); };
@@ -27,42 +27,47 @@ function useTypewriter(words: string[], typingSpeed = 80, deleteSpeed = 40, paus
   return text;
 }
 
+const Ico = ({ d }: { d: string }) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>
+);
+
 const stats = [
-  { n: 'Eco-Friendly', l: 'Products Used' },
-  { n: '5+', l: 'Years Experience' },
-  { n: 'Certified', l: 'Technicians' },
-  { n: 'Same Day', l: 'Service Available' },
+  { n: 'Eco-Friendly', l: 'Products Used', d: 'M12 22c4-3 7-6.5 7-11a7 7 0 0 0-14 0c0 4.5 3 8 7 11zM12 7v6M9 10h6' },
+  { n: '5+ Years', l: 'Experience', d: 'M12 8v4l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z' },
+  { n: 'Certified', l: 'Technicians', d: 'M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.6 6.5 19.5l1-6.3L3 8.9 9 8z' },
+  { n: 'Same Day', l: 'Service Available', d: 'M13 2L4 14h7l-1 8 9-12h-7z' },
+];
+
+const emirates = [
+  { name: 'Dubai', href: '/sofa-cleaning-dubai' },
+  { name: 'Abu Dhabi', href: '/sofa-cleaning-abu-dhabi' },
+  { name: 'Sharjah', href: '/sofa-cleaning-sharjah' },
+  { name: 'Ajman', href: '/sofa-cleaning-ajman' },
+  { name: 'Ras Al Khaimah', href: '/sofa-cleaning-ras-al-khaimah' },
+  { name: 'Fujairah', href: '/sofa-cleaning-fujairah' },
+  { name: 'Umm Al Quwain', href: '/sofa-cleaning-umm-al-quwain' },
 ];
 
 export default function Hero() {
-  const role = useTypewriter(['Sofa Deep Cleaning', 'Sofa Shampooing', 'Stain Removal', 'Same Day Service', 'At-Home Service']);
+  const role = useTypewriter(['Sofa Deep Cleaning', 'Sofa Shampooing', 'Stain Removal', 'Leather Care', 'Same Day Service', 'At-Home Service']);
 
   return (
-    <section id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', borderBottom: '1px solid var(--line)', background: '#0B0B0B' }}>
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0, background: '#0B0B0B' }}>
-        {/* Mobile portrait image — CSS hides on desktop instantly (no JS delay, no flash) */}
+    <section id="hero" className="hx">
+      {/* ── media layers ── */}
+      <div className="hx-media">
         <img
           src="/hero-mobile.webp"
-          alt="Professional sofa cleaning service in Dubai UAE — Al Haya Sofa Care at-home deep cleaning"
+          alt="Professional at-home sofa cleaning service across the UAE — Al Haya Sofa Care deep shampoo and steam cleaning"
           fetchPriority="high"
           decoding="sync"
           loading="eager"
           width={768}
           height={1376}
           className="hero-img-mobile"
-          style={{
-            position: 'absolute', inset: 0,
-            width: '100%', height: '100%',
-            objectFit: 'cover', objectPosition: 'center top',
-          }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
         />
-        {/* Desktop video — CSS hides on mobile, preload=none prevents download on mobile */}
         <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
+          autoPlay muted loop playsInline preload="none"
           poster="/sofa-cleaning-dubai-professional.webp"
           className="hero-video-desktop"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
@@ -70,73 +75,72 @@ export default function Hero() {
           <source src="/hero-bg.webm" type="video/webm" />
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(11,11,11,0.60) 0%, rgba(11,11,11,0.40) 55%, rgba(11,11,11,0.25) 100%)' }}/>
-        <div className="grid-bg" style={{ position: 'absolute', inset: 0 }}/>
+        <div className="hx-shade" />
+        <div className="hx-mesh" />
+        <span className="hx-orb hx-orb-1" />
+        <span className="hx-orb hx-orb-2" />
+        <div className="grid-bg hx-grid" />
       </div>
 
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 1, paddingTop: 88, paddingBottom: 24, paddingLeft: 'clamp(24px, 5vw, 80px)', paddingRight: 'clamp(24px, 5vw, 80px)', gap: 40 }} className="hero-inner">
-        <div style={{ maxWidth: 600, textAlign: 'left', flex: 1 }}>
-          <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '6px 12px', borderRadius: 999, background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.15)', fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.75)', marginBottom: 20 }}>
-            <span className="pulse-dot"/> Same-Day At-Home Service &nbsp;·&nbsp; Dubai, UAE
+      {/* ── content ── */}
+      <div className="hx-wrap">
+        <div className="hx-left">
+          <div className="hx-eyebrow hx-in" style={{ ['--d' as string]: '0s' }}>
+            <span className="pulse-dot" /> Same-Day At-Home Service
+            <i className="hx-sep" /> All 7 Emirates
           </div>
 
-          <h1 className="reveal reveal-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(38px, 5.5vw, 80px)', lineHeight: 0.94, fontWeight: 900, letterSpacing: '-0.03em', marginBottom: 6 }}>
-            <span style={{ display: 'block', color: 'rgba(255,255,255,0.65)', fontWeight: 500, fontSize: 'clamp(14px, 1.4vw, 18px)', letterSpacing: '-0.01em', marginBottom: 12, fontFamily: 'var(--font-sans)' }}>Dubai&apos;s Most Trusted</span>
-            <span style={{ display: 'block', color: '#ffffff' }}>Sofa <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: '#6DD5C2' }}>Cleaning</span></span>
-            <span style={{ display: 'block', color: '#ffffff' }}>Experts</span>
+          <h1 className="hx-h1 hx-in" style={{ ['--d' as string]: '.08s' }}>
+            <span className="hx-h1-sub">Professional &amp; Trusted</span>
+            <span className="hx-h1-main">Sofa <em>Cleaning</em></span>
+            <span className="hx-h1-main hx-h1-line2">Across the UAE</span>
           </h1>
 
-          {/* Typewriter — teal bg grows with text */}
-          <div className="reveal reveal-delay-2" style={{ marginTop: 18, marginBottom: 20, minHeight: '1.5em' }}>
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              background: '#1D6A5B',
-              padding: '6px 14px',
-              fontFamily: 'var(--font-mono)',
-              fontSize: 'clamp(14px, 1.6vw, 22px)',
-              fontWeight: 700,
-              color: '#ffffff',
-              letterSpacing: '-0.01em',
-              borderRadius: 4,
-              boxShadow: '0 0 0 2px #1D6A5B, 0 0 0 4px rgba(29,106,91,0.3)',
-              transition: 'width 0.1s ease',
-            }}>
-              &gt; <span>{role}</span><span className="cursor-blink" style={{ color: '#6DD5C2' }}>_</span>
-            </span>
+          <div className="hx-type hx-in" style={{ ['--d' as string]: '.16s' }}>
+            <span className="hx-type-dot" />
+            <span className="hx-type-text">{role}</span>
+            <span className="cursor-blink hx-type-cursor">|</span>
           </div>
 
-          <h2 className="reveal reveal-delay-3" style={{ fontSize: 'clamp(15px, 1.25vw, 19px)', fontWeight: 600, color: 'rgba(255,255,255,0.90)', maxWidth: 520, lineHeight: 1.75, marginBottom: 24, fontFamily: 'var(--font-sans)', textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)', letterSpacing: '0.01em' }}>
-            In Dubai, desert dust, humidity &amp; daily use turn your sofa into a filter for allergens. Al Haya brings <em style={{ fontFamily: 'var(--font-display)', color: '#6DD5C2', fontStyle: 'italic', fontWeight: 600 }}>certified deep cleaning</em> directly to your doorstep — eco-friendly solutions, fast-dry results, same-day service across Dubai, Sharjah, Ajman &amp; Abu Dhabi.
+          <h2 className="hx-lead hx-in" style={{ ['--d' as string]: '.24s' }}>
+            Desert dust, coastal humidity and daily use turn your sofa into a filter for allergens. Al Haya brings{' '}
+            <strong>certified deep cleaning</strong>{' '}to your doorstep — eco-friendly solutions, fast-dry results and same-day service in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah &amp; Umm Al Quwain.
           </h2>
 
-          <div className="reveal reveal-delay-4" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 32 }}>
-            <Link href="/contact" className="btn btn-primary">Book Now <IconArrow size={14}/></Link>
-            <a href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20sofa%20cleaning%20in%20Dubai." target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#fff', borderColor: 'rgba(255,255,255,0.35)' }}>
-              <IconWhatsApp size={16}/> WhatsApp Us
+          <div className="hx-cta hx-in" style={{ ['--d' as string]: '.32s' }}>
+            <Link href="/contact" className="hx-btn hx-btn-main">Book Now <IconArrow size={15} /></Link>
+            <a href="https://wa.me/971547199189?text=Hi%2C%20I%20need%20sofa%20cleaning." target="_blank" rel="noopener noreferrer" className="hx-btn hx-btn-glass">
+              <IconWhatsApp size={17} /> WhatsApp Us
             </a>
+            <Link href="/services" className="hx-link">View all services <IconArrow size={13} /></Link>
           </div>
 
-          <div className="reveal reveal-delay-5 hero-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.15)', maxWidth: 500 }}>
+          <ul className="hx-stats hx-in" style={{ ['--d' as string]: '.4s' }}>
             {stats.map((s) => (
-              <div key={s.l}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(16px, 1.8vw, 24px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>{s.n}</div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'rgba(255,255,255,0.55)', marginTop: 3, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{s.l}</div>
-              </div>
+              <li key={s.l} className="hx-stat">
+                <span className="hx-stat-ico"><Ico d={s.d} /></span>
+                <span><b>{s.n}</b><small>{s.l}</small></span>
+              </li>
             ))}
+          </ul>
+        </div>
+
+        <div className="hx-right hx-in" style={{ ['--d' as string]: '.3s' }}>
+          <div className="hero-enquiry-wrapper" style={{ flexShrink: 0 }}>
+            <HeroEnquiryCard />
           </div>
         </div>
-        <div className="hero-enquiry-wrapper" style={{ flexShrink: 0 }}>
-          <HeroEnquiryCard />
-        </div>
       </div>
-      <style jsx>{`
-        @media (max-width: 640px) {
-          .hero-stats { grid-template-columns: repeat(2, 1fr) !important; max-width: 280px !important; }
-        }
-        @media (max-width: 900px) {
-          .hero-inner { flex-direction: column !important; align-items: flex-start !important; }
-        }
-      `}</style>
+
+      {/* ── emirate quick links ── */}
+      <nav className="hx-bar" aria-label="Sofa cleaning by emirate">
+        <span className="hx-bar-label">Choose your emirate</span>
+        <div className="hx-bar-row">
+          {emirates.map((e) => (
+            <Link key={e.href} href={e.href} className="hx-chip" title={`Sofa cleaning ${e.name}`}>{e.name}</Link>
+          ))}
+        </div>
+      </nav>
     </section>
   );
 }
