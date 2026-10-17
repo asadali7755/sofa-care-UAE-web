@@ -21,7 +21,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
     "bullets": [
       "Removes deep-rooted dust mites and allergens",
       "Eliminates stubborn food, coffee and pet stains",
-      "Kills 99.9% of bacteria with steam treatment",
+      "Kills bacteria and dust mites with steam treatment",
       "Eco-friendly products — safe for kids and pets",
       "Fast drying — sofa ready in 2–4 hours",
       "All sofa types: fabric, leather, velvet, microfiber"
@@ -154,7 +154,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       },
       {
         "title": "Sofa Steam Cleaning Abu Dhabi",
-        "desc": "High-temperature steam kills 99.9% of bacteria and germs — critical for Abu Dhabi's humid coastal climate.",
+        "desc": "High-temperature steam kills bacteria, germs and dust mites — critical for Abu Dhabi's humid coastal climate.",
         "color": "#8B5CF6"
       },
       {
@@ -317,7 +317,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       },
       {
         "title": "Sofa Sanitization Ajman",
-        "desc": "Hospital-grade disinfection kills 99.9% of bacteria and germs. Safe for children and pets.",
+        "desc": "Steam disinfection kills bacteria and germs. Safe for children and pets.",
         "color": "#059669"
       }
     ],

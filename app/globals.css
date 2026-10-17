@@ -891,6 +891,8 @@ section, footer, nav { max-width: 100%; }
   background: none; border: none; color: var(--fg-dim); cursor: pointer;
   padding: 4px; display: flex; align-items: center; flex-shrink: 0;
 }
+.success-toast.is-error .st-icon { background: #DC2626; }
+.st-msg a { color: var(--accent); font-weight: 600; text-decoration: underline; }
 
 /* ─── Fab (WhatsApp + Request Call) ─── */
 .fab-stack {

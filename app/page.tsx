@@ -9,6 +9,7 @@ import ServeDubaiSection from './components/ServeDubaiSection';
 import MapSection from './components/MapSection';
 import CitiesSection from './components/CitiesSection';
 import AreasCovered from './components/AreasCovered';
+import HomeFaq from './components/HomeFaq';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollRevealInit from './components/ScrollRevealInit';
@@ -27,6 +28,7 @@ export default function Home() {
         <ServiceCoverageSection />
         <ServeDubaiSection />
         <MapSection />
+        <HomeFaq />
         <CTABanner />
       </main>
       <Footer />

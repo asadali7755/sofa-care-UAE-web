@@ -7,8 +7,8 @@ import { CITY_CONTENT } from '../lib/cityContent';
 import { CITY_IMAGES } from '../lib/cityImages';
 
 export const metadata: Metadata = {
-  title: 'Sofa Cleaning Abu Dhabi | Professional Sofa Deep Shampoo & Steam Cleaning',
-  description: 'Al Haya Sofa Care — professional sofa deep shampoo & steam cleaning in Abu Dhabi. At-home service covering Khalifa City, Al Reem Island, Yas Island & all areas. Same-day service. Call +971547199189.',
+  title: { absolute: 'Sofa Cleaning Abu Dhabi | Deep Shampoo at Home | Al Haya' },
+  description: 'At-home sofa deep shampoo & steam cleaning in Abu Dhabi — Khalifa City, Reem Island, Yas, Mussafah & more. Stain & odour removal, free WhatsApp quote.',
   keywords: [
     'sofa cleaning Abu Dhabi',
     'sofa deep cleaning Abu Dhabi',

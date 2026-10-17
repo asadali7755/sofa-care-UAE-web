@@ -1,34 +1,53 @@
 'use client';
 import { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
 import { sendEnquiry } from '@/app/lib/sendEmail';
-import { trackEnquirySubmit, trackPhoneCall, trackWhatsAppClick } from '@/app/lib/gtag';
+import { trackEnquiryFailed, trackEnquirySubmit } from '@/app/lib/gtag';
 
 const WA_LINK = 'https://wa.me/971547199189';
 const PHONE_TEL = '+971547199189';
 const PHONE_DISPLAY = '+971 54 719 9189';
 
+type ToastVariant = 'success' | 'error';
+
 interface ModalCtxType {
   open: () => void;
   close: () => void;
-  showToast: (msg?: string) => void;
+  showToast: (msg?: string, variant?: ToastVariant) => void;
 }
 const ModalCtx = createContext<ModalCtxType>({ open: () => {}, close: () => {}, showToast: () => {} });
 export function useRequestCall() { return useContext(ModalCtx); }
 export function useToast() { return useContext(ModalCtx).showToast; }
 
-function SuccessToast({ message, onDone }: { message: string; onDone: () => void }) {
+export const ENQUIRY_FAILED_MSG = "We couldn't send your request. Please WhatsApp or call us — we reply fast.";
+
+function SuccessToast({ message, variant, onDone }: { message: string; variant: ToastVariant; onDone: () => void }) {
+  const isError = variant === 'error';
   useEffect(() => {
-    const t = setTimeout(onDone, 5000);
+    const t = setTimeout(onDone, isError ? 10000 : 5000);
     return () => clearTimeout(t);
-  }, [onDone]);
+  }, [onDone, isError]);
   return (
-    <div className="success-toast">
+    <div className={`success-toast${isError ? ' is-error' : ''}`} role={isError ? 'alert' : 'status'}>
       <div className="st-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        {isError ? (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="7" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        ) : (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        )}
       </div>
       <div className="st-body">
-        <span className="st-title">Request sent</span>
-        <span className="st-msg">{message}</span>
+        <span className="st-title">{isError ? 'Not sent' : 'Request sent'}</span>
+        <span className="st-msg">
+          {message}
+          {isError && (
+            <>
+              {' '}
+              <a href={`${WA_LINK}?text=${encodeURIComponent('Hi, I need sofa cleaning.')}`} target="_blank" rel="noopener noreferrer" data-cta="enquiry_failed_toast">WhatsApp</a>
+              {' · '}
+              <a href={`tel:${PHONE_TEL}`} data-cta="enquiry_failed_toast">{PHONE_DISPLAY}</a>
+            </>
+          )}
+        </span>
       </div>
       <button className="st-close" onClick={onDone} aria-label="Dismiss">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -40,10 +59,11 @@ function SuccessToast({ message, onDone }: { message: string; onDone: () => void
 export function RequestCallProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [toast, setToast] = useState('');
+  const [toastVariant, setToastVariant] = useState<ToastVariant>('success');
 
-  const showToast = (msg = "We'll be in touch shortly.") => {
+  const showToast = (msg = "We'll be in touch shortly.", variant: ToastVariant = 'success') => {
+    setToastVariant(variant);
     setToast(msg);
-    setTimeout(() => setToast(''), 5000);
   };
 
   const value = { open: () => setIsOpen(true), close: () => setIsOpen(false), showToast };
@@ -63,7 +83,7 @@ export function RequestCallProvider({ children }: { children: ReactNode }) {
           onSent={(msg) => { value.close(); showToast(msg); }}
         />
       )}
-      {toast && <SuccessToast message={toast} onDone={() => setToast('')} />}
+      {toast && <SuccessToast message={toast} variant={toastVariant} onDone={() => setToast('')} />}
     </ModalCtx.Provider>
   );
 }
@@ -85,7 +105,14 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
     try {
       await sendEnquiry({ type: 'Request a Call', phone, name: name || '—', work: work || 'Sofa Cleaning' });
       trackEnquirySubmit('request_call_modal', work || 'Sofa Cleaning');
-    } catch {}
+    } catch {
+      // Keep the modal open with the details filled in; the WhatsApp/Call
+      // buttons right below are the fallback.
+      trackEnquiryFailed('request_call_modal');
+      setLoading(false);
+      setErr("Couldn't send. Please use WhatsApp or Call below.");
+      return;
+    }
     setLoading(false);
     onSent('We got your number! Expect a call back shortly.');
   };
@@ -131,9 +158,9 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
           </button>
         </form>
         <div className="rcm-or">Or reach us instantly</div>
-        <div className="rcm-alt">
-          <a href={`tel:${PHONE_TEL}`} onClick={() => trackPhoneCall('request_call_modal')}>Call {PHONE_DISPLAY}</a>
-          <a href={`${WA_LINK}?text=${encodeURIComponent("Hi, I need sofa cleaning services.")}`} target="_blank" rel="noopener" onClick={() => trackWhatsAppClick('request_call_modal')}>WhatsApp</a>
+        <div className="rcm-alt" data-cta="request_call_modal">
+          <a href={`tel:${PHONE_TEL}`}>Call {PHONE_DISPLAY}</a>
+          <a href={`${WA_LINK}?text=${encodeURIComponent("Hi, I need sofa cleaning services.")}`} target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
     </div>

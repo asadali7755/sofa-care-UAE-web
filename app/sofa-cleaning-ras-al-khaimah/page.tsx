@@ -46,7 +46,7 @@ const defaults = {
     { title: 'Sofa Deep Cleaning RAK', desc: 'Industrial extraction removes embedded dust, allergens and bacteria from every sofa type across Ras Al Khaimah.' },
     { title: 'Sofa Shampooing RAK', desc: 'Professional foam shampoo treatment lifts deep grime and stains. Fast-dry formula — ready in 2–4 hours.' },
     { title: 'Pet Hair Removal RAK', desc: 'Specialist vacuum and roller treatment removes embedded pet hair from all cushions and seams.' },
-    { title: 'Sofa Sanitization RAK', desc: 'Hospital-grade disinfection kills 99.9% of bacteria and germs. Safe for children and pets.' },
+    { title: 'Sofa Sanitization RAK', desc: 'Steam disinfection kills bacteria and germs. Safe for children and pets.' },
   ],
 };
 

@@ -7,8 +7,8 @@ import { CITY_CONTENT } from '../lib/cityContent';
 import { CITY_IMAGES } from '../lib/cityImages';
 
 export const metadata: Metadata = {
-  title: 'Sofa Cleaning Ajman | Professional Sofa Deep Shampoo & Steam Cleaning',
-  description: 'Al Haya Sofa Care — professional sofa deep shampoo & steam cleaning in Ajman. At-home doorstep service. Stain removal, leather care, pet hair removal. Same-day service. Call +971547199189.',
+  title: { absolute: 'Sofa Cleaning Ajman | Deep Shampoo at Home | Al Haya' },
+  description: 'At-home sofa deep shampoo & steam cleaning in Ajman — Al Nuaimiya, Al Rashidiya, Al Jurf & Corniche. Stain & odour removal, free WhatsApp quote.',
   keywords: [
     'sofa cleaning Ajman',
     'sofa deep cleaning Ajman',

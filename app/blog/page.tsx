@@ -39,7 +39,7 @@ export default function BlogIndex() {
               The Al Haya <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Care</span> Blog
             </h1>
             <p style={{ color: 'var(--fg-muted)', fontSize: 17, maxWidth: 620, lineHeight: 1.7 }}>
-              Practical, UAE-specific advice on sofa cleaning — real prices, care schedules, stain removal and leather care to help you keep your sofa fresh and make smart booking decisions.
+              Practical, UAE-specific advice on sofa cleaning — what affects the cost, care schedules, stain removal and leather care to help you keep your sofa fresh and make smart booking decisions.
             </p>
           </div>
         </section>

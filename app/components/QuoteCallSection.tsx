@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { useRequestCall } from './RequestCallModal';
 import { sendEnquiry } from '@/app/lib/sendEmail';
-import { trackEnquirySubmit } from '@/app/lib/gtag';
-import { useToast } from './RequestCallModal';
+import { trackEnquiryFailed, trackEnquirySubmit } from '@/app/lib/gtag';
+import { ENQUIRY_FAILED_MSG, useToast } from './RequestCallModal';
 
 export default function QuoteCallSection() {
   const { open } = useRequestCall();
@@ -21,7 +21,12 @@ export default function QuoteCallSection() {
     try {
       await sendEnquiry({ type: 'Free Quote Request', phone, name: name || '—', work: work || 'Sofa Cleaning' });
       trackEnquirySubmit('quote_section', work || 'Sofa Cleaning');
-    } catch {}
+    } catch {
+      trackEnquiryFailed('quote_section');
+      setLoading(false);
+      showToast(ENQUIRY_FAILED_MSG, 'error');
+      return;
+    }
     setLoading(false);
     setSent(true);
     showToast('Quote request sent! We will contact you shortly.');

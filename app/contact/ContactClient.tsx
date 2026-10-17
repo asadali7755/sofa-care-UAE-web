@@ -7,7 +7,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import ServiceCoverageSection from '../components/ServiceCoverageSection';
 import MapSection from '../components/MapSection';
 import { IconPhone, IconWhatsApp, IconLocation, IconArrow } from '../components/Icons';
-import { trackEnquirySubmit, trackWhatsAppClick } from '../lib/gtag';
+import { trackEnquiryFailed, trackEnquirySubmit, trackWhatsAppClick } from '../lib/gtag';
 import { sendEnquiry } from '../lib/sendEmail';
 import QuoteCallSection from '../components/QuoteCallSection';
 
@@ -42,6 +42,7 @@ export default function ContactPage() {
       trackEnquirySubmit('booking_form', bookForm.service);
       setBookSent(true);
     } catch {
+      trackEnquiryFailed('booking_form');
       alert('Something went wrong. Please try again or contact us via WhatsApp.');
     } finally {
       setBookLoading(false);
@@ -52,7 +53,9 @@ export default function ContactPage() {
     e.preventDefault();
     const wa = `Hi Al Haya,%0AName: ${contactForm.name}%0APhone: ${contactForm.phone}%0AMessage: ${contactForm.message}`;
     window.open(`https://wa.me/971547199189?text=${wa}`, '_blank');
-    sendEnquiry({ type: 'Contact Form', phone: contactForm.phone, name: contactForm.name, work: contactForm.message }).catch(() => {});
+    // The WhatsApp message above already carries the lead; the email is a backup copy.
+    sendEnquiry({ type: 'Contact Form', phone: contactForm.phone, name: contactForm.name, work: contactForm.message })
+      .catch(() => trackEnquiryFailed('contact_form'));
     trackEnquirySubmit('contact_form');
     trackWhatsAppClick('contact_form');
     setContactSent(true);

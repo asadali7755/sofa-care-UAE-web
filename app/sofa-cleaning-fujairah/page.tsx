@@ -7,8 +7,8 @@ import { CITY_CONTENT } from '../lib/cityContent';
 import { CITY_IMAGES } from '../lib/cityImages';
 
 export const metadata: Metadata = {
-  title: 'Sofa Cleaning Fujairah | Professional Sofa Deep Shampoo & Steam Cleaning',
-  description: 'Al Haya Sofa Care — professional sofa deep shampoo & steam cleaning in Fujairah, including Dibba. At-home east-coast service. Stain removal, leather care, eco-friendly products. Call +971547199189.',
+  title: { absolute: 'Sofa Cleaning Fujairah | Deep Shampoo at Home | Al Haya' },
+  description: 'At-home sofa deep shampoo & steam cleaning in Fujairah and Dibba. Stain, odour & pet-hair removal for villas and apartments. Free WhatsApp quote.',
   keywords: [
     'sofa cleaning Fujairah',
     'sofa deep cleaning Fujairah',

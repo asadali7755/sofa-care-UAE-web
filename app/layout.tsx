@@ -32,10 +32,10 @@ const fontGrot = Archivo({
 export const metadata: Metadata = {
   metadataBase: new URL('https://sofashampooingdubai.com'),
   title: {
-    default: 'Sofa Cleaning Dubai | Sofa Deep Shampoo & Steam Cleaning UAE | Al Haya',
+    default: 'Sofa Cleaning & Shampooing in Dubai & UAE | Al Haya',
     template: '%s | Al Haya Sofa Care UAE',
   },
-  description: 'Al Haya Sofa Care UAE — Professional sofa deep shampoo & steam cleaning in Dubai, Sharjah, Ajman & Abu Dhabi. Stain removal, leather care, pet hair removal, same-day at-home service. Call +971547199189.',
+  description: 'At-home sofa deep shampoo & steam cleaning in Dubai, Sharjah, Ajman & Abu Dhabi. Stain, odour & pet-hair removal, same-day slots. Free WhatsApp quote.',
   // Focused UAE keyword set (the 4 emirates we actually serve). Meta keywords
   // carry little SEO weight, so we keep a tight, relevant list rather than a
   // bloated 140+ one that dilutes focus and lists uncovered areas.
@@ -97,11 +97,15 @@ export const metadata: Metadata = {
     canonical: 'https://sofashampooingdubai.com',
   },
   verification: {
-    // TODO: Replace with your actual Google Search Console verification code
-    // Get it from: https://search.google.com/search-console → Add property → HTML tag method
     google: '0A5EubbkI_w7hewd0KWmtwVyVIVpTHiIDuCm4brgHoQ',
   },
 };
+
+// Must match the verified Google Business Profile ("AL HAYA cleaning services",
+// 4th St, Al Nahda First, Dubai) so Google and AI assistants see one entity.
+const GBP_LAT = 25.2959258;
+const GBP_LNG = 55.360045;
+const GBP_MAPS_URL = 'https://www.google.com/maps?cid=178186783724513623';
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
@@ -118,7 +122,7 @@ const localBusinessSchema = {
   telephone: '+971547199189',
   email: 'info@sofashampooingdubai.com',
   image: 'https://sofashampooingdubai.com/sofa-cleaning-dubai-professional.webp',
-  logo: 'https://sofashampooingdubai.com/favicon.svg',
+  logo: 'https://sofashampooingdubai.com/al-haya-sofa-care-logo.webp',
   priceRange: '$$',
   currenciesAccepted: 'AED',
   paymentAccepted: 'Cash, Credit Card, Bank Transfer',
@@ -128,20 +132,27 @@ const localBusinessSchema = {
   ],
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Dubai',
+    streetAddress: '4th Street, Al Nahda First',
     addressLocality: 'Dubai',
     addressRegion: 'Dubai',
-    postalCode: '00000',
     addressCountry: 'AE',
   },
-  geo: { '@type': 'GeoCoordinates', latitude: 25.2048, longitude: 55.2708 },
+  geo: { '@type': 'GeoCoordinates', latitude: GBP_LAT, longitude: GBP_LNG },
+  hasMap: GBP_MAPS_URL,
   areaServed: [
     { '@type': 'City', name: 'Dubai', '@id': 'https://www.wikidata.org/wiki/Q612' },
     { '@type': 'City', name: 'Sharjah', '@id': 'https://www.wikidata.org/wiki/Q182888' },
     { '@type': 'City', name: 'Ajman', '@id': 'https://www.wikidata.org/wiki/Q171677' },
     { '@type': 'City', name: 'Abu Dhabi', '@id': 'https://www.wikidata.org/wiki/Q61750' },
-    { '@type': 'City', name: 'Al Ain' },
+    { '@type': 'City', name: 'Umm Al Quwain' },
     { '@type': 'City', name: 'Ras Al Khaimah' },
+    { '@type': 'City', name: 'Fujairah' },
+    { '@type': 'City', name: 'Al Ain' },
+    { '@type': 'Place', name: 'Al Nahda, Dubai' },
+    { '@type': 'Place', name: 'Al Qusais, Dubai' },
+    { '@type': 'Place', name: 'Muhaisnah, Dubai' },
+    { '@type': 'Place', name: 'Deira, Dubai' },
+    { '@type': 'Place', name: 'Al Warqa, Dubai' },
     { '@type': 'Country', name: 'United Arab Emirates' },
   ],
   hasOfferCatalog: {
@@ -150,11 +161,11 @@ const localBusinessSchema = {
     itemListElement: [
       { '@type': 'Service', name: 'Sofa Deep Cleaning UAE', description: 'Professional deep shampoo cleaning for all sofa types across UAE' },
       { '@type': 'Service', name: 'Sofa Shampooing UAE', description: 'Professional foam shampoo treatment with quick dry technology' },
-      { '@type': 'Service', name: 'Sofa Steam Cleaning UAE', description: 'High-temperature steam cleaning that kills 99.9% of bacteria and germs' },
+      { '@type': 'Service', name: 'Sofa Steam Cleaning UAE', description: 'High-temperature steam cleaning that kills bacteria and dust mites' },
       { '@type': 'Service', name: 'Sofa Stain Removal UAE', description: 'Coffee, food, ink and pet stain removal from all upholstery types' },
       { '@type': 'Service', name: 'Leather Sofa Cleaning UAE', description: 'Specialist pH-safe leather care and conditioning' },
       { '@type': 'Service', name: 'Pet Hair Removal UAE', description: 'Deep pet hair extraction from all fabric types' },
-      { '@type': 'Service', name: 'Sofa Sanitization UAE', description: 'Hospital-grade disinfection service — 99.9% bacteria removal' },
+      { '@type': 'Service', name: 'Sofa Sanitization UAE', description: 'Steam disinfection that kills bacteria and dust mites' },
       { '@type': 'Service', name: 'Velvet & Microfiber Sofa Cleaning UAE', description: 'Specialist cleaning for delicate velvet and microfiber upholstery' },
     ],
   },
@@ -167,56 +178,13 @@ const localBusinessSchema = {
   // Google's Knowledge Graph these two separate businesses are the same
   // entity. Removed rather than left in.
   sameAs: [
+    GBP_MAPS_URL,
+    'https://www.facebook.com/profile.php?id=61580647541867',
     'https://wa.me/971547199189',
   ],
 };
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'How often should a sofa be professionally cleaned in Dubai?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Due to Dubai\'s high dust levels and humidity, we recommend a professional deep clean every 6 to 12 months. If you have pets or children, a 6-month interval is ideal to remove allergens, bacteria and embedded desert dust.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Is professional sofa cleaning worth it in Dubai?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Professional sofa cleaning in Dubai removes the abrasive micro-dust particles that break down fabric fibers over time, extending your furniture\'s lifespan by years. It also eliminates allergens and bacteria that standard household vacuums cannot reach.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'How long does sofa cleaning take to dry in UAE?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Thanks to our high-powered extraction systems, most sofas are dry and ready to use within 4 to 8 hours. For thicker materials or natural fibers, it may take up to 12 hours depending on airflow and AC settings in your home.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can you clean delicate fabrics like velvet or leather?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. We use specialist low-moisture techniques for velvet to maintain its soft texture, and pH-balanced conditioning treatments for leather to prevent cracking and dryness. All delicate fabric types are handled with expert care.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'How much does sofa cleaning cost in Dubai?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Our sofa cleaning prices are affordable and depend on sofa size, fabric and condition. Every quote is free on WhatsApp and includes at-home service with no hidden fees.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do you offer same-day sofa cleaning across UAE?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes! Al Haya Sofa Care UAE offers same-day sofa cleaning across Dubai, Sharjah, Ajman and Abu Dhabi. WhatsApp us at +971547199189 to book your same-day slot.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the difference between sofa shampoo cleaning and steam cleaning?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Sofa shampoo cleaning uses pH-balanced foam shampoo to break down oils, grease and embedded dirt — ideal for general deep cleaning. Steam cleaning uses high-temperature vapor to sanitize and disinfect, killing 99.9% of bacteria and dust mites — ideal for hygiene-focused cleaning or homes with babies and pets. Al Haya Sofa Care UAE offers both methods and can combine them for best results.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Are your sofa cleaning products safe for children and pets?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes, all our cleaning products are eco-friendly, non-toxic and completely safe for children and pets. We use premium, biodegradable shampoos specifically formulated for delicate upholstery fabrics.' },
-    },
-  ],
-};
+// FAQPage schema is emitted per page next to the visible FAQs it describes
+// (HomeFaq, AreaPage, services, blog posts) — never site-wide.
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -230,14 +198,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#F3F7F4" />
         <meta name="geo.region" content="AE-DU" />
         <meta name="geo.placename" content="Dubai, United Arab Emirates" />
-        <meta name="geo.position" content="25.2048;55.2708" />
-        <meta name="ICBM" content="25.2048, 55.2708" />
+        <meta name="geo.position" content={`${GBP_LAT};${GBP_LNG}`} />
+        <meta name="ICBM" content={`${GBP_LAT}, ${GBP_LNG}`} />
         <meta name="coverage" content="United Arab Emirates" />
         <meta name="target" content="all" />
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </head>
       <body>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-YPV76TBPNB" strategy="afterInteractive" />

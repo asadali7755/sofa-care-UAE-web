@@ -1,19 +1,17 @@
 'use client';
 import { useRequestCall } from '@/app/components/RequestCallModal';
-import { trackWhatsAppClick } from '@/app/lib/gtag';
 import { IconWhatsApp } from './Icons';
 
 export default function Fab() {
   const { open } = useRequestCall();
   return (
-    <div className="fab-stack">
+    <div className="fab-stack" data-cta="floating_button">
       <a
         href="https://wa.me/971547199189?text=Hi%2C%20I%20would%20like%20to%20book%20a%20sofa%20cleaning%20service%20in%20Dubai."
         target="_blank"
         rel="noopener noreferrer"
         className="fab-btn fab-wa"
         aria-label="Chat with us on WhatsApp"
-        onClick={() => trackWhatsAppClick('floating_button')}
       >
         <IconWhatsApp size={24} />
       </a>

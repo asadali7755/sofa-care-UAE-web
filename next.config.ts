@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { retiredBlogSlugs } from './app/lib/blog';
 
 const nextConfig: NextConfig = {
   images: {
@@ -40,6 +41,12 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      // Consolidated blog cluster (Oct 2026): retired posts → pillar post / city page
+      ...Object.entries(retiredBlogSlugs).map(([slug, destination]) => ({
+        source: `/blog/${slug}`,
+        destination,
+        statusCode: 301 as const,
+      })),
     ];
   },
 };

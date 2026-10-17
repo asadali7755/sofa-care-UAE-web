@@ -46,7 +46,7 @@ const defaults = {
     { title: 'Sofa Deep Cleaning UAQ', desc: 'Industrial extraction removes embedded dust, allergens and bacteria from every sofa type across Umm Al Quwain.' },
     { title: 'Sofa Shampooing UAQ', desc: 'Professional foam shampoo treatment lifts deep grime and stains. Fast-dry formula — ready in 2–4 hours.' },
     { title: 'Pet Hair Removal UAQ', desc: 'Specialist vacuum and roller treatment removes embedded pet hair from all cushions and seams.' },
-    { title: 'Sofa Sanitization UAQ', desc: 'Hospital-grade disinfection kills 99.9% of bacteria and germs. Safe for children and pets.' },
+    { title: 'Sofa Sanitization UAQ', desc: 'Steam disinfection kills bacteria and germs. Safe for children and pets.' },
   ],
 };
 

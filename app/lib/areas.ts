@@ -18,6 +18,8 @@ export interface Area {
   faqs: { q: string; a: string }[];
   /** Optional real photo of this specific area, overriding the generic banner */
   image?: string;
+  /** Same-named area in another emirate, linked from the hero so the two pages don't compete */
+  crossLink?: { question: string; href: string; label: string };
 }
 
 export interface EmirateConfig {
@@ -67,7 +69,7 @@ export const emirates: Record<string, EmirateConfig> = {
         localNote: 'For Business Bay offices, after-hours and weekend slots keep your workspace seating fresh without downtime. Residential towers along the canal often book quarterly cleaning to manage humidity-related odors before they set in.',
         faqs: [
           { q: 'Do you clean office sofas and reception seating in Business Bay?', a: 'Yes. We handle office reception sofas, waiting-area seating and meeting-room chairs in Business Bay, with flexible after-hours scheduling.' },
-          { q: 'Is steam sanitization available in Business Bay?', a: 'Yes — high-temperature steam cleaning that kills 99.9% of bacteria is available for all Business Bay homes and offices.' },
+          { q: 'Is steam sanitization available in Business Bay?', a: 'Yes — high-temperature steam cleaning that kills bacteria and dust mites is available for all Business Bay homes and offices.' },
           { q: 'How much does sofa or office seating cleaning cost in Business Bay?', a: 'Home sofa cleaning is affordably priced; office seating is quoted by number of pieces. WhatsApp +971547199189 with your requirements for a fast quote.' },
           { q: 'Can you book around our office hours in Business Bay?', a: 'Yes — we regularly schedule evening, weekend or early-morning visits so office cleaning never interferes with client meetings or staff.' },
           { q: 'How long before an office sofa is dry and usable again?', a: 'Most fabric seating is dry within 3–4 hours using our air movers, and leather reception sofas can be used again almost immediately after conditioning.' },
@@ -137,12 +139,79 @@ export const emirates: Record<string, EmirateConfig> = {
           { q: 'Can you clean a holiday home sofa before guests arrive on the Palm?', a: 'Yes — this is a common request. We can schedule a fast-dry clean timed to finish before check-in so the sofa is ready to use.' },
           { q: 'Do you handle gated villa and frond security access on Palm Jumeirah?', a: 'Yes — we coordinate access passes and security clearance for gated fronds in advance so the visit runs smoothly on arrival.' },
         ] },
+      { slug: 'al-qusais', name: 'Al Qusais', short: 'Al Qusais', propertyType: 'family apartments and villas',
+        intro: 'Al Qusais is right on our doorstep — Al Haya Sofa Care is based in neighbouring Al Nahda, so Al Qusais 1, 2 and 3 are among the quickest areas in Dubai for us to reach. The community mixes mid-rise family apartment buildings along Damascus Street and Amman Street with older villas in the residential blocks, and many households have lived here for years with sofas that have never had a professional clean. We bring at-home sofa deep shampoo, steam cleaning and stain removal to your building or villa, with same-day slots that are often easier to offer here than anywhere else in the city because our team is only a short drive away.',
+        whyClean: 'Al Qusais sits between the airport, the Al Qusais Industrial Area and the busy Sharjah border roads, so fine dust and traffic grime drift into homes through windows and AC vents every day. Larger families and shared flats mean sofas are used from morning to night — meals in front of the TV, children doing homework, guests visiting in the evening. Majlis-style floor seating and long L-shaped sofas in villas collect sweat, food oils and dust in the seams where a vacuum cannot reach. A deep extraction clean removes what everyday wiping leaves behind and gets rid of the stale smell that builds up in closed, air-conditioned rooms.',
+        serviceDetail: 'For Al Qusais apartments we carry compact, self-contained shampoo and steam-extraction machines up in the lift — no water connection or mess in your flat. Villa majlis sets, long L-shapes and floor cushions get full hot-water extraction, and we treat tea, coffee and food stains with fabric-matched spotters before the main clean. Most fabric sofas are dry in 3–4 hours with our air movers. Because our base is next door in Al Nahda, we can usually fit early-morning or after-Maghrib visits around family routines, and come back quickly if anything needs a touch-up.',
+        landmarks: ['Al Qusais 1', 'Al Qusais 2', 'Al Qusais 3', 'Damascus Street', 'Amman Street', 'Al Qusais Metro Station', 'Al Qusais Pond Park', 'Al Qusais Industrial Area', 'Al Twar'],
+        localNote: 'With airport and industrial dust close by, Al Qusais homes do well with a professional sofa clean every 4–6 months — or every 3 months for large families, pets or majlis seating used daily. Many residents book before Ramadan and Eid, when the living room fills with guests.',
+        faqs: [
+          { q: 'How quickly can you reach Al Qusais for sofa cleaning?', a: 'Very quickly — our team is based in neighbouring Al Nahda, so Al Qusais is one of the fastest areas for us to reach. Same-day visits are often possible if you message us in the morning.' },
+          { q: 'Do you clean majlis seating and floor cushions in Al Qusais villas?', a: 'Yes. We deep clean majlis sets, floor cushions, long L-shaped sofas and dining chairs with hot-water extraction and fabric-safe stain treatment.' },
+          { q: 'How much does sofa cleaning cost in Al Qusais?', a: 'Pricing depends on the number of seats, fabric type and condition. Send a photo on WhatsApp +971547199189 and we will give you a free quote.' },
+          { q: 'Do you serve apartment buildings on Damascus Street and Amman Street?', a: 'Yes — we serve apartment buildings across Al Qusais 1, 2 and 3, including the towers along Damascus Street and Amman Street, with portable equipment that fits in any lift.' },
+          { q: 'Can you remove old tea, coffee and food stains from a family sofa?', a: 'In most cases, yes. We pre-treat each stain with a spotter matched to the fabric, then shampoo and extract. Very old or set-in stains are lightened significantly even when they cannot be removed completely — we tell you honestly before we start.' },
+        ] },
+      { slug: 'al-nahda-dubai', name: 'Al Nahda Dubai', short: 'Al Nahda', propertyType: 'mid-rise family apartment towers',
+        intro: 'Al Nahda Dubai — Al Nahda 1 and Al Nahda 2, on the Dubai side of the Sharjah border — is where Al Haya Sofa Care is based, so this is truly our home area. The neighbourhood is packed with mid-rise apartment towers popular with families who work across Dubai and Sharjah, and with residents who want more space for their rent than central Dubai offers. We provide at-home sofa deep shampoo, steam cleaning, stain and odour removal across every Al Nahda building, usually with same-day availability.',
+        crossLink: { question: 'Looking for Al Nahda on the Sharjah side?', href: '/sofa-cleaning-sharjah/al-nahda', label: 'Sofa Cleaning Al Nahda Sharjah' },
+        whyClean: 'Al Nahda apartments are lived in hard: larger families, long working hours, children, and guests most weekends. Sofas double as dining, study and sleeping space, so sweat, food oils and spills build up quickly, and the closed, air-conditioned flats trap odours inside the cushions. The area\'s position beside major highways and the border crossings means fine road dust settles on everything near a window. A professional deep clean lifts the grime and bacteria that home vacuuming and fabric spray simply move around.',
+        serviceDetail: 'Our technicians use low-moisture shampoo and hot-water steam extraction suited to apartment living: equipment comes up in the lift, there is no water hook-up, and fabric sofas are usually dry within 3–4 hours so you have your living room back the same day. Leather sofas are cleaned and conditioned rather than wet-cleaned. For tenants moving in or out of Al Nahda buildings, we can schedule around your move date and building management rules, and we often clean sofas, mattresses and dining chairs in one visit.',
+        landmarks: ['Al Nahda 1', 'Al Nahda 2', 'Al Nahda Metro Station', 'Al Nahda Pond Park', 'Amman Street', 'Al Mulla Plaza', 'Sahara Centre (Sharjah border)'],
+        localNote: 'As our base area, Al Nahda Dubai gets our fastest response times. Apartments with children or pets benefit from a deep clean every 3–4 months; everyone else every 6 months, and always before moving in or handing back a flat.',
+        faqs: [
+          { q: 'Is Al Haya Sofa Care based in Al Nahda Dubai?', a: 'Yes — our team is based in Al Nahda First, Dubai, so Al Nahda 1 and Al Nahda 2 get our fastest same-day response.' },
+          { q: 'Do you clean sofas in Al Nahda 1 and Al Nahda 2 apartment towers?', a: 'Yes, every building in both Al Nahda 1 and Al Nahda 2. We bring portable shampoo and steam-extraction machines that need no water connection.' },
+          { q: 'How much does sofa cleaning cost in Al Nahda?', a: 'It depends on the size of the sofa, the fabric and how much staining there is. WhatsApp +971547199189 with a photo for a free quote.' },
+          { q: 'Can you clean my sofa before I move into a new Al Nahda flat?', a: 'Yes — move-in and move-out sofa and mattress cleaning is one of our most common requests in Al Nahda. Tell us your move date and we will plan around it.' },
+          { q: 'Do you also cover Al Nahda on the Sharjah side?', a: 'Yes. Al Nahda Sharjah is right next door to Al Nahda Dubai and we cover it the same way, usually with same-day visits too.' },
+        ] },
+      { slug: 'muhaisnah', name: 'Muhaisnah', short: 'Muhaisnah', propertyType: 'villas and family apartments',
+        intro: 'Muhaisnah stretches from the quiet villa streets of Muhaisnah 1 to the busy residential and commercial blocks of Muhaisnah 4 around Madina Mall, with Al Mizhar and Mirdif on its doorstep. It is only a short drive from our Al Nahda base, so Al Haya Sofa Care can usually offer same-day or next-day at-home sofa cleaning across the whole area. We deep shampoo and steam clean fabric sofas, majlis seating, dining chairs and mattresses, and condition leather sofas, without you needing to move any furniture.',
+        whyClean: 'Villas in Muhaisnah tend to have large living rooms and majlis areas with a lot of upholstered seating that is used daily by big families and visiting relatives. Sand and dust blow in from open plots and the main roads nearby, and settle deep into fabric and foam. In the apartment blocks of Muhaisnah 4, sofas are often shared by several people and used for sleeping as well as sitting. Regular deep cleaning removes the dust mites, sweat and odours that build up, and makes heavily used furniture last years longer.',
+        serviceDetail: 'For villa majlis sets and large sectionals we use portable hot-water extraction that cleans deep into cushions and seams, followed by air movers so most fabrics are dry within 3–4 hours. Velvet, chenille and traditional embroidered majlis fabrics get a gentler low-moisture method to protect the pile and colours. For apartments we bring compact equipment up in the lift. We can clean several rooms of seating in a single visit and schedule around prayer times and family routines.',
+        landmarks: ['Muhaisnah 1', 'Muhaisnah 2', 'Muhaisnah 3', 'Muhaisnah 4', 'Madina Mall', 'Al Mizhar', 'Etihad Mall'],
+        localNote: 'Muhaisnah villas with daily-use majlis seating benefit from a deep clean every 4–6 months; many families book before Ramadan, Eid and the cooler-season visiting months.',
+        faqs: [
+          { q: 'Do you cover both Muhaisnah villas and Muhaisnah 4 apartments?', a: 'Yes — we serve villas in Muhaisnah 1, 2 and 3 and apartment buildings in Muhaisnah 4 around Madina Mall, plus nearby Al Mizhar.' },
+          { q: 'Can you clean a full majlis set in one visit?', a: 'Yes. We regularly clean complete majlis sets, floor cushions and large sectionals in one visit, using a gentle method for velvet and embroidered fabrics.' },
+          { q: 'How much does sofa cleaning cost in Muhaisnah?', a: 'Pricing depends on the number of seats and the fabric. WhatsApp +971547199189 with a photo for a free, no-obligation quote.' },
+          { q: 'How far is your team from Muhaisnah?', a: 'Our base is in Al Nahda, Dubai — a short drive away — so same-day or next-day visits are usually possible.' },
+          { q: 'Are your cleaning products safe for children and elderly family members?', a: 'Yes. We use eco-friendly, non-toxic cleaning solutions and rinse them out during extraction, so no harsh residue is left on the fabric.' },
+        ] },
+      { slug: 'deira', name: 'Deira', short: 'Deira', propertyType: 'apartments, hotel apartments and offices',
+        intro: 'Deira is old Dubai at its busiest — Al Rigga, Al Muraqqabat, Port Saeed, Naif, Hor Al Anz and Abu Hail, packed with apartment buildings, hotel apartments, shops and offices around the Creek. Al Haya Sofa Care provides at-home and on-site sofa and upholstery cleaning across Deira for families, flat-shares, hotels and offices. Our Al Nahda base is a quick drive up Al Ittihad Road, so we can usually offer same-day visits, including early-morning and late-evening slots that suit Deira\'s round-the-clock routines.',
+        whyClean: 'Many Deira buildings are older, with dust that comes in through windows from the busy streets below and AC systems that recirculate it around the flat. Sofas here work hard: they are often shared by several flatmates, used for sleeping, and sit close to kitchens where cooking oils and smells settle into the fabric. Hotel apartments and offices see a constant flow of guests and visitors. A professional deep clean removes the grime, odours and bacteria that build up, and makes a tired sofa look and smell fresh again.',
+        serviceDetail: 'For Deira apartments we bring compact shampoo and steam-extraction machines that fit narrow corridors and small lifts, and need no water connection. For hotel apartments, offices and shops we can clean reception sofas, lobby seating and office chairs after hours or early in the morning so business is not disrupted. Strong cooking and smoke odours get an extra deodorising treatment. Most fabric seating is dry and usable again within 3–4 hours.',
+        landmarks: ['Al Rigga', 'Al Muraqqabat', 'Port Saeed', 'Naif', 'Hor Al Anz', 'Abu Hail', 'Deira City Centre', 'Al Ghurair Centre', 'Baniyas Square', 'Union Metro Station'],
+        localNote: 'Shared flats and family apartments in Deira benefit from a deep clean every 3–4 months; hotel apartments and offices usually book a regular quarterly clean for lobby and reception seating.',
+        faqs: [
+          { q: 'Which parts of Deira do you cover?', a: 'All of Deira — including Al Rigga, Al Muraqqabat, Port Saeed, Naif, Hor Al Anz, Abu Hail and the areas around Deira City Centre and Al Ghurair Centre.' },
+          { q: 'Do you clean sofas in hotel apartments and offices in Deira?', a: 'Yes. We clean lobby, reception and room seating for hotel apartments, and office sofas and chairs, with after-hours scheduling so guests and staff are not disturbed.' },
+          { q: 'Can you remove cooking and smoke smells from a sofa?', a: 'Yes. Deep extraction removes the oils that hold the smell, and we add a deodorising treatment for strong cooking or smoke odours.' },
+          { q: 'How much does sofa cleaning cost in Deira?', a: 'It depends on the number and size of pieces and their condition. WhatsApp +971547199189 with a photo and we will send a free quote.' },
+          { q: 'Can you work in older Deira buildings with small lifts?', a: 'Yes — our equipment is portable and compact, and it needs no water connection, so narrow corridors and small lifts are not a problem.' },
+        ] },
+      { slug: 'al-warqa', name: 'Al Warqa', short: 'Al Warqa', propertyType: 'family villas and townhouses',
+        intro: 'Al Warqa is a family villa community next to Mirdif, with spacious homes across Al Warqa 1 to 4 and the newer neighbourhoods near Dubai Safari Park. Villas here are furnished for big families and regular guests — large sectionals, formal sitting rooms and majlis seating that see a lot of use. Al Haya Sofa Care brings professional at-home sofa deep shampoo, steam cleaning, stain removal and leather care to Al Warqa from our base in Al Nahda, with same-day or next-day slots on most days.',
+        whyClean: 'Villas on the edge of the city pick up more sand and dust than central apartments, especially on windy days and when doors open onto gardens and driveways. Families with children and frequent guests mean sofas carry food spills, sweat and everyday grime, and formal sitting rooms can go months between uses and gather dust. A professional clean protects the fabric, removes allergens and keeps expensive furniture looking presentable for visitors.',
+        serviceDetail: 'We clean several rooms of seating in one visit — family room sectionals, formal sofas, majlis cushions and dining chairs — using hot-water extraction for everyday fabrics and a gentler low-moisture method for velvet, chenille and delicate weaves. Leather sofas are cleaned and conditioned. Our air movers dry most fabrics within 3–4 hours. We can also add an optional fabric protector after cleaning for homes with young children.',
+        landmarks: ['Al Warqa 1', 'Al Warqa 2', 'Al Warqa 3', 'Al Warqa 4', 'Dubai Safari Park', 'City Centre Mirdif (nearby)', 'Al Khawaneej (nearby)'],
+        localNote: 'Large Al Warqa villas with family sectionals and majlis seating benefit from a deep clean every 4–6 months; many families also book before Ramadan, Eid and the winter visiting season.',
+        faqs: [
+          { q: 'Do you cover all of Al Warqa?', a: 'Yes — we cover villas and townhouses across Al Warqa 1, 2, 3 and 4 and the newer communities nearby, as well as neighbouring Mirdif and Al Mizhar.' },
+          { q: 'Can you clean several rooms of sofas in one visit?', a: 'Yes. Villa visits often include the family room, formal sitting room, majlis cushions and dining chairs. We plan the time needed when you book.' },
+          { q: 'How much does villa sofa cleaning cost in Al Warqa?', a: 'Pricing depends on how many pieces there are, their size and fabric. WhatsApp +971547199189 with photos for a free quote.' },
+          { q: 'Do you clean delicate velvet or embroidered majlis fabrics?', a: 'Yes. We use a low-moisture method for velvet, chenille and embroidered fabrics, and test colourfastness on a hidden spot before cleaning.' },
+          { q: 'Can you apply fabric protection after cleaning?', a: 'Yes — an optional fabric protector helps repel spills and dust between cleans, which is popular with families with young children.' },
+        ] },
     ],
   },
   sharjah: {
     key: 'sharjah', cityName: 'Sharjah', citySlug: 'sofa-cleaning-sharjah',
     areas: [
       { slug: 'al-nahda', name: 'Al Nahda Sharjah', short: 'Al Nahda', propertyType: 'dense residential apartments',
+        crossLink: { question: 'Looking for Al Nahda on the Dubai side (Al Nahda 1 & 2)?', href: '/sofa-cleaning-dubai/al-nahda-dubai', label: 'Sofa Cleaning Al Nahda Dubai' },
         intro: 'Al Nahda is one of Sharjah’s busiest residential areas, packed with family apartment buildings right on the Dubai border. Its narrow streets and close-set towers mean traffic dust and construction grit are constant companions for local households. Al Haya Sofa Care offers convenient at-home sofa shampoo and steam cleaning across Al Nahda — quick-dry, eco-friendly and same-day. Many residents commute daily into Dubai, so our flexible evening and weekend slots fit busy schedules without disrupting the household.',
         whyClean: 'Al Nahda’s dense apartment blocks trap airborne dust from nearby roads and ongoing construction, and that fine grit works its way deep into sofa fibers within weeks. Combined with high foot traffic in smaller family units, fabric sofas here darken and flatten faster than in quieter suburbs. Regular professional shampooing lifts embedded grit before it abrades the weave, while steam sanitization tackles allergens that build up in shared, tightly packed living spaces. Skipping cleaning for too long lets dust settle permanently into the fabric base, making stains far harder to lift later.',
         serviceDetail: 'Our Al Nahda team uses hot-water extraction shampooing to flush dust and grime from deep within the cushion foam and fabric backing, followed by steam sanitization for a hygienic finish. Because apartments here are often compact, we work efficiently around furniture without needing to move large pieces out of the unit. Quick-dry techniques mean most 3-seaters are ready to sit on again within 3–4 hours, and our vans reach Al Nahda quickly given its Dubai-border location, so same-day booking is rarely an issue.',
@@ -316,7 +385,7 @@ export const emirates: Record<string, EmirateConfig> = {
         localNote: 'Family homes on Yas Island stay hygienic with a deep clean and steam sanitization every 4–6 months. Households with young children or frequent guest visits after days at Yas attractions often prefer a clean every 3 months.',
         faqs: [
           { q: 'Do you serve Yas Island villas and apartments?', a: 'Yes — at-home sofa cleaning across West Yas, Ansam, Mayan and all Yas Island communities.' },
-          { q: 'Is steam sanitization available?', a: 'Yes — high-temperature steam that kills 99.9% of bacteria, ideal for families.' },
+          { q: 'Is steam sanitization available?', a: 'Yes — high-temperature steam that kills bacteria and dust mites, ideal for families.' },
           { q: 'Can you remove sunscreen or food stains from sofas?', a: 'Yes — our pre-treatment specifically targets oily residues like sunscreen and food that are common after a day out on Yas Island.' },
           { q: 'Do you offer weekend appointments for busy Yas Island families?', a: 'Yes, we offer weekend and evening slots to fit around family activities and attraction visits.' },
           { q: 'Is the cleaning safe for children and pets on the sofa afterward?', a: 'Yes, all products are eco-friendly, non-toxic and safe once the sofa is dry.' },
@@ -387,6 +456,13 @@ export const getEmirate = (key: string): EmirateConfig | undefined => emirates[k
 export const getArea = (emirateKey: string, slug: string): Area | undefined =>
   emirates[emirateKey]?.areas.find((a) => a.slug === slug);
 
+/** Cut text to at most `max` chars on a word boundary (no mid-word truncation). */
+function trimToWords(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  return `${cut.slice(0, cut.lastIndexOf(' ')).replace(/[\s,;:—-]+$/, '')}…`;
+}
+
 export function buildAreaMetadata(emirateKey: string, slug: string): Metadata {
   const em = emirates[emirateKey];
   const area = getArea(emirateKey, slug);
@@ -394,7 +470,7 @@ export function buildAreaMetadata(emirateKey: string, slug: string): Metadata {
   const url = `${BASE}/${em.citySlug}/${slug}`;
   return {
     title: `Sofa Cleaning ${area.short}, ${em.cityName}`, // layout template appends brand
-    description: `Professional sofa cleaning in ${area.name}, ${em.cityName} — at-home deep shampoo, steam cleaning, stain & pet-hair removal for ${area.propertyType}. Same-day, affordable rates. Call +971547199189.`.slice(0, 158),
+    description: trimToWords(`At-home sofa deep shampoo & steam cleaning in ${area.name}, ${em.cityName} for ${area.propertyType}. Stain, odour & pet-hair removal, same-day slots. Free WhatsApp quote.`, 158),
     keywords: [
       `sofa cleaning ${area.name}`,
       `sofa cleaning ${area.short}`,

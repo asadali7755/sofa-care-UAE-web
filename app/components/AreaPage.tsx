@@ -27,8 +27,6 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
     provider: { '@type': 'LocalBusiness', name: 'Al Haya Sofa Care UAE', telephone: '+971547199189', url: BASE },
     areaServed: { '@type': 'Place', name: `${area.name}, ${em.cityName}, UAE` },
     url,
-    offers: [
-    ],
   };
   const breadcrumbSchema = {
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -66,7 +64,13 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
             <h1 style={{ fontSize: 'clamp(32px, 5vw, 64px)', lineHeight: 1.04, marginBottom: 20, fontFamily: 'var(--font-display)', fontWeight: 900 }}>
               Sofa Cleaning in <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>{area.name}</span>
             </h1>
-            <p style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 640, lineHeight: 1.7, marginBottom: 28 }}>{area.intro}</p>
+            <p style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 640, lineHeight: 1.7, marginBottom: area.crossLink ? 12 : 28 }}>{area.intro}</p>
+            {area.crossLink && (
+              <p style={{ color: 'var(--fg-muted)', fontSize: 15, marginBottom: 28 }}>
+                {area.crossLink.question}{' '}
+                <Link href={area.crossLink.href} style={{ color: 'var(--accent)', fontWeight: 600 }}>{area.crossLink.label} →</Link>
+              </p>
+            )}
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 28 }}>
               <Link href="/contact" className="btn btn-primary">Book in {area.short} <IconArrow size={14} /></Link>
               <a href={`https://wa.me/971547199189?text=${waText}`} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>

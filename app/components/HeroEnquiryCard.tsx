@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { sendEnquiry } from '@/app/lib/sendEmail';
-import { trackEnquirySubmit } from '@/app/lib/gtag';
-import { useToast } from '@/app/components/RequestCallModal';
+import { trackEnquiryFailed, trackEnquirySubmit } from '@/app/lib/gtag';
+import { ENQUIRY_FAILED_MSG, useToast } from '@/app/components/RequestCallModal';
 
 export default function HeroEnquiryCard() {
   const [name, setName] = useState('');
@@ -18,7 +18,13 @@ export default function HeroEnquiryCard() {
     try {
       await sendEnquiry({ type: 'Hero Enquiry', phone, name: name || '—', work: work || 'Sofa Cleaning' });
       trackEnquirySubmit('hero_card', work || 'Sofa Cleaning');
-    } catch {}
+    } catch {
+      // Leave the fields filled so nothing is lost; point to WhatsApp/call.
+      trackEnquiryFailed('hero_card');
+      setLoading(false);
+      showToast(ENQUIRY_FAILED_MSG, 'error');
+      return;
+    }
     setLoading(false);
     setName('');
     setPhone('');

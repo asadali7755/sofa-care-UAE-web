@@ -7,8 +7,8 @@ import { CITY_CONTENT } from '../lib/cityContent';
 import { CITY_IMAGES } from '../lib/cityImages';
 
 export const metadata: Metadata = {
-  title: 'Sofa Cleaning Sharjah | Professional Sofa Deep Shampoo & Steam Cleaning',
-  description: 'Al Haya Sofa Care — professional sofa deep shampoo & steam cleaning in Sharjah. At-home service covering all Sharjah areas. Stain removal, leather care, same-day service. Call +971547199189.',
+  title: { absolute: 'Sofa Cleaning Sharjah | Deep Shampoo at Home | Al Haya' },
+  description: 'At-home sofa deep shampoo & steam cleaning in Sharjah — Al Nahda, Al Majaz, Al Khan, Al Taawun, Muwaileh & more. Same-day slots, free WhatsApp quote.',
   keywords: [
     'sofa cleaning Sharjah',
     'sofa deep cleaning Sharjah',

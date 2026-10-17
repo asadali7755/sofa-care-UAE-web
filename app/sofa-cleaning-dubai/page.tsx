@@ -7,8 +7,8 @@ import { CITY_CONTENT } from '../lib/cityContent';
 import { CITY_IMAGES } from '../lib/cityImages';
 
 export const metadata: Metadata = {
-  title: 'Sofa Cleaning Dubai | Professional Sofa Deep Shampoo & Steam Cleaning',
-  description: 'Al Haya Sofa Care — #1 sofa cleaning in Dubai. Professional sofa deep shampoo & steam cleaning at your doorstep. Stain removal, leather care, pet hair removal. Same-day service. Call +971547199189.',
+  title: { absolute: 'Sofa Cleaning Dubai | Deep Shampoo at Home | Al Haya' },
+  description: 'At-home sofa deep shampoo & steam cleaning across Dubai — Marina, JVC, Downtown, Al Nahda, Al Qusais, Deira & more. Same-day slots, free WhatsApp quote.',
   keywords: [
     'sofa cleaning Dubai',
     'sofa deep cleaning Dubai',

@@ -75,7 +75,7 @@ export default function Footer() {
               <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Facebook</a>
               <a href="mailto:info@sofashampooingdubai.com" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>info@sofashampooingdubai.com</a>
               <a href="https://www.google.com/maps/place/AL+HAYA+cleaning+services/@25.2959258,55.3600450,17z" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>View on Google Maps</a>
-              <a href="https://www.google.com/maps/place/AL+HAYA+cleaning+services/@25.2959258,55.3600450,17z" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontSize: 13, fontWeight: 600 }}>★ Review Us on Google</a>
+              <a href="https://search.google.com/local/writereview?placeid=ChIJg1xl_sZdXz4RV6mRi-8LeQI" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontSize: 13, fontWeight: 600 }}>★ Review Us on Google</a>
               <div style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Dubai, UAE</div>
               <div style={{ color: 'var(--fg-muted)', fontSize: 13 }}>7 AM – 10 PM Daily</div>
             </div>
