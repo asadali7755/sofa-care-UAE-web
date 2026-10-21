@@ -42,7 +42,7 @@ function SuccessToast({ message, variant, onDone }: { message: string; variant: 
           {isError && (
             <>
               {' '}
-              <a href={`${WA_LINK}?text=${encodeURIComponent('Hi, I need sofa cleaning.')}`} target="_blank" rel="noopener noreferrer" data-cta="enquiry_failed_toast">WhatsApp</a>
+              <a href={`${WA_LINK}?text=${encodeURIComponent('Hi, I need sofa cleaning.')}`} target="_blank" rel="noopener noreferrer" data-cta="enquiry_failed_toast" data-wa-direct>WhatsApp</a>
               {' · '}
               <a href={`tel:${PHONE_TEL}`} data-cta="enquiry_failed_toast">{PHONE_DISPLAY}</a>
             </>
@@ -158,7 +158,7 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
           </button>
         </form>
         <div className="rcm-or">Or reach us instantly</div>
-        <div className="rcm-alt" data-cta="request_call_modal">
+        <div className="rcm-alt" data-cta="request_call_modal" data-wa-direct>
           <a href={`tel:${PHONE_TEL}`}>Call {PHONE_DISPLAY}</a>
           <a href={`${WA_LINK}?text=${encodeURIComponent("Hi, I need sofa cleaning services.")}`} target="_blank" rel="noopener">WhatsApp</a>
         </div>
