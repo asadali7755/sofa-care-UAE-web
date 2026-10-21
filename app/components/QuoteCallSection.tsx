@@ -5,7 +5,9 @@ import { sendEnquiry } from '@/app/lib/sendEmail';
 import { trackEnquiryFailed, trackEnquirySubmit } from '@/app/lib/gtag';
 import { ENQUIRY_FAILED_MSG, useToast } from './RequestCallModal';
 
-export default function QuoteCallSection() {
+/** Call-back + free-visit block. Pass areaName on area pages so the copy is local to that page. */
+export default function QuoteCallSection({ areaName }: { areaName?: string } = {}) {
+  const where = areaName ? ` in ${areaName}` : '';
   const { open } = useRequestCall();
   const showToast = useToast();
   const [name, setName] = useState('');
@@ -43,14 +45,16 @@ export default function QuoteCallSection() {
               Prefer a <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Phone Call?</span>
             </h2>
             <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.7, marginBottom: 24 }}>
-              Not sure which service you need? Our cleaning experts are ready to help. Request a call and get personalized advice — no pressure, no obligation. We will assess your requirements and provide a transparent quote over the phone.
+              {areaName
+                ? `Tell us about the sofa in your ${areaName} home and we will suggest the right clean and give you a quote on the call. No pressure, no obligation.`
+                : 'Not sure which service you need? Request a call and we will suggest the right clean for your sofa and give you a quote on the phone. No pressure, no obligation.'}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
               {[
-                'Free consultation with cleaning experts',
-                'Honest pricing — no hidden charges',
-                'Same-day callback within 30 minutes',
-                'Available 7 days a week, 8 AM to 10 PM',
+                `Free advice${where}`,
+                'No hidden charges',
+                'Same-day callback',
+                'Open daily, 7 AM – 10 PM',
               ].map((item) => (
                 <div key={item} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', color: 'var(--fg-muted)', fontSize: 15 }}>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0 }}>&#10003;</span> {item}
@@ -75,7 +79,7 @@ export default function QuoteCallSection() {
               <div className="section-tag" style={{ marginBottom: 8 }}>Quick Response</div>
               <h3 style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', marginBottom: 8 }}>Get a Free Visit</h3>
               <p style={{ color: 'var(--fg-muted)', fontSize: 14, marginBottom: 24, lineHeight: 1.6 }}>
-                Fill in your details and we will get back to you within 30 minutes to arrange a free visit.
+                {areaName ? `Leave your number and we will call you back to arrange a free visit${where}.` : 'Leave your number and we will call you back to arrange a free visit.'}
               </p>
               {sent ? (
                 <div style={{ textAlign: 'center', padding: '32px 16px' }}>
