@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const LEADS_TO = 'marbleprodxb@gmail.com';
+// Set ENQUIRY_TO in Vercel to change the lead inbox without a code change.
+const LEADS_TO = process.env.ENQUIRY_TO || 'marbleprodxb@gmail.com';
 // Set ENQUIRY_FROM (e.g. "Al Haya Sofa Care <leads@sofashampooingdubai.com>")
 // once the domain is verified in Resend. The resend.dev sandbox sender only
 // delivers to the Resend account owner and fails SPF/DKIM for the brand.
