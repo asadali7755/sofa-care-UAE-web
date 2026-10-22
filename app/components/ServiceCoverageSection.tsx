@@ -75,11 +75,10 @@ export default function ServiceCoverageSection() {
               boxShadow: '0 20px 60px rgba(12,17,14,0.12)',
               border: `1px solid ${c.color}40`,
             }}>
-              {/* Background image */}
-              <div className="scs-img" style={{
-                position: 'absolute', inset: 0,
-                backgroundImage: `url(${c.img})`,
-                backgroundSize: 'cover', backgroundPosition: 'center',
+              {/* Background image (an <img> so it can lazy-load; CSS backgrounds load immediately) */}
+              <img className="scs-img" src={c.img} alt="" aria-hidden="true" loading="lazy" decoding="async" style={{
+                position: 'absolute', inset: 0, width: '100%', height: '100%',
+                objectFit: 'cover', objectPosition: 'center',
                 transition: 'transform 0.6s cubic-bezier(0.2,0.7,0.2,1)',
               }} />
 

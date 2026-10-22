@@ -163,6 +163,8 @@ function GalleryCard({ item, showAfter }: { item: typeof galleryItems[0]; showAf
 
         {/* Before image */}
         <img
+          loading="lazy"
+          decoding="async"
           src={item.before}
           alt={item.altBefore}
           style={{
@@ -172,6 +174,8 @@ function GalleryCard({ item, showAfter }: { item: typeof galleryItems[0]; showAf
         />
         {/* After image */}
         <img
+          loading="lazy"
+          decoding="async"
           src={item.after}
           alt={item.altAfter}
           style={{

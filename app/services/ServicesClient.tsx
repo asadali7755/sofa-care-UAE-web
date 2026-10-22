@@ -83,7 +83,7 @@ function ServiceSection({
   const imageBlock = (
     <div className="reveal reveal-delay-2">
       <div style={{ borderRadius: 20, overflow: 'hidden', border: '1px solid var(--line)', aspectRatio: '4/3', position: 'relative' }}>
-        <img src={image} alt={imageAlt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <img src={image} alt={imageAlt} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
       <div style={{ marginTop: 20, background: 'var(--bg-elev)', borderRadius: 16, padding: 22, border: '1px solid var(--line)', borderLeft: `3px solid ${badgeColor}` }}>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: badgeColor, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>What&apos;s Included</div>
