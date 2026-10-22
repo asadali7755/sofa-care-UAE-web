@@ -54,7 +54,7 @@ export default function QuoteCallSection({ areaName }: { areaName?: string } = {
                 `Free advice${where}`,
                 'No hidden charges',
                 'Same-day callback',
-                'Open daily, 7 AM – 10 PM',
+                'Open 24 hours, 7 days a week',
               ].map((item) => (
                 <div key={item} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', color: 'var(--fg-muted)', fontSize: 15 }}>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, flexShrink: 0 }}>&#10003;</span> {item}

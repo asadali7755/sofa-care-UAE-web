@@ -62,8 +62,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "Dubai Coverage"
       },
       {
-        "n": "7 AM–10 PM",
-        "l": "Open daily"
+        "n": "24 Hours",
+        "l": "Open 7 days"
       }
     ],
     "services": [
@@ -142,8 +142,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "Abu Dhabi Coverage"
       },
       {
-        "n": "7 AM–10 PM",
-        "l": "Open daily"
+        "n": "24 Hours",
+        "l": "Open 7 days"
       }
     ],
     "services": [
@@ -220,8 +220,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "Sharjah Coverage"
       },
       {
-        "n": "7 AM–10 PM",
-        "l": "Open daily"
+        "n": "24 Hours",
+        "l": "Open 7 days"
       }
     ],
     "services": [
@@ -293,8 +293,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "Across Ajman"
       },
       {
-        "n": "7 AM–10 PM",
-        "l": "Open daily"
+        "n": "24 Hours",
+        "l": "Open 7 days"
       },
       {
         "n": "Free",
@@ -368,8 +368,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "Pre-guest cleans"
       },
       {
-        "n": "7 AM–10 PM",
-        "l": "Open daily"
+        "n": "24 Hours",
+        "l": "Open 7 days"
       },
       {
         "n": "Free",
@@ -439,8 +439,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "One visit"
       },
       {
-        "n": "7 AM–10 PM",
-        "l": "Open daily"
+        "n": "24 Hours",
+        "l": "Open 7 days"
       },
       {
         "n": "Free",
@@ -508,8 +508,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "Covered"
       },
       {
-        "n": "7 AM–10 PM",
-        "l": "Open daily"
+        "n": "24 Hours",
+        "l": "Open 7 days"
       },
       {
         "n": "Free",

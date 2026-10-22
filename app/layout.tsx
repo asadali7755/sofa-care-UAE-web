@@ -126,9 +126,9 @@ const localBusinessSchema = {
   priceRange: '$$',
   currenciesAccepted: 'AED',
   paymentAccepted: 'Cash, Credit Card, Bank Transfer',
-  openingHours: 'Mo-Su 07:00-22:00',
+  openingHours: 'Mo-Su 00:00-23:59',
   openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Monday','https://schema.org/Tuesday','https://schema.org/Wednesday','https://schema.org/Thursday','https://schema.org/Friday','https://schema.org/Saturday','https://schema.org/Sunday'], opens: '07:00', closes: '22:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Monday','https://schema.org/Tuesday','https://schema.org/Wednesday','https://schema.org/Thursday','https://schema.org/Friday','https://schema.org/Saturday','https://schema.org/Sunday'], opens: '00:00', closes: '23:59' },
   ],
   address: {
     '@type': 'PostalAddress',

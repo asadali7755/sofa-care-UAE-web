@@ -25,7 +25,7 @@ const STEPS = [
 ];
 
 
-const FACTS = ['Same-day slots', 'Dry in 3–4 hours', 'Open 7 AM – 10 PM', 'Free WhatsApp quote'];
+const FACTS = ['Same-day slots', 'Dry in 3–4 hours', 'Open 24 hours', 'Free WhatsApp quote'];
 
 function splitIntro(intro: string): [string, string] {
   const m = intro.match(/^([\s\S]+?[.!?])\s+([\s\S]*)$/);

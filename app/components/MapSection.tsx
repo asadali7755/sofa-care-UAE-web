@@ -46,7 +46,7 @@ export default function MapSection() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {[
                   { label: 'Location', value: 'Dubai, UAE' },
-                  { label: 'Hours', value: '7 AM – 10 PM Daily' },
+                  { label: 'Hours', value: 'Open 24 hours, 7 days' },
                   { label: 'Service', value: 'At-home — we come to you' },
                   { label: 'Coverage', value: 'Dubai · Abu Dhabi · Sharjah · Ajman' },
                 ].map((item) => (
