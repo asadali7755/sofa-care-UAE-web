@@ -15,7 +15,7 @@ const cyclingLines = [
   'At-Home Service',
   'Same Day Available',
   'Eco-Friendly Products',
-  'Certified Technicians',
+  'Trained Technicians',
   'Dubai · Abu Dhabi · Sharjah',
   'Ajman · RAK · Fujairah · UAQ',
 ];
@@ -75,14 +75,14 @@ function AnimatedServiceContent() {
 
       {/* Description */}
       <p style={{ color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75, marginBottom: 32 }}>
-        Fine desert dust and coastal humidity settle deep into fabric fibers, acting like sandpaper on your upholstery. Al Haya&apos;s certified technicians use industrial-grade extraction and pH-balanced cleaners tailored to your specific fabric — protecting your investment and ensuring a healthy home in all seven emirates, from Dubai and Abu Dhabi to Ras Al Khaimah, Fujairah and Umm Al Quwain.
+        Fine desert dust and coastal humidity settle deep into fabric fibers, acting like sandpaper on your upholstery. Al Haya&apos;s trained technicians use industrial-grade extraction and pH-balanced cleaners tailored to your specific fabric — protecting your investment and ensuring a healthy home in all seven emirates, from Dubai and Abu Dhabi to Ras Al Khaimah, Fujairah and Umm Al Quwain.
       </p>
 
       {/* Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 36 }}>
         {[
           { val: 'Eco-Friendly', label: 'Products' },
-          { val: 'Certified', label: 'Technicians' },
+          { val: 'Trained', label: 'Technicians' },
           { val: 'Same Day', label: 'Service Available' },
           { val: '5+ Yrs', label: 'Experience' },
         ].map(s => (
@@ -234,7 +234,7 @@ export default function ServicesPreview() {
             Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Cleaning</span> Services Across the UAE
           </h2>
           <p style={{ color: 'var(--fg-muted)', maxWidth: 580, margin: '0 auto', fontSize: 17, lineHeight: 1.65 }}>
-            Across the UAE, &ldquo;surface cleaning&rdquo; isn&apos;t enough. Fine desert dust settles deep into fabric fibers, while humidity locks in allergens and bacteria. Our certified technicians use industrial-grade extraction and pH-balanced cleaners to restore every sofa type in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah &amp; Umm Al Quwain.
+            Across the UAE, &ldquo;surface cleaning&rdquo; isn&apos;t enough. Fine desert dust settles deep into fabric fibers, while humidity locks in allergens and bacteria. Our trained technicians use industrial-grade extraction and pH-balanced cleaners to restore every sofa type in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah &amp; Umm Al Quwain.
           </p>
         </div>
 

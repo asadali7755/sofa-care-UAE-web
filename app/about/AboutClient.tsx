@@ -18,7 +18,7 @@ function IconTag({ size = 28 }: { size?: number }) {
 const stats = [
   { n: 'Eco-Friendly', l: 'Products Used' },
   { n: '5+', l: 'Years in Business' },
-  { n: 'Certified', l: 'Technicians' },
+  { n: 'Trained', l: 'Technicians' },
   { n: 'Same Day', l: 'Service Available' },
 ];
 
@@ -26,7 +26,7 @@ const whyUs = [
   { icon: <IconLeaf size={28}/>, title: 'Eco-Friendly', desc: 'Non-toxic, biodegradable cleaning solutions safe for children, pets & sensitive skin.', accent: '#6DD5C2' },
   { icon: <IconClock size={28}/>, title: 'Fast Service', desc: 'Same-day appointments available across Dubai, Sharjah & Ajman.', accent: '#1D6A5B' },
   { icon: <IconHome size={28}/>, title: 'At-Home Convenience', desc: 'We come to you with all equipment — no need to move furniture or travel.', accent: '#FF5A3C' },
-  { icon: <IconShield size={28}/>, title: 'Certified Team', desc: 'Trained, experienced technicians who handle every sofa type with care.', accent: '#3B82F6' },
+  { icon: <IconShield size={28}/>, title: 'Trained Team', desc: 'Trained, experienced technicians who handle every sofa type with care.', accent: '#3B82F6' },
   { icon: <IconTag size={28}/>, title: 'Transparent Pricing', desc: 'Affordable rates with no hidden fees — free quote on WhatsApp.', accent: '#10B981' },
   { icon: <IconShield size={28}/>, title: 'Satisfaction Guaranteed', desc: "We're not done until your sofa looks and smells exactly as you expect.", accent: '#8B5CF6' },
 ];
@@ -90,7 +90,7 @@ export default function AboutPage() {
                 <div className="reveal reveal-delay-1" style={{ display: 'flex', flexDirection: 'column', gap: 16, color: 'var(--fg-muted)', fontSize: 16, lineHeight: 1.75 }}>
                   <p>Al Haya Sofa Care UAE was founded with one simple mission: to provide Dubai families and businesses with a professional, reliable, and convenient sofa cleaning experience — right at their doorstep.</p>
                   <p>In a city like Dubai, where luxury meets the desert, your home is your sanctuary. The combination of fine sand, high humidity, and daily use means your sofa — the centerpiece of your living room — acts like a giant filter for dust, allergens, and pollutants. Surface cleaning simply isn&apos;t enough.</p>
-                  <p>We bring professional-grade industrial equipment and eco-friendly solutions directly to you. Our certified technicians identify your upholstery type, test pH levels, and use cleaners specifically tailored to your fabric — preventing browning or dye bleeding while lifting deep-seated dirt.</p>
+                  <p>We bring professional-grade industrial equipment and eco-friendly solutions directly to you. Our trained technicians identify your upholstery type, test pH levels, and use cleaners specifically tailored to your fabric — preventing browning or dye bleeding while lifting deep-seated dirt.</p>
                   <p>Today, Al Haya Sofa Care UAE proudly serves families and businesses across Dubai, Sharjah, Ajman &amp; Abu Dhabi with same-day service availability and a commitment to eco-friendly, professional-grade cleaning.</p>
                 </div>
               </div>

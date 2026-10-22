@@ -34,7 +34,7 @@ const Ico = ({ d }: { d: string }) => (
 const stats = [
   { n: 'Eco-Friendly', l: 'Products Used', d: 'M12 22c4-3 7-6.5 7-11a7 7 0 0 0-14 0c0 4.5 3 8 7 11zM12 7v6M9 10h6' },
   { n: '5+ Years', l: 'Experience', d: 'M12 8v4l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z' },
-  { n: 'Certified', l: 'Technicians', d: 'M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.6 6.5 19.5l1-6.3L3 8.9 9 8z' },
+  { n: 'Trained', l: 'Technicians', d: 'M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.6 6.5 19.5l1-6.3L3 8.9 9 8z' },
   { n: 'Same Day', l: 'Service Available', d: 'M13 2L4 14h7l-1 8 9-12h-7z' },
 ];
 
@@ -104,7 +104,7 @@ export default function Hero() {
 
           <h2 className="hx-lead hx-in" style={{ ['--d' as string]: '.24s' }}>
             Desert dust, coastal humidity and daily use turn your sofa into a filter for allergens. Al Haya brings{' '}
-            <strong>certified deep cleaning</strong>{' '}to your doorstep — eco-friendly solutions, fast-dry results and same-day service in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah &amp; Umm Al Quwain.
+            <strong>professional deep cleaning</strong>{' '}to your doorstep — eco-friendly solutions, fast-dry results and same-day service in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah &amp; Umm Al Quwain.
           </h2>
 
           <div className="hx-cta hx-in" style={{ ['--d' as string]: '.32s' }}>

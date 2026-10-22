@@ -21,7 +21,7 @@ const features = [
   },
   {
     icon: <IconShield size={26}/>,
-    title: 'Certified Technicians',
+    title: 'Trained Technicians',
     desc: 'Trained professionals handling every sofa type with care and expertise.',
     accent: '#3B82F6',
   },
@@ -130,7 +130,7 @@ export default function WhyChooseUs() {
           <div className="reveal" style={{ marginTop: 24, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
             {[
               { n: 'Eco-Friendly', l: 'Products' },
-              { n: 'Certified', l: 'Technicians' },
+              { n: 'Trained', l: 'Technicians' },
               { n: 'Same Day', l: 'Service' },
               { n: '5+ Yrs', l: 'Experience' },
             ].map((s) => (

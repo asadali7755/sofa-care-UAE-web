@@ -31,7 +31,7 @@ const cities = [
     href: '/sofa-cleaning-abu-dhabi',
     accent: '#8B5CF6',
     keyword: 'Sofa Cleaning Abu Dhabi',
-    desc: 'Certified sofa cleaning in Abu Dhabi — Khalifa City, Al Reem Island, Yas Island, Saadiyat Island & all Abu Dhabi areas. Best sofa cleaning Abu Dhabi doorstep service.',
+    desc: 'Professional sofa cleaning in Abu Dhabi — Khalifa City, Al Reem Island, Yas Island, Saadiyat Island & all Abu Dhabi areas. Best sofa cleaning Abu Dhabi doorstep service.',
     services: ['Sofa Deep Cleaning Abu Dhabi', 'Sofa Steam Cleaning Abu Dhabi', 'Leather Sofa Cleaning Abu Dhabi', 'Sofa Sanitization Abu Dhabi'],
   },
 ];
@@ -50,7 +50,7 @@ export default function CitiesSection() {
             </span>
           </h2>
           <p style={{ color: 'var(--fg-muted)', maxWidth: 560, margin: '0 auto', fontSize: 17, lineHeight: 1.65 }}>
-            Al Haya Sofa Care UAE brings certified at-home sofa cleaning to every corner of the UAE — same-day service, eco-friendly products, and guaranteed results.
+            Al Haya Sofa Care UAE brings professional at-home sofa cleaning to every corner of the UAE — same-day service, eco-friendly products and careful, thorough results.
           </p>
         </div>
 

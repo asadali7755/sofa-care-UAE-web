@@ -179,7 +179,7 @@ export default function ServicesPage() {
                 The Al Haya <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Technical Cleaning</span> Process
               </h2>
               <p style={{ color: 'var(--fg-muted)', maxWidth: 520, margin: '12px auto 0', fontSize: 16, lineHeight: 1.65 }}>
-                Transparency builds trust. Here is the exact protocol our certified technicians follow — designed to achieve like-new results on every sofa type.
+                Transparency builds trust. Here is the exact protocol our trained technicians follow — designed to achieve like-new results on every sofa type.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 32 }}>
