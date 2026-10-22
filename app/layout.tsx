@@ -191,8 +191,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} ${fontGrot.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="preload" href="/hero-mobile.webp" as="image" type="image/webp" media="(max-width: 768px)" />
-        <link rel="preload" href="/sofa-cleaning-dubai-professional.webp" as="image" type="image/webp" media="(min-width: 769px)" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#F3F7F4" />
@@ -207,7 +205,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       </head>
       <body>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-YPV76TBPNB" strategy="afterInteractive" />
+        {/* The inline stub below queues events in dataLayer, so the library can load after the page. */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-YPV76TBPNB" strategy="lazyOnload" />
         <Script id="google-analytics" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

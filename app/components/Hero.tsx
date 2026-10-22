@@ -50,31 +50,38 @@ const emirates = [
 
 export default function Hero() {
   const role = useTypewriter(['Sofa Deep Cleaning', 'Sofa Shampooing', 'Stain Removal', 'Leather Care', 'Same Day Service', 'At-Home Service']);
+  // autoPlay ignores preload="none", so the 3.6 MB video is only mounted on desktop.
+  const [showVideo, setShowVideo] = useState(false);
+  useEffect(() => { setShowVideo(window.matchMedia('(min-width: 769px)').matches); }, []);
 
   return (
     <section id="hero" className="hx">
       {/* ── media layers ── */}
       <div className="hx-media">
-        <img
-          src="/hero-mobile.webp"
-          alt="Professional at-home sofa cleaning service across the UAE — Al Haya Sofa Care deep shampoo and steam cleaning"
-          fetchPriority="high"
-          decoding="sync"
-          loading="eager"
-          width={768}
-          height={1376}
-          className="hero-img-mobile"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
-        />
-        <video
-          autoPlay muted loop playsInline preload="none"
-          poster="/sofa-cleaning-dubai-professional.webp"
-          className="hero-video-desktop"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-        >
-          <source src="/hero-bg.webm" type="video/webm" />
-          <source src="/hero-bg.mp4" type="video/mp4" />
-        </video>
+        {/* <picture> downloads only the image for the current screen size */}
+        <picture>
+          <source media="(min-width: 769px)" srcSet="/sofa-cleaning-dubai-professional.webp" />
+          <img
+            src="/hero-mobile.webp"
+            alt="Professional at-home sofa cleaning service across the UAE — Al Haya Sofa Care deep shampoo and steam cleaning"
+            fetchPriority="high"
+            decoding="sync"
+            loading="eager"
+            width={768}
+            height={1376}
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+          />
+        </picture>
+        {showVideo && (
+          <video
+            autoPlay muted loop playsInline preload="none"
+            poster="/sofa-cleaning-dubai-professional.webp"
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+          >
+            <source src="/hero-bg.webm" type="video/webm" />
+            <source src="/hero-bg.mp4" type="video/mp4" />
+          </video>
+        )}
         <div className="hx-shade" />
         <div className="hx-mesh" />
         <span className="hx-orb hx-orb-1" />

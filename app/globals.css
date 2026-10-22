@@ -1257,7 +1257,7 @@ section, footer, nav { max-width: 100%; }
 .cl-final .cl-btn-ghost { color: #fff; border-color: rgba(255,255,255,.5); }
 
 /* ── keyframes ── */
-@keyframes clRise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes clRise { from { transform: translateY(24px); } to { transform: none; } }
 @keyframes clFloat { 0%,100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-12px) rotate(var(--r, 0deg)); } }
 .cl-photo-card { --r: 2.5deg; }
 @keyframes clSpin { to { transform: rotate(360deg); } }
@@ -1425,7 +1425,7 @@ section, footer, nav { max-width: 100%; }
 .hx-chip { flex: 0 0 auto; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); color: #fff; font-size: 13px; font-weight: 600; text-decoration: none; backdrop-filter: blur(8px); transition: background .2s, color .2s, transform .2s, border-color .2s; white-space: nowrap; }
 .hx-chip:hover { background: #6DD5C2; color: #06100E; border-color: #6DD5C2; transform: translateY(-2px); }
 
-@keyframes hxRise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes hxRise { from { transform: translateY(26px); } to { transform: none; } }
 @keyframes hxFloat { 0%,100% { transform: translate(0,0); } 50% { transform: translate(28px,-34px); } }
 @keyframes hxShine { to { background-position: 200% center; } }
 @keyframes hxSweep { 0%,55% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
