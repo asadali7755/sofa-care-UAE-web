@@ -11,6 +11,11 @@ export default function ScrollRevealInit() {
   }, []);
 
   useEffect(() => {
+    // Mark what is already on screen as revealed *before* js-ready hides .reveal,
+    // so above-the-fold text never blinks out (that repaint was the mobile LCP).
+    document.querySelectorAll('.reveal').forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in');
+    });
     // Add js-ready so CSS animations kick in (elements hidden → animated in)
     document.documentElement.classList.add('js-ready');
 

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
-import { Archivo, Inter, JetBrains_Mono, Fraunces } from 'next/font/google';
+import { Inter, JetBrains_Mono, Fraunces } from 'next/font/google';
 import ClientProviders from '@/app/components/ClientProviders';
 
 const fontDisplay = Fraunces({
@@ -21,12 +21,8 @@ const fontMono = JetBrains_Mono({
   weight: ['400', '500', '600'],
   variable: '--font-mono',
   display: 'swap',
-});
-const fontGrot = Archivo({
-  subsets: ['latin'],
-  weight: ['500', '600', '700', '800', '900'],
-  variable: '--font-grot',
-  display: 'swap',
+  // Small labels only; don't let it compete with the hero fonts.
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -188,7 +184,7 @@ const localBusinessSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} ${fontGrot.variable}`}>
+    <html lang="en" className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
