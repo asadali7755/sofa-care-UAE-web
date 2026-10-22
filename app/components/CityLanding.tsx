@@ -6,6 +6,7 @@ import CityHeroArt from './CityHeroArt';
 import CityServices, { type CityServiceItem } from './CityServices';
 import { CITY_THEMES } from '../lib/cityThemes';
 import { emirates } from '../lib/areas';
+import { AreaMap, ResultsSection, ServiceShots, VideosSection, seedOf } from './MediaSections';
 
 export interface CityLandingProps {
   cityKey: string;
@@ -81,6 +82,7 @@ export default function CityLanding(p: CityLandingProps) {
   const vars = { '--c1': t.c1, '--c2': t.c2, '--soft': t.soft, '--deep': t.deep, '--deep2': t.deep2 } as CSSProperties;
   const areaPages = emirates[p.cityKey]?.areas ?? [];
   const waLink = `https://wa.me/971547199189?text=${p.waText}`;
+  const seed = seedOf(p.cityKey) * 3;
   const tone = t.heroTone;
   const abs = (u: string) => (u.startsWith('http') ? u : `https://sofashampooingdubai.com${u}`);
   const imageSchema = {
@@ -217,6 +219,8 @@ export default function CityLanding(p: CityLandingProps) {
       </section>
 
       {/* ───────── AREAS ───────── */}
+      <ResultsSection heading="Sofa cleaning before & after photos" place={p.cityName} seed={seed} count={6} />
+
       <section className={`cl-section cl-areas cl-areas-${t.areas}`}>
         <div className="container-x">
           <div className="cl-center reveal">
@@ -245,6 +249,7 @@ export default function CityLanding(p: CityLandingProps) {
               </div>
             </div>
           )}
+          <AreaMap query={`${p.cityName}, UAE`} title={`Map of our sofa cleaning coverage in ${p.cityName}`} />
         </div>
       </section>
 
@@ -258,9 +263,12 @@ export default function CityLanding(p: CityLandingProps) {
               <div className="cl-price-chip"><b>{p.priceValue}</b><span>{p.priceNote}</span></div>
             )}
           </div>
+          <ServiceShots place={p.cityName} seed={seed} />
           <CityServices style={t.services} cityName={p.cityName} services={p.services} />
         </div>
       </section>
+
+      <VideosSection heading={`Watch our sofa cleaning team at work`} waHref={waLink} seed={seed} />
 
       {/* ───────── PROCESS ───────── */}
       <section className="cl-section cl-process">

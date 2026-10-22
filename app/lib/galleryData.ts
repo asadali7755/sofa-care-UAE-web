@@ -31,3 +31,28 @@ export const galleryItems = [
   { id: 15, cat: 'Leather', label: 'White Leather Sofa Stain Removal — Palm Jumeirah', altBefore: 'White leather sofa with large dust and sand stain before professional leather cleaning in Palm Jumeirah Dubai', altAfter: 'White leather sofa completely restored after stain removal by Al Haya Sofa Care Palm Jumeirah Dubai', before: '/white-leather-stain-removal/before.webp', after: '/white-leather-stain-removal/after.webp' },
   { id: 16, cat: 'Sofa Cleaning', label: 'Fabric Sofa Dust & Seam Extraction — Ajman', altBefore: 'Beige fabric sofa with heavy dust and black dirt in seams before deep extraction cleaning in Ajman UAE', altAfter: 'Beige fabric sofa completely clean after professional dust and seam extraction by Al Haya in Ajman UAE', before: '/fabric-seam-extraction/before.webp', after: '/fabric-seam-extraction/after.webp' },
 ];
+
+/** Service photos (ids match the anchors on /services). */
+export const servicePhotos = [
+  { id: 'shampooing', label: 'Sofa shampoo', img: '/shampoo/after.webp' },
+  { id: 'deep-cleaning', label: 'Deep extraction', img: '/fabric-sofa-deep-clean/after.webp' },
+  { id: 'stain-removal', label: 'Stain removal', img: '/home/sofa-stain-removal-dubai.webp' },
+  { id: 'leather-cleaning', label: 'Leather care', img: '/home/leather-sofa-cleaning-dubai.webp' },
+  { id: 'odor-treatment', label: 'Odour removal', img: '/home/sofa-odor-treatment-dubai.webp' },
+  { id: 'pet-hair', label: 'Pet hair removal', img: '/home/pet-hair-removal-sofa-dubai.webp' },
+  { id: 'sanitization', label: 'Steam sanitising', img: '/home/sofa-sanitization-dubai.webp' },
+  { id: 'velvet-microfiber', label: 'Velvet & microfiber', img: '/home/velvet-microfiber-sofa-cleaning.webp' },
+  { id: 'fabric-protection', label: 'Fabric protection', img: '/home/sofa-fabric-protection-dubai.webp' },
+];
+
+/** Best-matching service photo for a free-text service title. */
+export function photoForService(title: string): string {
+  const t = title.toLowerCase();
+  const rules: [RegExp, string][] = [
+    [/leather/, 'leather-cleaning'], [/stain/, 'stain-removal'], [/odou?r|humid|musty|smell/, 'odor-treatment'],
+    [/pet/, 'pet-hair'], [/steam|saniti/, 'sanitization'], [/velvet|microfib/, 'velvet-microfiber'],
+    [/protect/, 'fabric-protection'], [/shampoo/, 'shampooing'],
+  ];
+  const id = rules.find(([re]) => re.test(t))?.[1] ?? 'deep-cleaning';
+  return servicePhotos.find((s) => s.id === id)!.img;
+}

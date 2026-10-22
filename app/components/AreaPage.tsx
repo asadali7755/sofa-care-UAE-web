@@ -9,22 +9,13 @@ import { IconArrow, IconWhatsApp } from './Icons';
 import QuoteCallSection from './QuoteCallSection';
 import { getEmirate, getArea } from '../lib/areas';
 import { PHOTOS, fill, heroPhotoFor, themeFor, type AreaSection } from '../lib/areaThemes';
-import { galleryItems, videoResults } from '../lib/galleryData';
+import { galleryItems, servicePhotos } from '../lib/galleryData';
+import { AreaMap, BeforeAfterPair, ResultsSection, ServiceShots, VideosSection, seedOf, stripPlace } from './MediaSections';
 import '../area-pages.css';
 
 const BASE = 'https://sofashampooingdubai.com';
 
-const SERVICE_LINKS = [
-  { id: 'shampooing', label: 'Sofa shampoo', img: '/shampoo/after.webp' },
-  { id: 'deep-cleaning', label: 'Deep extraction', img: '/fabric-sofa-deep-clean/after.webp' },
-  { id: 'stain-removal', label: 'Stain removal', img: '/home/sofa-stain-removal-dubai.webp' },
-  { id: 'leather-cleaning', label: 'Leather care', img: '/home/leather-sofa-cleaning-dubai.webp' },
-  { id: 'odor-treatment', label: 'Odour removal', img: '/home/sofa-odor-treatment-dubai.webp' },
-  { id: 'pet-hair', label: 'Pet hair removal', img: '/home/pet-hair-removal-sofa-dubai.webp' },
-  { id: 'sanitization', label: 'Steam sanitising', img: '/home/sofa-sanitization-dubai.webp' },
-  { id: 'velvet-microfiber', label: 'Velvet & microfiber', img: '/home/velvet-microfiber-sofa-cleaning.webp' },
-  { id: 'fabric-protection', label: 'Fabric protection', img: '/home/sofa-fabric-protection-dubai.webp' },
-];
+const SERVICE_LINKS = servicePhotos;
 
 const STEPS = [
   { t: 'Inspect', d: 'Fabric type checked and a hidden spot tested first.' },
@@ -33,11 +24,6 @@ const STEPS = [
   { t: 'Dry & check', d: 'Air movers speed drying and we check the sofa with you.' },
 ];
 
-// Portrait clips only; the landscape and square ones look odd in a row of three.
-const AREA_VIDEOS = videoResults.filter((v) => !/quick-result|shampooing-result/.test(v.src));
-
-const pick = <T,>(list: T[], start: number, n: number) => Array.from({ length: n }, (_, i) => list[(start + i) % list.length]);
-const stripPlace = (label: string) => label.split(' — ')[0];
 
 const FACTS = ['Same-day slots', 'Dry in 3–4 hours', 'Open 7 AM – 10 PM', 'Free WhatsApp quote'];
 
@@ -69,12 +55,8 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
   const proof = PHOTOS[t.proof];
   const [lede, aboutRest] = splitIntro(area.intro);
   // Stable per-page seed so each area shows a different set of real job photos and clips.
-  const seed = [...slug].reduce((n, ch) => n + ch.charCodeAt(0), 0) + index * 7;
-  const results = pick(galleryItems, seed, 3);
+  const seed = seedOf(slug) + index * 7;
   const aboutShot = galleryItems[(seed + 8) % galleryItems.length];
-  const clips = pick(AREA_VIDEOS, seed, 3);
-  const svcShots = pick(SERVICE_LINKS, seed, 4);
-  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(`${area.name}, ${em.cityName}, UAE`)}&output=embed`;
 
   const url = `${BASE}/${em.citySlug}/${slug}`;
   const waHref = `https://wa.me/971547199189?text=${encodeURIComponent(`Hi, I need sofa cleaning in ${area.name}, ${em.cityName}.`)}`;
@@ -202,14 +184,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
             <p className="ap-p ap-p-lg">{aboutRest}</p>
           </div>
           <figure className="ap-about-shot">
-            <div className="ap-about-img ap-about-img-a">
-              <Image src={aboutShot.before} alt={`Before: ${stripPlace(aboutShot.label)}`} fill sizes="(max-width: 900px) 60vw, 300px" style={{ objectFit: 'cover' }} />
-              <span className="ap-badge">Before</span>
-            </div>
-            <div className="ap-about-img ap-about-img-b">
-              <Image src={aboutShot.after} alt={`After: ${stripPlace(aboutShot.label)} by Al Haya Sofa Care`} fill sizes="(max-width: 900px) 60vw, 300px" style={{ objectFit: 'cover' }} />
-              <span className="ap-badge ap-badge-after">After</span>
-            </div>
+            <BeforeAfterPair item={aboutShot} sizes="(max-width: 900px) 60vw, 300px" className="ap-about-img" />
             <figcaption>{stripPlace(aboutShot.label)}</figcaption>
           </figure>
         </div>
@@ -245,9 +220,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
               {area.landmarks.map((lm) => <li key={lm}>{lm}</li>)}
             </ul>
           )}
-          <div className="ap-map">
-            <iframe src={mapSrc} title={`Map of ${area.name}, ${em.cityName}`} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
-          </div>
+          <AreaMap query={`${area.name}, ${em.cityName}, UAE`} title={`Map of ${area.name}, ${em.cityName}`} />
         </div>
       </section>
     ),
@@ -279,14 +252,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
         <div className="container-x">
           <span className="ap-eyebrow">Services</span>
           <h2 className="ap-h2">{f(t.heading.services)}</h2>
-          <div className="ap-svc-shots">
-            {svcShots.map((s) => (
-              <Link key={s.id} href={`/services#${s.id}`} className="ap-svc-shot">
-                <Image src={s.img} alt={`${s.label} in ${area.name}, ${em.cityName}`} fill sizes="(max-width: 900px) 50vw, 300px" style={{ objectFit: 'cover' }} />
-                <span>{s.label} <IconArrow size={12} /></span>
-              </Link>
-            ))}
-          </div>
+          <ServiceShots place={`${area.name}, ${em.cityName}`} seed={seed} />
           <ul className={`ap-svc ap-svc-${t.services}`}>
             {SERVICE_LINKS.map((s, i) => (
               <li key={s.id}>
@@ -301,56 +267,8 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
         </div>
       </section>
     ),
-    results: (
-      <section className="ap-section ap-results" key="results">
-        <div className="container-x">
-          <span className="ap-eyebrow">Before &amp; after</span>
-          <h2 className="ap-h2">{f(t.heading.results)}</h2>
-          <p className="ap-p ap-narrow-l">Unedited photos from our own recent jobs around the UAE. The same team and kit come to {area.short}.</p>
-          <div className="ap-ba-grid">
-            {results.map((g) => (
-              <figure key={g.id} className="ap-ba">
-                <div className="ap-ba-pair">
-                  <div className="ap-ba-img">
-                    <Image src={g.before} alt={`Before: ${stripPlace(g.label)}`} fill sizes="(max-width: 900px) 50vw, 200px" style={{ objectFit: 'cover' }} />
-                    <span className="ap-badge">Before</span>
-                  </div>
-                  <div className="ap-ba-img">
-                    <Image src={g.after} alt={`After: ${stripPlace(g.label)} by Al Haya Sofa Care`} fill sizes="(max-width: 900px) 50vw, 200px" style={{ objectFit: 'cover' }} />
-                    <span className="ap-badge ap-badge-after">After</span>
-                  </div>
-                </div>
-                <figcaption>{stripPlace(g.label)}</figcaption>
-              </figure>
-            ))}
-          </div>
-          <Link href="/gallery" className="ap-gallery-link">See the full gallery <IconArrow size={13} /></Link>
-        </div>
-      </section>
-    ),
-    videos: (
-      <section className="ap-section ap-videos" key="videos">
-        <div className="container-x ap-videos-grid">
-          <div>
-            <span className="ap-eyebrow">Videos</span>
-            <h2 className="ap-h2">{f(t.heading.videos)}</h2>
-            <p className="ap-p">Short clips filmed by our technicians on the job. Tap play to watch the shampoo and extraction work on real sofas.</p>
-            <a href={waHref} target="_blank" rel="noopener noreferrer" className="ap-btn ap-btn-wa"><IconWhatsApp size={16} /> Send us your sofa photo</a>
-          </div>
-          <div className="ap-reels">
-            {clips.map((v) => {
-              const name = v.src.split('/').pop()!.replace('.mp4', '');
-              return (
-                <figure key={v.src} className="ap-reel">
-                  <video src={v.src} poster={`/videos/posters/${name}.webp`} controls playsInline preload="none" title={v.title} aria-label={v.alt} />
-                  <figcaption>{v.label}</figcaption>
-                </figure>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-    ),
+    results: <ResultsSection key="results" heading={f(t.heading.results)} place={area.short} seed={seed} />,
+    videos: <VideosSection key="videos" heading={f(t.heading.videos)} waHref={waHref} seed={seed} />,
     faq: (
       <section className="ap-section ap-faq" key="faq">
         <div className="container-x">

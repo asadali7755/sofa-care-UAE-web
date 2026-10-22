@@ -1,7 +1,9 @@
 'use client';
 import { useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { ServicesStyle } from '../lib/cityThemes';
+import { photoForService } from '../lib/galleryData';
 
 export interface CityServiceItem { title: string; desc: string }
 
@@ -148,6 +150,11 @@ export default function CityServices({ style, cityName, services }: Props) {
     <div className="cl-bento">
       {services.map((s, i) => (
         <article key={s.title} className={`cl-bento-card reveal ${i === 0 ? 'is-hero' : ''}`}>
+          {i === 0 && (
+            <div className="cl-bento-photo" aria-hidden="true">
+              <Image src={photoForService(s.title)} alt="" fill sizes="(max-width: 900px) 100vw, 600px" style={{ objectFit: 'cover' }} />
+            </div>
+          )}
           <span className="cl-bento-n">{num(i)}</span>
           <h3>{s.title}</h3>
           <p>{s.desc}</p>
