@@ -9,21 +9,35 @@ import { IconArrow, IconWhatsApp } from './Icons';
 import QuoteCallSection from './QuoteCallSection';
 import { getEmirate, getArea } from '../lib/areas';
 import { PHOTOS, fill, heroPhotoFor, themeFor, type AreaSection } from '../lib/areaThemes';
+import { galleryItems, videoResults } from '../lib/galleryData';
 import '../area-pages.css';
 
 const BASE = 'https://sofashampooingdubai.com';
 
 const SERVICE_LINKS = [
-  { id: 'shampooing', label: 'Sofa shampoo' },
-  { id: 'deep-cleaning', label: 'Deep extraction' },
-  { id: 'stain-removal', label: 'Stain removal' },
-  { id: 'leather-cleaning', label: 'Leather care' },
-  { id: 'odor-treatment', label: 'Odour removal' },
-  { id: 'pet-hair', label: 'Pet hair removal' },
-  { id: 'sanitization', label: 'Steam sanitising' },
-  { id: 'velvet-microfiber', label: 'Velvet & microfiber' },
-  { id: 'fabric-protection', label: 'Fabric protection' },
+  { id: 'shampooing', label: 'Sofa shampoo', img: '/shampoo/after.webp' },
+  { id: 'deep-cleaning', label: 'Deep extraction', img: '/fabric-sofa-deep-clean/after.webp' },
+  { id: 'stain-removal', label: 'Stain removal', img: '/home/sofa-stain-removal-dubai.webp' },
+  { id: 'leather-cleaning', label: 'Leather care', img: '/home/leather-sofa-cleaning-dubai.webp' },
+  { id: 'odor-treatment', label: 'Odour removal', img: '/home/sofa-odor-treatment-dubai.webp' },
+  { id: 'pet-hair', label: 'Pet hair removal', img: '/home/pet-hair-removal-sofa-dubai.webp' },
+  { id: 'sanitization', label: 'Steam sanitising', img: '/home/sofa-sanitization-dubai.webp' },
+  { id: 'velvet-microfiber', label: 'Velvet & microfiber', img: '/home/velvet-microfiber-sofa-cleaning.webp' },
+  { id: 'fabric-protection', label: 'Fabric protection', img: '/home/sofa-fabric-protection-dubai.webp' },
 ];
+
+const STEPS = [
+  { t: 'Inspect', d: 'Fabric type checked and a hidden spot tested first.' },
+  { t: 'Pre-treat', d: 'Stains and soiled arms sprayed with a fabric-matched spotter.' },
+  { t: 'Shampoo & extract', d: 'Foam or hot-water wash, then the dirt is pulled out.' },
+  { t: 'Dry & check', d: 'Air movers speed drying and we check the sofa with you.' },
+];
+
+// Portrait clips only; the landscape and square ones look odd in a row of three.
+const AREA_VIDEOS = videoResults.filter((v) => !/quick-result|shampooing-result/.test(v.src));
+
+const pick = <T,>(list: T[], start: number, n: number) => Array.from({ length: n }, (_, i) => list[(start + i) % list.length]);
+const stripPlace = (label: string) => label.split(' — ')[0];
 
 const FACTS = ['Same-day slots', 'Dry in 3–4 hours', 'Open 7 AM – 10 PM', 'Free WhatsApp quote'];
 
@@ -54,6 +68,13 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
     : heroPhotoFor(emirateKey, index, t);
   const proof = PHOTOS[t.proof];
   const [lede, aboutRest] = splitIntro(area.intro);
+  // Stable per-page seed so each area shows a different set of real job photos and clips.
+  const seed = [...slug].reduce((n, ch) => n + ch.charCodeAt(0), 0) + index * 7;
+  const results = pick(galleryItems, seed, 3);
+  const aboutShot = galleryItems[(seed + 8) % galleryItems.length];
+  const clips = pick(AREA_VIDEOS, seed, 3);
+  const svcShots = pick(SERVICE_LINKS, seed, 4);
+  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(`${area.name}, ${em.cityName}, UAE`)}&output=embed`;
 
   const url = `${BASE}/${em.citySlug}/${slug}`;
   const waHref = `https://wa.me/971547199189?text=${encodeURIComponent(`Hi, I need sofa cleaning in ${area.name}, ${em.cityName}.`)}`;
@@ -174,10 +195,23 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
   const sections: Record<AreaSection, ReactNode> = {
     about: aboutRest ? (
       <section className="ap-section ap-about" key="about">
-        <div className="container-x ap-narrow">
-          <span className="ap-eyebrow">About {area.short}</span>
-          <h2 className="ap-h2">{f(t.heading.about)}</h2>
-          <p className="ap-p ap-p-lg">{aboutRest}</p>
+        <div className="container-x ap-about-grid">
+          <div>
+            <span className="ap-eyebrow">About {area.short}</span>
+            <h2 className="ap-h2">{f(t.heading.about)}</h2>
+            <p className="ap-p ap-p-lg">{aboutRest}</p>
+          </div>
+          <figure className="ap-about-shot">
+            <div className="ap-about-img ap-about-img-a">
+              <Image src={aboutShot.before} alt={`Before: ${stripPlace(aboutShot.label)}`} fill sizes="(max-width: 900px) 60vw, 300px" style={{ objectFit: 'cover' }} />
+              <span className="ap-badge">Before</span>
+            </div>
+            <div className="ap-about-img ap-about-img-b">
+              <Image src={aboutShot.after} alt={`After: ${stripPlace(aboutShot.label)} by Al Haya Sofa Care`} fill sizes="(max-width: 900px) 60vw, 300px" style={{ objectFit: 'cover' }} />
+              <span className="ap-badge ap-badge-after">After</span>
+            </div>
+            <figcaption>{stripPlace(aboutShot.label)}</figcaption>
+          </figure>
         </div>
       </section>
     ) : null,
@@ -211,6 +245,9 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
               {area.landmarks.map((lm) => <li key={lm}>{lm}</li>)}
             </ul>
           )}
+          <div className="ap-map">
+            <iframe src={mapSrc} title={`Map of ${area.name}, ${em.cityName}`} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
+          </div>
         </div>
       </section>
     ),
@@ -226,6 +263,15 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
             <p className="ap-p">{area.serviceDetail}</p>
           </div>
         </div>
+        <ol className="container-x ap-steps">
+          {STEPS.map((st, i) => (
+            <li key={st.t}>
+              <span className="ap-step-n">{String(i + 1).padStart(2, '0')}</span>
+              <strong>{st.t}</strong>
+              <span>{st.d}</span>
+            </li>
+          ))}
+        </ol>
       </section>
     ) : null,
     services: (
@@ -233,6 +279,14 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
         <div className="container-x">
           <span className="ap-eyebrow">Services</span>
           <h2 className="ap-h2">{f(t.heading.services)}</h2>
+          <div className="ap-svc-shots">
+            {svcShots.map((s) => (
+              <Link key={s.id} href={`/services#${s.id}`} className="ap-svc-shot">
+                <Image src={s.img} alt={`${s.label} in ${area.name}, ${em.cityName}`} fill sizes="(max-width: 900px) 50vw, 300px" style={{ objectFit: 'cover' }} />
+                <span>{s.label} <IconArrow size={12} /></span>
+              </Link>
+            ))}
+          </div>
           <ul className={`ap-svc ap-svc-${t.services}`}>
             {SERVICE_LINKS.map((s, i) => (
               <li key={s.id}>
@@ -244,6 +298,56 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+    ),
+    results: (
+      <section className="ap-section ap-results" key="results">
+        <div className="container-x">
+          <span className="ap-eyebrow">Before &amp; after</span>
+          <h2 className="ap-h2">{f(t.heading.results)}</h2>
+          <p className="ap-p ap-narrow-l">Unedited photos from our own recent jobs around the UAE. The same team and kit come to {area.short}.</p>
+          <div className="ap-ba-grid">
+            {results.map((g) => (
+              <figure key={g.id} className="ap-ba">
+                <div className="ap-ba-pair">
+                  <div className="ap-ba-img">
+                    <Image src={g.before} alt={`Before: ${stripPlace(g.label)}`} fill sizes="(max-width: 900px) 50vw, 200px" style={{ objectFit: 'cover' }} />
+                    <span className="ap-badge">Before</span>
+                  </div>
+                  <div className="ap-ba-img">
+                    <Image src={g.after} alt={`After: ${stripPlace(g.label)} by Al Haya Sofa Care`} fill sizes="(max-width: 900px) 50vw, 200px" style={{ objectFit: 'cover' }} />
+                    <span className="ap-badge ap-badge-after">After</span>
+                  </div>
+                </div>
+                <figcaption>{stripPlace(g.label)}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <Link href="/gallery" className="ap-gallery-link">See the full gallery <IconArrow size={13} /></Link>
+        </div>
+      </section>
+    ),
+    videos: (
+      <section className="ap-section ap-videos" key="videos">
+        <div className="container-x ap-videos-grid">
+          <div>
+            <span className="ap-eyebrow">Videos</span>
+            <h2 className="ap-h2">{f(t.heading.videos)}</h2>
+            <p className="ap-p">Short clips filmed by our technicians on the job. Tap play to watch the shampoo and extraction work on real sofas.</p>
+            <a href={waHref} target="_blank" rel="noopener noreferrer" className="ap-btn ap-btn-wa"><IconWhatsApp size={16} /> Send us your sofa photo</a>
+          </div>
+          <div className="ap-reels">
+            {clips.map((v) => {
+              const name = v.src.split('/').pop()!.replace('.mp4', '');
+              return (
+                <figure key={v.src} className="ap-reel">
+                  <video src={v.src} poster={`/videos/posters/${name}.webp`} controls playsInline preload="none" title={v.title} aria-label={v.alt} />
+                  <figcaption>{v.label}</figcaption>
+                </figure>
+              );
+            })}
+          </div>
         </div>
       </section>
     ),

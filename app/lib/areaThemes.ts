@@ -7,7 +7,7 @@
 import type { Area } from './areas';
 
 export type AreaHero = 'glass' | 'editorial' | 'bleed' | 'diagonal' | 'spotlight';
-export type AreaSection = 'about' | 'why' | 'places' | 'process' | 'services' | 'faq';
+export type AreaSection = 'about' | 'why' | 'places' | 'process' | 'services' | 'faq' | 'results' | 'videos';
 
 export interface AreaTheme {
   key: string;
@@ -25,7 +25,7 @@ export interface AreaTheme {
   cta: 'band' | 'card' | 'split';
   /** Proof photo used next to the process section. */
   proof: keyof typeof PHOTOS;
-  heading: Record<'about' | 'why' | 'places' | 'process' | 'services' | 'faq' | 'cta', string>;
+  heading: Record<AreaSection | 'cta', string>;
   /** Hero eyebrow + CTA line; {short} {name} {city} {lm} {type} are filled in. */
   eyebrow: string;
   ctaLine: string;
@@ -46,9 +46,11 @@ export const AREA_THEMES: AreaTheme[] = [
   {
     key: 'lagoon', c1: '#0E9F9A', c2: '#5EEAD4', soft: '#E6FAF7', deep: '#042F2E', deep2: '#0B4F4B',
     hero: 'glass', tone: 'dark',
-    order: ['about', 'why', 'places', 'process', 'services', 'faq'],
+    order: ['about', 'results', 'why', 'places', 'process', 'videos', 'services', 'faq'],
     places: 'chips', services: 'bento', faq: 'accordion', cta: 'band', proof: 'coffeeSteps',
     heading: {
+      results: 'Before & after: sofa shampoo results',
+      videos: 'Watch the team at work',
       about: 'Sofa cleaning in {short}, done at your door',
       why: 'Why sofas in {short} need a deep clean',
       places: 'Sofa cleaning near {lm} and across {short}',
@@ -63,9 +65,11 @@ export const AREA_THEMES: AreaTheme[] = [
   {
     key: 'saffron', c1: '#E8730F', c2: '#FDBA74', soft: '#FFF4E8', deep: '#3B1D06', deep2: '#6B3410',
     hero: 'editorial', tone: 'light',
-    order: ['about', 'process', 'why', 'services', 'places', 'faq'],
+    order: ['about', 'process', 'results', 'why', 'services', 'videos', 'places', 'faq'],
     places: 'grid', services: 'list', faq: 'cards', cta: 'card', proof: 'leatherSteps',
     heading: {
+      results: 'Real stains, real results',
+      videos: 'Sofa cleaning clips from recent jobs',
       about: 'Your {short} sofa, cleaned properly',
       why: 'What {short} homes do to a sofa',
       places: 'Where we work in {name}',
@@ -80,9 +84,11 @@ export const AREA_THEMES: AreaTheme[] = [
   {
     key: 'indigo', c1: '#6366F1', c2: '#C7D2FE', soft: '#EEF0FF', deep: '#0F1033', deep2: '#262A6B',
     hero: 'bleed', tone: 'dark',
-    order: ['about', 'services', 'why', 'process', 'places', 'faq'],
+    order: ['about', 'services', 'results', 'why', 'process', 'videos', 'places', 'faq'],
     places: 'marquee', services: 'pills', faq: 'columns', cta: 'split', proof: 'chaise',
     heading: {
+      results: 'Deep cleaning before & after photos',
+      videos: 'See the extraction in action',
       about: 'At-home sofa cleaning across {short}',
       why: '{city} dust meets {short} sofas',
       places: '{short} streets and buildings we cover',
@@ -97,9 +103,11 @@ export const AREA_THEMES: AreaTheme[] = [
   {
     key: 'rose', c1: '#E11D48', c2: '#FDA4AF', soft: '#FFF1F3', deep: '#3F0A18', deep2: '#7A1430',
     hero: 'diagonal', tone: 'light',
-    order: ['about', 'why', 'process', 'places', 'services', 'faq'],
+    order: ['about', 'results', 'why', 'process', 'videos', 'places', 'services', 'faq'],
     places: 'chips', services: 'bento', faq: 'accordion', cta: 'card', proof: 'leatherAfter',
     heading: {
+      results: 'Sofa stain removal results',
+      videos: 'Short videos from real sofa cleans',
       about: 'Deep sofa shampoo for {short} homes',
       why: 'The real reasons {short} sofas get dirty',
       places: 'Covering every corner of {short}',
@@ -114,9 +122,11 @@ export const AREA_THEMES: AreaTheme[] = [
   {
     key: 'emerald', c1: '#059669', c2: '#FCD34D', soft: '#ECFDF5', deep: '#022C22', deep2: '#065F46',
     hero: 'spotlight', tone: 'dark',
-    order: ['about', 'places', 'why', 'services', 'process', 'faq'],
+    order: ['about', 'videos', 'places', 'why', 'results', 'services', 'process', 'faq'],
     places: 'grid', services: 'list', faq: 'columns', cta: 'band', proof: 'coffeeSteps',
     heading: {
+      results: 'Upholstery cleaning before & after',
+      videos: 'Sofa cleaning in motion',
       about: 'Professional sofa cleaning in {name}',
       why: 'Life in {short} and your sofa',
       places: 'Sofa cleaning near me in {short}',
