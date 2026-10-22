@@ -62,8 +62,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "Dubai Coverage"
       },
       {
-        "n": "Certified",
-        "l": "Team"
+        "n": "7 AM–10 PM",
+        "l": "Open daily"
       }
     ],
     "services": [
@@ -142,8 +142,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "Abu Dhabi Coverage"
       },
       {
-        "n": "Certified",
-        "l": "Team"
+        "n": "7 AM–10 PM",
+        "l": "Open daily"
       }
     ],
     "services": [
@@ -175,7 +175,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
     "key": "sharjah",
     "cityName": "Sharjah",
     "tag": "Sharjah Service",
-    "heroPara": "Professional sofa deep shampoo & steam cleaning across all Sharjah areas. Al Haya Sofa Care UAE brings certified technicians and industrial equipment directly to your home — no fuss, no transport.",
+    "heroPara": "Professional sofa deep shampoo & steam cleaning across all Sharjah areas. Al Haya Sofa Care UAE brings trained technicians and professional equipment directly to your home, so nothing needs to be moved or transported.",
     "whyParas": [
       "From Al Nahda to Muwaileh and University City — Al Haya Sofa Care UAE serves all of Sharjah with professional sofa cleaning that goes deep beyond the surface. Our team arrives equipped with industrial shampoo machines and steam cleaners, ready to restore your sofa.",
       "Whether it's a fabric sofa caked in Sharjah's fine desert dust, a leather sofa needing conditioning, or stubborn pet stains — our advanced 2-in-1 shampoo and steam method tackles every case, leaving your sofa fresh, hygienic and looking new."
@@ -187,7 +187,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       "Eco-friendly, child & pet safe products",
       "Leather, fabric, velvet & microfiber specialists",
       "Fast drying — ready in 2 to 4 hours",
-      "100% satisfaction — we do not leave until done"
+      "You check the result with the technician before we leave"
     ],
     "areas": [
       "Al Nahda",
@@ -220,8 +220,8 @@ export const CITY_CONTENT: Record<string, CityContent> = {
         "l": "Sharjah Coverage"
       },
       {
-        "n": "Certified",
-        "l": "Team"
+        "n": "7 AM–10 PM",
+        "l": "Open daily"
       }
     ],
     "services": [
@@ -252,145 +252,293 @@ export const CITY_CONTENT: Record<string, CityContent> = {
   "ajman": {
     "key": "ajman",
     "cityName": "Ajman",
-    "tag": "Ajman Service",
-    "heroPara": "Expert sofa deep shampoo & steam cleaning in Ajman. Al Haya Sofa Care UAE comes to your home with full professional equipment — affordable, fast, and completely thorough.",
+    "tag": "Ajman · next door to our base",
+    "heroPara": "Ajman is a short drive from our Al Nahda base, so same-day sofa shampoo is easier to arrange here than almost anywhere else. From Corniche apartments to the villas of Al Zorah, Al Helio and Al Zahya, we clean fabric, leather and velvet sofas at your door.",
     "whyParas": [
-      "Al Haya Sofa Care UAE proudly serves Ajman with the same high-standard professional sofa cleaning used across Dubai and Sharjah. Our mobile team arrives equipped with industrial shampoo machines and high-temperature steam cleaners, ready to restore your sofa to like-new condition.",
-      "Our 2-in-1 deep shampoo and steam cleaning method removes dust mites, bacteria, stubborn stains and unpleasant odors — all in a single visit. We handle all sofa types including fabric, leather, velvet, microfiber and suede."
+      "Ajman homes range from compact apartments on the Corniche and in Al Nuaimiya to large inland villas in Al Helio, Al Yasmeen and Al Zahya, so one cleaning method never fits every sofa. Coastal flats fight sea humidity and musty smells; inland villas deal with blown-in sand and majlis seating used every day by big families.",
+      "Because we are based just across the border in Al Nahda, our team can usually reach Ajman within the day, plan several rooms in one visit and come back quickly if anything needs a touch-up."
     ],
-    "areasIntro": null,
+    "areasIntro": "We have dedicated pages for the Ajman communities we visit most, from the Corniche to the new inland villa districts.",
     "bullets": [
-      "Mobile team comes to your home in Ajman",
-      "All sofa types handled with expert care",
-      "Stain removal for coffee, food, ink and pet stains",
-      "Odor elimination — not just masked",
-      "Eco-friendly, non-toxic products used",
-      "Affordable rates — transparent pricing, no hidden costs"
+      "Same-day slots on most days from our Al Nahda base",
+      "Majlis sets, floor cushions and big villa sectionals",
+      "Coastal-apartment method for humidity and musty odours",
+      "Velvet, chenille and leather handled with separate methods",
+      "Pet and child stains pre-treated before the main wash",
+      "Free quote on WhatsApp before we book"
     ],
     "areas": [
-      "Al Nuaimia",
+      "Al Nuaimiya",
       "Al Rashidiya",
       "Al Jurf",
-      "Al Hamidiya",
-      "Emirates City",
-      "Al Bustan",
-      "Al Mowaihat",
-      "Al Rumailah",
-      "Al Zahra",
-      "Ajman Downtown",
+      "Ajman Corniche",
       "Al Helio",
-      "Corniche Ajman"
+      "Al Zorah",
+      "Al Yasmeen",
+      "Al Zahya",
+      "Ajman Uptown",
+      "Al Mowaihat",
+      "Al Hamidiya",
+      "Al Rawda",
+      "Emirates City",
+      "Al Rumailah"
     ],
     "stats": [
       {
-        "n": "Affordable",
-        "l": "Pricing"
-      },
-      {
         "n": "Same Day",
-        "l": "Service"
+        "l": "On most days"
       },
       {
-        "n": "12+ Areas",
-        "l": "Ajman Coverage"
+        "n": "14 Areas",
+        "l": "Across Ajman"
       },
       {
-        "n": "Certified",
-        "l": "Team"
+        "n": "7 AM–10 PM",
+        "l": "Open daily"
+      },
+      {
+        "n": "Free",
+        "l": "WhatsApp quote"
       }
     ],
     "services": [
       {
-        "title": "Sofa Deep Cleaning Ajman",
-        "desc": "Industrial extraction removes embedded dust, allergens and bacteria from every sofa type across Ajman.",
+        "title": "Villa & majlis cleaning in Ajman",
+        "desc": "Full majlis sets, floor cushions and large sectionals cleaned room by room in Al Helio, Al Yasmeen and Al Zahya villas.",
         "color": "var(--accent)"
       },
       {
-        "title": "Sofa Shampooing Ajman",
-        "desc": "Professional foam shampoo treatment lifts deep grime and stains. Fast-dry formula — ready in 2–4 hours.",
+        "title": "Apartment sofa shampoo",
+        "desc": "Compact machines and a quick-dry shampoo for Corniche and Al Nuaimiya flats, with no water connection needed.",
         "color": "#1D6A5B"
       },
       {
-        "title": "Pet Hair Removal Ajman",
-        "desc": "Specialist vacuum and roller treatment removes embedded pet hair from all cushions and seams.",
-        "color": "#1D6A5B"
+        "title": "Odour and humidity treatment",
+        "desc": "Deep extraction removes the moisture and residue behind musty smells in sea-facing Ajman homes.",
+        "color": "#0891B2"
       },
       {
-        "title": "Sofa Sanitization Ajman",
-        "desc": "Steam disinfection kills bacteria and germs. Safe for children and pets.",
-        "color": "#059669"
+        "title": "Leather and velvet care",
+        "desc": "Leather is cleaned and conditioned; velvet and chenille get a low-moisture method that protects the pile.",
+        "color": "#8B5CF6"
       }
     ],
     "wa": "Hi%2C%20I%20need%20sofa%20cleaning%20in%20Ajman.",
-    "ctaText": "Same-day service available. Call or WhatsApp now."
+    "ctaText": "Book a same-day sofa clean anywhere in Ajman."
+  },
+  "ras-al-khaimah": {
+    "key": "ras-al-khaimah",
+    "cityName": "Ras Al Khaimah",
+    "tag": "Ras Al Khaimah · coast to mountains",
+    "heroPara": "Sofa cleaning in Ras Al Khaimah covers beach resorts on Al Marjan Island, lagoon homes in Mina Al Arab, golf villas in Al Hamra Village and family houses in Al Nakheel and Khuzam. Our team brings shampoo, extraction and leather-care equipment to your door.",
+    "whyParas": [
+      "Ras Al Khaimah is two climates in one emirate. Along the coast in Al Hamra Village, Mina Al Arab and Al Marjan Island, sea air keeps humidity high and sofas can start to smell damp. Inland towards Khuzam, Al Dhait and the roads to Jebel Jais, wind carries dust off the mountains and open land into every room.",
+      "Many RAK homes are holiday villas or apartments that sit empty for weeks and then need to be ready for guests, while family homes in the older districts see daily heavy use. We plan each visit around that: a fast-dry clean before guests arrive, or a thorough deep wash for a sofa that works every day."
+    ],
+    "areasIntro": "We cover the coastal communities and the established family districts of Ras Al Khaimah.",
+    "bullets": [
+      "Holiday-home cleans timed to finish before check-in",
+      "Fast-dry extraction for humid coastal apartments",
+      "Dust-heavy inland villas cleaned room by room",
+      "Leather conditioning against sun and salt air",
+      "Optional fabric protector for light upholstery",
+      "Free quote on WhatsApp before we drive out"
+    ],
+    "areas": [
+      "Al Hamra Village",
+      "Mina Al Arab",
+      "Al Marjan Island",
+      "RAK City",
+      "Al Nakheel",
+      "Khuzam",
+      "Al Dhait",
+      "Julphar",
+      "Al Qusaidat",
+      "Dafan Al Khor",
+      "Al Rams",
+      "Al Jazeera Al Hamra"
+    ],
+    "stats": [
+      {
+        "n": "12 Areas",
+        "l": "Across RAK"
+      },
+      {
+        "n": "Holiday Homes",
+        "l": "Pre-guest cleans"
+      },
+      {
+        "n": "7 AM–10 PM",
+        "l": "Open daily"
+      },
+      {
+        "n": "Free",
+        "l": "WhatsApp quote"
+      }
+    ],
+    "services": [
+      {
+        "title": "Holiday-home sofa refresh",
+        "desc": "Sofas in Al Marjan Island and Mina Al Arab apartments cleaned and dried in time for your next guests.",
+        "color": "var(--accent)"
+      },
+      {
+        "title": "Coastal humidity clean",
+        "desc": "Hot-water extraction with a fast-dry finish removes the damp, salty residue that coastal air leaves in foam.",
+        "color": "#B4532A"
+      },
+      {
+        "title": "Villa deep shampoo",
+        "desc": "Large sectionals and majlis seating in Khuzam, Al Nakheel and Al Dhait homes, several rooms in one visit.",
+        "color": "#1D6A5B"
+      },
+      {
+        "title": "Leather sofa conditioning",
+        "desc": "pH-safe cleaning and conditioning that keeps leather supple through hot, bright RAK summers.",
+        "color": "#8B5CF6"
+      }
+    ],
+    "wa": "Hi%2C%20I%20need%20sofa%20cleaning%20in%20Ras%20Al%20Khaimah.",
+    "ctaText": "Tell us your RAK community and sofa size on WhatsApp for a free quote."
+  },
+  "umm-al-quwain": {
+    "key": "umm-al-quwain",
+    "cityName": "Umm Al Quwain",
+    "tag": "Umm Al Quwain · quiet coast, family homes",
+    "heroPara": "Umm Al Quwain is the calmest emirate on our map: villa streets in Al Salamah and Al Raudah, homes around the old town and marina, and farm houses inland at Falaj Al Mualla. We bring at-home sofa shampoo, steam cleaning and stain removal to all of them.",
+    "whyParas": [
+      "Most Umm Al Quwain homes are spacious family villas, many with a majlis and several sofa sets that rarely all get cleaned at once. The emirate sits between the lagoon and the open sea, so humidity rises in the evenings and fabric holds on to it, while sand from the open plots around new neighbourhoods finds its way indoors.",
+      "Because UAQ is quieter and more spread out than its neighbours, we group bookings and confirm the time with you the day before. That way one visit can cover the family room, the majlis and the bedroom chairs without rushing."
+    ],
+    "areasIntro": "From the old town to the inland farms, these are the Umm Al Quwain areas we cover.",
+    "bullets": [
+      "Whole-house visits: family room, majlis and chairs together",
+      "Visit time confirmed with you the day before",
+      "Gentle method for embroidered and velvet majlis fabric",
+      "Humidity and musty-smell treatment for lagoon-side homes",
+      "Eco-friendly products, rinsed out during extraction",
+      "Free quote on WhatsApp"
+    ],
+    "areas": [
+      "UAQ Old Town",
+      "UAQ Marina",
+      "Al Salamah",
+      "Al Raudah",
+      "Al Ramlah",
+      "Al Dar Al Baida",
+      "Al Humrah",
+      "Falaj Al Mualla"
+    ],
+    "stats": [
+      {
+        "n": "8 Areas",
+        "l": "Across UAQ"
+      },
+      {
+        "n": "Whole House",
+        "l": "One visit"
+      },
+      {
+        "n": "7 AM–10 PM",
+        "l": "Open daily"
+      },
+      {
+        "n": "Free",
+        "l": "WhatsApp quote"
+      }
+    ],
+    "services": [
+      {
+        "title": "Majlis cleaning in UAQ",
+        "desc": "Floor cushions, back rests and majlis sofas cleaned with a gentle method that protects colour and embroidery.",
+        "color": "var(--accent)"
+      },
+      {
+        "title": "Family-room deep shampoo",
+        "desc": "Daily-use sofas in Al Salamah and Al Raudah villas washed and extracted to remove grime, sweat and odours.",
+        "color": "#1D6A5B"
+      },
+      {
+        "title": "Lagoon-side odour removal",
+        "desc": "Extraction and fast drying for homes near the lagoon and marina, where evening humidity leaves fabric smelling damp.",
+        "color": "#0891B2"
+      },
+      {
+        "title": "Stain removal",
+        "desc": "Coffee, tea, food and ink stains pre-treated with fabric-matched spotters before the main clean.",
+        "color": "#FF5A3C"
+      }
+    ],
+    "wa": "Hi%2C%20I%20need%20sofa%20cleaning%20in%20Umm%20Al%20Quwain.",
+    "ctaText": "Send your UAQ area and a photo of the sofa on WhatsApp for a free quote."
   },
   "fujairah": {
     "key": "fujairah",
     "cityName": "Fujairah",
-    "tag": "Fujairah / East Coast Service",
-    "heroPara": "Professional sofa deep shampoo & steam cleaning across Fujairah and the east coast, including Dibba. Al Haya Sofa Care UAE brings certified technicians and industrial equipment directly to your home.",
+    "tag": "Fujairah · the east coast",
+    "heroPara": "Sofa cleaning on the east coast, from Fujairah City to Dibba and the beach resorts near Al Aqah. Mountain dust and sea humidity are both hard on upholstery here, and we bring shampoo, extraction and odour treatment to your villa or apartment.",
     "whyParas": [
-      "From Fujairah City to Dibba on the Sharjah border — Al Haya Sofa Care UAE serves the east coast with the same professional sofa cleaning we deliver across the rest of the UAE. Our team arrives equipped with industrial shampoo machines and steam cleaners.",
-      "East-coast humidity and mountain dust are tougher on upholstery than the drier western emirates, so we use an antimicrobial treatment for musty odors alongside our standard shampoo and steam process — especially useful for villas and holiday homes that sit empty between visits."
+      "The Hajar mountains sit right behind Fujairah's coast, so homes get fine dust from the hills and damp air from the sea in the same week. Fabric sofas in sea-facing apartments start to smell musty; villas near the wadis collect dust in every seam.",
+      "Holiday homes along the coast near Dibba and Al Aqah often stand empty between stays and need a full refresh before guests arrive. For east-coast visits we confirm the address and access in advance and plan enough drying time before we leave."
     ],
-    "areasIntro": null,
+    "areasIntro": "We cover Fujairah City, Dibba and the coast between them.",
     "bullets": [
-      "Deep shampoo + steam cleaning in one visit",
-      "Regular scheduled route covering the east coast",
-      "Eco-friendly, child & pet safe products",
-      "Leather, fabric, velvet & microfiber specialists",
-      "Antimicrobial treatment for humidity-related odors",
-      "100% satisfaction — we do not leave until done"
+      "Musty-odour treatment for sea-facing homes",
+      "Holiday-home refresh before guests arrive",
+      "Mountain dust lifted with deep extraction",
+      "Leather conditioning against sun and humidity",
+      "Address and access confirmed before the trip",
+      "Free quote on WhatsApp"
     ],
     "areas": [
       "Fujairah City",
       "Dibba",
       "Al Faseel",
-      "Khor Fakkan",
-      "Al Gurfa",
-      "Mirbah"
+      "Mirbah",
+      "Al Aqah",
+      "Al Gurfa"
     ],
     "stats": [
       {
-        "n": "Affordable",
-        "l": "Pricing"
-      },
-      {
         "n": "East Coast",
-        "l": "Regular Route"
+        "l": "Fujairah to Dibba"
       },
       {
         "n": "6 Areas",
-        "l": "Fujairah Coverage"
+        "l": "Covered"
       },
       {
-        "n": "Certified",
-        "l": "Team"
+        "n": "7 AM–10 PM",
+        "l": "Open daily"
+      },
+      {
+        "n": "Free",
+        "l": "WhatsApp quote"
       }
     ],
     "services": [
       {
-        "title": "Sofa Deep Cleaning Fujairah",
-        "desc": "Industrial extraction removes embedded dust, allergens and stains from all sofa types across the east coast.",
+        "title": "Sofa deep cleaning in Fujairah",
+        "desc": "Hot-water extraction pulls mountain dust and allergens out of fabric sofas in Fujairah City villas.",
         "color": "var(--accent)"
       },
       {
-        "title": "Sofa Shampooing Fujairah",
-        "desc": "pH-balanced foam shampoo lifts deep grime. Scheduled east-coast route including Dibba.",
+        "title": "Odour and humidity treatment",
+        "desc": "Removes the damp, musty smell that sea air leaves in sofas along the coast from Fujairah to Dibba.",
         "color": "#0891B2"
       },
       {
-        "title": "Leather Sofa Cleaning Fujairah",
-        "desc": "Specialist pH-safe leather conditioning and protective coat. Prevents cracking in coastal humidity.",
+        "title": "Leather sofa care",
+        "desc": "pH-safe cleaning and conditioning that stops leather cracking in heat and coastal humidity.",
         "color": "#8B5CF6"
       },
       {
-        "title": "Odor & Antimicrobial Treatment",
-        "desc": "Neutralises musty, humidity-related odors at the source — ideal for villas and holiday homes.",
+        "title": "Holiday-home refresh",
+        "desc": "A full clean for resort apartments and villas near Al Aqah and Dibba, finished before check-in.",
         "color": "#FF5A3C"
       }
     ],
     "wa": "Hi%2C%20I%20need%20sofa%20cleaning%20in%20Fujairah.",
-    "ctaText": "Regular east-coast route. Call or WhatsApp now."
+    "ctaText": "Planning an east-coast visit? Send your area on WhatsApp for a free quote."
   }
 };

@@ -87,9 +87,10 @@ export default function Navbar() {
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
         borderBottom: `1px solid ${scrolled ? 'var(--line)' : 'transparent'}`,
-        background: scrolled ? 'rgba(243,247,244,0.95)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(16px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
+        // Frosted even at the top so links stay readable over dark heroes.
+        background: scrolled ? 'rgba(243,247,244,0.95)' : 'rgba(243,247,244,0.82)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
         transition: 'background 0.3s, border-color 0.3s',
       }}>
         <div style={{

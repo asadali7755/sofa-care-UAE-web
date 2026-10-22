@@ -281,7 +281,7 @@ export default function CityLanding(p: CityLandingProps) {
         </div>
       </section>
 
-      <QuoteCallSection />
+      <QuoteCallSection areaName={p.cityName} />
 
       {/* ───────── OTHER EMIRATES ───────── */}
       <section className="cl-section-sm cl-others">
