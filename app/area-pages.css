@@ -243,6 +243,20 @@
 .sp-why-img { position: relative; aspect-ratio: 3/2; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.18); }
 .sp-why-fig figcaption { margin-top: 10px; font-size: 12.5px; color: var(--ap-muted); font-style: italic; }
 .ap-t-indigo .ap-why .sp-why-fig figcaption { color: rgba(255,255,255,.7); }
+.sp-note-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; margin-top: 26px; }
+.sp-note-row .sp-note { margin-top: 0; }
+.sp-note-fig { margin: 0; }
+@media (max-width: 900px) { .sp-note-row { grid-template-columns: 1fr; } }
+
+/* Arabic (RTL) pages */
+.ap-rtl { font-family: 'Segoe UI', Tahoma, 'Noto Sans Arabic', Arial, sans-serif; }
+.ap-rtl .ap-h1, .ap-rtl .ap-h2, .ap-rtl .ap-eyebrow, .ap-rtl .ap-tag, .ap-rtl .ap-facts li, .ap-rtl .ap-crumb { font-family: inherit; letter-spacing: 0; text-transform: none; }
+.ap-rtl em { font-style: normal; font-family: inherit; }
+.ap-rtl .ap-h1 { line-height: 1.25; }
+.ap-rtl .ap-why-text { border-left: 0; padding-left: 0; border-right: 3px solid var(--c1); padding-right: 24px; }
+.ap-rtl .sp-note { border-left: 1px solid color-mix(in oklab, var(--c1) 22%, transparent); border-right: 4px solid var(--c1); }
+.ap-rtl .ap-btn svg, .ap-rtl .ap-gallery-link svg { transform: scaleX(-1); }
+.ap-rtl .sp-card strong::before { content: "✓ "; }
 
 /* emirate hub bento: photo behind the dark lead card */
 .cl-bento-photo { position: absolute; inset: 0; z-index: 0; }

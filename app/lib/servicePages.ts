@@ -26,6 +26,8 @@ export interface ServicePageData {
   steps: { heading: string; items: { t: string; d: string }[] };
   table?: { heading: string; intro: string; cols: [string, string, string]; rows: [string, string, string][] };
   honest: { heading: string; text: string };
+  /** Illustration shown next to the honest note (always captioned as an illustration). */
+  noteImage?: { src: string; alt: string; caption: string };
   resultsHeading: string;
   galleryCats: string[];
   videoSrcs: string[];
@@ -86,6 +88,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       heading: 'What we will tell you before we start',
       text: 'Cleaning removes dirt, oils and many marks, but it cannot reverse damage. Cracks, peeling, worn colour and some ink or dye marks may soften or lighten rather than disappear. If a mark is damage rather than dirt, the technician will show you and explain what to expect before starting.',
     },
+    noteImage: { src: '/home/leather-seat-worn-vs-cleaned-conditioned.webp', alt: 'Dry, scuffed brown leather seat next to the same seat cleaned and conditioned', caption: 'Illustration: a dry, scuffed leather seat and the same seat cleaned and conditioned. Results depend on the condition of the leather.' },
     resultsHeading: 'Leather sofa before & after',
     galleryCats: ['Leather'],
     videoSrcs: ['/videos/sofa-deep-cleaning-result-dubai-1.mp4', '/videos/couch-cleaning-before-after-dubai-7.mp4', '/videos/single-seat-sofa-cleaning-dubai.mp4'],
@@ -151,6 +154,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       heading: 'Steam or shampoo?',
       text: 'Steam is best for freshening and sanitising fabric; shampoo is better at breaking down grease and heavy grime. Many sofas get both in the same visit. If your sofa needs one more than the other, the technician will explain why before starting.',
     },
+    noteImage: { src: '/home/extraction-wand-grey-fabric-sofa.webp', alt: 'Extraction wand spraying and lifting dirt from a grey fabric sofa seat', caption: 'Illustration: an extraction wand lifting dirt out of a grey fabric sofa.' },
     resultsHeading: 'Fabric sofa steam & deep clean results',
     galleryCats: ['Sofa Cleaning', 'Shampooing'],
     videoSrcs: ['/videos/sofa-steam-cleaning-result-dubai-6.mp4', '/videos/sofa-sanitization-result-dubai-8.mp4', '/videos/fabric-sofa-deep-clean-dubai-5.mp4'],
@@ -228,6 +232,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       heading: 'Can every stain be removed?',
       text: 'Most fresh stains come out fully. Old, set-in, dye-based or bleach marks may only lighten, and a stain that has damaged the fabric cannot be reversed. We look at your photo and tell you honestly what to expect before you book.',
     },
+    noteImage: { src: '/home/grey-sofa-water-ring-stain-vs-clean.webp', alt: 'Grey fabric sofa seat with a ring stain next to the same seat after cleaning', caption: 'Illustration: a ring stain on a grey fabric seat and the same seat after the whole panel is cleaned.' },
     resultsHeading: 'Sofa stain removal before & after',
     galleryCats: ['Stain Removal'],
     videoSrcs: ['/videos/sofa-stain-removal-before-after-dubai.mp4', '/videos/upholstery-cleaning-before-after-dubai-3.mp4', '/videos/couch-cleaning-before-after-dubai-7.mp4'],

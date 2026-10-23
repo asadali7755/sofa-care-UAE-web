@@ -143,9 +143,19 @@ export default function ServicePage({ slug }: { slug: string }) {
             ))}
           </ol>
           <div className="container-x">
-            <div className="sp-note">
-              <strong>{p.honest.heading}</strong>
-              <p>{p.honest.text}</p>
+            <div className={p.noteImage ? 'sp-note-row' : undefined}>
+              <div className="sp-note">
+                <strong>{p.honest.heading}</strong>
+                <p>{p.honest.text}</p>
+              </div>
+              {p.noteImage && (
+                <figure className="sp-why-fig sp-note-fig">
+                  <div className="sp-why-img">
+                    <Image src={p.noteImage.src} alt={p.noteImage.alt} fill sizes="(max-width: 900px) 100vw, 520px" style={{ objectFit: 'cover' }} />
+                  </div>
+                  <figcaption>{p.noteImage.caption}</figcaption>
+                </figure>
+              )}
             </div>
           </div>
         </section>

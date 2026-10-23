@@ -52,7 +52,10 @@ export const metadata: Metadata = {
     'microfiber sofa deep cleaning Dubai',
     'L-shaped sofa deep cleaning Dubai',
   ],
-  alternates: { canonical: 'https://sofashampooingdubai.com/sofa-cleaning-dubai' },
+  alternates: {
+    canonical: 'https://sofashampooingdubai.com/sofa-cleaning-dubai',
+    languages: { 'en-AE': '/sofa-cleaning-dubai', 'ar-AE': '/ar/sofa-cleaning-dubai', 'x-default': '/sofa-cleaning-dubai' },
+  },
   openGraph: {
     title: 'Sofa Cleaning Dubai | Al Haya Sofa Care UAE',
     description: 'Professional sofa deep shampoo & steam cleaning in Dubai. At-home service, same-day available, eco-friendly. Affordable rates. Call +971547199189.',

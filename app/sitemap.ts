@@ -35,6 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Core pages
     { url: baseUrl, lastModified, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${baseUrl}/services`, lastModified, changeFrequency: 'monthly', priority: 0.9 },
+    // Arabic pages
+    { url: `${baseUrl}/ar`, lastModified: SERVICE_PAGES_ADDED, changeFrequency: 'monthly' as const, priority: 0.85 },
+    { url: `${baseUrl}/ar/sofa-cleaning-dubai`, lastModified: SERVICE_PAGES_ADDED, changeFrequency: 'monthly' as const, priority: 0.85 },
     // Dedicated service pages
     ...SERVICE_PAGES.map((p) => ({ url: `${baseUrl}/${p.slug}`, lastModified: SERVICE_PAGES_ADDED, changeFrequency: 'monthly' as const, priority: 0.9 })),
     { url: `${baseUrl}/contact`, lastModified, changeFrequency: 'monthly', priority: 0.9 },

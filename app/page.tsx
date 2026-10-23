@@ -14,6 +14,13 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollRevealInit from './components/ScrollRevealInit';
 
+import type { Metadata } from 'next';
+
+// Homepage keeps the root title/description; this adds the Arabic hreflang pair.
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://sofashampooingdubai.com', languages: { 'en-AE': '/', 'ar-AE': '/ar', 'x-default': '/' } },
+};
+
 export default function Home() {
   return (
     <>

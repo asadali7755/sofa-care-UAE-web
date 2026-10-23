@@ -76,6 +76,7 @@ export default function Footer() {
               <a href="mailto:info@sofashampooingdubai.com" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>info@sofashampooingdubai.com</a>
               <a href="https://www.google.com/maps/place/AL+HAYA+cleaning+services/@25.2959258,55.3600450,17z" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>View on Google Maps</a>
               <a href="https://search.google.com/local/writereview?placeid=ChIJg1xl_sZdXz4RV6mRi-8LeQI" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontSize: 13, fontWeight: 600 }}>★ Review Us on Google</a>
+              <Link href="/ar" hrefLang="ar" lang="ar" style={{ color: 'var(--fg-muted)', fontSize: 13, fontWeight: 600 }}>العربية — تنظيف الكنب</Link>
               <div style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Dubai, UAE</div>
               <div style={{ color: 'var(--fg-muted)', fontSize: 13 }}>Open 24 hours, Saturday–Thursday</div>
             </div>
