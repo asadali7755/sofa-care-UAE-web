@@ -20,6 +20,8 @@ export interface ServicePageData {
   heroImage: { src: string; alt: string };
   facts: string[];
   why: { heading: string; paras: string[] };
+  /** Illustrative image beside the 'why' text; caption says so when it shows a before/after. */
+  whyImage?: { src: string; alt: string; caption?: string };
   covers: { heading: string; intro: string; items: { t: string; d: string }[] };
   steps: { heading: string; items: { t: string; d: string }[] };
   table?: { heading: string; intro: string; cols: [string, string, string]; rows: [string, string, string][] };
@@ -47,7 +49,8 @@ export const SERVICE_PAGES: ServicePageData[] = [
     h1Lead: 'Leather Sofa Cleaning',
     h1Em: '& Conditioning',
     lede: 'We clean and condition leather sofas at your home across the UAE — lifting the body oils, dust and marks that build up on headrests and armrests, then putting back the moisture that air-conditioning draws out.',
-    heroImage: { src: '/home/leather-sofa-cleaning-dubai.webp', alt: 'Technician conditioning a leather sofa at home in Dubai' },
+    heroImage: { src: '/home/brown-leather-chesterfield-sofa-dubai-penthouse.webp', alt: 'Brown leather Chesterfield sofa in a bright Dubai penthouse living room' },
+    whyImage: { src: '/home/leather-armrest-grimy-vs-conditioned.webp', alt: 'Leather sofa armrest darkened by body oils and dirt next to a cleaned, conditioned armrest', caption: 'Illustration: a grimy leather armrest and the same armrest cleaned and conditioned.' },
     facts: ['Leather-safe products', 'Patch test first', 'Sit on it the same day', 'Free WhatsApp quote'],
     why: {
       heading: 'Why leather sofas in the UAE need regular care',
@@ -111,7 +114,8 @@ export const SERVICE_PAGES: ServicePageData[] = [
     h1Lead: 'Sofa Steam Cleaning',
     h1Em: 'at Home',
     lede: 'High-temperature steam and hot-water extraction for fabric sofas, majlis seating and mattresses across the UAE — to refresh the fabric, lift trapped dust and reduce dust mites and odours, without moving the furniture.',
-    heroImage: { src: '/home/sofa-sanitization-dubai.webp', alt: 'Technician steam-cleaning a patterned fabric sofa at home' },
+    heroImage: { src: '/home/steam-extraction-tool-fabric-sofa-close-up.webp', alt: 'Steam and extraction tool cleaning a beige fabric sofa seat' },
+    whyImage: { src: '/home/steam-cleaning-grey-sectional-sofa.webp', alt: 'Steam cleaning machine working on a grey fabric sectional sofa at home' },
     facts: ['Dry in 3–4 hours', 'Eco-friendly products', 'No furniture moving', 'Free WhatsApp quote'],
     why: {
       heading: 'When steam is the right choice',
@@ -176,6 +180,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     h1Em: 'at Home',
     lede: 'Coffee, karak tea, food, ink and pet accidents — we treat sofa stains at your home across the UAE, matching the treatment to both the stain and the fabric so the mark lifts without leaving a ring.',
     heroImage: { src: '/home/coffee-stain-fabric-sofa-cushion.webp', alt: 'Close-up of a coffee stain soaked into a linen fabric sofa cushion' },
+    whyImage: { src: '/home/white-sofa-coffee-stain-vs-clean.webp', alt: 'White fabric sofa seat with a coffee spill next to the same seat clean', caption: 'Illustration: a fresh coffee spill and the same seat after stain removal.' },
     facts: ['Fabric & leather', 'Same-day slots', 'No rings or bleaching', 'Free WhatsApp quote'],
     why: {
       heading: 'Why sofa stains need the right treatment',

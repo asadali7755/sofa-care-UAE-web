@@ -39,10 +39,10 @@ export const servicePhotos = [
   { id: 'shampooing', label: 'Sofa shampoo', img: '/shampoo/after.webp' },
   { id: 'deep-cleaning', label: 'Deep extraction', img: '/fabric-sofa-deep-clean/after.webp' },
   { id: 'stain-removal', label: 'Stain removal', img: '/home/sofa-stain-removal-dubai.webp' },
-  { id: 'leather-cleaning', label: 'Leather care', img: '/home/leather-sofa-cleaning-dubai.webp' },
+  { id: 'leather-cleaning', label: 'Leather care', img: '/home/dark-brown-leather-sofa-cosy-living-room.webp' },
   { id: 'odor-treatment', label: 'Odour removal', img: '/home/sofa-odor-treatment-dubai.webp' },
   { id: 'pet-hair', label: 'Pet hair removal', img: '/home/pet-hair-on-fabric-sofa.webp' },
-  { id: 'sanitization', label: 'Steam sanitising', img: '/home/sofa-sanitization-dubai.webp' },
+  { id: 'sanitization', label: 'Steam sanitising', img: '/home/steam-cleaning-grey-sectional-sofa.webp' },
   { id: 'velvet-microfiber', label: 'Velvet & microfiber', img: '/home/blue-velvet-sofa-cleaning.webp' },
   { id: 'fabric-protection', label: 'Fabric protection', img: '/home/sofa-fabric-protection-dubai.webp' },
 ];

@@ -46,6 +46,10 @@ export const PHOTOS = {
   greyLShape: { src: '/home/clean-grey-l-shaped-sofa-dubai-apartment.webp', w: 1600, h: 1067, alt: 'Clean grey L-shaped sofa in a bright apartment living room' },
   highRise: { src: '/home/clean-corner-sofa-dubai-high-rise-apartment.webp', w: 1600, h: 1067, alt: 'Clean corner sofa in a high-rise apartment with a city view' },
   marinaView: { src: '/home/clean-sectional-sofa-dubai-marina-view.webp', w: 1024, h: 559, alt: 'Clean sectional sofa in a Dubai apartment overlooking the marina' },
+  velvetLux: { src: '/home/blue-velvet-sofa-luxury-dubai-living-room.webp', w: 1600, h: 1067, alt: 'Blue velvet sofa in a luxury marble living room' },
+  leatherPenthouse: { src: '/home/brown-leather-chesterfield-sofa-dubai-penthouse.webp', w: 1600, h: 1067, alt: 'Brown leather Chesterfield sofa in a penthouse with a Dubai skyline view' },
+  leatherCosy: { src: '/home/dark-brown-leather-sofa-cosy-living-room.webp', w: 1600, h: 1067, alt: 'Dark brown leather sofa with cushions in a warm family living room' },
+  lightGrey: { src: '/home/light-grey-fabric-sofa-living-room.webp', w: 1600, h: 1067, alt: 'Light grey fabric sofa in a calm, sunlit living room' },
 } as const;
 
 export const AREA_THEMES: AreaTheme[] = [
@@ -153,18 +157,20 @@ export function themeFor(emirateKey: string, index: number): AreaTheme {
 }
 
 /** Hero photo per area: real local photo if set, else rotate a pool that fits the homes there. */
-export function heroPhotoFor(emirateKey: string, index: number, theme: AreaTheme, propertyType = '') {
+export function heroPhotoFor(emirateKey: string, index: number, theme: AreaTheme, propertyType = '', slug = '') {
   // Full-bleed heroes need a clean, label-free photo behind the text.
   if (theme.hero === 'bleed') {
     return PHOTOS[emirateKey === 'dubai' ? 'dubai' : emirateKey === 'ajman' ? 'ajman' : 'steam'];
   }
   const villas = /villa/i.test(propertyType) && !/^(high-rise|mid-rise|apartments?)/i.test(propertyType);
   const pool: (keyof typeof PHOTOS)[] =
-    villas ? ['villaRoom', 'beigeSofa', 'greyLShape'] :
-    emirateKey === 'dubai' ? ['marinaView', 'highRise', 'greyLShape', 'beigeSofa'] :
-    ['greyLShape', 'highRise', 'beigeSofa'];
-  let key = pool[index % pool.length];
-  if (key === theme.proof) key = pool[(index + 1) % pool.length];
+    villas ? ['villaRoom', 'leatherCosy', 'beigeSofa', 'lightGrey', 'greyLShape'] :
+    emirateKey === 'dubai' ? ['marinaView', 'highRise', 'velvetLux', 'leatherPenthouse', 'greyLShape', 'beigeSofa'] :
+    ['greyLShape', 'highRise', 'lightGrey', 'beigeSofa', 'velvetLux'];
+  // Hash the slug so neighbouring areas spread across the whole pool.
+  const n = [...slug].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) >>> 0, index);
+  let key = pool[n % pool.length];
+  if (key === theme.proof) key = pool[(n + 1) % pool.length];
   return PHOTOS[key];
 }
 

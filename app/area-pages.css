@@ -238,6 +238,12 @@
 .sp-table td:first-child { font-weight: 700; }
 .sp-table td:last-child { color: #B4532A; }
 
+/* service-page 'why' illustration */
+.sp-why-fig { margin: 22px 0 0; }
+.sp-why-img { position: relative; aspect-ratio: 3/2; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.18); }
+.sp-why-fig figcaption { margin-top: 10px; font-size: 12.5px; color: var(--ap-muted); font-style: italic; }
+.ap-t-indigo .ap-why .sp-why-fig figcaption { color: rgba(255,255,255,.7); }
+
 /* emirate hub bento: photo behind the dark lead card */
 .cl-bento-photo { position: absolute; inset: 0; z-index: 0; }
 .cl-bento-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, color-mix(in oklab, var(--deep) 20%, transparent) 0%, color-mix(in oklab, var(--deep) 92%, transparent) 72%); }

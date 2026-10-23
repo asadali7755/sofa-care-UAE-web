@@ -52,7 +52,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
   const f = (s: string) => fill(s, area, em.cityName);
   const photo = area.image
     ? { src: area.image, w: 1200, h: 800, alt: `${area.name}, ${em.cityName}` }
-    : heroPhotoFor(emirateKey, index, t, area.propertyType);
+    : heroPhotoFor(emirateKey, index, t, area.propertyType, slug);
   const proof = PHOTOS[t.proof];
   const [lede, aboutRest] = splitIntro(area.intro);
   // Stable per-page seed so each area shows a different set of real job photos and clips.

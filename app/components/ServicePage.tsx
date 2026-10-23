@@ -95,6 +95,14 @@ export default function ServicePage({ slug }: { slug: string }) {
             <div>
               <span className="ap-eyebrow">Why it matters</span>
               <h2 className="ap-h2">{p.why.heading}</h2>
+              {p.whyImage && (
+                <figure className="sp-why-fig">
+                  <div className="sp-why-img">
+                    <Image src={p.whyImage.src} alt={p.whyImage.alt} fill sizes="(max-width: 900px) 100vw, 480px" style={{ objectFit: 'cover' }} />
+                  </div>
+                  {p.whyImage.caption && <figcaption>{p.whyImage.caption}</figcaption>}
+                </figure>
+              )}
             </div>
             <div className="ap-why-text">
               {p.why.paras.map((para) => <p key={para.slice(0, 24)} className="ap-p">{para}</p>)}
