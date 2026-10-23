@@ -26,8 +26,8 @@ export default function Footer() {
           <div>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>Services</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
-              {['Sofa Deep Cleaning', 'Sofa Shampooing', 'Stain Removal', 'Odor Treatment', 'Leather Sofa Cleaning'].map((s) => (
-                <Link key={s} href="/services" style={{ color: 'var(--fg-muted)', fontSize: 13 }}
+              {[['Sofa Deep Cleaning', '/services#deep-cleaning'], ['Sofa Shampooing', '/services#shampooing'], ['Sofa Steam Cleaning', '/sofa-steam-cleaning'], ['Sofa Stain Removal', '/sofa-stain-removal'], ['Leather Sofa Cleaning', '/leather-sofa-cleaning']].map(([s, href]) => (
+                <Link key={s} href={href} style={{ color: 'var(--fg-muted)', fontSize: 13 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--fg)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg-muted)')}
                 >{s}</Link>
@@ -96,8 +96,8 @@ export default function Footer() {
             <div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--accent)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Services</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {['Deep Cleaning', 'Shampooing', 'Stain Removal', 'Leather Care'].map((s) => (
-                  <Link key={s} href="/services" style={{ color: 'var(--fg-muted)', fontSize: 13 }}>{s}</Link>
+                {[['Steam Cleaning', '/sofa-steam-cleaning'], ['Shampooing', '/services#shampooing'], ['Stain Removal', '/sofa-stain-removal'], ['Leather Care', '/leather-sofa-cleaning']].map(([s, href]) => (
+                  <Link key={s} href={href} style={{ color: 'var(--fg-muted)', fontSize: 13 }}>{s}</Link>
                 ))}
               </div>
             </div>

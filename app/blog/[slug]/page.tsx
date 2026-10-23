@@ -11,6 +11,7 @@ import QuoteCallSection from '../../components/QuoteCallSection';
 import { blogPosts, getBlogPost, getRelatedPosts } from '../../lib/blog';
 import { emirates } from '../../lib/areas';
 import { SERVICES } from '../../services/servicesData';
+import { serviceHref } from '../../lib/servicePages';
 
 const BASE = 'https://sofashampooingdubai.com';
 type Props = { params: Promise<{ slug: string }> };
@@ -145,7 +146,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <h2 style={{ fontSize: 'clamp(18px, 2.2vw, 22px)', marginBottom: 14 }}>Related services &amp; areas</h2>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
                   {service && (
-                    <Link href={`/services#${service.id}`} style={relatedLinkStyle}>
+                    <Link href={serviceHref(service.id)} style={relatedLinkStyle}>
                       {service.name} <span style={{ color: 'var(--accent)' }}>→</span>
                     </Link>
                   )}

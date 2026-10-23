@@ -10,6 +10,7 @@ import QuoteCallSection from './QuoteCallSection';
 import { getEmirate, getArea } from '../lib/areas';
 import { PHOTOS, fill, heroPhotoFor, themeFor, type AreaSection } from '../lib/areaThemes';
 import { galleryItems, servicePhotos } from '../lib/galleryData';
+import { serviceHref } from '../lib/servicePages';
 import { AreaMap, BeforeAfterPair, ResultsSection, ServiceShots, VideosSection, seedOf, stripPlace } from './MediaSections';
 import '../area-pages.css';
 
@@ -256,7 +257,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
           <ul className={`ap-svc ap-svc-${t.services}`}>
             {SERVICE_LINKS.map((s, i) => (
               <li key={s.id}>
-                <Link href={`/services#${s.id}`}>
+                <Link href={serviceHref(s.id)}>
                   <span className="ap-svc-n">{String(i + 1).padStart(2, '0')}</span>
                   <span className="ap-svc-l">{s.label}</span>
                   <IconArrow size={13} />

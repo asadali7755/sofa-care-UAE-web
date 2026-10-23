@@ -217,6 +217,25 @@
 .ap-map { margin-top: 28px; border-radius: 22px; overflow: hidden; border: 1px solid color-mix(in oklab, var(--c1) 22%, transparent); box-shadow: 0 20px 50px rgba(0,0,0,.08); height: 340px; }
 .ap-map iframe { width: 100%; height: 100%; border: 0; display: block; }
 
+/* ── SERVICE PAGES (/leather-sofa-cleaning, ...) ── */
+.sp-cards { list-style: none; padding: 0; margin: 26px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.sp-card { padding: 20px 20px 18px; border-radius: 18px; background: var(--soft); border: 1px solid color-mix(in oklab, var(--c1) 20%, transparent); display: flex; flex-direction: column; gap: 6px; }
+.sp-card strong { font-size: 16px; color: var(--ap-ink); }
+.sp-card strong::before { content: "✓ "; color: var(--c1); }
+.sp-card span { font-size: 14px; line-height: 1.65; color: var(--ap-muted); }
+.sp-card-no { background: #fff; border-style: dashed; }
+.sp-card-no strong::before { content: "✕ "; color: #B4532A; }
+.sp-steps { grid-template-columns: repeat(3, 1fr); margin-top: 28px; }
+.sp-note { margin-top: 26px; padding: 18px 22px; border-radius: 18px; background: #fff; border: 1px solid color-mix(in oklab, var(--c1) 22%, transparent); border-left: 4px solid var(--c1); max-width: 860px; }
+.sp-note strong { display: block; font-size: 16px; color: var(--ap-ink); margin-bottom: 6px; }
+.sp-note p { margin: 0; color: var(--ap-muted); line-height: 1.75; }
+.sp-table-wrap { overflow-x: auto; margin-top: 22px; border-radius: 16px; border: 1px solid color-mix(in oklab, var(--c1) 22%, transparent); max-width: 860px; }
+.sp-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; }
+.sp-table th { text-align: left; padding: 12px 16px; background: var(--deep); color: #fff; font-weight: 700; }
+.sp-table td { padding: 12px 16px; border-top: 1px solid color-mix(in oklab, var(--c1) 14%, transparent); color: var(--ap-ink); }
+.sp-table td:first-child { font-weight: 700; }
+.sp-table td:last-child { color: #B4532A; }
+
 /* emirate hub bento: photo behind the dark lead card */
 .cl-bento-photo { position: absolute; inset: 0; z-index: 0; }
 .cl-bento-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, color-mix(in oklab, var(--deep) 20%, transparent) 0%, color-mix(in oklab, var(--deep) 92%, transparent) 72%); }
@@ -254,6 +273,7 @@
   .ap-reel:nth-child(2) { transform: none; }
   .ap-svc-shots { grid-template-columns: 1fr 1fr; }
   .ap-steps { grid-template-columns: 1fr 1fr; }
+  .sp-cards { grid-template-columns: 1fr; }
   .ap-map { height: 260px; }
 }
 @media (prefers-reduced-motion: reduce) {

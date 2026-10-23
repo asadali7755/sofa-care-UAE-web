@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IconArrow, IconWhatsApp } from './Icons';
 import { galleryItems, servicePhotos, videoResults } from '../lib/galleryData';
+import { serviceHref } from '../lib/servicePages';
 import '../area-pages.css';
 
 /**
@@ -32,7 +33,7 @@ export function BeforeAfterPair({ item, sizes, className }: { item: (typeof gall
   );
 }
 
-export function ResultsSection({ heading, place, seed, count = 3 }: { heading: string; place: string; seed: number; count?: number }) {
+export function ResultsSection({ heading, place, seed, count = 3, items = galleryItems }: { heading: string; place: string; seed: number; count?: number; items?: typeof galleryItems }) {
   return (
     <section className="ap ap-section ap-results">
       <div className="container-x">
@@ -40,7 +41,7 @@ export function ResultsSection({ heading, place, seed, count = 3 }: { heading: s
         <h2 className="ap-h2">{heading}</h2>
         <p className="ap-p ap-narrow-l">Unedited photos from our own recent jobs around the UAE. The same team and kit come to {place}.</p>
         <div className="ap-ba-grid">
-          {pick(galleryItems, seed, count).map((g) => (
+          {pick(items, seed, Math.min(count, items.length)).map((g) => (
             <figure key={g.id} className="ap-ba">
               <div className="ap-ba-pair">
                 <BeforeAfterPair item={g} sizes="(max-width: 900px) 50vw, 200px" className="ap-ba-img" />
@@ -55,7 +56,8 @@ export function ResultsSection({ heading, place, seed, count = 3 }: { heading: s
   );
 }
 
-export function VideosSection({ heading, waHref, seed }: { heading: string; waHref: string; seed: number }) {
+export function VideosSection({ heading, waHref, seed, srcs }: { heading: string; waHref: string; seed: number; srcs?: string[] }) {
+  const clips = srcs ? REEL_VIDEOS.filter((v) => srcs.includes(v.src)) : pick(REEL_VIDEOS, seed, 3);
   return (
     <section className="ap ap-section ap-videos">
       <div className="container-x ap-videos-grid">
@@ -66,7 +68,7 @@ export function VideosSection({ heading, waHref, seed }: { heading: string; waHr
           <a href={waHref} target="_blank" rel="noopener noreferrer" className="ap-btn ap-btn-wa"><IconWhatsApp size={16} /> Send us your sofa photo</a>
         </div>
         <div className="ap-reels">
-          {pick(REEL_VIDEOS, seed, 3).map((v) => {
+          {clips.map((v) => {
             const name = v.src.split('/').pop()!.replace('.mp4', '');
             return (
               <figure key={v.src} className="ap-reel">
@@ -85,7 +87,7 @@ export function ServiceShots({ place, seed }: { place: string; seed: number }) {
   return (
     <div className="ap ap-svc-shots">
       {pick(servicePhotos, seed, 4).map((s) => (
-        <Link key={s.id} href={`/services#${s.id}`} className="ap-svc-shot">
+        <Link key={s.id} href={serviceHref(s.id)} className="ap-svc-shot">
           <Image src={s.img} alt={`${s.label} in ${place}`} fill sizes="(max-width: 900px) 50vw, 300px" style={{ objectFit: 'cover' }} />
           <span>{s.label} <IconArrow size={12} /></span>
         </Link>

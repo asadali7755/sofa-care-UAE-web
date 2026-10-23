@@ -9,6 +9,7 @@ import ServiceCoverageSection from '../components/ServiceCoverageSection';
 import QuoteCallSection from '../components/QuoteCallSection';
 import { useRequestCall } from '../components/RequestCallModal';
 import { SERVICES, SERVICE_FAQS, EMIRATE_LINKS, serviceAreaLinks, type ServiceItem } from './servicesData';
+import { SERVICE_PAGE_BY_ID } from '../lib/servicePages';
 
 type ServiceSectionProps = ServiceItem & { index: number };
 
@@ -76,6 +77,11 @@ function ServiceSection({
           <div style={{ fontSize: 18, fontWeight: 700 }}>{time}</div>
         </div>
       </div>
+      {SERVICE_PAGE_BY_ID[id] && (
+        <Link href={SERVICE_PAGE_BY_ID[id]} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 16, fontWeight: 700, color: emColor ?? badgeColor, textDecoration: 'none' }}>
+          Full {linkLabel} details <IconArrow size={13} />
+        </Link>
+      )}
       <ServiceCTAButtons waText={waText} />
     </div>
   );
