@@ -150,7 +150,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="form-label">Service Required *</label>
-                      <select className="form-input" required value={bookForm.service} onChange={(e) => setBookForm({ ...bookForm, service: e.target.value })}>
+                      <select aria-label="Service" className="form-input" required value={bookForm.service} onChange={(e) => setBookForm({ ...bookForm, service: e.target.value })}>
                         <option value="">Select a service...</option>
                         <option value="Sofa Deep Cleaning">Sofa Deep Cleaning</option>
                         <option value="Sofa Shampooing">Sofa Shampooing</option>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label className="form-label">Preferred Time *</label>
-                        <select className="form-input" required value={bookForm.time} onChange={(e) => setBookForm({ ...bookForm, time: e.target.value })}>
+                        <select aria-label="Preferred time" className="form-input" required value={bookForm.time} onChange={(e) => setBookForm({ ...bookForm, time: e.target.value })}>
                           <option value="">Select time...</option>
                           <option value="07:00 - 09:00 AM">07:00 - 09:00 AM</option>
                           <option value="09:00 - 11:00 AM">09:00 - 11:00 AM</option>
@@ -178,7 +178,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="form-label">Location / Area *</label>
-                      <select className="form-input" required value={bookForm.area} onChange={(e) => setBookForm({ ...bookForm, area: e.target.value })}>
+                      <select aria-label="Area" className="form-input" required value={bookForm.area} onChange={(e) => setBookForm({ ...bookForm, area: e.target.value })}>
                         <option value="">Select your area...</option>
                         <optgroup label="🏙 Dubai">
                           <option>Dubai Marina</option>

@@ -5,7 +5,7 @@
 .ap-section-sm { padding: 48px 0; }
 .ap-narrow { max-width: 780px; }
 .ap-narrow-l { max-width: 760px; }
-.ap-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--c1); margin-bottom: 14px; }
+.ap-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: color-mix(in oklab, var(--c1) 78%, #000); margin-bottom: 14px; }
 .ap-eyebrow::before { content: ""; width: 22px; height: 2px; border-radius: 2px; background: currentColor; }
 .ap-h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(26px, 3.3vw, 44px); line-height: 1.1; margin: 0 0 18px; color: var(--ap-ink); letter-spacing: -.01em; }
 .ap-p { color: var(--ap-muted); font-size: 16px; line-height: 1.8; margin: 0 0 16px; }
@@ -17,7 +17,7 @@
 .ap-btn:hover { transform: translateY(-3px); }
 .ap-btn-main { background: var(--c1); color: #fff; box-shadow: 0 12px 30px color-mix(in oklab, var(--c1) 38%, transparent); }
 .ap-btn-main::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%); transform: translateX(-120%); animation: apShine 3.8s ease-in-out infinite; }
-.ap-btn-wa { background: #25D366; color: #fff; }
+.ap-btn-wa { background: #0F7B45; color: #fff; }
 .ap-btn-ghost { background: transparent; color: var(--ap-ink); border-color: rgba(12,17,14,.22); }
 
 /* ── HERO (shared) ── */
@@ -95,6 +95,8 @@
 .ap-t-saffron .ap-why-text, .ap-t-emerald .ap-why-text { border-left: 0; padding: 28px; background: #fff; border-radius: 22px; box-shadow: 0 20px 50px color-mix(in oklab, var(--c1) 14%, transparent); }
 .ap-t-indigo .ap-why { background: linear-gradient(160deg, var(--deep), var(--deep2)); }
 .ap-t-indigo .ap-why .ap-h2, .ap-t-indigo .ap-why .ap-why-text { color: #fff; }
+.ap-t-indigo .ap-why .ap-why-text .ap-p { color: rgba(255,255,255,.86); }
+.ap-why-text .ap-p:last-child { margin-bottom: 0; }
 .ap-t-indigo .ap-why .ap-eyebrow { color: var(--c2); }
 
 /* ── PLACES ── */
@@ -178,7 +180,7 @@
 .ap-about-img-b { right: 0; bottom: 28px; width: 62%; height: 70%; transform: rotate(2deg); }
 .ap-about-shot figcaption { position: absolute; left: 0; bottom: 0; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ap-muted); }
 .ap-badge { position: absolute; left: 10px; top: 10px; z-index: 1; padding: 5px 10px; border-radius: 999px; background: rgba(12,17,14,.78); color: #fff; font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
-.ap-badge-after { background: var(--c1); }
+.ap-badge-after { background: color-mix(in oklab, var(--c1) 75%, #000); }
 
 .ap-results { background: linear-gradient(180deg, var(--soft), #fff); }
 .ap-ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }

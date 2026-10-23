@@ -59,7 +59,7 @@ export default function HeroEnquiryCard() {
         onChange={(e) => setPhone(e.target.value)}
         required
       />
-      <select value={work} onChange={(e) => setWork(e.target.value)}>
+      <select aria-label="Service" value={work} onChange={(e) => setWork(e.target.value)}>
         <option value="">Select Service</option>
         <option value="Sofa Cleaning">Sofa Cleaning</option>
         <option value="Sofa Shampooing">Sofa Shampooing</option>

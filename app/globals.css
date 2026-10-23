@@ -133,8 +133,8 @@ a { color: inherit; text-decoration: none; }
 .btn-primary:hover { background: var(--teal-l); transform: translateY(-2px); }
 .btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--line-strong); }
 .btn-ghost:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
-.btn-wa { background: #25D366; color: #fff; }
-.btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
+.btn-wa { background: #0F7B45; color: #fff; } /* darker WhatsApp green: white text passes contrast */
+.btn-wa:hover { background: #0B6A3B; transform: translateY(-2px); }
 
 /* ─── Layout ─── */
 .container-x { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
@@ -868,7 +868,7 @@ section, footer, nav { max-width: 100%; }
 .wa-lead-err { color: #e53e3e; font-size: 12px; }
 .wa-lead-submit {
   display: flex; align-items: center; justify-content: center; gap: 8px;
-  background: #25D366; text-decoration: none; margin-top: 0;
+  background: #0F7B45; text-decoration: none; margin-top: 0;
 }
 .wa-lead-submit:hover { background: #1EBE5A; }
 .rcm-or {
@@ -986,7 +986,7 @@ section, footer, nav { max-width: 100%; }
 .cl-btn:hover { transform: translateY(-3px); }
 .cl-btn-main { background: var(--c1); color: #fff; box-shadow: 0 10px 28px color-mix(in oklab, var(--c1) 40%, transparent); }
 .cl-btn-main::after { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%); transform: translateX(-120%); animation: clShine 3.6s ease-in-out infinite; }
-.cl-btn-wa { background: #25D366; color: #fff; }
+.cl-btn-wa { background: #0F7B45; color: #fff; }
 .cl-btn-ghost { background: transparent; color: var(--cl-ink); border-color: rgba(12,17,14,.25); }
 
 /* ── HERO ── */

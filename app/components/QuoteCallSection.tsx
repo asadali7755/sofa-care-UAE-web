@@ -107,7 +107,7 @@ export default function QuoteCallSection({ areaName }: { areaName?: string } = {
                     onChange={(e) => setPhone(e.target.value)}
                     required
                   />
-                  <select
+                  <select aria-label="Service"
                     className="form-input"
                     value={work}
                     onChange={(e) => setWork(e.target.value)}

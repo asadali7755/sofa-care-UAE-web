@@ -231,6 +231,7 @@ export default function Navbar() {
           overflowY: 'auto',
         }}
         aria-hidden={!open}
+        inert={!open}
       >
         {/* Drawer Header */}
         <div style={{

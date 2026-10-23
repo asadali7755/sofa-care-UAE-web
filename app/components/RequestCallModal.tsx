@@ -144,7 +144,7 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
             style={err ? { borderColor: '#e53e3e' } : {}}
           />
           {err && <span style={{ color: '#e53e3e', fontSize: 12, marginTop: 4, display: 'block' }}>{err}</span>}
-          <select value={work} onChange={(e) => setWork(e.target.value)} style={{ width: '100%', padding: '12px 14px', border: '1.5px solid rgba(12,17,14,0.12)', borderRadius: 10, fontSize: 15, background: '#F3F7F4', color: '#0C110E', fontFamily: 'var(--font-sans)' }}>
+          <select aria-label="Service" value={work} onChange={(e) => setWork(e.target.value)} style={{ width: '100%', padding: '12px 14px', border: '1.5px solid rgba(12,17,14,0.12)', borderRadius: 10, fontSize: 15, background: '#F3F7F4', color: '#0C110E', fontFamily: 'var(--font-sans)' }}>
             <option value="">Select Service</option>
             <option value="Sofa Cleaning">Sofa Cleaning</option>
             <option value="Sofa Shampooing">Sofa Shampooing</option>
