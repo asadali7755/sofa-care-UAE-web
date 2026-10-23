@@ -102,7 +102,7 @@ export default function AreaPage({ emirateKey, slug }: { emirateKey: string; slu
         <span>{area.short}</span>
       </nav>
       <span className="ap-tag"><span className="ap-tag-dot" />{f(t.eyebrow)}</span>
-      <h1 className="ap-h1">Sofa Cleaning in <em>{area.name}</em></h1>
+      <h1 className="ap-h1">{area.h1Lead ?? 'Sofa Cleaning in'} <em>{area.name}</em></h1>
       <p className="ap-lede">{lede}</p>
       {area.crossLink && (
         <p className="ap-cross">

@@ -18,6 +18,10 @@ export interface Area {
   faqs: { q: string; a: string }[];
   /** Optional real photo of this specific area, overriding the generic banner */
   image?: string;
+  /** Optional SEO overrides when GSC shows a specific query to target */
+  metaTitle?: string;
+  metaDescription?: string;
+  h1Lead?: string;
   /** Same-named area in another emirate, linked from the hero so the two pages don't compete */
   crossLink?: { question: string; href: string; label: string };
 }
@@ -131,17 +135,21 @@ export const emirates: Record<string, EmirateConfig> = {
           { q: 'Do you handle building concierge and access coordination in Downtown towers?', a: 'Yes — we regularly coordinate with concierge and building management in towers around Address Residences and the Opera District ahead of the visit.' },
         ] },
       { slug: 'palm-jumeirah', name: 'Palm Jumeirah', short: 'Palm Jumeirah', propertyType: 'beachfront villas and luxury apartments',
-        intro: 'Palm Jumeirah\'s beachfront villas and luxury apartments — spread across the trunk, fronds and Golden Mile — face constant salt-air humidity that\'s tough on premium sofas, whether it\'s a frond villa\'s formal majlis or a Shoreline Apartments living room facing the open sea. Homes here are typically furnished at a high standard, with imported fabrics and leather that need careful, fabric-matched handling rather than generic cleaning chemicals. Al Haya Sofa Care offers specialist deep cleaning, fast-dry extraction and leather conditioning that protects high-value upholstery in Palm residences, with a service level that matches the address.',
-        whyClean: 'Palm Jumeirah sits fully exposed to the open Gulf, and its constant sea breeze carries higher salt concentration than mainland coastal areas like Jumeirah or JBR, accelerating fabric breakdown and leather cracking if sofas aren\'t cleaned regularly. Frond villas often have large glass doors opening directly onto private beaches, letting in sand and salt air throughout the day. Many Palm residences are also holiday homes or investment properties used seasonally, so sofas can go months without use and still need refreshing before guests arrive. Fast, thorough cleaning is essential to protect the investment in premium furniture here.',
-        serviceDetail: 'For Palm villas and apartments, we use fast-dry hot-water extraction specifically chosen to remove trapped salt-air moisture before it settles permanently into foam and fabric backing, cutting typical dry time to around 3–4 hours despite the humid coastal setting. Leather sofas receive a full conditioning treatment that restores oils lost to sun and salt exposure. We also offer an optional protective fabric coat after cleaning that helps repel humidity and everyday spills between visits — popular with frond villa owners who host frequently. Access coordination for gated fronds and villa security is arranged ahead of each visit.',
-        landmarks: ['Palm Jumeirah Crescent', 'Atlantis', 'Golden Mile', 'Shoreline Apartments', 'Palm Trunk', 'Nakheel Mall', 'The Pointe', 'Palm West Beach'],
-        localNote: 'Salt-air humidity on the Palm accelerates fabric and leather wear — fast-dry professional cleaning every 4–6 months is ideal. Seasonal or holiday-home owners often book ahead of guest arrivals to refresh sofas that have sat unused.',
+        metaTitle: 'Sofa Cleaning Services in Palm Jumeirah | Al Haya',
+        metaDescription: 'Sofa cleaning services in Palm Jumeirah for frond villas and Shoreline and Golden Mile apartments: shampoo, leather care, stain removal. Free WhatsApp quote.',
+        h1Lead: 'Sofa Cleaning Services in',
+        intro: 'Our sofa cleaning services in Palm Jumeirah cover the whole island — frond villas with private beaches, the Shoreline and Golden Mile apartment buildings on the trunk, and the towers and hotel residences along the Crescent. Homes here are furnished to a high standard, often with imported fabric, velvet and leather that need a method matched to the material rather than one product for everything. Al Haya Sofa Care brings fast-dry shampoo and extraction, leather cleaning and conditioning, and stain removal to your door, and plans the visit around building and frond access.',
+        whyClean: 'Palm Jumeirah is surrounded by the sea, so the breeze carries salt and moisture into every room, and frond villas open straight onto the sand. Salt and humidity settle into foam and fabric backing and leave sofas smelling damp; fine sand grinds into the weave every time someone sits down. Leather dries out and fades from the strong sun through floor-to-ceiling glass. Many Palm homes are also holiday homes or rentals that stand empty for weeks and then need to be guest-ready quickly.',
+        serviceDetail: 'For Palm villas and apartments we dry-vacuum the sand out first, then use fast-dry hot-water extraction to pull out trapped salt and moisture, so most fabric sofas are usable again in three to four hours. Velvet and delicate fabrics get a low-moisture method, and leather sofas are cleaned and conditioned to put back the oils lost to sun and sea air. An optional fabric protector is available after cleaning, and we arrange building passes or frond gate access with you before the visit.',
+        landmarks: ['The Palm Fronds', 'Shoreline Apartments', 'Golden Mile', 'Tiara Residences', 'Palm Crescent', 'Nakheel Mall', 'The Pointe', 'Palm West Beach'],
+        localNote: 'Sea air on the Palm wears fabric and leather faster than inland homes, so a sofa clean every four to six months is ideal. Holiday-home and rental owners often book a fast-dry clean timed just before guests check in.',
         faqs: [
-          { q: 'Do you serve villas and apartments on Palm Jumeirah?', a: 'Yes — we cover Shoreline Apartments, Golden Mile, and beachfront villas across the Palm Jumeirah trunk and fronds.' },
-          { q: 'How do you protect sofas from Palm Jumeirah humidity?', a: 'We use fast-dry extraction to remove trapped moisture and offer a protective fabric coat to repel humidity and stains between cleans.' },
-          { q: 'What does sofa cleaning cost for a Palm Jumeirah villa?', a: 'Pricing is affordable, with large frond villa sectionals quoted by size. WhatsApp +971547199189 for a quote.' },
-          { q: 'Can you clean a holiday home sofa before guests arrive on the Palm?', a: 'Yes — this is a common request. We can schedule a fast-dry clean timed to finish before check-in so the sofa is ready to use.' },
-          { q: 'Do you handle gated villa and frond security access on Palm Jumeirah?', a: 'Yes — we coordinate access passes and security clearance for gated fronds in advance so the visit runs smoothly on arrival.' },
+          { q: 'What sofa cleaning services do you offer in Palm Jumeirah?', a: 'Fabric sofa shampoo and deep extraction, steam cleaning, stain and odour removal, leather cleaning and conditioning, and majlis and mattress cleaning — all at your villa or apartment on the Palm.' },
+          { q: 'Do you serve villas and apartments on Palm Jumeirah?', a: 'Yes — frond villas, the Shoreline and Golden Mile apartments on the trunk, and the residences along the Crescent.' },
+          { q: 'How do you deal with salt air and humidity in Palm sofas?', a: 'We remove sand first, then use fast-dry extraction to take out trapped moisture and salt. An optional fabric protector helps between cleans.' },
+          { q: 'Can you clean a holiday-home sofa before guests arrive on the Palm?', a: 'Yes — this is a common request. We schedule a fast-dry clean that finishes before check-in so the sofa is ready to use.' },
+          { q: 'Do you handle building and frond access on Palm Jumeirah?', a: 'Yes. Tell us your building or frond when you book and we arrange the access pass or gate entry with you in advance.' },
+          { q: 'How much do sofa cleaning services in Palm Jumeirah cost?', a: 'It depends on the size and number of pieces and the fabric. Send photos on WhatsApp +971547199189 for a free quote.' },
         ] },
       { slug: 'al-qusais', name: 'Al Qusais', short: 'Al Qusais', propertyType: 'family apartments and villas',
         intro: 'Al Qusais is right on our doorstep — Al Haya Sofa Care is based in neighbouring Al Nahda, so Al Qusais 1, 2 and 3 are among the quickest areas in Dubai for us to reach. The community mixes mid-rise family apartment buildings along Damascus Street and Amman Street with older villas in the residential blocks, and many households have lived here for years with sofas that have never had a professional clean. We bring at-home sofa deep shampoo, steam cleaning and stain removal to your building or villa, with same-day slots that are often easier to offer here than anywhere else in the city because our team is only a short drive away.',
@@ -251,6 +259,23 @@ export const emirates: Record<string, EmirateConfig> = {
           { q: "Can you clean several rooms of sofas in one visit?", a: "Yes. Villa visits often cover the family room, formal sitting room, majlis and dining chairs; we plan the time when you book." },
           { q: "Are your products safe for children and elderly family members?", a: "Yes. We use eco-friendly, non-toxic products and rinse them out during extraction." },
           { q: "Do you offer sofa cleaning near me in Al Khawaneej and Mizhar?", a: "Yes. We cover Al Khawaneej 1 and 2 and neighbouring Al Mizhar and Al Warqa." },
+        ] },
+      { slug: 'al-furjan', name: 'Al Furjan', short: 'Al Furjan', propertyType: 'townhouses, villas and mid-rise apartments',
+        metaTitle: 'Sofa Cleaning Services in Al Furjan, Dubai | Al Haya',
+        metaDescription: 'Sofa cleaning services in Al Furjan for townhouses, villas and apartments near the Pavilion and metro: shampoo, pet hair and stain removal. Free WhatsApp quote.',
+        h1Lead: 'Sofa Cleaning Services in',
+        intro: 'Sofa cleaning services in Al Furjan cover two kinds of home: the Quortaj and Dubai Style townhouses and villas in the original Nakheel community, and the newer mid-rise apartment buildings around Al Furjan metro station and Al Furjan Pavilion. Families here tend to have large L-shaped sofas, children and pets, and many apartments are recent handovers. Al Haya Sofa Care brings shampoo, deep extraction, pet hair and stain removal and leather care to your door across Al Furjan and the neighbouring streets of Discovery Gardens.',
+        whyClean: 'Al Furjan still has building sites and open plots nearby, so fine dust comes in through balconies, garden doors and AC vents and settles into the weave of the sofa. Townhouse living rooms open straight onto gardens and play areas, which makes the sofa the place where children, pets and snacks meet. Light fabrics show grey armrests and drink rings within months. A regular deep clean lifts the dust, grease and pet hair before they wear the fibres down.',
+        serviceDetail: 'For Al Furjan townhouses and villas we bring full hot-water extraction for big L-shaped and corner sofas and can clean several rooms in one visit. In apartment buildings we carry compact machines in the lift and use a low-moisture, fast-dry method. Pet hair is lifted with rubber brushes and vacuuming before any shampoo, pet stains get an odour treatment, and leather sofas are cleaned and conditioned rather than washed.',
+        landmarks: ['Al Furjan Pavilion', 'Al Furjan metro station', 'Quortaj villas', 'Dubai Style villas', 'Discovery Gardens', 'Ibn Battuta Mall', 'Jumeirah Golf Estates', 'Jebel Ali Village'],
+        localNote: 'Busy family homes in Al Furjan stay fresh with a sofa deep clean every four to six months, or every three months with pets or toddlers. New apartment owners often book a clean soon after handover to remove construction dust.',
+        faqs: [
+          { q: 'Do you offer sofa cleaning services in Al Furjan?', a: 'Yes. We clean sofas in Al Furjan townhouses, villas and apartment buildings, and in nearby Discovery Gardens and Jebel Ali Village.' },
+          { q: 'Can you clean a large L-shaped sofa in an Al Furjan townhouse?', a: 'Yes. We bring full hot-water extraction for big L-shaped and corner sofas and can do several rooms in the same visit.' },
+          { q: 'Do you remove pet hair and pet smells from sofas?', a: 'Yes. We lift pet hair with rubber brushes and vacuuming first, then shampoo and treat pet stains for odour so the smell does not come back.' },
+          { q: 'Do you work in apartment buildings near Al Furjan metro station?', a: 'Yes. Our portable machines need no water connection and fit standard building lifts.' },
+          { q: 'How much does sofa cleaning cost in Al Furjan?', a: 'It depends on the sofa size, fabric and condition. Send a photo on WhatsApp +971547199189 for a free quote.' },
+          { q: 'When can you come to Al Furjan?', a: 'We are open 24 hours from Saturday to Thursday and closed on Fridays. Message us on WhatsApp for the earliest free slot.' },
         ] },
     ],
   },
@@ -573,8 +598,8 @@ export function buildAreaMetadata(emirateKey: string, slug: string): Metadata {
   if (!em || !area) return {};
   const url = `${BASE}/${em.citySlug}/${slug}`;
   return {
-    title: `Sofa Cleaning ${area.short}, ${em.cityName}`, // layout template appends brand
-    description: trimToWords(`At-home sofa deep shampoo & steam cleaning in ${area.name}, ${em.cityName} for ${area.propertyType}. Stain, odour & pet-hair removal, same-day slots. Free WhatsApp quote.`, 158),
+    title: area.metaTitle ? { absolute: area.metaTitle } : `Sofa Cleaning ${area.short}, ${em.cityName}`, // layout template appends brand
+    description: area.metaDescription ?? trimToWords(`At-home sofa deep shampoo & steam cleaning in ${area.name}, ${em.cityName} for ${area.propertyType}. Stain, odour & pet-hair removal, same-day slots. Free WhatsApp quote.`, 158),
     keywords: [
       `sofa cleaning ${area.name}`,
       `sofa cleaning ${area.short}`,
