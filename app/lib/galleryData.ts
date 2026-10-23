@@ -30,6 +30,8 @@ export const galleryItems = [
   { id: 14, cat: 'Shampooing', label: 'Suede Fabric Sofa Deep Shampoo — Abu Dhabi', altBefore: 'Dirty beige suede fabric sofa with stains and grime before deep shampoo cleaning in Abu Dhabi UAE', altAfter: 'Beige suede sofa fully refreshed after professional deep shampoo treatment by Al Haya in Abu Dhabi UAE', before: '/suede-sofa-shampooing/before.webp', after: '/suede-sofa-shampooing/after.webp' },
   { id: 15, cat: 'Leather', label: 'White Leather Sofa Stain Removal — Palm Jumeirah', altBefore: 'White leather sofa with large dust and sand stain before professional leather cleaning in Palm Jumeirah Dubai', altAfter: 'White leather sofa completely restored after stain removal by Al Haya Sofa Care Palm Jumeirah Dubai', before: '/white-leather-stain-removal/before.webp', after: '/white-leather-stain-removal/after.webp' },
   { id: 16, cat: 'Sofa Cleaning', label: 'Fabric Sofa Dust & Seam Extraction — Ajman', altBefore: 'Beige fabric sofa with heavy dust and black dirt in seams before deep extraction cleaning in Ajman UAE', altAfter: 'Beige fabric sofa completely clean after professional dust and seam extraction by Al Haya in Ajman UAE', before: '/fabric-seam-extraction/before.webp', after: '/fabric-seam-extraction/after.webp' },
+  { id: 17, cat: 'Sofa Cleaning', label: 'Grey Fabric 3-Seater Deep Clean', altBefore: 'Grey fabric three-seater sofa with dull, flattened cushions before deep cleaning', altAfter: 'Same grey fabric three-seater sofa refreshed after deep cleaning by Al Haya Sofa Care', before: '/grey-sofa-deep-clean/before.webp', after: '/grey-sofa-deep-clean/after.webp' },
+  { id: 18, cat: 'Shampooing', label: 'L-Shaped Fabric Sofa Shampoo', altBefore: 'Brown fabric seat cushions of a white L-shaped sofa with dirt marks before shampooing', altAfter: 'Brown fabric seat cushions of the white L-shaped sofa clean after shampooing by Al Haya Sofa Care', before: '/l-shape-sofa-shampoo/before.webp', after: '/l-shape-sofa-shampoo/after.webp' },
 ];
 
 /** Service photos (ids match the anchors on /services). */
@@ -39,9 +41,9 @@ export const servicePhotos = [
   { id: 'stain-removal', label: 'Stain removal', img: '/home/sofa-stain-removal-dubai.webp' },
   { id: 'leather-cleaning', label: 'Leather care', img: '/home/leather-sofa-cleaning-dubai.webp' },
   { id: 'odor-treatment', label: 'Odour removal', img: '/home/sofa-odor-treatment-dubai.webp' },
-  { id: 'pet-hair', label: 'Pet hair removal', img: '/home/pet-hair-removal-sofa-dubai.webp' },
+  { id: 'pet-hair', label: 'Pet hair removal', img: '/home/pet-hair-on-fabric-sofa.webp' },
   { id: 'sanitization', label: 'Steam sanitising', img: '/home/sofa-sanitization-dubai.webp' },
-  { id: 'velvet-microfiber', label: 'Velvet & microfiber', img: '/home/velvet-microfiber-sofa-cleaning.webp' },
+  { id: 'velvet-microfiber', label: 'Velvet & microfiber', img: '/home/blue-velvet-sofa-cleaning.webp' },
   { id: 'fabric-protection', label: 'Fabric protection', img: '/home/sofa-fabric-protection-dubai.webp' },
 ];
 

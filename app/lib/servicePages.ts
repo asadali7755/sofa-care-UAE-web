@@ -175,7 +175,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     h1Lead: 'Sofa Stain Removal',
     h1Em: 'at Home',
     lede: 'Coffee, karak tea, food, ink and pet accidents — we treat sofa stains at your home across the UAE, matching the treatment to both the stain and the fabric so the mark lifts without leaving a ring.',
-    heroImage: { src: '/home/sofa-stain-removal-dubai.webp', alt: 'Coffee stain on a light sofa seat before stain removal' },
+    heroImage: { src: '/home/coffee-stain-fabric-sofa-cushion.webp', alt: 'Close-up of a coffee stain soaked into a linen fabric sofa cushion' },
     facts: ['Fabric & leather', 'Same-day slots', 'No rings or bleaching', 'Free WhatsApp quote'],
     why: {
       heading: 'Why sofa stains need the right treatment',

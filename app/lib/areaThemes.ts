@@ -40,6 +40,12 @@ export const PHOTOS = {
   leatherSteps: { src: '/leather.webp', w: 1200, h: 960, alt: 'Leather sofa before and after a deep clean, with the six-step leather care process' },
   dubai: { src: '/cities/sofa-cleaning-dubai.webp', w: 800, h: 600, alt: 'Downtown Dubai skyline with the Burj Khalifa at sunset' },
   ajman: { src: '/cities/sofa-cleaning-ajman.webp', w: 1200, h: 800, alt: 'Sunset over a mosque on the Ajman skyline' },
+  // Showcase interiors (illustrative, not job photos — never use these in before/after sections)
+  villaRoom: { src: '/home/clean-sofa-uae-villa-living-room.webp', w: 1600, h: 1067, alt: 'Clean light-grey sofa in a bright UAE villa living room' },
+  beigeSofa: { src: '/home/clean-beige-three-seater-sofa.webp', w: 1600, h: 1067, alt: 'Fresh beige three-seater fabric sofa in a sunny living room' },
+  greyLShape: { src: '/home/clean-grey-l-shaped-sofa-dubai-apartment.webp', w: 1600, h: 1067, alt: 'Clean grey L-shaped sofa in a bright apartment living room' },
+  highRise: { src: '/home/clean-corner-sofa-dubai-high-rise-apartment.webp', w: 1600, h: 1067, alt: 'Clean corner sofa in a high-rise apartment with a city view' },
+  marinaView: { src: '/home/clean-sectional-sofa-dubai-marina-view.webp', w: 1024, h: 559, alt: 'Clean sectional sofa in a Dubai apartment overlooking the marina' },
 } as const;
 
 export const AREA_THEMES: AreaTheme[] = [
@@ -146,16 +152,17 @@ export function themeFor(emirateKey: string, index: number): AreaTheme {
   return AREA_THEMES[(index + offset) % AREA_THEMES.length];
 }
 
-/** Hero photo per area: real local photo if set, else rotate the pool. */
-export function heroPhotoFor(emirateKey: string, index: number, theme: AreaTheme) {
+/** Hero photo per area: real local photo if set, else rotate a pool that fits the homes there. */
+export function heroPhotoFor(emirateKey: string, index: number, theme: AreaTheme, propertyType = '') {
   // Full-bleed heroes need a clean, label-free photo behind the text.
   if (theme.hero === 'bleed') {
     return PHOTOS[emirateKey === 'dubai' ? 'dubai' : emirateKey === 'ajman' ? 'ajman' : 'steam'];
   }
+  const villas = /villa/i.test(propertyType) && !/^(high-rise|mid-rise|apartments?)/i.test(propertyType);
   const pool: (keyof typeof PHOTOS)[] =
-    emirateKey === 'dubai' ? ['dubai', 'steam', 'chaise', 'leatherAfter'] :
-    emirateKey === 'ajman' ? ['ajman', 'steam', 'leatherAfter', 'chaise'] :
-    ['steam', 'leatherAfter', 'chaise'];
+    villas ? ['villaRoom', 'beigeSofa', 'greyLShape'] :
+    emirateKey === 'dubai' ? ['marinaView', 'highRise', 'greyLShape', 'beigeSofa'] :
+    ['greyLShape', 'highRise', 'beigeSofa'];
   let key = pool[index % pool.length];
   if (key === theme.proof) key = pool[(index + 1) % pool.length];
   return PHOTOS[key];
