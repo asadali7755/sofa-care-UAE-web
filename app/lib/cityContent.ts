@@ -63,7 +63,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       },
       {
         "n": "24 Hours",
-        "l": "Open 7 days"
+        "l": "Saturday–Thursday"
       }
     ],
     "services": [
@@ -143,7 +143,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       },
       {
         "n": "24 Hours",
-        "l": "Open 7 days"
+        "l": "Saturday–Thursday"
       }
     ],
     "services": [
@@ -221,7 +221,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       },
       {
         "n": "24 Hours",
-        "l": "Open 7 days"
+        "l": "Saturday–Thursday"
       }
     ],
     "services": [
@@ -294,7 +294,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       },
       {
         "n": "24 Hours",
-        "l": "Open 7 days"
+        "l": "Saturday–Thursday"
       },
       {
         "n": "Free",
@@ -369,7 +369,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       },
       {
         "n": "24 Hours",
-        "l": "Open 7 days"
+        "l": "Saturday–Thursday"
       },
       {
         "n": "Free",
@@ -440,7 +440,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       },
       {
         "n": "24 Hours",
-        "l": "Open 7 days"
+        "l": "Saturday–Thursday"
       },
       {
         "n": "Free",
@@ -509,7 +509,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
       },
       {
         "n": "24 Hours",
-        "l": "Open 7 days"
+        "l": "Saturday–Thursday"
       },
       {
         "n": "Free",

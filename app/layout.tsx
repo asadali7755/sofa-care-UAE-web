@@ -122,9 +122,10 @@ const localBusinessSchema = {
   priceRange: '$$',
   currenciesAccepted: 'AED',
   paymentAccepted: 'Cash, Credit Card, Bank Transfer',
-  openingHours: 'Mo-Su 00:00-23:59',
+  // Open 24 hours, closed on Fridays (matches the Google Business Profile).
+  openingHours: ['Mo-Th 00:00-23:59', 'Sa-Su 00:00-23:59'],
   openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Monday','https://schema.org/Tuesday','https://schema.org/Wednesday','https://schema.org/Thursday','https://schema.org/Friday','https://schema.org/Saturday','https://schema.org/Sunday'], opens: '00:00', closes: '23:59' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Saturday','https://schema.org/Sunday','https://schema.org/Monday','https://schema.org/Tuesday','https://schema.org/Wednesday','https://schema.org/Thursday'], opens: '00:00', closes: '23:59' },
   ],
   address: {
     '@type': 'PostalAddress',
