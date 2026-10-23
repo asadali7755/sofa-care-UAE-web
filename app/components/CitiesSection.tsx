@@ -31,7 +31,7 @@ const cities = [
     href: '/sofa-cleaning-abu-dhabi',
     accent: '#8B5CF6',
     keyword: 'Sofa Cleaning Abu Dhabi',
-    desc: 'Professional sofa cleaning in Abu Dhabi — Khalifa City, Al Reem Island, Yas Island, Saadiyat Island & all Abu Dhabi areas. Best sofa cleaning Abu Dhabi doorstep service.',
+    desc: 'Professional sofa cleaning in Abu Dhabi — Khalifa City, Al Reem Island, Yas Island, Saadiyat Island & all Abu Dhabi areas. Professional sofa cleaning at your door in Abu Dhabi.',
     services: ['Sofa Deep Cleaning Abu Dhabi', 'Sofa Steam Cleaning Abu Dhabi', 'Leather Sofa Cleaning Abu Dhabi', 'Sofa Sanitization Abu Dhabi'],
   },
 ];

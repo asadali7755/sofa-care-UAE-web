@@ -204,7 +204,7 @@ const services = [
     tagColor: '#3B82F6',
     title: 'Fabric Protection',
     desc: 'Invisible shield coating repels future stains, spills and dirt — keeps your sofa cleaner for much longer.',
-    features: ['Invisible stain shield', 'Spill repellent coat', 'UV fade protection', 'Lasts 12+ months'],
+    features: ['Invisible stain shield', 'Spill repellent coat', 'Easier spill clean-up', 'Optional after any clean'],
     price: 'Affordable',
     href: '/contact',
     bgImage: '/home/sofa-fabric-protection-dubai.webp',

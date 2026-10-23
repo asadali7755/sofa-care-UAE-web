@@ -88,7 +88,7 @@ export default function WhyChooseUs() {
               <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Al Haya</span>
             </h2>
             <p style={{ color: 'var(--fg-muted)', fontSize: 15, lineHeight: 1.65, maxWidth: 360, margin: '0 auto' }}>
-              Dubai&apos;s trusted sofa cleaning experts — eco-friendly products, same-day service, guaranteed results.
+              Dubai&apos;s trusted sofa cleaning experts — eco-friendly products, same-day service, and the result checked with you before we leave.
             </p>
           </div>
 

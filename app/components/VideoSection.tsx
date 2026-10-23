@@ -70,7 +70,7 @@ export default function VideoSection() {
         <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, maxWidth: 700, margin: '0 auto' }}>
           {[
             { n: '2 hrs', l: 'Avg service time' },
-            { n: '100%', l: 'Satisfaction' },
+            { n: 'At home', l: 'No moving sofas' },
             { n: 'Eco', l: 'Safe products' },
             { n: 'Fast', l: 'Same-day dry' },
           ].map((s) => (

@@ -28,7 +28,7 @@ const whyUs = [
   { icon: <IconHome size={28}/>, title: 'At-Home Convenience', desc: 'We come to you with all equipment — no need to move furniture or travel.', accent: '#FF5A3C' },
   { icon: <IconShield size={28}/>, title: 'Trained Team', desc: 'Trained, experienced technicians who handle every sofa type with care.', accent: '#3B82F6' },
   { icon: <IconTag size={28}/>, title: 'Transparent Pricing', desc: 'Affordable rates with no hidden fees — free quote on WhatsApp.', accent: '#10B981' },
-  { icon: <IconShield size={28}/>, title: 'Satisfaction Guaranteed', desc: "We're not done until your sofa looks and smells exactly as you expect.", accent: '#8B5CF6' },
+  { icon: <IconShield size={28}/>, title: 'Checked With You', desc: "Before we leave, we go over the result with you so anything you're unhappy with is raised on the spot.", accent: '#8B5CF6' },
 ];
 
 const sofaIcon = (
@@ -178,7 +178,7 @@ export default function AboutPage() {
                 {
                   step: '03',
                   title: 'Deep Shampooing & Steam Cleaning',
-                  desc: 'Dual-action approach: shampooing breaks down oils and grease; high-temperature steam kills 99% of bacteria and mites while lifting deep-seated dirt.',
+                  desc: 'Dual-action approach: shampooing breaks down oils and grease; high-temperature steam helps kill bacteria and dust mites while lifting deep-seated dirt.',
                   accent: '#3B82F6',
                 },
                 {

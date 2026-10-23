@@ -41,7 +41,7 @@ export default function CTABanner() {
           </div>
 
           <div style={{ marginTop: 32, display: 'flex', gap: 32, justifyContent: 'center', flexWrap: 'wrap' }}>
-            {['No hidden fees', 'Eco-friendly products', 'Satisfaction guaranteed', 'Quick-dry formula'].map((item) => (
+            {['No hidden fees', 'Eco-friendly products', 'Result checked with you', 'Quick-dry formula'].map((item) => (
               <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--fg-muted)', fontSize: 14 }}>
                 <span style={{ color: 'var(--accent)' }}>✓</span> {item}
               </div>

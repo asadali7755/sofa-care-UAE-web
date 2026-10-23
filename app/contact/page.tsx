@@ -11,7 +11,7 @@ const contactBreadcrumb = {
 
 export const metadata: Metadata = {
   title: 'Book Sofa Cleaning Dubai | Contact Us',
-  description: 'Book professional sofa cleaning in Dubai, Sharjah & Ajman. Call or WhatsApp +971547199189. Same-day service available. Online booking form. Fast response guaranteed.',
+  description: 'Book professional sofa cleaning in Dubai, Sharjah & Ajman. Call or WhatsApp +971547199189. Same-day service available. Online booking form. Quick reply on WhatsApp.',
   keywords: [
     'book sofa cleaning Dubai',
     'sofa cleaning booking Dubai',
