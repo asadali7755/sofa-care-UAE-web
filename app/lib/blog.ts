@@ -52,6 +52,8 @@ export const retiredBlogSlugs: Record<string, string> = {
   'sofa-shampooing-dubai-best-choice': '/blog/sofa-shampooing-dubai-emirates',
   'sofa-shampooing-dubai-abu-dhabi': '/blog/sofa-shampooing-dubai-emirates',
   'fabric-protection-dubai-price-list': '/blog/fabric-protection-dubai-deals',
+  // Carpet is outside this site's sofa-only scope
+  'carpet-cleaning-dubai-guide': '/sofa-cleaning-dubai',
   'upholstery-cleaning-dubai-guide': '/blog/sofa-shampooing-dubai-emirates',
   // IKEA
   'ikea-sofa-cleaning-deals-dubai': '/blog/ikea-sofa-cleaning-dubai-home-service',
