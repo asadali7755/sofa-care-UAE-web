@@ -2,6 +2,10 @@ import type { NextConfig } from 'next';
 import { retiredBlogSlugs } from './app/lib/blog';
 
 const nextConfig: NextConfig = {
+  // Hostinger shared hosting caps how many processes a build may start, so
+  // keep the build to one worker.
+  experimental: { cpus: 1 },
+
   images: {
     remotePatterns: [
       {
