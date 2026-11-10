@@ -1,0 +1,9 @@
+# Build settings for Hostinger, which installs with pnpm 11. pnpm 11 stops
+# the install when a dependency's build script has not been approved, so
+# approve the two that have one (both also ship prebuilt binaries).
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver
