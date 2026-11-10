@@ -2,13 +2,7 @@ import type { NextConfig } from 'next';
 import { retiredBlogSlugs } from './app/lib/blog';
 
 const nextConfig: NextConfig = {
-  // Static export for Cloudflare Pages (Vercel Hobby was paused on 7 Nov 2026).
-  // The enquiry form runs as a Pages Function (functions/api/enquiry.js), the
-  // WordPress 410s and www -> apex redirect in functions/_middleware.js, and
-  // redirects() is written to public/_redirects by scripts/cf-redirects.ts.
-  output: 'export',
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
