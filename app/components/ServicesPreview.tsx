@@ -53,7 +53,7 @@ function AnimatedServiceContent() {
 
       {/* Big heading */}
       <h2 style={{ fontSize: 'clamp(28px, 3vw, 44px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 20 }}>
-        United Arab Emirates <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Most Trusted</span><br/>Sofa Experts
+        Sofa <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Deep Cleaning</span><br/>Across the UAE
       </h2>
 
       {/* Animated typewriter */}
@@ -231,7 +231,7 @@ export default function ServicesPreview() {
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 56 }}>
           <div className="section-tag">Our Services</div>
           <h2 style={{ fontSize: 'clamp(32px, 4vw, 56px)', marginBottom: 16 }}>
-            Professional <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Cleaning</span> Services Across the UAE
+            <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Sofa Cleaning</span> Services in Dubai &amp; Across the UAE
           </h2>
           <p style={{ color: 'var(--fg-muted)', maxWidth: 580, margin: '0 auto', fontSize: 17, lineHeight: 1.65 }}>
             Across the UAE, &ldquo;surface cleaning&rdquo; isn&apos;t enough. Fine desert dust settles deep into fabric fibers, while humidity locks in allergens and bacteria. Our trained technicians use industrial-grade extraction and pH-balanced cleaners to restore every sofa type in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah &amp; Umm Al Quwain.

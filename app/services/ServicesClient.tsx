@@ -145,7 +145,7 @@ export default function ServicesPage() {
             </div>
             <div className="section-tag">Our Services</div>
             <h1 className="reveal" style={{ fontSize: 'clamp(36px, 6vw, 80px)', lineHeight: 1.0, marginBottom: 20 }}>
-              Professional Sofa Cleaning Services Across <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>All 7 Emirates</span>
+              Sofa Cleaning Services Across <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>All 7 Emirates</span>
             </h1>
             <p className="reveal reveal-delay-1" style={{ color: 'var(--fg-muted)', fontSize: 18, maxWidth: 620, lineHeight: 1.65 }}>
               Wherever you live in the UAE, your sofa acts as a filter for fine sand, humidity, allergens and bacteria. Al Haya Sofa Care UAE uses industrial-grade extraction and pH-balanced cleaners to restore your upholstery at your doorstep — in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain.

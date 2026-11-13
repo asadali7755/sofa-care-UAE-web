@@ -11,7 +11,7 @@ export const CITY_CONTENT: Record<string, CityContent> = {
     "key": "dubai",
     "cityName": "Dubai",
     "tag": "Dubai Service",
-    "heroPara": "Dubai's most trusted sofa deep shampoo & steam cleaning service. Al Haya Sofa Care UAE brings professional equipment directly to your home — covering all Dubai areas, same-day available.",
+    "heroPara": "At-home sofa deep shampoo & steam cleaning across Dubai. Al Haya Sofa Care UAE brings professional equipment directly to your home — covering all Dubai areas, same-day available.",
     "whyParas": [
       "Dubai's micro-dust particles are incredibly fine. They settle deep into fabric fibers, acting like sandpaper that wears down your sofa over time. Air conditioning systems circulate this dust constantly — regular vacuuming cannot reach these deep layers.",
       "Professional-grade extraction removes dust mites, pet dander and bacteria that standard household vacuums leave behind — essential for families with children or anyone with respiratory sensitivities.",

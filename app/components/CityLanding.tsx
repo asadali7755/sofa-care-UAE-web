@@ -101,6 +101,37 @@ export default function CityLanding(p: CityLandingProps) {
     creator: { '@type': 'Organization', name: 'Al Haya Sofa Care UAE' },
   };
 
+  // Searches for each emirate are mostly "sofa cleaning <city>", "... price"
+  // and "... at home": answer them on the page and in FAQPage schema.
+  const areaList = p.areas.slice(0, 6).join(', ');
+  const faqs = [
+    {
+      q: `How much does sofa cleaning cost in ${p.cityName}?`,
+      a: `The price depends on the number of seats, the fabric (fabric, leather or velvet) and how stained or dusty the sofa is. Send a photo of your sofa on WhatsApp and we reply with a free quote for your exact sofa.`,
+    },
+    {
+      q: `Do you clean sofas at home in ${p.cityName}?`,
+      a: `Yes. The team comes to your home or office in ${p.cityName} with its own shampoo and extraction machines, and the sofa is cleaned where it stands.`,
+    },
+    {
+      q: 'How long does a sofa take to dry after shampooing?',
+      a: 'Usually 2 to 4 hours. Thick fabrics and rooms with little airflow take longer; running the AC or a fan speeds it up.',
+    },
+    {
+      q: `Which areas of ${p.cityName} do you cover?`,
+      a: `All of ${p.cityName}${areaList ? `, including ${areaList}` : ''}. Tell us your area on WhatsApp and we confirm a visit time.`,
+    },
+    {
+      q: 'Can you remove stains, odours and pet hair?',
+      a: 'Yes, stain, odour and pet-hair treatment is part of the deep clean. Very old or dye stains may only lighten, and we tell you that before we start.',
+    },
+  ];
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  };
+
   const heroText = (
     <div className="cl-hero-text">
       <div className="cl-tag"><span className="cl-tag-dot" />{p.tag}</div>
@@ -131,7 +162,7 @@ export default function CityLanding(p: CityLandingProps) {
   const whyHead = (
     <>
       <div className="cl-eyebrow">{p.whyTag ?? `Why Choose Al Haya in ${p.cityName}`}</div>
-      <h2 className="cl-h2">Trusted Sofa Cleaning <em>{p.whyAccent ?? `in ${p.cityName}`}</em></h2>
+      <h2 className="cl-h2">Sofa Cleaning Services <em>{p.whyAccent ?? `in ${p.cityName}`}</em></h2>
     </>
   );
   const whyParas = p.whyParas.map((t2, i) => <p key={i} className="cl-p">{t2}</p>);
@@ -290,6 +321,25 @@ export default function CityLanding(p: CityLandingProps) {
       </section>
 
       <QuoteCallSection areaName={p.cityName} />
+
+      {/* ───────── FAQ ───────── */}
+      <section className="cl-section-sm cl-faq">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        <div className="container-x" style={{ maxWidth: 860 }}>
+          <div className="cl-center reveal">
+            <div className="cl-eyebrow">Questions</div>
+            <h2 className="cl-h2 cl-h2-sm">Sofa cleaning in {p.cityName}: common questions</h2>
+          </div>
+          <div style={{ display: 'grid', gap: 12, marginTop: 24 }}>
+            {faqs.map((f) => (
+              <details key={f.q} style={{ border: '1px solid rgba(0,0,0,.1)', borderRadius: 14, padding: '14px 18px', background: '#fff' }}>
+                <summary style={{ cursor: 'pointer', fontWeight: 600 }}>{f.q}</summary>
+                <p style={{ marginTop: 10, lineHeight: 1.7, opacity: 0.85 }}>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ───────── OTHER EMIRATES ───────── */}
       <section className="cl-section-sm cl-others">

@@ -98,9 +98,9 @@ export default function Hero() {
           </div>
 
           <h1 className="hx-h1 hx-in" style={{ ['--d' as string]: '.08s' }}>
-            <span className="hx-h1-sub">Professional &amp; Trusted</span>
+            <span className="hx-h1-sub">At-Home Deep Shampoo</span>
             <span className="hx-h1-main">Sofa <em>Cleaning</em></span>
-            <span className="hx-h1-main hx-h1-line2">Across the UAE</span>
+            <span className="hx-h1-main hx-h1-line2">in Dubai &amp; the UAE</span>
           </h1>
 
           <div className="hx-type hx-in" style={{ ['--d' as string]: '.16s' }}>

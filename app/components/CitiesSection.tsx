@@ -44,7 +44,7 @@ export default function CitiesSection() {
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 52 }}>
           <div className="section-tag">UAE Coverage</div>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', marginBottom: 16 }}>
-            Professional Sofa Cleaning in{' '}
+            Sofa Deep Cleaning in{' '}
             <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>
               Dubai, Sharjah, Ajman &amp; Abu Dhabi
             </span>
