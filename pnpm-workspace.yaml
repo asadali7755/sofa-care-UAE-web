@@ -9,5 +9,7 @@ onlyBuiltDependencies:
   - unrs-resolver
 # pnpm 11 on Hostinger rejects lockfile entries published less than a day
 # ago (ERR_PNPM_MINIMUM_RELEASE_AGE_VIOLATION). Apply the same rule locally
-# (minutes) so a fresh lockfile never pulls in a package that new.
-minimumReleaseAge: 2880
+# (minutes) so a fresh lockfile never pulls in a package that new. Keep it
+# equal to Hostinger's one day: pnpm also enforces this value on Hostinger,
+# so a longer age here rejects packages Hostinger itself would accept.
+minimumReleaseAge: 1440
