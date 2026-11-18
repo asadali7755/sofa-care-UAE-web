@@ -5,7 +5,7 @@
  *
  * Oct 2026 consolidation: the near-duplicate generated posts were merged into one
  * pillar per topic. Retired slugs 301 to their pillar via `retiredBlogSlugs`
- * (wired into next.config.ts) and are filtered out here if they ever reappear.
+ * (wired into middleware.ts) and are filtered out here if they ever reappear.
  */
 export interface BlogSection { heading: string; body?: string[]; bullets?: string[]; }
 export interface BlogCostRow { label: string; price: string; }

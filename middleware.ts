@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { retiredBlogSlugs } from './app/lib/blog';
 
 const WP_PARAMS = ['feed', 'cat', 'tag', 'page_id', 'paged', 'author', 'p', 's', 'attachment_id'];
 
@@ -12,6 +13,16 @@ export function middleware(request: NextRequest) {
   const host = (request.headers.get('x-forwarded-host') || request.headers.get('host') || '').split(':')[0];
   if (host === `www.${CANONICAL_HOST}`) {
     const url = new URL(request.nextUrl.pathname + request.nextUrl.search, `https://${CANONICAL_HOST}`);
+    return NextResponse.redirect(url, 301);
+  }
+
+  // Consolidated blog cluster (Oct 2026): retired posts 301 to their pillar
+  // post or city page. This was in next.config.ts, but next.config.mjs must
+  // not import app code (see the note there).
+  const retired = request.nextUrl.pathname.match(/^\/blog\/([a-z0-9-]+)\/?$/);
+  if (retired && Object.hasOwn(retiredBlogSlugs, retired[1])) {
+    const url = request.nextUrl.clone();
+    url.pathname = retiredBlogSlugs[retired[1]];
     return NextResponse.redirect(url, 301);
   }
 
